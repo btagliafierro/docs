@@ -1,0 +1,70 @@
+
+
+h1 {
+  color: rgb(25, 148, 52);
+  font-size: 150%;
+}
+p {
+  color: rgb(12, 6, 6);
+  font-size: 100%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.footnote-ref {
+  font-size: 1.1em !important;
+  color: #4f7fd9 !important;
+}
+
+/* Replace footnote references with a symbol */
+.footnote-ref::after {
+  content: "✦"; /* Example symbol */
+}
+
+/* Fix dark mode text contrast */
+[data-md-color-scheme="slate"] {
+  /* Main background and text colors */
+  --md-default-bg-color: #1e1e1e;
+  --md-default-fg-color: #e0e0e0;
+  
+  /* Body text specifically */
+  --md-typeset-color: #e0e0e0;
+  
+  /* Code blocks */
+  --md-code-bg-color: #2d2d2d;
+  --md-code-fg-color: #f0f0f0;
+  
+  /* Tables */
+  --md-typeset-table-color: #e0e0e0;
+  
+  /* Links */
+  --md-typeset-a-color: #64b5f6;
+  
+  /* Headings */
+  --md-default-fg-color--light: #b0b0b0;
+  --md-default-fg-color--lighter: #909090;
+}
+
+/* Force body text to be light in dark mode */
+[data-md-color-scheme="slate"] .md-typeset {
+  color: #e0e0e0 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset p,
+[data-md-color-scheme="slate"] .md-typeset li,
+[data-md-color-scheme="slate"] .md-typeset td {
+  color: #e0e0e0 !important;
+}
+
+/* Ensure headings are visible */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4 {
+  color: #f5f5f5 !important;
+}
+
+/* Fix equations in dark mode */
+[data-md-color-scheme="slate"] .arithmatex {
+  color: #e8e8e8 !important;
+}

@@ -1,0 +1,1761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for DualSPHysics - SPH-based CFD software">
+      
+      
+        <meta name="author" content="Bonaventura Tagliafierro">
+      
+      
+        <link rel="canonical" href="https://example.com/features/">
+      
+      
+        <link rel="prev" href="../user_guide/dambreak/">
+      
+      
+        <link rel="next" href="../licenses/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Latest features - DualSPHysics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#new-in-dualsphysics-v54" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://dual.sphysics.org" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DualSPHysics Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Latest features
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../home/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../theory/fundamentals/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../couplings/wavegen/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Couplings
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples/testcases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/testcases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Latest features
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../licenses/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Licenses
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/modifying.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  News
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://dual.sphysics.org" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    DualSPHysics Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../home/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/developers_institutions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers and Institutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPH Formulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/boundary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boundary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU and GPU Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couplings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Couplings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../couplings/wavegen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Geneneration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../couplings/dem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descrete Element Method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../couplings/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coupling DualSPHysics with Project Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../couplings/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coupling DualSPHysics with MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/testcases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/dambreak.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/testcases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/dambreak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Latest features
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Latest features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-dualsphysics-v54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New in DualSPHysics v5.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-dualsphysics-v52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New in DualSPHysics v5.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-dualsphysics-v50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New in DualSPHysics v5.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-dualsphysics-v44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New in DualSPHysics v4.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-dualsphysics-v42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New in DualSPHysics v4.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    News
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/modifying.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modifying DualSPHysics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Latest features</h1>
+
+<h2 id="new-in-dualsphysics-v54">New in DualSPHysics v5.4<a class="headerlink" href="#new-in-dualsphysics-v54" title="Link to this heading">&para;</a></h2>
+<p><strong>Novelties in pre-processing tools</strong></p>
+<ul>
+<li>Advanced particle generation for simulations using variable resolution.</li>
+<li>Significant performance improvements on automatic normal calculation.</li>
+<li>Supports output files larger than 4 GB to generate hundreds of millions of particles.</li>
+</ul>
+<p><strong>Novelties in DualSPHysics solver</strong></p>
+<ul>
+<li>Variable resolution model.</li>
+<li>New mDBC modes: no-slip and free-slip.</li>
+<li>Inlet-outlet using mesh data.</li>
+<li>New shifting model with accurate free-surface detection.</li>
+</ul>
+<p><strong>Novelties in post-processing tools</strong></p>
+<ul>
+<li>Variable resolution output is automatically supported.</li>
+<li>New options to compute several water elevations in the same water column (MeasureTool).</li>
+</ul>
+<p><strong>Other improvements in DualSPHysics solver</strong></p>
+<ul>
+<li>Precompiled library dependencies removed (MoorDynPlus, JVtkLib, JNumexLib).</li>
+<li>mDBC can be applied to FlexStruct.</li>
+<li>Filters for output particle data (space saving).</li>
+</ul>
+<h2 id="new-in-dualsphysics-v52">New in DualSPHysics v5.2<a class="headerlink" href="#new-in-dualsphysics-v52" title="Link to this heading">&para;</a></h2>
+<p><strong>Novelties in pre-processing tools</strong></p>
+<ul>
+<li>Advanced method to fill external geometries especially useful for mDBC (filling depth configurable by depthmin and depthmax)</li>
+<li>Improved management of data for normal vectors (simpler, faster and less space required)</li>
+<li>Automatic bathymetry from elevation points</li>
+<li>Initial distribution with degree of randomness for non-deterministic simulations</li>
+<li>Improved initial density gradient for complex simulations</li>
+<li>Creates help VTK files with domains of main drawing operations</li>
+</ul>
+<p><strong>Novelties in DualSPHysics solver</strong></p>
+<ul>
+<li>mDBC can be applied now to floating bodies</li>
+<li>New options to configure mDBC normal vectors in DualSPHysics</li>
+<li>Lagrangian formulation for flexible-structure interaction (FSI)</li>
+<li>DualSPHysics updated for latest compilers (Visual Studio 2022 (v143), gcc 11.2, CUDA 11.7)</li>
+<li>DualSPHysics compiled for AMD GPUs as well</li>
+<li>Focused waves generation (1st and 2nd order theory)</li>
+<li>Advanced refilling rate to increase performance of inlet/outlet</li>
+</ul>
+<p><strong>Novelties in post-processing tools</strong></p>
+<ul>
+<li>New post-processing tool for particle trajectories (TracerParts)</li>
+<li>New options to calculate fluid elevation and depth</li>
+<li>Calculation of fluid energy with PartVTK</li>
+<li>Simple definition of measurement positions by execution parameters</li>
+<li>Calculation of intrinsic and extrinsic moment forces</li>
+<li>Automatic viscosity setting from XML or BI4 files</li>
+<li>ViscoBoundFactor is supported by post-processing tools</li>
+<li>Supports single and double precision mixing of PARTs</li>
+</ul>
+<p><strong>Other improvements in DualSPHysics solver</strong></p>
+<ul>
+<li>CFL number configuration by execution parameters</li>
+<li>New options to configure an initial ramp for DDT</li>
+<li>BoundCorr feature was replaced with mDBC</li>
+<li>Execution parameter for saving VTK with mDBC normals during simulation</li>
+<li>Chrono features can be used with different RigidAlgorithm options</li>
+<li>Updates mooring library with MoorDynPlus v2.041</li>
+<li>GainStroke is applied to stroke calculation for focused waves</li>
+<li>Add timers for gauge tasks</li>
+</ul>
+<h2 id="new-in-dualsphysics-v50">New in DualSPHysics v5.0<a class="headerlink" href="#new-in-dualsphysics-v50" title="Link to this heading">&para;</a></h2>
+<p><strong>Novelties in pre-processing tools</strong></p>
+<ul>
+<li>New mode to create particles at free positions instead of following the cartesian grid</li>
+<li>Definition of variables in the XML file that makes easier the particle generation of complex cases with GenCase and the configuration of DualSPHysics</li>
+<li>Computation of normal vectors for boundary particles (to be used with new boundary conditions)</li>
+<li>Option to create several layers of particles (to be used with new boundary conditions)</li>
+</ul>
+<p><strong>Novelties simulating fluid-driven objects</strong></p>
+<ul>
+<li>Problems dealing with objects with density very different from water are solved</li>
+<li>Floating objects can be combined with imposed linear and angular velocity</li>
+</ul>
+<p><strong>New SPH formulations</strong></p>
+<ul>
+<li>Density Diffusion Term (DDT) [Fourtakas et al. 2019]</li>
+<li>Modified Dynamic Boundary Conditions (mDBC) [English et al. 2019]</li>
+</ul>
+<p><strong>Improvements in performance</strong></p>
+<ul>
+<li>Both CPU and GPU implementations use now double precision for arrays of position and for updating magnitudes</li>
+<li>GPU executions are more efficient using relative position of the particles instead of absolute position </li>
+<li>Greater robustness, usability and efficiency of the inlet/outlet implementation</li>
+</ul>
+<p><strong>New coupling with <a href="https://github.com/imestevez/MoorDynPlus">MoorDyn+</a>+ library</strong></p>
+<ul>
+<li>Mooring lines can be simulated modelling axial elasticity and bottom friction</li>
+<li>Several mooring lines can be connected to a floating device and a mooring line can be connected to different floating devices</li>
+<li>Numerical tensions are solved at fairleads and anchor points</li>
+<li>Maximum breaking tension can be also defined by the user</li>
+</ul>
+<p><strong>New functionalities in the coupling with <a href="https://projectchrono.org/">Project Chrono</a></strong></p>
+<ul>
+<li>Collisions can be solved using non-smooth contacts or smooth contacts </li>
+<li>Multicore implementation is now available for collisions</li>
+<li>Springs can be simulated as linear dampers or using Coulomb friction</li>
+<li>New constraints such as “pulleys” are now possible</li>
+</ul>
+<p><strong>New rheology models, non-Newtonian formulations and multiphase flows</strong></p>
+<ul>
+<li>Velocity gradients calculated by a finite differences method (FDM) or an SPH gradient</li>
+<li>Explicit calculation of shear rates and apparent viscosity for non-Newtonian fluids</li>
+<li>Viscous forces modelled by the [Morris et al. 1997] operator or the SPH deviatoric stress tensor</li>
+<li>Combination of Newtonian and non-Newtonian fluids (Newtonian, dilatant and pseudo-plastic) using the generalised Herschel–Bulkley-Papanastasiou model </li>
+<li>Capable of modelling Power law, Bingham and any other non-linear fluid </li>
+<li>Platform for implementation of any non-Newtonian formulation  </li>
+<li>Up to nine different phases per simulation</li>
+</ul>
+<p><strong>Improved documentation</strong></p>
+<ul>
+<li>New structure of the online <a href="https://github.com/DualSPHysics/DualSPHysics/wiki">Documentation</a></li>
+<li>XML_GUIDE for Open boundaries, Chrono, MoorDyn, mDBC and multi-phase</li>
+</ul>
+<hr />
+<h2 id="new-in-dualsphysics-v44">New in DualSPHysics v4.4<a class="headerlink" href="#new-in-dualsphysics-v44" title="Link to this heading">&para;</a></h2>
+<p><strong>Coupling with <a href="https://projectchrono.org/">Project Chrono</a> library</strong></p>
+<ul>
+<li>Collisions between solids (using restitution and friction coefficient)</li>
+<li>Realistic frictional behavior with a full Coulomb sliding/sticking/rolling model</li>
+<li>Large variety of mechanical constraints (joints, hinges and springs)</li>
+<li>Examples can be found in the subfolder <strong>examples/chrono</strong></li>
+</ul>
+<p><strong>Coupling with wave propagation models</strong></p>
+<ul>
+<li>Employing the multi-layered piston wavemaker (with <a href="http://swash.sourceforge.net/">SWASH</a>)</li>
+<li>Relaxation zone technique for wave and current generation</li>
+<li>Examples can be found in the subfolder <strong>examples/wavecoupling</strong></li>
+</ul>
+<p><strong>Open boundary conditions: inlet &amp; outlet</strong></p>
+<ul>
+<li>A time- and/or space-dependent velocity field can be assigned at an open boundary</li>
+<li>The density at an open boundary can be either predefined (fixed and hydrostatic options available) or varied according to information retrieved from the adjacent fluid</li>
+<li>The water elevation at an open boundary can be either predefined (fixed and time-dependent options available) or varied according to information retrieved from the adjacent fluid</li>
+<li>The buffer areas are built to allow dual inlet/outlet behaviour</li>
+<li>Examples can be found in the subfolder <strong>examples/inletoutlet</strong></li>
+</ul>
+<p><strong>Wave generation</strong></p>
+<ul>
+<li>Automatic generation of single and multiple solitary waves</li>
+<li>Example can be found in <strong>examples/main/16_SolitaryWaves</strong></li>
+</ul>
+<p><strong>Novelties on post-processing tools</strong></p>
+<ul>
+<li>The <strong>moment about an axis</strong> can be now computed using ComputeForces.exe</li>
+</ul>
+<p><strong>More help to produce XML input file</strong></p>
+<ul>
+<li>Several templates are now available in doc/xml_format</li>
+<li>New and more complete "XML_v4.4_GUIDE.pdf"</li>
+</ul>
+<p><strong>Other changes</strong></p>
+<ul>
+<li>New definition of domain limits (simulationdomain)</li>
+<li>Numerical gauge during simulation (gauges)</li>
+<li>Easy way to restrain the motion (DOF) of floating bodies (<strong>examples/others/FtRestrictions</strong>)</li>
+</ul>
+<hr />
+<h2 id="new-in-dualsphysics-v42">New in DualSPHysics v4.2<a class="headerlink" href="#new-in-dualsphysics-v42" title="Link to this heading">&para;</a></h2>
+<p><strong>New structure of package (now linux and windows in only one package)</strong></p>
+<p><strong>Multiphase code: LiquidGas</strong></p>
+<ul>
+<li>Source code and examples</li>
+</ul>
+<p><strong>New capacity to simulate up to 65,000 floating or moving bodies</strong> </p>
+<ul>
+<li>Pre-processing and post-processing tools are adapted to this</li>
+<li>Compiling option for this functionality</li>
+</ul>
+<p><strong>Wave generation and absorption</strong></p>
+<ul>
+<li>2nd Order Stokes: piston and flap</li>
+<li>Passive absorption using sponge layers</li>
+<li>Active absorption: AWAS for piston</li>
+</ul>
+<p><strong>New test cases</strong> (all can be visualised in <a href="https://www.youtube.com/watch?v=BvCXgew5Ucs&amp;list=PLwaIMU-iIzj2MnNs8w9nH0yluapkGh0jP">Youtube</a>) </p>
+<ul>
+<li>Poiseuille flow</li>
+<li>Many floating objects</li>
+<li>Dike with AWAS where overtopping is computed</li>
+</ul>
+<p><strong>New post-processing tools</strong></p>
+<ul>
+<li>FlowTool.exe; to compute inflow, outflow… overtopping!</li>
+<li>IsoSurface.exe; now also creates slices </li>
+</ul>
+<p><strong>Graphical User Interface using FreeCAD</strong> </p>
+<ul>
+<li>DesignSPHysics: http://design.sphysics.org/ </li>
+</ul>
+<p><strong>Advanced visualisation using Blender</strong></p>
+<ul>
+<li>VisualSPHysics: http://visual.sphysics.org/ </li>
+</ul>
+<p><strong>Other changes</strong></p>
+<ul>
+<li>Several bugs are solved: shifting correction and others reported by users</li>
+<li>CUDA 9.2</li>
+<li>Visual Studio Community 2015 (free)</li>
+<li>Improvements in the code documentation (WIKI)</li>
+<li>Improved implementation of floating objects to facilitate coupling with other models</li>
+<li>New functionalities in the XML of GenCase to create more complex cases</li>
+<li>New output VTK file 1000 times less heavy to easily visualise huge cases</li>
+</ul>
+<p><strong>New license of the code: LGPL v2.1- GNU Lesser General Public License (LGPL)</strong></p>
+<ul>
+<li>Software can be incorporated into both free software and proprietary software </li>
+<li>Developers and companies can integrate LGPL software into their software without being required to release the source code of their own software-parts</li>
+<li>Libraries linked to DualSPHysics can be closed source</li>
+<li>LGPL can be used in commercial applications</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../user_guide/dambreak/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dambreak 3D">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Dambreak 3D
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../licenses/" class="md-footer__link md-footer__link--next" aria-label="Next: Licenses">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Licenses
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 DualSPHysics Team
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/DualSPHysics/DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.indexes", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
