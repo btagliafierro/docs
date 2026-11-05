@@ -1,33 +1,38 @@
+/* ============================================
+   TYPOGRAPHY & CONTENT STYLING
+   ============================================ */
 
-
+/* Headings */
 h1 {
   color: rgb(25, 148, 52);
   font-size: 150%;
 }
-p {
+
+/* Body text - only for main content paragraphs in light mode */
+[data-md-color-scheme="default"] .md-content__inner > p {
   color: rgb(12, 6, 6);
-  font-size: 100%;
   text-align: justify;
   text-justify: inter-word;
 }
 
+/* Footnote references */
 .footnote-ref {
   font-size: 1.1em !important;
   color: #4f7fd9 !important;
 }
 
-/* Replace footnote references with a symbol */
 .footnote-ref::after {
-  content: "✦"; /* Example symbol */
+  content: "✦";
 }
 
-/* Fix dark mode text contrast */
+/* ============================================
+   DARK MODE CONFIGURATION
+   ============================================ */
+
 [data-md-color-scheme="slate"] {
-  /* Main background and text colors */
+  /* Base colors */
   --md-default-bg-color: #1e1e1e;
   --md-default-fg-color: #e0e0e0;
-  
-  /* Body text specifically */
   --md-typeset-color: #e0e0e0;
   
   /* Code blocks */
@@ -45,26 +50,173 @@ p {
   --md-default-fg-color--lighter: #909090;
 }
 
-/* Force body text to be light in dark mode */
+/* Dark mode text elements */
 [data-md-color-scheme="slate"] .md-typeset {
-  color: #e0e0e0 !important;
+  color: #e0e0e0;
 }
 
 [data-md-color-scheme="slate"] .md-typeset p,
 [data-md-color-scheme="slate"] .md-typeset li,
 [data-md-color-scheme="slate"] .md-typeset td {
-  color: #e0e0e0 !important;
+  color: #e0e0e0;
 }
 
-/* Ensure headings are visible */
 [data-md-color-scheme="slate"] .md-typeset h1,
 [data-md-color-scheme="slate"] .md-typeset h2,
 [data-md-color-scheme="slate"] .md-typeset h3,
 [data-md-color-scheme="slate"] .md-typeset h4 {
-  color: #f5f5f5 !important;
+  color: #f5f5f5;
 }
 
-/* Fix equations in dark mode */
+/* Equations in dark mode */
 [data-md-color-scheme="slate"] .arithmatex {
-  color: #e8e8e8 !important;
+  color: #e8e8e8;
+}
+
+/* ============================================
+   FIGURE STYLING
+   ============================================ */
+
+figure {
+  text-align: center;
+  margin: 2em 0;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  margin-top: 0.5em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+}
+
+figcaption strong {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Catalogue figures keep a white canvas in both colour schemes. Pixel-level
+   source-alpha restoration also removes embedded black extraction bands. */
+.md-typeset figure img[src*="assets/images/examples/catalogue/"] {
+  background-color: #fff;
+}
+
+/* Only Overview's text toggles the group; its former separate arrow is hidden. */
+.md-nav--primary .catalogue-overview > .md-nav__container > label {
+  display: none;
+}
+
+/* Visible keyboard focus on the Overview text and native mobile back control. */
+.md-nav--primary .catalogue-overview > .md-nav__container > [role="button"]:focus-visible,
+.md-nav--primary .catalogue-overview > nav > [role="button"]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Preserve the official transparent SVG and its aspect ratio in the header. */
+.md-header__button.md-logo {
+  display: block;
+  margin: 0.1rem;
+  padding: 0.1rem;
+}
+.md-header__button.md-logo img {
+  width: auto;
+  height: 1.8rem;
+  padding: 0.05rem 0.1rem;
+  background-color: transparent;
+  border-radius: 2px;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-header__button.md-logo img { height: 1.4rem; }
+}
+
+/* Keep the visually clipped MathML within these two XML-guide paragraphs.
+   Its full accessible content remains in the DOM; visible maths is unchanged. */
+.md-typeset p.xml-guide-inline-math mjx-assistive-mml {
+  width: 1px !important;
+  height: 1px !important;
+}
+
+/* Gallery links: retain the existing blue identity with AA contrast in light
+   mode. Scope includes visible alt text for the original missing thumbnails. */
+[data-md-color-scheme="default"] .md-typeset a.examples-gallery-link {
+  color: var(--md-primary-fg-color--dark);
+}
+
+[data-md-color-scheme="default"] .md-typeset a.examples-gallery-link:is(:hover, :focus-visible) {
+  color: var(--md-default-fg-color);
+}
+
+[data-md-color-scheme="default"] .md-typeset a.examples-gallery-link:focus-visible img {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* ============================================
+   LEFT NAVIGATION PANEL
+   ============================================ */
+
+/* A rounded, tinted frame behind the left menu. Only the panel is styled;
+   text, links and highlights keep their colours.
+   Colour rule: the panel takes the hue of the header (primary colour) and the
+   lightness of the code blocks, so it reads as one of the site's surfaces.
+   Light mode: 6% blue on white          -> about #f2f9fe
+   Dark mode:  28% blue grey on #1e1e1e  -> about #2d3437
+   Both follow `primary` in mkdocs.yml if the palette changes.
+   Desktop only: on small screens the menu is a drawer. */
+/* declared on the scheme selectors (on <body>), where Material sets the
+   palette colours; on :root the primary colour would still be the default */
+[data-md-color-scheme="default"] {
+  --nav-panel-bg: color-mix(in srgb, var(--md-primary-fg-color) 6%, var(--md-default-bg-color));
+}
+[data-md-color-scheme="slate"] {
+  --nav-panel-bg: color-mix(in srgb, var(--md-primary-fg-color) 28%, var(--md-default-bg-color));
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    background: var(--nav-panel-bg);
+    border-radius: 0.8rem;
+    margin: 0.6rem 0.8rem 0.6rem 0;
+    padding: 0.5rem 0.3rem 0.8rem;
+  }
+
+  /* Material gives the sticky section title its own page-coloured background
+     and glow; match it to the panel so no white band shows. The second
+     selector covers sections with an index page, such as the catalogue
+     overview, whose title sits inside .md-nav__container. */
+  .md-sidebar--primary .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link,
+  .md-sidebar--primary .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__container,
+  .md-sidebar--primary .md-nav__title {
+    background: var(--nav-panel-bg);
+    box-shadow: none;
+  }
+}
+/* Material normally gives strong text inside headings a regular weight. */
+.md-typeset :is(h1, h2).catalogue-case > strong {
+  font-family: inherit;
+  font-weight: 700;
+}
+
+/* Family case headings feed Material's native table of contents. Scope the
+   folder treatment to catalogue family pages, including the mobile TOC. */
+body:has(.md-content__inner > h2.catalogue-case) .md-nav--secondary .md-nav__link {
+  position: relative;
+  padding-inline-start: 1.6em;
+  overflow-wrap: anywhere;
+}
+
+body:has(.md-content__inner > h2.catalogue-case) .md-nav--secondary .md-nav__link::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.15em;
+  height: 1em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Cpath d='M2 3h7l2 3h11v12H2z' fill='%23f6c945' stroke='%2349391b' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M2 7h20' fill='none' stroke='%2349391b' stroke-width='1.2'/%3E%3C/svg%3E") center / contain no-repeat;
+  pointer-events: none;
 }

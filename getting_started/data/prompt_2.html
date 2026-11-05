@@ -1,0 +1,118 @@
+<style>
+  .terminal-window {
+    background-color: #300a24; /* Canonical Ubuntu purple background */
+    color: #ffffff;
+    font-family: 'Ubuntu Mono', 'Consolas', 'DejaVu Sans Mono', monospace;
+    font-size: 0.85em;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    max-width: 650px;
+    margin: 10px 0;
+    border: 1px solid #4a153b;
+  }
+
+  /* Title bar styling */
+  .terminal-titlebar {
+    background-color: #3c3b37; /* Ubuntu header bar dark gray */
+    color: #dfdbd2;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    user-select: none;
+    border-bottom: 1px solid #282724;
+  }
+
+  .terminal-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+  }
+
+  /* GNOME Window Controls (Close, Minimize, Maximize on right) */
+  .terminal-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .control-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .btn-minimize { background-color: #4d4d4d; }
+  .btn-maximize { background-color: #4d4d4d; }
+  .btn-close { background-color: #e95420; } /* Ubuntu Brand Orange */
+
+  /* Terminal body area */
+  .terminal-body {
+    padding: 12px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+  }
+
+  /* Ubuntu prompt colors */
+  .prompt-user {
+    color: #8ae234; /* Green user@hostname */
+    font-weight: bold;
+  }
+
+  .prompt-path {
+    color: #729fcf; /* Blue working directory */
+    font-weight: bold;
+  }
+
+  .prompt-symbol {
+    color: #ffffff;
+  }
+
+  .terminal-prompt-line {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Solid block cursor typical of GNOME Terminal */
+  .terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: #ffffff;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+</style>
+
+<div class="terminal-window">
+  <div class="terminal-titlebar">
+    <div class="terminal-title">
+      <span>tagli@ubuntu: ~/DualSPHDocs</span>
+    </div>
+    <div class="terminal-controls">
+      <span class="control-btn btn-minimize"></span>
+      <span class="control-btn btn-maximize"></span>
+      <span class="control-btn btn-close"></span>
+    </div>
+  </div>
+  <div class="terminal-body">
+<span class="prompt-user">tagli@ubuntu</span>:<span class="prompt-path">~/DualSPHDocs</span><span class="prompt-symbol">$</span> ./xCaseWavemaker_linux64_CPU.sh
+
+Execution started...
+Initializing DualSPHysics particles...
+[1/100] Processing step 0.01s...
+[2/100] Processing step 0.02s...
+
+<div class="terminal-prompt-line"><span class="prompt-user">tagli@ubuntu</span>:<span class="prompt-path">~/DualSPHDocs</span><span class="prompt-symbol">$</span><span class="terminal-cursor"></span></div>
+  </div>
+</div>

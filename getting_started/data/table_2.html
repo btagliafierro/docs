@@ -1,0 +1,157 @@
+<style>
+  /* Base clean table styling */
+  table.local-clean-table,
+  table.local-clean-table tr,
+  table.local-clean-table th,
+  table.local-clean-table td {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    font-size: 0.90em !important;
+  }
+
+  /* Force column spacing by targeting cell elements directly */
+  .md-typeset table.local-clean-table td,
+  table.local-clean-table td {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    padding-left: 0px !important;
+    padding-right: 30px !important; /* Adjust gap between columns here */
+  }
+
+  /* Remove padding from the last column to prevent right margin overflow */
+  .md-typeset table.local-clean-table td:last-child,
+  table.local-clean-table td:last-child {
+    padding-right: 0px !important;
+  }
+
+  /* Pulse animation keyframes */
+  @keyframes pulseHighlight {
+    0% {
+      background-color: rgba(63, 81, 181, 0.08);
+      border-color: rgba(63, 81, 181, 0.3);
+    }
+    50% {
+      background-color: rgba(63, 81, 181, 0.22);
+      border-color: rgba(63, 81, 181, 0.7);
+    }
+    100% {
+      background-color: rgba(63, 81, 181, 0.08);
+      border-color: rgba(63, 81, 181, 0.3);
+    }
+  }
+
+  /* Animation class applied to the target row cell */
+  .animated-click-target {
+    animation: pulseHighlight 1.5s infinite ease-in-out;
+    border: 1px solid transparent !important;
+    border-radius: 4px;
+  }
+</style>
+
+<p>📁 <b>DualSPHysics_vxxx &gt; examples &gt; main</b></p>
+
+<table class="local-clean-table">
+  <tr style="border: none; padding: 4px 5;">
+    <td>📁 <b>01_DamBreak</b></td>
+    <td>20/07/2026 17:50</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>02_Periodicity</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>03_MovingSquare</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>04_ExternalForces</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>05_SloshingTank</b></td>
+    <td>21/07/2026 22:07</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <!-- Animated pulse applied to 06_Wavemaker target folder -->
+    <td class="animated-click-target">📁 <b>06_Wavemaker</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>07_WavemakerFile</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>08_WavesFlap</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>09_WavesPiston</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>10_WavesPistonAWAS</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>11_Floating</b></td>
+    <td>24/07/2026 12:45</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>12_FloatingWaves</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>13_Pump</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>14_DEM</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>15_Poiseuille</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>16_SolitaryWaves</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>17_WaveRunup</b></td>
+    <td>22/07/2026 17:36</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>18_Bathymetry</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>19_FocusedWaves</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+  <tr style="border: none; padding: 2px 0;">
+    <td>📁 <b>20_Damping</b></td>
+    <td>26/01/2026 11:51</td>
+    <td>File folder</td>
+  </tr>
+</table>
