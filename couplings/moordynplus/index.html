@@ -6,25 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for DualSPHysics - SPH-based CFD software">
       
       
-        <meta name="author" content="Bonaventura Tagliafierro">
+        <link rel="canonical" href="https://btagliafierro.github.io/docs/couplings/moordynplus/">
       
       
-        <link rel="canonical" href="https://example.com/couplings/moordynplus/">
-      
-      
-        <link rel="prev" href="../chrono/">
-      
-      
-        <link rel="next" href="../../examples/testcases/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.ico">
+      <link rel="icon" href="../../assets/images/dualsphysics-logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
@@ -57,8 +49,6 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../stylesheets/custom.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -84,12 +74,23 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-moordyn-library" class="md-skip">
+        <a href="#sec:moordynplus" class="md-skip">
           Skip to content
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <strong>Draft for internal review.</strong>
+  Some pages, figures and videos are still in progress.
+
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -104,9 +105,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://dual.sphysics.org" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+    <a href="../../home/" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
       
-  <img src="../../assets/images/logo.png" alt="logo">
+  <img src="../../assets/images/dualsphysics-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -204,6 +205,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
   </nav>
   
     
@@ -242,37 +255,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../theory/fundamentals/" class="md-tabs__link">
+        <a href="../../gallery/intro/" class="md-tabs__link">
           
   
   
     
   
-  Theory
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../wavegen/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Couplings
+  Gallery
 
         </a>
       </li>
@@ -288,13 +277,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../examples/testcases/" class="md-tabs__link">
+        <a href="../../getting_started/getting_started/" class="md-tabs__link">
           
   
   
     
   
-  Examples
+  Getting Started
 
         </a>
       </li>
@@ -310,13 +299,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../user_guide/testcases/" class="md-tabs__link">
+        <a href="../../examples_catalogue/catalogue/main-catalogue/" class="md-tabs__link">
           
   
   
     
   
-  User Guide
+  Examples Catalogue
 
         </a>
       </li>
@@ -329,17 +318,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../features/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../benchmarks/" class="md-tabs__link">
+          
   
   
     
   
-  Latest features
+  Benchmarks
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -348,17 +340,64 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../licenses/" class="md-tabs__link">
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../xml_guides/general/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XML Guides
+
+        </a>
+      </li>
+    
+  
+
+      
         
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faq/faq/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../licenses/" class="md-tabs__link">
+          
   
   
     
   
   Licenses
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -370,13 +409,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/modifying.md" class="md-tabs__link">
+        <a href="../../contributing/setup/" class="md-tabs__link">
           
   
   
     
   
-  News
+  Contributing
 
         </a>
       </li>
@@ -410,17 +449,27 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://dual.sphysics.org" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+    <a href="../../home/" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
       
-  <img src="../../assets/images/logo.png" alt="logo">
+  <img src="../../assets/images/dualsphysics-logo.svg" alt="logo">
 
     </a>
     DualSPHysics Documentation
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -439,8 +488,6 @@
       
         
       
-        
-      
     
     
     
@@ -454,9 +501,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -525,6 +570,69 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gallery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -532,14 +640,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home/developers_institutions/" class="md-nav__link">
+      <a href="../../gallery/intro/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Developers and Institutions
+    Gallery
   
 
     
@@ -568,6 +676,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -588,19 +700,17 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Theory
+    Getting Started
   
 
     
@@ -611,12 +721,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Theory
+    Getting Started
   
 
           </label>
@@ -629,14 +739,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../theory/fundamentals/" class="md-nav__link">
+      <a href="../../getting_started/getting_started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    SPH Formulation
+    Run Your First Simulation
   
 
     
@@ -657,14 +767,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../theory/boundary/" class="md-nav__link">
+      <a href="../../getting_started/workflow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Boundary
+    The DualSPHysics Workflow
   
 
     
@@ -685,14 +795,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../theory/implementation/" class="md-nav__link">
+      <a href="../../getting_started/cpu-gpu-multigpu/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CPU and GPU Implementation
+    CPU, GPU and Multi-GPU Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/case_definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Definition (XML)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/designsphysics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DesignSPHysics
   
 
     
@@ -717,10 +883,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -732,33 +896,54 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Couplings
+    Examples Catalogue
   
 
     
@@ -769,12 +954,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Couplings
+    Examples Catalogue
   
 
           </label>
@@ -787,14 +972,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../wavegen/" class="md-nav__link">
+      <a href="../../examples_catalogue/catalogue/main-catalogue/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Wave Geneneration
+    Main
   
 
     
@@ -815,14 +1000,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../dem/" class="md-nav__link">
+      <a href="../../examples_catalogue/catalogue/mdbc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Descrete Element Method
+    mDBC
   
 
     
@@ -843,14 +1028,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../chrono/" class="md-nav__link">
+      <a href="../../examples_catalogue/catalogue/inletoutlet/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Coupling DualSPHysics with Project Chrono
+    Inlet/Outlet
   
 
     
@@ -868,24 +1053,429 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/inletmesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
+    InletMesh
+  
+
+    
+  </span>
   
   
-    <li class="md-nav__item md-nav__item--active">
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/wavecoupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wavecoupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/divclean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divergence cleaning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mphase_liquidgas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase LiquidGas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase NNewtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+    </li>
+  
+
+    
       
       
+  
+  
+  
+  
+    
+    
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../benchmarks/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
-    Coupling DualSPHysics with MoorDynPlus
+    Benchmarks
   
 
     
@@ -893,17 +1483,43 @@
   
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_2d/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Coupling DualSPHysics with MoorDynPlus
+    Dambreak 2D
   
 
     
@@ -912,12 +1528,1507 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/sloshing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sloshing Tank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/wave_generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/floating_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floating Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
       
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XML Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/mdbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase non-Newtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/new_floating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Add a Floating Object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Resolution/Particle Size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_viscosity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Viscosity Formulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_time_duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Simulation Time Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_still_water_level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Still-Water Level (Pending)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/simulation_domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand the Simulation Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/mk_labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand MK Labels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_pressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_free_surface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Free-Surface Elevation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_force/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Force
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/visualise_paraview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise Results in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/visualise_mdbc_normals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise mDBC Normals in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/floating_body_motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Compute the Motion of a Floating Body
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../licenses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licenses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Licenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/dualsphysics-lgpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (LGPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/dualsphysics-bsd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (BSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/tinyxml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TinyXML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/random-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random number generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/project-chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDyn+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -951,497 +3062,100 @@
     </ul>
   
 </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Examples
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Examples
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/testcases/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/dambreak.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dambreak 3D
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    User Guide
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    User Guide
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_guide/testcases/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_guide/dambreak/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dambreak 3D
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../features/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Latest features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../licenses/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Licenses
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    News
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    News
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/modifying.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Modifying DualSPHysics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
-</nav>
                   </div>
                 </div>
               </div>
             
-            
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
               
               <article class="md-content__inner md-typeset">
                 
                   
 
 
+  
+  
 
-  <h1>Coupling DualSPHysics with MoorDynPlus</h1>
 
+<!-- GENERATED by latex/build_web.py -- do not edit, edit the .tex source -->
+
+<h1 id="sec:moordynplus">Coupling DualSPHysics with MoorDynPlus<a class="headerlink" href="#sec:moordynplus" title="Link to this heading">&para;</a></h1>
 <h2 id="the-moordyn-library">The MoorDyn library<a class="headerlink" href="#the-moordyn-library" title="Link to this heading">&para;</a></h2>
-<p>MoorDyn is an open-source dynamic mooring line model that has been designed for coupling with other numerical models (<a href="http://www.matt-hall.ca/moordyn.html">http://www.matt-hall.ca/moordyn.html</a>). 
-MoorDyn discretizes mooring lines as point masses (nodes <em>i</em>) connected by linear spring-damper segments to provide elasticity in the axial direction. If <strong>r</strong><sub><em>i</em></sub> and <strong>r</strong><sub><em>i+1</em></sub> represent the absolute position vectors of two adjacent nodes, the strain in the segment connecting them (<em>i</em>+1/2) is calculated as:</p>
-<p align="center">
-<img src="https://imgur.com/lx4WvFZ.png"/> (93)
-</p>
+<p>MoorDyn is an open-source dynamic mooring line model that has been designed for coupling with other numerical models (<a href="http://www.matt-hall.ca/moordyn.html">http://www.matt-hall.ca/moordyn.html</a>). MoorDyn discretizes mooring lines as point masses (nodes <span class="arithmatex">\(i\)</span>) connected by linear spring-damper segments to provide elasticity in the axial direction. If <strong>r</strong><sub><em>i</em></sub> and <strong>r</strong><sub><em>i+1</em></sub> represent the absolute position vectors of two adjacent nodes, the strain in the segment connecting them (<span class="arithmatex">\(i\)</span>+1/2) is calculated as:</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{93}
+\label{eq:md_strain}
+\varepsilon_{i+1/2} = \frac{\left\|\mathbf{r}_{i+1}-\mathbf{r}_i\right\| - l}{l}
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(l\)</span> is the segment unstretched length.</p>
+<p>The tension forces acting within each segment due to material stiffness and internal damping are then calculated, respectively, as:</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{94}
+\label{eq:md_tension}
+\mathbf{T}_{i+1/2} = E\,\frac{\pi}{4}\,\mathit{diam}^2\,\varepsilon_{i+1/2}\,\frac{\mathbf{r}_{i+1}-\mathbf{r}_i}{\left\|\mathbf{r}_{i+1}-\mathbf{r}_i\right\|}
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\tag{95}
+\label{eq:md_damping}
+\mathbf{C}_{i+1/2} = C_{int}\,\frac{\pi}{4}\,\mathit{diam}^2\,\dot{\varepsilon}_{i+1/2}\,\frac{\mathbf{r}_{i+1}-\mathbf{r}_i}{\left\|\mathbf{r}_{i+1}-\mathbf{r}_i\right\|}
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(diam\)</span> is line diameter, <span class="arithmatex">\(E\)</span> is elasticity modulus and <span class="arithmatex">\(C_{int}\)</span> is the internal damping coefficient. For chains, which have very small internal structural damping, a small amount of structural damping is still included in the model to critically damp non-physical resonances that can occur at the individual segment natural frequencies due to the model discretization. Bending and torsional stiffnesses are neglected. Hydrodynamic damping and added mass are represented using the Morison equation applied to each node. The tangent direction at a node <span class="arithmatex">\(i\)</span> is approximated as a unit vector aligned between the nodes on either side:</p>
+<p align="center"><img src="https://imgur.com/1LX88vQ.png" alt="equation"/> (96)</p>
 
-<p>where <span class="arithmatex">\(l\)</span> is the segment unstretched length. </p>
-<p>The tension forces acting within each segment due to material stiffness and internal damping are then calculated, respectively, as: </p>
-<p align="center">
-<img src="https://imgur.com/HDOvpUr.png"/> (94)
-</p>
-
-<p align="center">
-<img src="https://imgur.com/XdMmI3h.png"/> (95)
-</p>
-
-<p>where <span class="arithmatex">\(diam\)</span> is line diameter, <span class="arithmatex">\(E\)</span> is elasticity modulus and <span class="arithmatex">\(C_{int}\)</span> is the internal damping coefficient. For chains, which have very small internal structural damping, a small amount of structural damping is still included in the model to critically damp non-physical resonances that can occur at the individual segment natural frequencies due to the model discretization. Bending and torsional stiffnesses are neglected. Hydrodynamic damping and added mass are represented using the Morison equation applied to each node. The tangent direction at a node <em>i</em> is approximated as a unit vector aligned between the nodes on either side:</p>
-<p align="center">
-<img src="https://imgur.com/1LX88vQ.png"/> (96)
-</p>
-
-<p>From the Morison equation, the drag force in the transverse (<strong>D</strong><sub><em>n</em></sub>) and tangential (<strong>D</strong><sub><em>t</em></sub>) directions applied to node <em>i</em> are:</p>
-<p align="center">
-<img src="https://imgur.com/B1m6f4P.png"/> (97.1)
-</p>
-
-<p align="center">
-<img src="https://imgur.com/HhhEqNC.png"/> (97.2)
-</p>
-
-<p>where <em>C</em><sub><em>dn</em></sub> and <em>C</em><sub><em>dt</em></sub> are transverse and tangential drag coefficients, respectively. These forces are calculated assuming quiescent water; wave kinematics are neglected in MoorDyn’s calculation of hydrodynamic loads.</p>
+<p>From the Morison equation, the drag force in the transverse (<strong>D</strong><sub><em>n</em></sub>) and tangential (<strong>D</strong><sub><em>t</em></sub>) directions applied to node <span class="arithmatex">\(i\)</span> are:</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{97.1}
+\label{eq:md_drag_n}
+\mathbf{D}_{n,i} = -\frac{1}{2}\,\rho_w\,C_{dn}\,\mathit{diam}\,l\,\left\|\mathbf{v}_{n,i}\right\|\,\mathbf{v}_{n,i}
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\tag{97.2}
+\label{eq:md_drag_t}
+\mathbf{D}_{t,i} = -\frac{1}{2}\,\rho_w\,C_{dt}\,\pi\,\mathit{diam}\,l\,\left\|\mathbf{v}_{t,i}\right\|\,\mathbf{v}_{t,i}
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(C_{dn}\)</span> and <span class="arithmatex">\(C_{dt}\)</span> are transverse and tangential drag coefficients, respectively. These forces are calculated assuming quiescent water; wave kinematics are neglected in MoorDyn’s calculation of hydrodynamic loads.</p>
 <p>Added mass on each node (<strong>a</strong><sub><em>i</em></sub>) is calculated as a matrix</p>
-<p align="center">
-<img src="https://imgur.com/GvTyoue.png"/> (98)
-</p>
-
-<p>where <em>C</em><sub><em>an</em></sub> and <em>C</em><sub><em>at</em></sub> are transverse and tangential added mass coefficients, respectively, and <strong>I</strong><sub>m</sub> is the identity matrix.</p>
-<p>Vertical seabed contact forces (<strong>B</strong><sub><em>i</em></sub>) are modelled by a spring-damper approach using a stiffness coefficient kb and damping coefficient <em>c</em><sub><em>b</em></sub> with magnitude (Hall, 2017): </p>
-<p align="center">
-<img src="https://imgur.com/Ov69Hns.png"/> (99)
-</p>
-
-<p>that is activated whenever the elevation of a node, <em>z</em><sub><em>i</em></sub>, passes below the defined seabed depth, <em>z</em><sub><em>b</em></sub>. The model is only active when a node contacts the seabed (i.e. when <em>z</em><sub><em>i</em></sub> ≤ <em>z</em><sub><em>b</em></sub>).</p>
-<p>The total equation of motion for each node along a mooring line, accounting for the terms already mentioned along with node mass (matrix <strong>m</strong><sub><strong>node</strong>,<em>i</em></sub>), and submerged weight (<strong>W</strong><sub><strong>sub</strong>,<em>i</em></sub>), is then </p>
-<p align="center">
-<img src="https://imgur.com/AzaesNF.png"/> (100)
-</p>
-
+<div class="arithmatex">\[\begin{equation}
+\tag{98}
+\label{eq:md_added_mass}
+\mathbf{a}_i = \rho_w\,\frac{\pi}{4}\,\mathit{diam}^2\,l\left[C_{an}\left(\mathbf{I}_m-\hat{\mathbf{q}}_i\hat{\mathbf{q}}_i^T\right) + C_{at}\,\hat{\mathbf{q}}_i\hat{\mathbf{q}}_i^T\right]
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(C_{an}\)</span> and <span class="arithmatex">\(C_{at}\)</span> are transverse and tangential added mass coefficients, respectively, and <strong>I</strong><sub>m</sub> is the identity matrix.</p>
+<p>Vertical seabed contact forces (<strong>B</strong><sub><em>i</em></sub>) are modelled by a spring-damper approach using a stiffness coefficient kb and damping coefficient <span class="arithmatex">\(c_{b}\)</span> with magnitude (Hall, 2017):</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{99}
+\label{eq:md_seabed}
+B_i = \mathit{diam}\,l\left[\left(z_b-z_i\right)k_b - \dot{z}_i\,c_b\right]
+\end{equation}\]</div>
+<p>that is activated whenever the elevation of a node, <span class="arithmatex">\(z_{i}\)</span>, passes below the defined seabed depth, <span class="arithmatex">\(z_{b}\)</span>. The model is only active when a node contacts the seabed (i.e. when <span class="arithmatex">\(z_{i}\)</span> ≤ <span class="arithmatex">\(z_{b}\)</span>).</p>
+<p>The total equation of motion for each node along a mooring line, accounting for the terms already mentioned along with node mass (matrix <strong>m</strong><sub><strong>node</strong>,<em>i</em></sub>), and submerged weight (<strong>W</strong><sub><strong>sub</strong>,<em>i</em></sub>), is then</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{100}
+\label{eq:md_motion}
+\left(\mathbf{m}_{node,i}+\mathbf{a}_i\right)\ddot{\mathbf{r}}_i = \mathbf{T}_{i+1/2}-\mathbf{T}_{i-1/2}+\mathbf{C}_{i+1/2}-\mathbf{C}_{i-1/2}+\mathbf{W}_{sub,i}+\mathbf{B}_i+\mathbf{D}_{n,i}+\mathbf{D}_{t,i}
+\end{equation}\]</div>
 <p>This three-by-three matrix equation is solved for each node within a constant-time-step second-order Runge–Kutta integrator.</p>
-<p>With its simple formulation, MoorDyn has shown to be computationally efficient and reliable for common offshore renewable energy mooring scenarios, typically giving accurate results with discretizations in the order of 20 segments per mooring line (<a href="http://www.sciencedirect.com/science/article/pii/S0029801815002279">Hall and Goupee, 2015</a>; Vissio et al., 2015; Sirnivas et al., 2016). Finer discretizations are usually only necessary when transients emerge in the seabed contact forces due to individual nodes touching down abruptly. </p>
+<p>With its simple formulation, MoorDyn has shown to be computationally efficient and reliable for common offshore renewable energy mooring scenarios, typically giving accurate results with discretizations in the order of 20 segments per mooring line (<a href="http://www.sciencedirect.com/science/article/pii/S0029801815002279">Hall and Goupee, 2015</a>; Vissio et al., 2015; Sirnivas et al., 2016). Finer discretizations are usually only necessary when transients emerge in the seabed contact forces due to individual nodes touching down abruptly.</p>
 <p>Information on using MoorDyn is available in the <a href="http://www.matt-hall.ca/files/MoorDyn%20Users%20Guide%202017-08-16.pdf">MoorDyn Users Guide</a>.</p>
 <h2 id="two-way-coupling-dualsphysics-moordyn">Two-way coupling DualSPHysics-MoorDyn<a class="headerlink" href="#two-way-coupling-dualsphysics-moordyn" title="Link to this heading">&para;</a></h2>
-<p>Fundamentally, coupling MoorDyn with other codes is based on a loose coupling approach in which fairlead kinematics are passed to MoorDyn, the mooring system dynamics are calculated for one or more time steps, and then the resulting fairlead tension vectors are transferred back to the other simulation code used for the coupling. </p>
+<p>Fundamentally, coupling MoorDyn with other codes is based on a loose coupling approach in which fairlead kinematics are passed to MoorDyn, the mooring system dynamics are calculated for one or more time steps, and then the resulting fairlead tension vectors are transferred back to the other simulation code used for the coupling.</p>
 <p>The coupling between DualSPHysics and the MoorDyn library can split into three steps:</p>
 <p>1<sup>st</sup>) the motions and rotations initially solved in DualSPHysics (<strong>V</strong>, <strong>Ω</strong>, <strong>R</strong><sub><strong>0</strong></sub>) are passed to MoorDyn and used as input for the mooring line fairlead kinematics;</p>
-<p>2<sup>nd</sup>) MoorDyn solves the mooring line behaviour during the time step used in the DualSPHysics model, namely MoorDyn updates the position of the segments of the mooring line and computes the forces at the fairlead connections (<em>d</em><strong>V</strong>/<em>dt</em>, <em>d</em><strong>Ω</strong>/<em>dt</em>), which are transferred back to DualSPHysics;</p>
-<p>3<sup>rd</sup>) the extra forces calculated in the second step are added in DualSPHysics to obtain the final resulting force acting onto the floating structure that is used to compute the final motions and rotations of the floating structure. </p>
-<p>The computational cost of MoorDyn at each time step is negligible compared to the execution time needed to solve one time step in the SPH model. </p>
-<p align="center">
-<img src=https://i.imgur.com/ZXZeRQ3.png>
-</p>
-
-<p align="center">
-<strong>Figure 3-8.</strong> Flow chart of the coupling between DualSPHysics and MoorDyn.
-</p>
+<p>2<sup>nd</sup>) MoorDyn solves the mooring line behaviour during the time step used in the DualSPHysics model, namely MoorDyn updates the position of the segments of the mooring line and computes the forces at the fairlead connections (<em>d</em><strong>V</strong>/<span class="arithmatex">\(dt\)</span>, <em>d</em><strong>Ω</strong>/<span class="arithmatex">\(dt\)</span>), which are transferred back to DualSPHysics;</p>
+<p>3<sup>rd</sup>) the extra forces calculated in the second step are added in DualSPHysics to obtain the final resulting force acting onto the floating structure that is used to compute the final motions and rotations of the floating structure.</p>
+<p>The computational cost of MoorDyn at each time step is negligible compared to the execution time needed to solve one time step in the SPH model.</p>
+<figure id="fig:figure_3_8" data-latex-placement="h">
+<img src="https://i.imgur.com/ZXZeRQ3.png" />
+<figcaption>Flow chart of the coupling between DualSPHysics and MoorDyn.</figcaption>
+</figure>
 
 <p>The work of <a href="https://doi.org/10.1016/j.coastaleng.2019.103560">Domínguez et al., 2019</a> included more details about this coupling and a complete validation comparing numerical values with experimental data. Overall, the results demonstrate the accuracy of the coupling between DualSPHysics and MoorDyn to simulate the motion of a moored floating structure under the action of regular waves in terms of free-surface elevation, motions of the floater and mooring tensions.</p>
 <p>Going forward, this modelling approach can be employed to simulate more complex floating structures such as floating wind turbines, buoys, WECs, offshore platforms, etc.</p>
@@ -1451,6 +3165,9 @@ MoorDyn discretizes mooring lines as point masses (nodes <em>i</em>) connected b
 
 
 
+
+  
+  
 
 
 
@@ -1476,51 +3193,13 @@ MoorDyn discretizes mooring lines as point masses (nodes <em>i</em>) connected b
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../chrono/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Coupling DualSPHysics with Project Chrono">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Coupling DualSPHysics with Project Chrono
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../examples/testcases/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Overview
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2025 DualSPHysics Team
+      Copyright &copy; 2026 DualSPHysics Team &middot; Edited by Bonaventura Tagliafierro
     </div>
   
   
@@ -1567,14 +3246,14 @@ MoorDyn discretizes mooring lines as point masses (nodes <em>i</em>) connected b
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.indexes", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/catalogue-overview.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

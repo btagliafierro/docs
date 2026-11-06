@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="510" viewBox="0 0 400 510" role="img" aria-label="Case-specific mapping: local mkfluid 0 to final mk 1; local mkbound 0 to final mk 10; local mkbound 10 to final mk 20.">
+<rect width="400" height="510" fill="#ffffff"/>
+<text x="20" y="34" font-family="Arial,DejaVu Sans,sans-serif" font-size="26" font-weight="700" fill="#263747">Local labels to final MK</text>
+<text x="20" y="67" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#263747">Case-specific offsets</text>
+<text x="20" y="101" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">mkfluidfirst = 1</text>
+<text x="20" y="133" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">mkboundfirst = 10</text>
+<text x="20" y="169" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#263747">Local label</text>
+<text x="255" y="169" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#263747">Final MK</text>
+<rect x="18" y="186" width="364" height="80" rx="8" fill="#eaf6fc" stroke="#09678a" stroke-width="2"/>
+<text x="30" y="214" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#09678a">Fluid</text>
+<text x="30" y="247" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">mkfluid = 0</text>
+<text x="260" y="247" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">mk = 1</text>
+<path d="M217 239 H247 M240 232 L247 239 L240 246" fill="none" stroke="#09678a" stroke-width="3"/>
+<rect x="18" y="280" width="364" height="80" rx="8" fill="#fff3e9" stroke="#9b4a10" stroke-width="2"/>
+<text x="30" y="308" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9b4a10">Boundary</text>
+<text x="30" y="341" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">mkbound = 0</text>
+<text x="260" y="341" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">mk = 10</text>
+<path d="M217 333 H247 M240 326 L247 333 L240 340" fill="none" stroke="#9b4a10" stroke-width="3"/>
+<rect x="18" y="374" width="364" height="80" rx="8" fill="#fff3e9" stroke="#9b4a10" stroke-width="2"/>
+<text x="30" y="402" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9b4a10">Boundary</text>
+<text x="30" y="435" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">mkbound = 10</text>
+<text x="260" y="435" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">mk = 20</text>
+<path d="M217 427 H247 M240 420 L247 427 L240 434" fill="none" stroke="#9b4a10" stroke-width="3"/>
+<text x="20" y="488" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#263747">Offsets vary with the case.</text>
+</svg>

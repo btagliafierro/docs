@@ -6,30 +6,22 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for DualSPHysics - SPH-based CFD software">
       
       
-        <meta name="author" content="Bonaventura Tagliafierro">
+        <link rel="canonical" href="https://btagliafierro.github.io/docs/couplings/wavegen/">
       
       
-        <link rel="canonical" href="https://example.com/couplings/wavegen/">
-      
-      
-        <link rel="prev" href="../../theory/implementation/">
-      
-      
-        <link rel="next" href="../dem/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.ico">
+      <link rel="icon" href="../../assets/images/dualsphysics-logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Wave Geneneration - DualSPHysics Documentation</title>
+        <title>Wave Generation - DualSPHysics Documentation</title>
       
     
     
@@ -57,8 +49,6 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../stylesheets/custom.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -84,12 +74,23 @@
     <div data-md-component="skip">
       
         
-        <a href="#first-order-wave-generation" class="md-skip">
+        <a href="#sec:wavegen" class="md-skip">
           Skip to content
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <strong>Draft for internal review.</strong>
+  Some pages, figures and videos are still in progress.
+
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -104,9 +105,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://dual.sphysics.org" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+    <a href="../../home/" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
       
-  <img src="../../assets/images/logo.png" alt="logo">
+  <img src="../../assets/images/dualsphysics-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Wave Geneneration
+              Wave Generation
             
           </span>
         </div>
@@ -204,6 +205,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
   </nav>
   
     
@@ -242,37 +255,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../theory/fundamentals/" class="md-tabs__link">
+        <a href="../../gallery/intro/" class="md-tabs__link">
           
   
   
     
   
-  Theory
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Couplings
+  Gallery
 
         </a>
       </li>
@@ -288,13 +277,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../examples/testcases/" class="md-tabs__link">
+        <a href="../../getting_started/getting_started/" class="md-tabs__link">
           
   
   
     
   
-  Examples
+  Getting Started
 
         </a>
       </li>
@@ -310,13 +299,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../user_guide/testcases/" class="md-tabs__link">
+        <a href="../../examples_catalogue/catalogue/main-catalogue/" class="md-tabs__link">
           
   
   
     
   
-  User Guide
+  Examples Catalogue
 
         </a>
       </li>
@@ -329,17 +318,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../features/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../benchmarks/" class="md-tabs__link">
+          
   
   
     
   
-  Latest features
+  Benchmarks
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -348,17 +340,64 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../licenses/" class="md-tabs__link">
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../xml_guides/general/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XML Guides
+
+        </a>
+      </li>
+    
+  
+
+      
         
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faq/faq/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../licenses/" class="md-tabs__link">
+          
   
   
     
   
   Licenses
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -370,13 +409,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/modifying.md" class="md-tabs__link">
+        <a href="../../contributing/setup/" class="md-tabs__link">
           
   
   
     
   
-  News
+  Contributing
 
         </a>
       </li>
@@ -410,17 +449,27 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://dual.sphysics.org" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+    <a href="../../home/" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
       
-  <img src="../../assets/images/logo.png" alt="logo">
+  <img src="../../assets/images/dualsphysics-logo.svg" alt="logo">
 
     </a>
     DualSPHysics Documentation
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -439,8 +488,6 @@
       
         
       
-        
-      
     
     
     
@@ -454,9 +501,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -525,6 +570,69 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gallery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -532,14 +640,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home/developers_institutions/" class="md-nav__link">
+      <a href="../../gallery/intro/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Developers and Institutions
+    Gallery
   
 
     
@@ -568,6 +676,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -588,19 +700,17 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Theory
+    Getting Started
   
 
     
@@ -611,12 +721,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Theory
+    Getting Started
   
 
           </label>
@@ -629,14 +739,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../theory/fundamentals/" class="md-nav__link">
+      <a href="../../getting_started/getting_started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    SPH Formulation
+    Run Your First Simulation
   
 
     
@@ -657,14 +767,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../theory/boundary/" class="md-nav__link">
+      <a href="../../getting_started/workflow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Boundary
+    The DualSPHysics Workflow
   
 
     
@@ -685,14 +795,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../theory/implementation/" class="md-nav__link">
+      <a href="../../getting_started/cpu-gpu-multigpu/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CPU and GPU Implementation
+    CPU, GPU and Multi-GPU Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/case_definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Definition (XML)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/designsphysics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DesignSPHysics
   
 
     
@@ -717,10 +883,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -732,33 +896,54 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Couplings
+    Examples Catalogue
   
 
     
@@ -769,12 +954,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Couplings
+    Examples Catalogue
   
 
           </label>
@@ -784,42 +969,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Wave Geneneration
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/main-catalogue/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Wave Geneneration
+    Main
   
 
     
@@ -828,12 +988,2047 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mdbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/inletmesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InletMesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/wavecoupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wavecoupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/divclean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divergence cleaning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mphase_liquidgas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase LiquidGas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase NNewtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
       
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../benchmarks/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_2d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 2D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/sloshing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sloshing Tank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/wave_generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/floating_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floating Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XML Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/mdbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase non-Newtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/new_floating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Add a Floating Object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Resolution/Particle Size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_viscosity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Viscosity Formulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_time_duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Simulation Time Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_still_water_level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Still-Water Level (Pending)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/simulation_domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand the Simulation Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/mk_labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand MK Labels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_pressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_free_surface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Free-Surface Elevation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_force/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Force
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/visualise_paraview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise Results in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/visualise_mdbc_normals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise mDBC Normals in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/floating_body_motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Compute the Motion of a Floating Body
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../licenses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licenses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Licenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/dualsphysics-lgpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (LGPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/dualsphysics-bsd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (BSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/tinyxml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TinyXML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/random-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random number generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/project-chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDyn+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -910,17 +3105,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rayleigh-approximation-to-a-solitary-wave" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rayleigh approximation to a solitary wave
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#multiple-solitary-waves" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -970,7 +3154,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#active-wave-absorption" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -980,8 +3169,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -991,789 +3180,252 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dem/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Descrete Element Method
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chrono/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Coupling DualSPHysics with Project Chrono
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../moordynplus/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Coupling DualSPHysics with MoorDynPlus
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Examples
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Examples
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/testcases/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/dambreak.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dambreak 3D
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    User Guide
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    User Guide
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_guide/testcases/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_guide/dambreak/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dambreak 3D
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../features/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Latest features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../licenses/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Licenses
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    News
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    News
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/modifying.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Modifying DualSPHysics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
 </nav>
                   </div>
                 </div>
               </div>
             
-            
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
               
               <article class="md-content__inner md-typeset">
                 
                   
 
 
+  
+  
 
-<p>Wave generation is included in this version of DualSPHysics, which includes piston- and flap-type long-crested wave generation. In this way, the numerical model can be used to simulate a physical wave flume. Both monochromatic (regular) and random waves can be generated. Second-order correction for bound long waves (sub-harmonics) is implemented for random waves with piston-type wave maker only. For regular waves, second-order correction (super-harmonics) is implemented for both piston- and flap-type wavemaker. The following sections refer only to the piston-type wavemaker. </p>
+
+<!-- GENERATED by latex/build_web.py -- do not edit, edit the .tex source -->
+
+<h1 id="sec:wavegen">Wave Generation<a class="headerlink" href="#sec:wavegen" title="Link to this heading">&para;</a></h1>
+<p>Wave generation is included in this version of DualSPHysics, which includes piston- and flap-type long-crested wave generation. In this way, the numerical model can be used to simulate a physical wave flume. Both monochromatic (regular) and random waves can be generated. Second-order correction for bound long waves (sub-harmonics) is implemented for random waves with piston-type wave maker only. For regular waves, second-order correction (super-harmonics) is implemented for both piston- and flap-type wavemaker. The following sections refer only to the piston-type wavemaker.</p>
 <h2 id="first-order-wave-generation">First order wave generation<a class="headerlink" href="#first-order-wave-generation" title="Link to this heading">&para;</a></h2>
-<p>The Biesel transfer functions express the relation between wave amplitude and
-wavemaker displacement [Biesel and Suquet, 1951], under the assumption of
-irrotational and incompressible fluid and constant pressure at the free surface. The
-transfer function links the displacement of the piston-type wavemaker to the water
-surface elevation, under the hypothesis of monochromatic sinusoidal waves in one
-dimension in the x-direction:</p>
-<p>\begin{equation}
-\tag{1} %% 44 in original
-\label{wave_fisrtOrder} 
+<p>The Biesel transfer functions express the relation between wave amplitude and wavemaker displacement [Biesel and Suquet, 1951], under the assumption of irrotational and incompressible fluid and constant pressure at the free surface. The transfer function links the displacement of the piston-type wavemaker to the water surface elevation, under the hypothesis of monochromatic sinusoidal waves in one dimension in the x-direction:</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{1} in original
+\label{wave_fisrtOrder}
 \eta(x,t)=\frac{H}{2}\cos(\omega t -kx+\delta)
-\end{equation}
-where <span class="arithmatex">\(H\)</span> is the wave height, d the water depth, <span class="arithmatex">\(x\)</span> is distance and <span class="arithmatex">\(\delta\)</span> is the initial phase.
-The quantity <span class="arithmatex">\(\omega=2\pi/T\)</span> is the angular frequency and <span class="arithmatex">\(k=2\pi/L\)</span> is the wave number with <span class="arithmatex">\(T\)</span>
-equal to the wave period and <span class="arithmatex">\(L\)</span> the wave length. The initial phase <span class="arithmatex">\(\delta\)</span> is given by a random
-number between 0 and <span class="arithmatex">\(2\pi\)</span>.</p>
-<p>Equation \eqref{wave_fisrtOrder} expresses the surface elevation at infinity that Biesel defined as the far-field solution. The Biesel function can be derived for the far-field solution and for a pistontype
-wavemaker as:
-\begin{equation}
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(H\)</span> is the wave height, d the water depth, <span class="arithmatex">\(x\)</span> is distance and <span class="arithmatex">\(\delta\)</span> is the initial phase. The quantity <span class="arithmatex">\(\omega=2\pi/T\)</span> is the angular frequency and <span class="arithmatex">\(k=2\pi/L\)</span> is the wave number with <span class="arithmatex">\(T\)</span> equal to the wave period and <span class="arithmatex">\(L\)</span> the wave length. The initial phase <span class="arithmatex">\(\delta\)</span> is given by a random number between 0 and <span class="arithmatex">\(2\pi\)</span>.</p>
+<p>Equation <span class="arithmatex">\(\eqref{wave_fisrtOrder}\)</span> expresses the surface elevation at infinity that Biesel defined as the far-field solution. The Biesel function can be derived for the far-field solution and for a pistontype wavemaker as:</p>
+<div class="arithmatex">\[\begin{equation}
 \tag{2}
 \label{eq_piston_tranfer}
 \frac{H}{S_0} = 2\frac{\sinh^2(kd)}{\sinh(kd)\cosh(kd)+kd},
-\end{equation}</p>
-<p>where <span class="arithmatex">\(S_0\)</span> is the piston stroke. Once the piston stroke is defined, the time series of the
-piston movement is given by:</p>
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(S_0\)</span> is the piston stroke. Once the piston stroke is defined, the time series of the piston movement is given by:</p>
 <div class="arithmatex">\[\begin{equation}
-\tag{3} %% 46
+\tag{3}
 \label{eq_piston_motion}
 e_1(t) = \frac{S_0}{2} \sin(\omega t+\delta),
 \end{equation}\]</div>
 <h2 id="second-order-wave-generation-of-regular-waves">Second-order wave generation of regular waves<a class="headerlink" href="#second-order-wave-generation-of-regular-waves" title="Link to this heading">&para;</a></h2>
-<p>The implementation of a second order wavemaker theory will prevent the generation of
-spurious secondary waves. The second order wave generation theory implemented in
-DualSPHysics is based on <a href="#Madsen_1971" title="click to see!">Madsen,  1971</a> who developed a simple second-order
-wavemaker theory to generate long second order Stokes waves that would not change
-shape as they propagated. The theory proposed by <a href="#Madsen_1971" title="click to see!">Madsen,  1971</a> is straightforward,
-controllable, computationally inexpensive with efficient results, and is accurate for
-waves of first and second order.</p>
-<p>The piston stroke <span class="arithmatex">\(S_0\)</span> can be redefined from Equation \eqref{eq_piston_tranfer} as <span class="arithmatex">\(S_0=H/m_1\)</span> where:</p>
+<p>The implementation of a second order wavemaker theory will prevent the generation of spurious secondary waves. The second order wave generation theory implemented in DualSPHysics is based on (Madsen 1971) who developed a simple second-order wavemaker theory to generate long second order Stokes waves that would not change shape as they propagated. The theory proposed by (Madsen 1971) is straightforward, controllable, computationally inexpensive with efficient results, and is accurate for waves of first and second order.</p>
+<p>The piston stroke <span class="arithmatex">\(S_0\)</span> can be redefined from Equation <span class="arithmatex">\(\eqref{eq_piston_tranfer}\)</span> as <span class="arithmatex">\(S_0=H/m_1\)</span> where:</p>
 <div class="arithmatex">\[\begin{equation}
-\tag{4} %% 47
+\tag{4}
 m_1(t) = \frac{2\sinh^2(kd)}{\sinh(kd)\cosh(kd)+kd},
 \end{equation}\]</div>
-<p>Following <a href="#Madsen_1971">Madsen, 1971</a>, to generate a wave of second order, an extra term must be added to Equation \eqref{eq_piston_motion}. This term, for piston-type wavemaker, is equal to:</p>
+<p>Following (Madsen 1971), to generate a wave of second order, an extra term must be added to Equation <span class="arithmatex">\(\eqref{eq_piston_motion}\)</span>. This term, for piston-type wavemaker, is equal to:</p>
 <div class="arithmatex">\[\begin{equation}
-\tag{5} %% 48
+\tag{5}
 \label{eq_piston_motion2nd}
 e_2(t) = \bigg(\frac{H^2}{32d} \bigg(\frac{3\cosh(kd)}{\sinh^3(kd)}-\frac{2}{m_1}\bigg)\bigg) \sin(2\omega t+2\delta),
 \end{equation}\]</div>
-<p>Therefore, the piston displacement, for regular waves, is the summation of Equations \eqref{eq_piston_motion} and
-\eqref{eq_piston_motion2nd}:</p>
+<p>Therefore, the piston displacement, for regular waves, is the summation of Equations <span class="arithmatex">\(\eqref{eq_piston_motion}\)</span> and <span class="arithmatex">\(\eqref{eq_piston_motion2nd}\)</span>:</p>
 <div class="arithmatex">\[\begin{equation}
-\tag{5} %% 49
+\tag{6}
 \label{eq_piston_motion_tot}
 e(t) = \frac{S_0}{2}\sin(\omega t+\delta)+\frac{H^2}{32d} \bigg(\frac{3\cosh(kd)}{\sinh^3(kd)}-\frac{2}{m_1}\bigg) \sin(2\omega t+2\delta),
 \end{equation}\]</div>
-<p>Madsen limited the application of this approximate second order wavemaker theory to
-waves that complied with the condition given by <span class="arithmatex">\(HL^2/d^3 &lt; (8\pi^2)/3\)</span>. A specific warning is
-implemented in DualSPHysics to inform the user whether or not this condition is
-fulfilled.</p>
+<p>Madsen limited the application of this approximate second order wavemaker theory to waves that complied with the condition given by <span class="arithmatex">\(HL^2/d^3 &lt; (8\pi^2)/3\)</span>. A specific warning is implemented in DualSPHysics to inform the user whether or not this condition is fulfilled.</p>
 <h2 id="first-order-wave-generation-of-irregular-waves">First order wave generation of irregular waves<a class="headerlink" href="#first-order-wave-generation-of-irregular-waves" title="Link to this heading">&para;</a></h2>
-<p>Monochromatic waves are not representative of sea states that characterise real wave
-storm conditions. Sea waves are mostly random or irregular in nature. Irregular wave
-generation is performed in DualSPHysics based on [Liu and Frigaard, 2001]. Starting from an assigned wave spectra, the Biesel transfer function (Equation \eqref{eq_piston_tranfer}) is applied to each
-component in which the spectrum is discretised. The procedure for the generation of
-irregular waves is summarised as follows:</p>
-<ul>
-<li>1 Defining the wave spectrum through its characteristic parameters (peak frequency,
-spectrum shape, etc.).</li>
-<li>2 Dividing the spectrum into <span class="arithmatex">\(N\)</span> parts (<span class="arithmatex">\(N&gt;50\)</span>) in the interval (<span class="arithmatex">\(f_{start}, f_{stop}\)</span>), where generally
-the values assumed by the spectrum (<span class="arithmatex">\(S_η\)</span>) at the extremes of this interval are smaller
-than the value assumed for the peak frequency, <span class="arithmatex">\(f_p: S_η(f_{start})≤0.01·S_η(f_p)\)</span> and
-<span class="arithmatex">\(S_\eta(f_{stop}) ≤ 0.01 \cdot S_\eta(f_p)\)</span>.</li>
-<li>3 The frequency band width is so-defined as <span class="arithmatex">\(Δf=(fstop-fstart)/N\)</span>. The irregular wave is
-decomposed into <span class="arithmatex">\(N\)</span> linear waves.</li>
-<li>4 Determining the angular frequency <span class="arithmatex">\(\omega_i\)</span>, amplitude <span class="arithmatex">\(a_i\)</span> and initial phase <span class="arithmatex">\(\delta_i\)</span> (random real
-number between 0 and <span class="arithmatex">\(2\pi\)</span>) of each <span class="arithmatex">\(i\)</span>-th linear wave. The angular frequency <span class="arithmatex">\(\omega_i\)</span> and
-amplitude ai can therefore be expressed as follows:</li>
-</ul>
+<p>Monochromatic waves are not representative of sea states that characterise real wave storm conditions. Sea waves are mostly random or irregular in nature. Irregular wave generation is performed in DualSPHysics based on [Liu and Frigaard, 2001]. Starting from an assigned wave spectra, the Biesel transfer function (Equation <span class="arithmatex">\(\eqref{eq_piston_tranfer}\)</span>) is applied to each component in which the spectrum is discretised. The procedure for the generation of irregular waves is summarised as follows:</p>
+<p>* 1 Defining the wave spectrum through its characteristic parameters (peak frequency, spectrum shape, etc.). * 2 Dividing the spectrum into <span class="arithmatex">\(N\)</span> parts (<span class="arithmatex">\(N&gt;50\)</span>) in the interval (<span class="arithmatex">\(f_{start}, f_{stop}\)</span>), where generally the values assumed by the spectrum (<span class="arithmatex">\(S_η\)</span>) at the extremes of this interval are smaller than the value assumed for the peak frequency, <span class="arithmatex">\(f_p: S_η(f_{start})≤0.01·S_η(f_p)\)</span> and <span class="arithmatex">\(S_\eta(f_{stop}) ≤ 0.01 \cdot S_\eta(f_p)\)</span>. * 3 The frequency band width is so-defined as <span class="arithmatex">\(Δf=(fstop-fstart)/N\)</span>. The irregular wave is decomposed into <span class="arithmatex">\(N\)</span> linear waves. * 4 Determining the angular frequency <span class="arithmatex">\(\omega_i\)</span>, amplitude <span class="arithmatex">\(a_i\)</span> and initial phase <span class="arithmatex">\(\delta_i\)</span> (random real number between 0 and <span class="arithmatex">\(2\pi\)</span>) of each <span class="arithmatex">\(i\)</span>-th linear wave. The angular frequency <span class="arithmatex">\(\omega_i\)</span> and amplitude ai can therefore be expressed as follows:</p>
 <div class="arithmatex">\[\begin{equation}
-\tag{6} %% 50
-\label{}
+\tag{7}
+\label{irreg_wave_frequency}
 \omega_i=2\pi f_i;
 a_i=\sqrt{2S_\eta(f_i)\Delta f}=\frac{H_i}{2}.
 \end{equation}\]</div>
-<ul>
-<li>5 Converting the time series of surface elevation into the time series of piston
-movement with the help of Biesel transfer function:</li>
-</ul>
+<p>* 5 Converting the time series of surface elevation into the time series of piston movement with the help of Biesel transfer function:</p>
 <div class="arithmatex">\[\begin{equation}
-\tag{8} %% 52
-\label{}
+\tag{8}
+\label{irreg_wave_transfer_function}
 \frac{H_i}{S_{0,i}} = \frac{2\sinh^2(k_id)}{\sinh(k_id)\cosh(k_id)+k_id};
 \end{equation}\]</div>
-<ul>
-<li>6 Composing all the <span class="arithmatex">\(i\)</span>-th components derived from the previous equation into the time
-series of the piston displacement as:</li>
-</ul>
+<p>* 6 Composing all the <span class="arithmatex">\(i\)</span>-th components derived from the previous equation into the time series of the piston displacement as:</p>
 <div class="arithmatex">\[\begin{equation}
-\tag{9} %% 53
-\label{}
+\tag{9}
+\label{irreg_wave_piston_displacement}
 e(t) = \sum_{i=1}^N \frac{S_{0,i}}{2}\sin(\omega_it+\delta_i).
 \end{equation}\]</div>
-<p>In DualSPHysics two standard wave spectra have been implemented and used to
-generate irregular waves: JONSWAP and Pierson-Moskowitz spectra. The
-characteristic parameters of each spectrum can be assigned by the user together with the
-value of <span class="arithmatex">\(N\)</span> (number of parts in which the spectrum is divided).</p>
-<p>The user can choose among four different ways to define the angular frequency. It can
-be determined assuming an equidistant discretization of the wave spectrum
-(<span class="arithmatex">\(f_i=f_{start}+iΔf-Δf/2\)</span>), or chosen as unevenly distributed between <span class="arithmatex">\((i-0.5)\Delta f\)</span> and <span class="arithmatex">\((i+0.5)\Delta f\)</span>.
-An unevenly distributed band width should be preferred: in fact, depending on N, an
-equidistant splitting can lead to the repetition of the same wave group in the time series
-that can be easily avoided using an unevenly distributed band width. The last two ways
-to determine the angular frequency of each component and its band width consist of the
-application of a stretched or cosine stretched function. The use of a stretched or cosine
-stretched function has been proven to lead the most accurate results in terms of wave
-height distribution and groupiness, even when the number of spectrum components <span class="arithmatex">\(N\)</span>, is
-relatively low. If there is a certain wave group that is repeating, finally the full range of
-wave heights and wave periods is not reproduced and statistically the wave train is not
-representing a real sea state of random waves.</p>
-<p>A phase seed is also used and can be changed in DualSPHysics to obtain different
-random series of <span class="arithmatex">\(\delta_i\)</span>. Changing the phase seed allows generating different irregular wave
-time series both with the same significant wave height (<span class="arithmatex">\(H_{m0}\)</span>) and peak period (<span class="arithmatex">\(T_p\)</span>).</p>
+<p>In DualSPHysics two standard wave spectra have been implemented and used to generate irregular waves: JONSWAP and Pierson-Moskowitz spectra. The characteristic parameters of each spectrum can be assigned by the user together with the value of <span class="arithmatex">\(N\)</span> (number of parts in which the spectrum is divided).</p>
+<p>The user can choose among four different ways to define the angular frequency. It can be determined assuming an equidistant discretization of the wave spectrum (<span class="arithmatex">\(f_i=f_{start}+iΔf-Δf/2\)</span>), or chosen as unevenly distributed between <span class="arithmatex">\((i-0.5)\Delta f\)</span> and <span class="arithmatex">\((i+0.5)\Delta f\)</span>. An unevenly distributed band width should be preferred: in fact, depending on N, an equidistant splitting can lead to the repetition of the same wave group in the time series that can be easily avoided using an unevenly distributed band width. The last two ways to determine the angular frequency of each component and its band width consist of the application of a stretched or cosine stretched function. The use of a stretched or cosine stretched function has been proven to lead the most accurate results in terms of wave height distribution and groupiness, even when the number of spectrum components <span class="arithmatex">\(N\)</span>, is relatively low. If there is a certain wave group that is repeating, finally the full range of wave heights and wave periods is not reproduced and statistically the wave train is not representing a real sea state of random waves.</p>
+<p>A phase seed is also used and can be changed in DualSPHysics to obtain different random series of <span class="arithmatex">\(\delta_i\)</span>. Changing the phase seed allows generating different irregular wave time series both with the same significant wave height (<span class="arithmatex">\(H_{m0}\)</span>) and peak period (<span class="arithmatex">\(T_p\)</span>).</p>
 <h2 id="second-order-bound-long-waves">Second-order bound long waves<a class="headerlink" href="#second-order-bound-long-waves" title="Link to this heading">&para;</a></h2>
-<p>When natural waves are reproduced in a laboratory or in a numerical model the wave generator is normally controlled by a first-order signal. The wave set-down (bound long waves) generates drift velocities directed landwards under the crests and seawards under the troughs [Ottesen-Hansen et al., 1980]. However, at the wavemaker, there is no flow through the paddle, therefore the natural drift velocities are compensated by identical ones with opposite signs. The latter velocities create a progressive long wave that is not bound anymore but free. This phenomenon is called parasitic long waves and it results in an exaggeration of the long wave effects. Second-order wave generation is required in order to cancel out this parasitic long wave to achieve the drift velocities that characterise the set-down. Another long wave, called displacement long wave, is caused by finite wavemaker displacements away from the mean position. </p>
+<p>When natural waves are reproduced in a laboratory or in a numerical model the wave generator is normally controlled by a first-order signal. The wave set-down (bound long waves) generates drift velocities directed landwards under the crests and seawards under the troughs [Ottesen-Hansen et al., 1980]. However, at the wavemaker, there is no flow through the paddle, therefore the natural drift velocities are compensated by identical ones with opposite signs. The latter velocities create a progressive long wave that is not bound anymore but free. This phenomenon is called parasitic long waves and it results in an exaggeration of the long wave effects. Second-order wave generation is required in order to cancel out this parasitic long wave to achieve the drift velocities that characterise the set-down. Another long wave, called displacement long wave, is caused by finite wavemaker displacements away from the mean position.</p>
 <p>The correction of the first-order wave generation at the wavemaker must be capable of compensating both parasitic long waves and displacement long waves. The method implemented in DualSPHysics is based on the solution for the control signal of the wavemaker that is described in [Barthel et al., 1993].</p>
 <h2 id="solitary-waves">Solitary waves<a class="headerlink" href="#solitary-waves" title="Link to this heading">&para;</a></h2>
 <p>Generation of solitary waves in DualSPHysics is achieved by means moving boundaries. In particular, a piston-type wavemaker is employed to generate single and multiple solitary waves [Dominguez et al., 2019].</p>
 <h3 id="single-solitary-wave">Single solitary wave<a class="headerlink" href="#single-solitary-wave" title="Link to this heading">&para;</a></h3>
 <p>Goring [1978] laid the groundwork for the generation of solitary waves by means of a piston-type wavemaker.His method was based on one fundamental hypothesis: the horizontal velocity of the water particles under the wave crest, u (depth-integrated velocity), is equal to the velocity of the wavemaker.</p>
-<p>Equation \eqref{ss_1} defines the aforementioned assumption, where <span class="arithmatex">\(xs\)</span> refers to the piston displacement.
-\begin{equation}
-\tag{10} %% 54
+<p>Equation <span class="arithmatex">\(\eqref{ss_1}\)</span> defines the aforementioned assumption, where <span class="arithmatex">\(xs\)</span> refers to the piston displacement.</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{10}
 \label{ss_1}
 u(x_s,t) = \frac{dx_s}{dt}.
-\end{equation}
-The depth-average velocity can be expressed by Equation \eqref{ss_2}, where <span class="arithmatex">\(c\)</span> is the wave celerity, <span class="arithmatex">\(h\)</span> is the still water depth and <span class="arithmatex">\(η\)</span> is the free surface elevation.
-\begin{equation}
-\tag{11} %% 55
+\end{equation}\]</div>
+<p>The depth-average velocity can be expressed by Equation <span class="arithmatex">\(\eqref{ss_2}\)</span>, where <span class="arithmatex">\(c\)</span> is the wave celerity, <span class="arithmatex">\(h\)</span> is the still water depth and <span class="arithmatex">\(η\)</span> is the free surface elevation.</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{11}
 \label{ss_2}
 u(x_s,t) = \frac{c_\eta(x_s,t)}{h+\eta(x_s,t)}.
-\end{equation}
-Combining and integrating Equations \eqref{ss_1} and \eqref{ss_2}, the piston displacement in time can be expressed as:
-\begin{equation}
-\tag{12} %% 56
-\label{}
+\end{equation}\]</div>
+<p>Combining and integrating Equations <span class="arithmatex">\(\eqref{ss_1}\)</span> and <span class="arithmatex">\(\eqref{ss_2}\)</span>, the piston displacement in time can be expressed as:</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{12}
+\label{solitary_piston_displacement}
 x_s(t) = \frac{2H}{kh}\tanh\big(k(ct-x_s(t))\big).
-\end{equation}</p>
+\end{equation}\]</div>
 <p>where the parameter <span class="arithmatex">\(k\)</span> is the outskirt coefficient, which describes the way the free surface elevation tends towards the mean level at infinity. The solitary wave profile is given by:</p>
 <div class="arithmatex">\[\begin{equation}
-\tag{13} %% 57
+\tag{13}
 \label{ss_wave}
 \eta(x_s,t) = H {sech}^2(k(ct-x_s)).
 \end{equation}\]</div>
-<p>Equation \eqref{ss_wave} is an implicit equation that needs to be solved by numerical methods.</p>
-<p>In order to give the possibility to the user to generate the solitary wave profile that would be the most appropriate for his problem and the closest the the real studied phenomenon (e.g., tsunami wave), three different theories for solitary wave generation have been implemented in DualSPHysics. For all cases, a piston-type wavemaker is employed. The three different approaches result in different wave propagation properties (i.e. different loss of amplitude and differences in generated trailing waves) [Dominguez et al., 2019].
-One solution is derived from the Rayleigh solitary wave solution; the second one uses a wavemaker law-of-motion derived from the KdV solution; the third one consists of solving Equation \eqref{ss_wave} iteratively using the Newton<span class="arithmatex">\(--\)</span>Raphson method. The following subsections described the three different theories.</p>
-<h3 id="rayleigh-approximation-to-a-solitary-wave">Rayleigh approximation to a solitary wave<a class="headerlink" href="#rayleigh-approximation-to-a-solitary-wave" title="Link to this heading">&para;</a></h3>
-<p>Following Serre (1953), the theoretical free-surface elevation expressed by Equation \eqref{ss_wave} can be re-written as follows:
-\begin{equation}
-\tag{14} %% 58
-\label{ss_wave}
-\eta(x_s,t) = H \, \sech^{2}!\left( k (x - c t) \right),
+<p>Equation <span class="arithmatex">\(\eqref{ss_wave}\)</span> is an implicit equation that needs to be solved by numerical methods.</p>
+<p>In order to give the possibility to the user to generate the solitary wave profile that would be the most appropriate for his problem and the closest the the real studied phenomenon (e.g., tsunami wave), three different theories for solitary wave generation have been implemented in DualSPHysics. For all cases, a piston-type wavemaker is employed. The three different approaches result in different wave propagation properties (i.e. different loss of amplitude and differences in generated trailing waves) [Dominguez et al., 2019]. One solution is derived from the Rayleigh solitary wave solution; the second one uses a wavemaker law-of-motion derived from the KdV solution; the third one consists of solving Equation <span class="arithmatex">\(\eqref{ss_wave}\)</span> iteratively using the Newton<span class="arithmatex">\(--\)</span>Raphson method. The following subsections described the three different theories.</p>
+<h4 id="rayleigh-approximation-to-a-solitary-wave">Rayleigh approximation to a solitary wave<a class="headerlink" href="#rayleigh-approximation-to-a-solitary-wave" title="Link to this heading">&para;</a></h4>
+<p>Following Serre (1953), the theoretical free-surface elevation expressed by Equation <span class="arithmatex">\(\eqref{ss_wave}\)</span> can be re-written as follows:</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{14}
+\label{ss_wave_rayleigh}
+\eta(x_s,t) = H \, \operatorname{sech}^{2}\!\left( k (x - c t) \right),
 \qquad
 k = \sqrt{\frac{3H}{4h^{3}}}.
-\end{equation}
-The quantity <span class="arithmatex">\(\sqrt{4H(H+h)/3}\)</span> corresponds to half wavemaker stroke (SR) and takes into account that in DualSPHysics the origin of the wavemaker movement is set as <span class="arithmatex">\(x=0\)</span>. The quantity defined as <span class="arithmatex">\(c\)</span> is the wave celerity; <span class="arithmatex">\(Tf\)</span> is the generation time used to form the solitary wave, <span class="arithmatex">\(x_s\)</span> is the wavemaker displacement and <span class="arithmatex">\(k\)</span> is the outskirt coefficient. All these parameters are defined as follows (<span class="arithmatex">\(H\)</span> and h refer to the wave height and to the water depth, respectively):
-\begin{equation}
-\tag{15} %% 59
-\label{}
+\end{equation}\]</div>
+<p>The quantity <span class="arithmatex">\(\sqrt{4H(H+h)/3}\)</span> corresponds to half wavemaker stroke (SR) and takes into account that in DualSPHysics the origin of the wavemaker movement is set as <span class="arithmatex">\(x=0\)</span>. The quantity defined as <span class="arithmatex">\(c\)</span> is the wave celerity; <span class="arithmatex">\(Tf\)</span> is the generation time used to form the solitary wave, <span class="arithmatex">\(x_s\)</span> is the wavemaker displacement and <span class="arithmatex">\(k\)</span> is the outskirt coefficient. All these parameters are defined as follows (<span class="arithmatex">\(H\)</span> and h refer to the wave height and to the water depth, respectively):</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{15}
+\label{solitary_wave_celerity}
 c = \sqrt{g(H+h)}.
-\end{equation}
-\begin{equation}
-\tag{16} %% 60
-\label{}
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\tag{16}
+\label{solitary_generation_time}
 T_f = \frac{2}{kc}(3.8+\frac{H}{h});
-\end{equation}
-\begin{equation}
-\tag{17} %% 61
-\label{}
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\tag{17}
+\label{solitary_piston_motion}
 x_s(t) = \frac{H}{k}\frac{gh(k_c(t-T_f))t}{h+H(1-gh^2(kc(t-T_f)t))},
-\end{equation}
-where:
-\begin{equation}
-\tag{18} %% 62
-\label{}
+\end{equation}\]</div>
+<p>where:</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{18}
+\label{solitary_k_coefficient}
 k = \sqrt{\frac{3H}{4h^2(H+h)}}.
-\end{equation}</p>
-<p>b) First-order shallow water model (KdV)
-Clamond and Germain (1999) used a paddle law of motion derived from the KdV (first-order shallow water) solution. The piston displacement can be expressed as follows:</p>
-<p align="center">
-<img src="https://i.imgur.com/gnQJKLz.png"/> (63)
-</p>
-<p>where the outskirt coefficient is now expressed as:</p>
-<p align="center">
-<img src="https://i.imgur.com/gcohldt.png"/> (64a)
-</p>
-<p>and c_KdV can be expressed as follows:</p>
-<p align="center">
-<img src="https://i.imgur.com/e55poUn.png"/> (64b)
-</p>
+\end{equation}\]</div>
+<h4 id="first-order-shallow-water-model-kdv">First-order shallow water model (KdV)<a class="headerlink" href="#first-order-shallow-water-model-kdv" title="Link to this heading">&para;</a></h4>
+<p>Clamond and Germain (1999) used a paddle law of motion derived from the KdV (first-order shallow water) solution. The piston displacement can be expressed as follows:</p>
+<p align="center"><img src="https://i.imgur.com/gnQJKLz.png" alt="equation"/> (19)</p>
 
-<p>c) Goring solution (Boussinesq)
-Equations (56) and (57) correspond, respectively, to the equation of the piston displacement and the theoretical water elevation using the solution proposed by Goring which requires an iterative procedure to solve Equation (56).</p>
+<p>where the outskirt coefficient is now expressed as:</p>
+<p align="center"><img src="https://i.imgur.com/gcohldt.png" alt="equation"/> (20a)</p>
+
+<p>and <span class="arithmatex">\(c_{KdV}\)</span> can be expressed as follows:</p>
+<p align="center"><img src="https://i.imgur.com/e55poUn.png" alt="equation"/> (20b)</p>
+
+<h4 id="goring-solution-boussinesq">Goring solution (Boussinesq)<a class="headerlink" href="#goring-solution-boussinesq" title="Link to this heading">&para;</a></h4>
+<p>Equations <span class="arithmatex">\(\eqref{solitary_piston_displacement}\)</span> and <span class="arithmatex">\(\eqref{ss_wave}\)</span> correspond, respectively, to the equation of the piston displacement and the theoretical water elevation using the solution proposed by Goring which requires an iterative procedure to solve Equation <span class="arithmatex">\(\eqref{solitary_piston_displacement}\)</span>.</p>
 <h3 id="multiple-solitary-waves">Multiple solitary waves<a class="headerlink" href="#multiple-solitary-waves" title="Link to this heading">&para;</a></h3>
 <p>To generate a series of multiple solitary waves, the law of motion of the wavemaker is calculated for each i-th solitary wave. Any of the three theories indicated in the previous sections can be used. Then, the time lag between the <span class="arithmatex">\(i+1\)</span>-th and the <span class="arithmatex">\(i\)</span>-th solitary wave has to be specified as a fraction or multiple of the generation time used for the <span class="arithmatex">\(i\)</span>-th solitary wave. The time lag-between the generation of the two solitary waves will be expressed by <span class="arithmatex">\(\lambda T_f\)</span>, being <span class="arithmatex">\(T_f\)</span> the generation time used to generated the first solitary wave. The coefficient <span class="arithmatex">\(λ\)</span> is a positive real number that multiplies <span class="arithmatex">\(T_f\)</span>. If <span class="arithmatex">\(\lambda&lt;1\)</span>, the generation of the second solitary wave starts when the displacement of the piston has not reached yet the maximum stroke that is needed to generate the first solitary wave.</p>
 <p>The generation of multiple solitary waves is a simple but efficient way to model a wave train of several tsunamis which might have been triggered by the same tectonic event.</p>
-<h1 id="focused-waves">Focused waves<a class="headerlink" href="#focused-waves" title="Link to this heading">&para;</a></h1>
+<h2 id="focused-waves">Focused waves<a class="headerlink" href="#focused-waves" title="Link to this heading">&para;</a></h2>
 <p>NewWave theory [Whittaker et al., 2017] is employed to create the time series of focused wave groups. The NewWave theory describes the most probable shape of a large wave in a given sea state. Theoretically, the focus wave group energy reaches the structure in a compact, maximized form if the focus location is close enough to the focus location. A NewWave-type focused wave group comprising N infinitesimal wave components is given by:</p>
-<p align="center">
-<img src="https://imgur.com/NO4ycVz.png"/> (65)   
-</p>
-
-<p>where <span class="arithmatex">\(S_{ηη}\)</span> is the power spectral density, <span class="arithmatex">\(ω\)</span> is the angular frequency, <span class="arithmatex">\(t\)</span> is time, $\sigma$ is the standard deviation of the sea state (with an associated variance  <span class="arithmatex">\(\sigma^2=\sum S_{ηη} (\omega_i )\Delta_\omega\)</span> in this discretised form) and <span class="arithmatex">\(k_i\)</span> is the wavenumber of the <span class="arithmatex">\(i\)</span>-th wave component with angular frequency ωi and related to it by the familiar linear dispersion relation <span class="arithmatex">\(\omega^2=gk\tanh⁡(kh)\)</span> (where <span class="arithmatex">\(g\)</span> is the acceleration due to gravity and <span class="arithmatex">\(h\)</span> is the water depth), and <span class="arithmatex">\(x\)</span> is the horizontal distance.
-All wave components come into phase at the focus location <span class="arithmatex">\(x_f\)</span> and focus time <span class="arithmatex">\(t_f\)</span> to form a large wave with a linear focus amplitude equal to <span class="arithmatex">\(A\)</span>. </p>
-<p>A full range of focusing behaviours can be allowed by introducing the the phase angle <span class="arithmatex">\(\phi\)</span> of the group at focus (e.g. crest, trough, otherwise), while the energy concentration within the group is independent of the value of <span class="arithmatex">\(\phi\)</span>. However, the wave shape can affect its breaking patterns and therefore the impacts exerted on the structure. </p>
-<h1 id="passive-and-active-wave-absorption">Passive and active wave absorption<a class="headerlink" href="#passive-and-active-wave-absorption" title="Link to this heading">&para;</a></h1>
+<div class="arithmatex">\[\begin{equation}
+\tag{21}
+\label{eq:newwave}
+\eta(x,t) = \frac{A}{\sigma^2}\sum_{i=1}^{N} S_{\eta\eta}(\omega_i)\,\Delta\omega\,\cos\left(k_i(x-x_f)-\omega_i(t-t_f)\right)
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(S_{ηη}\)</span> is the power spectral density, <span class="arithmatex">\(ω\)</span> is the angular frequency, <span class="arithmatex">\(t\)</span> is time, <span class="arithmatex">\(\sigma\)</span> is the standard deviation of the sea state (with an associated variance <span class="arithmatex">\(\sigma^2=\sum S_{ηη} (\omega_i )\Delta_\omega\)</span> in this discretised form) and <span class="arithmatex">\(k_i\)</span> is the wavenumber of the <span class="arithmatex">\(i\)</span>-th wave component with angular frequency ωi and related to it by the familiar linear dispersion relation <span class="arithmatex">\(\omega^2=gk\tanh⁡(kh)\)</span> (where <span class="arithmatex">\(g\)</span> is the acceleration due to gravity and <span class="arithmatex">\(h\)</span> is the water depth), and <span class="arithmatex">\(x\)</span> is the horizontal distance. All wave components come into phase at the focus location <span class="arithmatex">\(x_f\)</span> and focus time <span class="arithmatex">\(t_f\)</span> to form a large wave with a linear focus amplitude equal to <span class="arithmatex">\(A\)</span>.</p>
+<p>A full range of focusing behaviours can be allowed by introducing the the phase angle <span class="arithmatex">\(\phi\)</span> of the group at focus (e.g. crest, trough, otherwise), while the energy concentration within the group is independent of the value of <span class="arithmatex">\(\phi\)</span>. However, the wave shape can affect its breaking patterns and therefore the impacts exerted on the structure.</p>
+<h2 id="passive-and-active-wave-absorption">Passive and active wave absorption<a class="headerlink" href="#passive-and-active-wave-absorption" title="Link to this heading">&para;</a></h2>
 <p>The use of wave absorption allows generating long time series of sea waves in relatively short domains with negligible wave reflection. Wave absorption techniques can be categorized as passive and active, respectively. Passive wave absorbers are usually required to damp the wave energy and to reduce reflection exerted by the boundary of the model domain. In active absorption systems, the wavemaker real-time displacement is corrected to cancel out the reflected waves and to damp the re-reflection phenomenon. Active wave absorption is implemented in DualSPHysics for a piston-type wavemaker only.</p>
 <h3 id="passive-wave-absorption">Passive wave absorption<a class="headerlink" href="#passive-wave-absorption" title="Link to this heading">&para;</a></h3>
 <p>A damping zone is implemented in DualSPHysics as passive absorption system. The implemented damping system consists in gradually reducing the velocity of the particles at each time step according to their location, but using quadratic decay rather than exponential. In this way, the velocity is modified following</p>
-<p align="center">
-<img src="https://i.imgur.com/nP4ErE9.png"/> (66)
-</p>
-
+<div class="arithmatex">\[\begin{equation}
+\tag{22}
+\label{eq:damping_velocity}
+v = v_0\,f(x,\Delta t)
+\end{equation}\]</div>
 <p>where <span class="arithmatex">\(v_0\)</span> is the initial velocity of the particle <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(v\)</span> is the final velocity and <span class="arithmatex">\(f(x,\Delta t)\)</span> is the reduction function defined as</p>
-<p align="center">
-<img src="https://i.imgur.com/B1omhTk.png"/> (67)
-</p>
-
+<div class="arithmatex">\[\begin{equation}
+\tag{23}
+\label{eq:damping_function}
+f(x,\Delta t) = 1 - \Delta t\,\beta\left(\frac{x-x_0}{x_1-x_0}\right)^2
+\end{equation}\]</div>
 <p>where <span class="arithmatex">\(Δt\)</span> is the duration of the last time step, <span class="arithmatex">\(x\)</span> is position of the particles, <span class="arithmatex">\(x0\)</span> and <span class="arithmatex">\(x1\)</span> are the initial and final position of the damping zone, respectively. It is recommended to use one wavelength, L, as the length of the damping zone. The coefficient <span class="arithmatex">\(β\)</span> modifies the reduction function that is applied to the velocity.</p>
 <h2 id="active-wave-absorption">Active wave absorption<a class="headerlink" href="#active-wave-absorption" title="Link to this heading">&para;</a></h2>
 <p>The active wave absorption system implemented in DualSPHysics is based on the time-domain filtering technique that uses the free-surface elevation at the wavemaker position as feedback for the control of the wavemaker displacement. The target wavemaker position e(t) is corrected in real time in order to avoid reflection at the wavemaker. It is necessary to estimate the free-surface elevation of the reflected waves, <span class="arithmatex">\(ηR\)</span>, to be absorbed, by comparing the target incident free-surface elevation, <span class="arithmatex">\(ηI\)</span>, with the measured one in front of the wavemaker, <span class="arithmatex">\(ηSPH\)</span>. This is measured at 4-10·hSPH from the wavemaker. The reflected free-surface elevation can be expressed as</p>
-<p align="center">
-<img src="https://i.imgur.com/xZHfwS1.png"/> (68)
-</p>
-
+<div class="arithmatex">\[\begin{equation}
+\tag{24}
+\label{eq:awas_etaR}
+\eta_R(t) = \eta_{SPH}(t) - \eta_I(t)
+\end{equation}\]</div>
 <p>The wavemaker velocity is then modified to match the velocity induced by the wave that will be absorbed. For a piston-type wavemaker the wave absorption is performed using linear long wave theory [Schaffer and Klopman, 2000; Dean and Dalrymple, 1991]. The velocity correction to absorb the reflected waves, UR, is expressed as</p>
-<p align="center">
-<img src="https://i.imgur.com/rbQWWOO.png"/> (69)
-</p>
-
-<p>where <span class="arithmatex">\(ηR\)</span> is the free-surface elevation of the reflected waves and g is the gravitational acceleration. The corrected wavemaker velocity <span class="arithmatex">\(U_C\)</span> is the subtraction of <span class="arithmatex">\(U_R\)</span> from the theoretical wave maker velocity UI. This <span class="arithmatex">\(U_I\)</span> is the derivative in time of the wavemaker displacement <span class="arithmatex">\(e(t)\)</span>. Here the implementation details are expressed for the regular wave case. The theoretical velocity at time t, <span class="arithmatex">\(_UI(t)\)</span>, can be computed as: </p>
-<p align="center">
-<img src="https://i.imgur.com/BOHNsjX.png"/> (70)
-</p>
-
+<div class="arithmatex">\[\begin{equation}
+\tag{25}
+\label{eq:awas_UR}
+U_R(t) = \eta_R(t)\,\sqrt{g/d}
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(ηR\)</span> is the free-surface elevation of the reflected waves and g is the gravitational acceleration. The corrected wavemaker velocity <span class="arithmatex">\(U_C\)</span> is the subtraction of <span class="arithmatex">\(U_R\)</span> from the theoretical wave maker velocity UI. This <span class="arithmatex">\(U_I\)</span> is the derivative in time of the wavemaker displacement <span class="arithmatex">\(e(t)\)</span>. Here the implementation details are expressed for the regular wave case. The theoretical velocity at time t, <span class="arithmatex">\(_UI(t)\)</span>, can be computed as:</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{26}
+\label{eq:awas_UI}
+U_I(t) = \frac{de(t)}{dt} = \frac{\omega S_0}{2}\cos(\omega t+\delta)
+\end{equation}\]</div>
 <p>The free-surface elevation in front of the wavemaker is measured, the target incident free-surface elevation is calculated and therefore the velocity correction UR is estimated. The corrected wavemaker velocity at the instant <span class="arithmatex">\(t+dt\)</span> can be expressed as</p>
-<p align="center">
-<img src="https://i.imgur.com/x5BTFSp.png"/> (71)
-</p>
-
+<div class="arithmatex">\[\begin{equation}
+\tag{27}
+\label{eq:awas_UC}
+U_C(t+dt) = U_I(t+dt) - U_R(t)
+\end{equation}\]</div>
 <p>The wavemaker position at <span class="arithmatex">\(t+dt\)</span> is then corrected using the following expression</p>
-<p align="center">
-<img src="https://i.imgur.com/WMWWQ8E.png"/> (72)
-</p>
-
-<p>Small deviations of the mean water level from the zero can imply accumulations in time leading to a drift of the wavemaker from its initial position that will grow indefinitely. In order to prevent this drift, the wavemaker should be forced back to its zero position. Hence, a drift correction algorithm is implemented in the code. The algorithm checks when the 80% of the maximum forward or backward stroke is reached (80% was assumed as default value but it can be modified by the user). If this happens the wave board is pushed/pulled slowly back, while continuing to generate the target waves, in such a way that its average position will finally correspond to its initial zero-position (i.e. at the beginning of the simulation). A smoothed transition, in form of a power function, is used to prevent abrupt changes in the wavemaker displacement.</p>
+<div class="arithmatex">\[\begin{equation}
+\tag{28}
+\label{eq:awas_position}
+e(t+dt) = e(t) + \left(U_C(t+dt)+U_C(t)\right)\frac{dt}{2}
+\end{equation}\]</div>
+<p>Small deviations of the mean water level from the zero can imply accumulations in time leading to a drift of the wavemaker from its initial position that will grow indefinitely. In order to prevent this drift, the wavemaker should be forced back to its zero position. Hence, a drift correction algorithm is implemented in the code. The algorithm checks when the 80</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Link to this heading">&para;</a></h2>
-<p><a id="Madsen_1971"></a>
-◆ Madsen, O. S. (1971). On the generation of long waves. <em>Journal of Geophysical Research (1896-1977)</em>, <em>76</em>(36), 8672-8683. https://doi.org/https://doi.org/10.1029/JC076i036p08672.</p>
+<div class="references csl-bib-body hanging-indent" id="refs">
+<div class="csl-entry" id="ref-Madsen_1971">
+<p>Madsen, Ole Secher. 1971. “On the Generation of Long Waves.” <em>Journal of Geophysical Research (1896-1977)</em> 76 (36): 8672–83. https://doi.org/<a href="https://doi.org/10.1029/JC076i036p08672">https://doi.org/10.1029/JC076i036p08672</a>.</p>
+</div>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1799,51 +3451,13 @@ All wave components come into phase at the focus location <span class="arithmate
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../theory/implementation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CPU and GPU Implementation">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                CPU and GPU Implementation
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../dem/" class="md-footer__link md-footer__link--next" aria-label="Next: Descrete Element Method">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Descrete Element Method
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2025 DualSPHysics Team
+      Copyright &copy; 2026 DualSPHysics Team &middot; Edited by Bonaventura Tagliafierro
     </div>
   
   
@@ -1890,14 +3504,14 @@ All wave components come into phase at the focus location <span class="arithmate
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.indexes", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/catalogue-overview.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

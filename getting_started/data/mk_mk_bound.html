@@ -1,0 +1,414 @@
+<style>
+  .sph-gif-container {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    width: 100%;
+    max-width: 800px;
+    margin: 16px 0;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    box-sizing: border-box;
+  }
+
+  .array-stage {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    background: #f8f9fa;
+    border: 1px solid #e8eaed;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .array-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .label-fluid { 
+    color: #1a73e8; 
+    margin-bottom: 8px;
+  }
+  
+  .label-target { 
+    color: #202124; 
+    margin-top: 10px; 
+    text-align: center;
+  }
+
+  /* Containers */
+  .source-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: #ffffff;
+    border: 1.5px dashed #bdc1c6;
+    border-radius: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .target-container {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background: #ffffff;
+    border: 1.5px solid #dadce0;
+    border-radius: 8px;
+    padding: 12px 12px 8px 12px;
+    box-sizing: border-box;
+  }
+
+  /* Grid Layouts */
+  .grid-track {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Target Slot Cell */
+  .cell {
+    height: 52px;
+    border-radius: 6px;
+    border: 1.5px dashed #bdc1c6;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #5f6368;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+  }
+
+  .cell-reserve {
+    background: #f1f3f4;
+    border: 1px solid #e0e0e0;
+    color: #9aa0a6;
+  }
+
+  /* Sub-label text rendered directly BELOW each slot cell */
+  .slot-id-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #3c4043;
+    text-align: center;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  /* Animated Moving Blocks */
+  .block {
+    position: absolute;
+    width: calc((100% - 56px - 48px) / 8);
+    height: 52px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    box-sizing: border-box;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    text-align: center;
+    line-height: 1.2;
+    padding: 4px;
+    z-index: 10;
+  }
+
+  .block-subtext {
+    font-size: 11px;
+    margin-top: 1px;
+    white-space: nowrap;
+  }
+
+  .block-title {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .block-fluid {
+    background: #e8f0fe;
+    border: 1.5px solid #1a73e8;
+    color: #1a73e8;
+  }
+
+  .block-bound {
+    background: #fef7e0;
+    border: 1.5px solid #e37400;
+    color: #e37400;
+  }
+
+  /* Initial Source Positions: Top = 60px (Fluid) and 124px (Bound) */
+  /* Target Landed Position: Top = 308px */
+
+  .f0 {
+    top: 60px;
+    left: calc(28px + 0 * ((100% - 56px) / 8));
+    animation-name: anim-f0;
+  }
+
+  .f1 {
+    top: 60px;
+    left: calc(28px + 1 * ((100% - 56px) / 8));
+    animation-name: anim-f1;
+  }
+
+  .b0 {
+    top: 124px;
+    left: calc(28px + 0 * ((100% - 56px) / 8));
+    animation-name: anim-b0;
+  }
+
+  .b1 {
+    top: 124px;
+    left: calc(28px + 1 * ((100% - 56px) / 8));
+    animation-name: anim-b1;
+  }
+
+  .b2 {
+    top: 124px;
+    left: calc(28px + 2 * ((100% - 56px) / 8));
+    animation-name: anim-b2;
+  }
+
+  /* KEYFRAME ANIMATIONS WITH SNAP / LOCKING IMPACT EFFECT */
+
+  @keyframes anim-f0 {
+    0%, 15% {
+      top: 60px;
+      left: calc(28px + 0 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    26% {
+      top: 314px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    29% {
+      top: 308px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.35);
+    }
+    32%, 85% {
+      top: 308px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 60px;
+      left: calc(28px + 0 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim-f1 {
+    0%, 18% {
+      top: 60px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    29% {
+      top: 314px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    32% {
+      top: 308px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.35);
+    }
+    35%, 85% {
+      top: 308px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 60px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim-b0 {
+    0%, 40% {
+      top: 124px;
+      left: calc(28px + 0 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    51% {
+      top: 314px;
+      left: calc(28px + 5 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    54% {
+      top: 308px;
+      left: calc(28px + 5 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(227, 116, 0, 0.35);
+    }
+    57%, 85% {
+      top: 308px;
+      left: calc(28px + 5 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 124px;
+      left: calc(28px + 0 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim-b1 {
+    0%, 43% {
+      top: 124px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    54% {
+      top: 314px;
+      left: calc(28px + 6 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    57% {
+      top: 308px;
+      left: calc(28px + 6 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(227, 116, 0, 0.35);
+    }
+    60%, 85% {
+      top: 308px;
+      left: calc(28px + 6 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 124px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim-b2 {
+    0%, 46% {
+      top: 124px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    57% {
+      top: 314px;
+      left: calc(28px + 7 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    60% {
+      top: 308px;
+      left: calc(28px + 7 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(227, 116, 0, 0.35);
+    }
+    63%, 85% {
+      top: 308px;
+      left: calc(28px + 7 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 124px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+</style>
+
+<div class="sph-gif-container">
+  <div class="array-stage">
+    
+    <!-- Source Container Box -->
+    <div class="source-container">
+      <div class="array-section-label label-fluid">Source Container: mkfluid & mkbound Arrays</div>
+    </div>
+
+    <!-- Target Container Box -->
+    <div class="target-container">
+      <div class="grid-track">
+        <div class="cell"><span style="color:#202124;">Void</span></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell cell-reserve">...</div>
+        <div class="cell cell-reserve"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+
+      <!-- Labels positioned below each slot -->
+      <div class="grid-track" style="margin-top: 4px;">
+        <div class="slot-id-label">mk=0</div>
+        <div class="slot-id-label">mk=1</div>
+        <div class="slot-id-label">mk=2</div>
+        <div class="slot-id-label" style="color:#9aa0a6;">mk=3..8</div>
+        <div class="slot-id-label" style="color:#9aa0a6;">mk=9</div>
+        <div class="slot-id-label">mk=10</div>
+        <div class="slot-id-label">mk=11</div>
+        <div class="slot-id-label">mk=12</div>
+      </div>
+
+      <div class="array-section-label label-target">Target Container: mk Array (fluidcount = 9)</div>
+    </div>
+
+    <!-- Animated Blocks with Lock Snap Effect -->
+    <div class="block block-fluid f0">
+      <span class="block-title">mkfluid=0</span>
+      <span class="block-subtext">Fluid 0</span>
+    </div>
+
+    <div class="block block-fluid f1">
+      <span class="block-title">mkfluid=1</span>
+      <span class="block-subtext">Fluid 1</span>
+    </div>
+
+    <div class="block block-bound b0">
+      <span class="block-title">mkbound=0</span>
+      <span class="block-subtext">Bound 0</span>
+    </div>
+
+    <div class="block block-bound b1">
+      <span class="block-title">mkbound=1</span>
+      <span class="block-subtext">Bound 1</span>
+    </div>
+
+    <div class="block block-bound b2">
+      <span class="block-title">mkbound=2</span>
+      <span class="block-subtext">Bound 2</span>
+    </div>
+
+  </div>
+</div>

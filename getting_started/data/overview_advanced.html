@@ -1,0 +1,322 @@
+<style>
+  .sph-scheme-container {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    width: 100%;
+    max-width: 820px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Tight vertical spacing */
+    box-sizing: border-box;
+  }
+
+  /* Compact Section Cards */
+  .sph-section {
+    position: relative;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .sph-section-badge {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  /* Pre-processing (Red Theme) */
+  .sph-pre {
+    background: linear-gradient(180deg, #fff5f5 0%, #fde8e8 100%);
+    border: 1.5px solid #f2b8b5;
+  }
+  .sph-pre .sph-section-badge {
+    background-color: #ffffff;
+    color: #c5221f;
+    border: 1px solid #c5221f;
+  }
+
+  /* Processing (Blue Theme) */
+  .sph-pro {
+    background: linear-gradient(180deg, #f8faff 0%, #e8f0fe 100%);
+    border: 1.5px solid #aecbfa;
+  }
+  .sph-pro .sph-section-badge {
+    background-color: #ffffff;
+    color: #174ea6;
+    border: 1px solid #174ea6;
+  }
+
+  /* Post-processing (Green Theme) */
+.sph-post {
+  background: linear-gradient(180deg, #f6fbf7 0%, #e6f4ea 100%);
+  border: 1.5px solid #a8dab5;
+  padding: 35px 14px 20px 14px; /* [Top] [Right] [Bottom] [Left] */
+  min-height: 150px;
+}
+  .sph-post .sph-section-badge {
+    background-color: #ffffff;
+    color: #137333;
+    border: 1px solid #137333;
+  }
+
+  /* Main Executable Process Boxes */
+  .sph-exe-box {
+    background: #ffffff;
+    border: 1.5px solid #202124;
+    padding: 4px 16px;
+    font-weight: 800;
+    font-size: 14px;
+    color: #202124;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .sph-exe-box:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+  }
+
+  /* Output / File Group Boxes */
+  .sph-file-pill {
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 11px;
+    color: #3c4043;
+    line-height: 1.35;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    transition: border-color 0.15s ease;
+  }
+  .sph-file-pill:hover {
+    border-color: #1a73e8;
+  }
+
+  /* Connector Arrows */
+  .sph-arrow-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f6368;
+    margin: 1px 0;
+  }
+  .sph-arrow-down svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Pre-processing Layout Grid */
+  .sph-pre-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .sph-pre-outputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  /* Logo Container for Processing */
+  .sph-logo-box {
+    padding: 2px 10px;
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #aecbfa;
+    box-shadow: 0 1px 3px rgba(66,133,244,0.15);
+  }
+
+  .sph-logo-box img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  /* Post-processing Layout Grid */
+  .sph-post-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .sph-post-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sph-post-column .sph-exe-box {
+    font-size: 11px;
+    padding: 4px 2px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sph-post-column .sph-file-pill {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px;
+  }
+
+  /* File Accent Colors */
+  .txt-xml { color: #d93025; font-weight: bold; }
+  .txt-bi4 { color: #1a73e8; font-weight: bold; }
+  .txt-vtk { color: #1e8e3e; }
+  .txt-csv { color: #e37400; }
+
+  @media (max-width: 680px) {
+    .sph-post-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+
+<div class="sph-scheme-container">
+
+  <!-- ================= PRE-PROCESSING SECTION ================= -->
+  <div class="sph-section sph-pre">
+    <div class="sph-section-badge">Pre-processing</div>
+
+    <!-- Case_Def Input Files -->
+    <div class="sph-pre-top">
+      <div class="sph-file-pill txt-xml">📄 Case_Def.xml</div>
+      <div class="sph-file-pill txt-vtk">
+        <span>object.vtk</span> • <span>object.stl</span> • <span>object.ply</span>
+      </div>
+    </div>
+
+    <!-- Arrow down to GENCASE -->
+    <div class="sph-arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg>
+    </div>
+
+    <!-- GENCASE Executable -->
+    <div class="sph-exe-box">GENCASE</div>
+
+    <!-- Arrow down to Outputs -->
+    <div class="sph-arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg>
+    </div>
+
+    <!-- GENCASE Output Data Files -->
+    <div class="sph-pre-outputs">
+      <div class="sph-file-pill txt-csv">mov.dat<br>forces.csv</div>
+      <div class="sph-file-pill">
+        <span class="txt-xml">Case.xml</span><br>
+        <span class="txt-bi4">Case.bi4</span>
+      </div>
+      <div class="sph-file-pill txt-vtk">
+        Case_All.vtk • Case_Bound.vtk<br>
+        Case_Fluid.vtk • Case__Dp.vtk
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrow Transition to Processing -->
+  <div class="sph-arrow-down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 19 15"></polyline></svg>
+  </div>
+
+  <!-- ================= PROCESSING SECTION ================= -->
+  <div class="sph-section sph-pro">
+    <div class="sph-section-badge">Processing</div>
+
+    <!-- DualSPHysics Logo Header -->
+    <div class="sph-logo-box">
+      <img src="../../assets/images/dualsphysics-logo.svg" alt="DualSPHysics Logo" />
+    </div>
+
+    <!-- Arrow down -->
+    <div class="sph-arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 19 15"></polyline></svg>
+    </div>
+
+    <!-- Output Files -->
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+      <div class="sph-file-pill txt-bi4">Part_Head.ibi4 • PartFloat.fbi4</div>
+      <div class="sph-file-pill txt-bi4">Part_xxxx.bi4 • PartOut.obi4</div>
+      <div class="sph-file-pill">Run.out</div>
+    </div>
+  </div>
+
+  <!-- Arrow Transition to Post-Processing -->
+  <div class="sph-arrow-down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 19 15"></polyline></svg>
+  </div>
+
+  <!-- ================= POST-PROCESSING SECTION ================= -->
+  <div class="sph-section sph-post">
+    <div class="sph-section-badge">Post-processing</div>
+
+    <!-- Right Top File Accent Badge -->
+    <div style="position: absolute; top: 6px; right: 10px;">
+      <div class="sph-file-pill txt-csv" style="padding: 2px 6px; font-size: 10px;">
+        PointsPos.csv • Points.txt
+      </div>
+    </div>
+
+    <!-- Post Processing Tools Grid -->
+    <div class="sph-post-grid">
+      
+      <!-- PARTVTK -->
+      <div class="sph-post-column">
+        <div class="sph-exe-box">PARTVTK</div>
+        <div class="sph-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg></div>
+        <div class="sph-file-pill txt-vtk">
+          PartFluid.vtk<br>
+          PartBound.vtk<br>
+          PartMoving.vtk
+        </div>
+      </div>
+
+      <!-- BOUNDARYVTK -->
+      <div class="sph-post-column">
+        <div class="sph-exe-box">BOUNDARYVTK</div>
+        <div class="sph-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg></div>
+        <div class="sph-file-pill txt-vtk">
+          Fixed.vtk<br>
+          Moving_xxxx.vtk<br>
+          Floating_xxxx.vtk
+        </div>
+      </div>
+
+      <!-- ISOSURFACE -->
+      <div class="sph-post-column">
+        <div class="sph-exe-box">ISOSURFACE</div>
+        <div class="sph-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg></div>
+        <div class="sph-file-pill txt-vtk">
+          Surface_xxxx.vtk
+        </div>
+      </div>
+
+      <!-- MEASURETOOL -->
+      <div class="sph-post-column">
+        <div class="sph-exe-box">MEASURETOOL</div>
+        <div class="sph-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg></div>
+        <div class="sph-file-pill txt-csv">
+          Pressure.csv<br>
+          Velocity.csv<br>
+          Height_xxxx.vtk
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

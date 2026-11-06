@@ -1,0 +1,136 @@
+<style>
+  /* Flex container for the entire horizontal diagram */
+  .diag-container {
+    display: flex;
+    flex-direction: row; /* Horizontal flow */
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 14px;
+    margin: 20px 0;
+    gap: 0;
+  }
+
+  /* General style for all labeled box elements */
+  .diag-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 4px;
+    user-select: none;
+    line-height: 1.2;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    max-width: fit-content;
+  }
+
+  /* Style for the logo asset container */
+  .logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    max-width: 150px; /* Adjust size as needed */
+    flex: 0 0 142px; /* Keep the logo within 150px including its padding. */
+  }
+
+  .logo-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Specific border colors */
+  .border-grey { border: 2px solid #a0a0a0; color: #a0a0a0; font-weight: 500;}
+  .border-red { border: 2px solid #ef5350; color: #ef5350; font-weight: 500;}
+  .border-blue { border: 2px solid #1e88e5; color: #1e88e5; font-weight: 500;}
+  .border-black { border: 2px solid #000000; color: #000000; font-weight: 700;}
+
+  /* Special style for PARTVTK block */
+  .box-special {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    text-align: left;
+    white-space: pre-wrap;
+    padding: 10px;
+  }
+
+  /* Container for the middle file group */
+  .file-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Flex row within the group */
+  .file-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  /* Specific width for file boxes to keep them grid-aligned */
+  .file-box {
+    width: 140px;
+    text-align: center;
+  }
+
+  /* Style for all arrows */
+  .diag-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0a0a0;
+    font-weight: 900;
+    font-size: 24px;
+    padding: 0 15px;
+    user-select: none;
+  }
+</style>
+
+<div class="diag-container">
+
+  <!-- Step 1: Logo Asset Replacement -->
+  <div class="logo-box">
+    <img src="../../assets/images/dualsphysics-logo.svg" alt="DualSPHysics Logo" />
+  </div>
+
+  <!-- Grey Arrow -->
+  <div class="diag-arrow">&#11157;</div>
+
+  <!-- Step 2: Input File Group -->
+  <div class="file-group">
+    <div class="file-row">
+      <div class="diag-box border-red file-box">Part_Head.ibi4</div>
+      <div class="diag-box border-red file-box">Part_xxxx.bi4</div>
+      <div class="diag-box border-grey" style="width: 70px; text-align: center;">Run.out</div>
+    </div>
+    <div class="file-row">
+      <div class="diag-box border-grey file-box">PartFloat.fbi4</div>
+      <div class="diag-box border-grey file-box">PartOut.obi4</div>
+    </div>
+  </div>
+
+  <!-- Grey Arrow -->
+  <div class="diag-arrow">&#11157;</div>
+
+  <!-- Step 3: PARTVTK Processing Block -->
+  <div class="diag-box border-black">PARTVTK</div>
+
+  <!-- Grey Arrow -->
+  <div class="diag-arrow">&#11157;</div>
+
+  <!-- Step 4: Output File Group -->
+  <div class="diag-box border-blue box-special">
+PartFluid_xxxx.vtk
+PartMoving_xxxx.vtk
+PartFloating_xxxx.vtk
+Acceleration.asc
+  </div>
+
+</div>

@@ -1,0 +1,34 @@
+/* VS Code colors for batch files specifically */
+[data-md-color-scheme="slate"] .highlight .language-bat,
+[data-md-color-scheme="slate"] .highlight .language-batch,
+[data-md-color-scheme="slate"] .language-bat,
+[data-md-color-scheme="slate"] .language-batch {
+  background-color: #1e1e1e !important;
+}
+
+/* Batch file specific tokens */
+[data-md-color-scheme="slate"] .language-bat .n,
+[data-md-color-scheme="slate"] .language-batch .n {
+  color: #9cdcfe !important; /* Commands/executables - light blue */
+}
+
+[data-md-color-scheme="slate"] .language-bat .na,
+[data-md-color-scheme="slate"] .language-batch .na {
+  color: #569cd6 !important; /* Arguments - blue */
+}
+
+[data-md-color-scheme="slate"] .language-bat .s,
+[data-md-color-scheme="slate"] .language-batch .s {
+  color: #ce9178 !important; /* Strings/paths - orange */
+}
+
+/* Make all text in code blocks more visible */
+[data-md-color-scheme="slate"] .highlight pre,
+[data-md-color-scheme="slate"] .highlight code {
+  color: #d4d4d4 !important;
+}
+
+/* Specific for .exe and commands */
+[data-md-color-scheme="slate"] code {
+  color: #9cdcfe !important;
+}
