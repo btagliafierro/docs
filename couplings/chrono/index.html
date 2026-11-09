@@ -290,20 +290,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../gallery/intro/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="../../gallery/intro/" class="md-tabs__link">
+        
   
   
     
   
   Gallery
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -640,62 +637,6 @@
   
   
   
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Gallery
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Gallery
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../gallery/intro/" class="md-nav__link">
         
@@ -713,14 +654,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -3225,7 +3158,7 @@
 <p>DualSPHysics at the moment uses the rigid body, constraints and collision detection parts of the library. This allows a user to use a set of bodies described in meshes, specify restrictions applied to the bodies (from the implemented list of joints, hinges and springs) and compute interactions between bodies, in a similar fashion to the DEM implementation, but in a more stable manner. Realistic frictional behavior is also now possible, since a full Coulomb sliding/sticking/rolling model is used.</p>
 <p>The implementation strategy is to couple both models with a message passing interface, as structured in Figure <a href="#fig:scheme">?</a>. Once quantities from the rigid bodies are computed by DualSPHysics, the time step, along with the linear and angular accelerations from each body, computed solely from fluid- body interaction, are sent to our Project Chrono module. For that time step, Chrono returns the linear and angular velocities, as well as CC position, computed by integrating the fluid contributions with the dynamic or kinematic restrictions of the system, including collisions.</p>
 <figure id="fig:scheme" data-latex-placement="h">
-<img src="../assets/images/couplings/chrono_coupling.png" style="width:70.0%; background-color: #ffffff;" />
+<img src="../../assets/images/couplings/chrono_coupling.png" style="width:70.0%; background-color: #ffffff;" />
 <figcaption>Flow chart of the coupling between DualSPHysics and Project Chrono.</figcaption>
 </figure>
 

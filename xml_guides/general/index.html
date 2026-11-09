@@ -294,20 +294,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../gallery/intro/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="../../gallery/intro/" class="md-tabs__link">
+        
   
   
     
   
   Gallery
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -646,62 +643,6 @@
   
   
   
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Gallery
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Gallery
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../gallery/intro/" class="md-nav__link">
         
@@ -719,14 +660,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -4784,7 +4717,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">&lt;/mkconfig&gt;</span>
 </span></code></pre></div>
 <figure>
-  <a href="../assets/images/xml_guide/general/marker-ordering.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/marker-ordering.png" alt="Changing the coordinate ordering for a marker changes particle ordering within the generated objects; it does not change the physical marker assignment." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/marker-ordering.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/marker-ordering.png" alt="Changing the coordinate ordering for a marker changes particle ordering within the generated objects; it does not change the physical marker assignment." loading="lazy"></a>
   <figcaption><strong>Figure 2:</strong> Changing the coordinate ordering for a marker changes particle ordering within the generated objects; it does not change the physical marker assignment.</figcaption>
 </figure>
 
@@ -4799,7 +4732,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span></code></pre></div>
 <p>Particles are created only inside the generation domain. Afterwards the simulation domain is recalculated from the minimum and maximum positions of the generated particles; it can also be configured in <code>parameters</code>.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/generation-domain.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/generation-domain.png" alt="The pointmin and pointmax limits bound particle generation. The solver subsequently derives its domain from the actual particles unless simulationdomain specifies another extent." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/generation-domain.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/generation-domain.png" alt="The pointmin and pointmax limits bound particle generation. The solver subsequently derives its domain from the actual particles unless simulationdomain specifies another extent." loading="lazy"></a>
   <figcaption><strong>Figure 3:</strong> The pointmin and pointmax limits bound particle generation. The solver subsequently derives its domain from the actual particles unless simulationdomain specifies another extent.</figcaption>
 </figure>
 
@@ -4864,7 +4797,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">&lt;setshapemode&gt;</span>bound<span class="nt">&lt;/setshapemode&gt;</span>
 </span></code></pre></div>
 <figure>
-  <a href="../assets/images/xml_guide/general/drawing-modes.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/drawing-modes.png" alt="Wire, face, solid and full drawing modes produce different point arrangements on the same box." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/drawing-modes.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/drawing-modes.png" alt="Wire, face, solid and full drawing modes produce different point arrangements on the same box." loading="lazy"></a>
   <figcaption><strong>Figure 4:</strong> Wire, face, solid and full drawing modes produce different point arrangements on the same box.</figcaption>
 </figure>
 
@@ -4891,7 +4824,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span></code></pre></div>
 <p>The four panels show, in reading order, the original box, translation by <code>(0.5, 0, 0)</code>, scaling by <code>(2, 1.5, 0.5)</code>, and rotation by 45 degrees about <code>(0, 0, 1)</code>. Each operation precedes the box drawing in its illustrated configuration. The source writes the illustrative command rows as <code>move x="0.5" y="0" z="0"</code>, <code>scale x="2" y="1.5" z="0.5"</code> and <code>rotate x="0" y="0" z="1" ang="45"</code>; the drawing command is abbreviated there as <code>drawbox …</code>, rather than a complete XML fragment.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/drawing-transformations.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/drawing-transformations.png" alt="The source compares the original box with translation by 0.5 in X, scaling by (2, 1.5, 0.5), and a 45-degree rotation about Z." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/drawing-transformations.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/drawing-transformations.png" alt="The source compares the original box with translation by 0.5 in X, scaling by (2, 1.5, 0.5), and a 45-degree rotation about Z." loading="lazy"></a>
   <figcaption><strong>Figure 5:</strong> The source compares the original box with translation by 0.5 in X, scaling by (2, 1.5, 0.5), and a 45-degree rotation about Z.</figcaption>
 </figure>
 
@@ -4975,18 +4908,18 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nt">&lt;/drawbox&gt;</span>
 </span></code></pre></div>
 <figure>
-  <a href="../assets/images/xml_guide/general/triangle-strip.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/triangle-strip.png" alt="Triangle-strip construction and point ordering in the source example." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/triangle-strip.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/triangle-strip.png" alt="Triangle-strip construction and point ordering in the source example." loading="lazy"></a>
   <figcaption><strong>Figure 6:</strong> Triangle-strip construction and point ordering in the source example.</figcaption>
 </figure>
 
 <figure>
-  <a href="../assets/images/xml_guide/general/indexed-triangles.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/indexed-triangles.png" alt="Indexed triangles connect the numbered vertices. Point indices and triangle orientation are part of the geometry definition." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/indexed-triangles.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/indexed-triangles.png" alt="Indexed triangles connect the numbered vertices. Point indices and triangle orientation are part of the geometry definition." loading="lazy"></a>
   <figcaption><strong>Figure 7:</strong> Indexed triangles connect the numbered vertices. Point indices and triangle orientation are part of the geometry definition.</figcaption>
 </figure>
 
 <p>In the two lower panels, <code>all ^ top</code> means all faces excluding the top; <code>bottom | left | right</code> means only the bottom, left and right faces.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/box-faces.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/box-faces.png" alt="Box interior and face selections, including all faces except top and a selection of bottom, left and right faces." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/box-faces.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/box-faces.png" alt="Box interior and face selections, including all faces except top and a selection of bottom, left and right faces." loading="lazy"></a>
   <figcaption><strong>Figure 8:</strong> Box interior and face selections, including all faces except top and a selection of bottom, left and right faces.</figcaption>
 </figure>
 
@@ -5069,7 +5002,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;TrianglesFan2&quot;</span><span class="w"> </span><span class="na">reset=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/triangle-fans.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/triangle-fans.png" alt="Open and closed triangle fans retain the common vertex, outer-vertex order and closing-point labels." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/triangle-fans.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/triangle-fans.png" alt="Open and closed triangle fans retain the common vertex, outer-vertex order and closing-point labels." loading="lazy"></a>
   <figcaption><strong>Figure 9:</strong> Open and closed triangle fans retain the common vertex, outer-vertex order and closing-point labels.</figcaption>
 </figure>
 
@@ -5129,13 +5062,13 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;Prism4&quot;</span><span class="w"> </span><span class="na">reset=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/twisted-prism.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/twisted-prism.png" alt="Three views of the twisted prism defined by the paired base and top points in the editable source example." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/twisted-prism.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/twisted-prism.png" alt="Three views of the twisted prism defined by the paired base and top points in the editable source example." loading="lazy"></a>
   <figcaption><strong>Figure 10:</strong> Three views of the twisted prism defined by the paired base and top points in the editable source example.</figcaption>
 </figure>
 
 <p>The left panel is the source solid <code>drawfigure</code>; the right is its face representation (<code>drawtriangles</code> or face-mode <code>drawfigure</code>). The source uses the complete eight-point and six-triangle lists already given in the <code>drawtriangles</code> block above: <code>(0,1,5)</code>, <code>(1,2,6)</code>, <code>(2,3,7)</code>, <code>(3,0,4)</code>, <code>(0,2,1)</code> and <code>(4,5,6)</code>. Its wrapper selects boundary marker 0 and shape mode <code>dp | bound</code>. The separate current-reference <code>drawfigure</code> fragment above contains three planes; it is a different illustrative input, whose equivalence to the source volume has not been established.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/triangulated-polyhedron.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/triangulated-polyhedron.png" alt="Solid and face views of the source triangulated polyhedron; the point and triangle definitions are documented in editable text." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/triangulated-polyhedron.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/triangulated-polyhedron.png" alt="Solid and face views of the source triangulated polyhedron; the point and triangle definitions are documented in editable text." loading="lazy"></a>
   <figcaption><strong>Figure 11:</strong> Solid and face views of the source triangulated polyhedron; the point and triangle definitions are documented in editable text.</figcaption>
 </figure>
 
@@ -5161,7 +5094,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;Prism3&quot;</span><span class="w"> </span><span class="na">reset=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/nonrectangular-prisms.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/nonrectangular-prisms.png" alt="The source demonstrates a non-rectangular prism using paired base and top points." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/nonrectangular-prisms.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/nonrectangular-prisms.png" alt="The source demonstrates a non-rectangular prism using paired base and top points." loading="lazy"></a>
   <figcaption><strong>Figure 12:</strong> The source demonstrates a non-rectangular prism using paired base and top points.</figcaption>
 </figure>
 
@@ -5180,7 +5113,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="nt">&lt;/mainlist&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/extrusion-profile.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/extrusion-profile.png" alt="Extrusion maps each profile point to its translated counterpart; source point labels and displacement arrows are retained." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/extrusion-profile.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/extrusion-profile.png" alt="Extrusion maps each profile point to its translated counterpart; source point labels and displacement arrows are retained." loading="lazy"></a>
   <figcaption><strong>Figure 13:</strong> Extrusion maps each profile point to its translated counterpart; source point labels and displacement arrows are retained.</figcaption>
 </figure>
 
@@ -5215,7 +5148,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="nt">&lt;setdpctes</span><span class="w"> </span><span class="na">ctecylindernumsides=</span><span class="s">&quot;40&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/cylinder-drawing.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/cylinder-drawing.png" alt="Solid (left) and face (right) cylinder drawing; the original coordinates and tube/cover settings are given in editable XML." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/cylinder-drawing.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/cylinder-drawing.png" alt="Solid (left) and face (right) cylinder drawing; the original coordinates and tube/cover settings are given in editable XML." loading="lazy"></a>
   <figcaption><strong>Figure 14:</strong> Solid (left) and face (right) cylinder drawing; the original coordinates and tube/cover settings are given in editable XML.</figcaption>
 </figure>
 
@@ -5255,7 +5188,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="nt">&lt;/drawprism&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/indexed-face-mask.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/indexed-face-mask.png" alt="Face numbering and the resulting open prism after omitting faces 1, 2, 6 and 7." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/indexed-face-mask.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/indexed-face-mask.png" alt="Face numbering and the resulting open prism after omitting faces 1, 2, 6 and 7." loading="lazy"></a>
   <figcaption><strong>Figure 15:</strong> Face numbering and the resulting open prism after omitting faces 1, 2, 6 and 7.</figcaption>
 </figure>
 
@@ -5291,7 +5224,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a><span class="nt">&lt;/mainlist&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/particle-layers.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/particle-layers.png" alt="Signed offsets create layers around the reference geometry. The source distinguishes layers on opposite sides of a surface." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/particle-layers.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/particle-layers.png" alt="Signed offsets create layers around the reference geometry. The source distinguishes layers on opposite sides of a surface." loading="lazy"></a>
   <figcaption><strong>Figure 16:</strong> Signed offsets create layers around the reference geometry. The source distinguishes layers on opposite sides of a surface.</figcaption>
 </figure>
 
@@ -5328,13 +5261,13 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="nt">&lt;/mainlist&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/pump-components.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/pump-components.png" alt="Separate fixed and moving pump components are converted from external geometry to points before the fluid region is filled." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/pump-components.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/pump-components.png" alt="Separate fixed and moving pump components are converted from external geometry to points before the fluid region is filled." loading="lazy"></a>
   <figcaption><strong>Figure 17:</strong> Separate fixed and moving pump components are converted from external geometry to points before the fluid region is filled.</figcaption>
 </figure>
 
 <p>The depth diagram marks <code>depthmin = 3 dp</code> and <code>depthmax = 7 dp</code>. The two pump results compare <code>depthmin=0</code> and <code>depthmin=0.2</code>; their dark rendering backgrounds are part of the original visualisation. The separate current-reference advanced-fill XML above illustrates <code>&lt;depth depthmin="0.02" depthmax="0.1"/&gt;</code>. These distinct examples retain their original values.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/advanced-fill-depth.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/advanced-fill-depth.png" alt="Advanced filling controls the surface offset and thickness. The source compares depthmin equal to zero and 0.2; these are illustrative geometry choices." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/advanced-fill-depth.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/advanced-fill-depth.png" alt="Advanced filling controls the surface offset and thickness. The source compares depthmin equal to zero and 0.2; these are illustrative geometry choices." loading="lazy"></a>
   <figcaption><strong>Figure 18:</strong> Advanced filling controls the surface offset and thickness. The source compares depthmin equal to zero and 0.2; these are illustrative geometry choices.</figcaption>
 </figure>
 
@@ -5436,7 +5369,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </tbody>
 </table>
 <figure>
-  <a href="../assets/images/xml_guide/general/bathymetry-periodic.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/bathymetry-periodic.png" alt="The source bathymetry example shows coordinate transforms, grid extension, periodic border adjustment and diagnostic output." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/bathymetry-periodic.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/bathymetry-periodic.png" alt="The source bathymetry example shows coordinate transforms, grid extension, periodic border adjustment and diagnostic output." loading="lazy"></a>
   <figcaption><strong>Figure 19:</strong> The source bathymetry example shows coordinate transforms, grid extension, periodic border adjustment and diagnostic output.</figcaption>
 </figure>
 
@@ -5454,7 +5387,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span></code></pre></div>
 <p>The red point is the fill seed <code>(0.14, -0.1, -0.39)</code>. The black wireframe is the limiting box, starting at <code>(-0.6, -0.39, -0.8)</code> with size <code>(0.9, 0.68, 0.52)</code>. Filling uses fluid marker 0 and <code>modefill=void</code>, as in the pump fragment above; it fills void space only up to the specified box limits.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/fill-seed.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/fill-seed.png" alt="The pump example distinguishes the seed point from the bounding box used to restrict filling." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/fill-seed.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/fill-seed.png" alt="The pump example distinguishes the seed point from the bounding box used to restrict filling." loading="lazy"></a>
   <figcaption><strong>Figure 20:</strong> The pump example distinguishes the seed point from the bounding box used to restrict filling.</figcaption>
 </figure>
 
@@ -5470,7 +5403,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="nt">&lt;redrawnear</span><span class="w"> </span><span class="na">targettp=</span><span class="s">&quot;void&quot;</span><span class="w"> </span><span class="na">bordertp=</span><span class="s">&quot;bound&quot;</span><span class="w"> </span><span class="na">bordermk=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/redraw-neighbours.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/redraw-neighbours.png" alt="Redraw examples change different node populations according to their neighbouring markers; squares represent lattice nodes, not particle shapes." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/redraw-neighbours.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/redraw-neighbours.png" alt="Redraw examples change different node populations according to their neighbouring markers; squares represent lattice nodes, not particle shapes." loading="lazy"></a>
   <figcaption><strong>Figure 21:</strong> Redraw examples change different node populations according to their neighbouring markers; squares represent lattice nodes, not particle shapes.</figcaption>
 </figure>
 
@@ -5496,7 +5429,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="nt">&lt;setfrdrawmode</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <figure>
-  <a href="../assets/images/xml_guide/general/free-drawing.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/free-drawing.png" alt="Normal mode (left) and FrDraw mode (right) for a sphere (top) and cylinder (bottom)." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/free-drawing.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/free-drawing.png" alt="Normal mode (left) and FrDraw mode (right) for a sphere (top) and cylinder (bottom)." loading="lazy"></a>
   <figcaption><strong>Figure 22:</strong> Normal mode (left) and FrDraw mode (right) for a sphere (top) and cylinder (bottom).</figcaption>
 </figure>
 
@@ -5526,7 +5459,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="nt">&lt;/mainlist&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/redraw-hole-closing.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/redraw-hole-closing.png" alt="Boundary gaps are closed by redrawing neighbouring void nodes before the fluid volume is filled." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/redraw-hole-closing.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/redraw-hole-closing.png" alt="Boundary gaps are closed by redrawing neighbouring void nodes before the fluid volume is filled." loading="lazy"></a>
   <figcaption><strong>Figure 23:</strong> Boundary gaps are closed by redrawing neighbouring void nodes before the fluid volume is filled.</figcaption>
 </figure>
 
@@ -5599,7 +5532,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span></code></pre></div>
 <p>The left profile is linear, from 1 m/s at Z=0 to 5 m/s at Z=1. The right is parabolic, passing through 1 m/s at Z=0, 3.1 m/s at Z=0.3 and 5 m/s at Z=1. These are the same inputs as the <code>velocity2</code> and <code>velocity3</code> fragments above.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/initial-profiles.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/initial-profiles.png" alt="Linear and parabolic initial-velocity profiles retain their different intermediate values and height coordinates." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/initial-profiles.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/initial-profiles.png" alt="Linear and parabolic initial-velocity profiles retain their different intermediate values and height coordinates." loading="lazy"></a>
   <figcaption><strong>Figure 25:</strong> Linear and parabolic initial-velocity profiles retain their different intermediate values and height coordinates.</figcaption>
 </figure>
 
@@ -5621,7 +5554,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span></code></pre></div>
 <p>The upper particle row is the new, finer initial configuration; the lower row is the previous simulation’s final free-surface profile at coarser resolution. The existing filtering explanation describes the reconstruction of this surface; its panel labels have been moved here from the image.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/initial-surface-transfer.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/initial-surface-transfer.png" alt="The earlier free-surface profile is transferred to a new finer particle arrangement. The two resolutions and times represent different initialisation stages." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/initial-surface-transfer.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/initial-surface-transfer.png" alt="The earlier free-surface profile is transferred to a new finer particle arrangement. The two resolutions and times represent different initialisation stages." loading="lazy"></a>
   <figcaption><strong>Figure 26:</strong> The earlier free-surface profile is transferred to a new finer particle arrangement. The two resolutions and times represent different initialisation stages.</figcaption>
 </figure>
 
@@ -5639,7 +5572,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="nt">&lt;/initials&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/initial-field-transfer.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/initial-field-transfer.png" alt="Velocity fields from the previous simulation at t=10 s (left) and the new initial state at t=0 s (right), with the shared velocity colour scale." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/initial-field-transfer.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/initial-field-transfer.png" alt="Velocity fields from the previous simulation at t=10 s (left) and the new initial state at t=0 s (right), with the shared velocity colour scale." loading="lazy"></a>
   <figcaption><strong>Figure 27:</strong> Velocity fields from the previous simulation at t=10 s (left) and the new initial state at t=0 s (right), with the shared velocity colour scale.</figcaption>
 </figure>
 
@@ -5659,7 +5592,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="nt">&lt;/initials&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/initial-rotation.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/initial-rotation.png" alt="The original aligned box and the box rotated after particle generation. The particle-size indicator is retained." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/initial-rotation.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/initial-rotation.png" alt="The original aligned box and the box rotated after particle generation. The particle-size indicator is retained." loading="lazy"></a>
   <figcaption><strong>Figure 28:</strong> The original aligned box and the box rotated after particle generation. The particle-size indicator is retained.</figcaption>
 </figure>
 
@@ -5685,7 +5618,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-38-19"><a id="__codelineno-38-19" name="__codelineno-38-19" href="#__codelineno-38-19"></a><span class="nt">&lt;matrixreset/&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/initial-rotation-before.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/initial-rotation-before.png" alt="The source compares an aligned box with geometry rotated before particle generation, showing the coarse-lattice stair-step effect." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/initial-rotation-before.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/initial-rotation-before.png" alt="The source compares an aligned box with geometry rotated before particle generation, showing the coarse-lattice stair-step effect." loading="lazy"></a>
   <figcaption><strong>Figure 29:</strong> The source compares an aligned box with geometry rotated before particle generation, showing the coarse-lattice stair-step effect.</figcaption>
 </figure>
 
@@ -5754,7 +5687,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="nt">&lt;/objreal&gt;</span>
 </span></code></pre></div>
 <figure>
-  <a href="../assets/images/xml_guide/general/hierarchical-motion.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/hierarchical-motion.png" alt="Parent and child objects follow combined trajectories. The displayed times belong to the source hierarchical-motion example." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/hierarchical-motion.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/hierarchical-motion.png" alt="Parent and child objects follow combined trajectories. The displayed times belong to the source hierarchical-motion example." loading="lazy"></a>
   <figcaption><strong>Figure 30:</strong> Parent and child objects follow combined trajectories. The displayed times belong to the source hierarchical-motion example.</figcaption>
 </figure>
 
@@ -5821,7 +5754,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span></code></pre></div>
 <p>The six source snapshots illustrate <code>Motion06</code>, combining accelerated rotation (<code>mvrotace</code>) and accelerated circular motion (<code>mvcirace</code>). Their original times are 0, 5, 10, 15, 20 and 25 s.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/rotation-circular-motion.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/rotation-circular-motion.png" alt="The source illustrates how prescribed rotation and circular motion combine in an articulated arrangement; it is not a dynamic joint calculation." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/rotation-circular-motion.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/rotation-circular-motion.png" alt="The source illustrates how prescribed rotation and circular motion combine in an articulated arrangement; it is not a dynamic joint calculation." loading="lazy"></a>
   <figcaption><strong>Figure 31:</strong> The source illustrates how prescribed rotation and circular motion combine in an articulated arrangement; it is not a dynamic joint calculation.</figcaption>
 </figure>
 
@@ -5966,14 +5899,14 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-46-27"><a id="__codelineno-46-27" name="__codelineno-46-27" href="#__codelineno-46-27"></a><span class="w">        </span><span class="nt">&lt;/flap_spectrum&gt;</span>
 </span></code></pre></div>
 <figure>
-  <a href="../assets/images/xml_guide/general/spectrum-discretisations.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/spectrum-discretisations.png" alt="Regular, random, stretched and cosine-stretched spectral discretisations in the source illustration." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/spectrum-discretisations.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/spectrum-discretisations.png" alt="Regular, random, stretched and cosine-stretched spectral discretisations in the source illustration." loading="lazy"></a>
   <figcaption><strong>Figure 33:</strong> Regular, random, stretched and cosine-stretched spectral discretisations in the source illustration.</figcaption>
 </figure>
 
 <p>A flap needs its rotation axis, specified by <code>flapaxis0</code> and <code>flapaxis1</code>, and the hinge-position configuration <code>variabledraft</code>. Define and inspect the actual axis coordinates and water depth. A flap and a piston have different kinematics; do not reuse the piston-spectrum element for a flap merely because an older illustration carries that tag.</p>
 <p>The source explanation says that <code>variabledraft</code> is the distance of the hinge above or below the bottom, with an above-bottom value below zero and a below-bottom value above zero; its diagram illustrates a hinge below the bottom. The current reference’s <code>variabledraft</code> comments above state the opposite sign convention (above &gt;0, below &lt;0). This source/reference discrepancy remains unresolved. The figure’s original sign annotation is retained; neither the examples nor the hinge geometry have been changed.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/flap-hinge.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/flap-hinge.png" alt="Flap geometry, water depth, hinge and angle in the source coordinate system. The axis coordinates must agree with the actual generated paddle." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/flap-hinge.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/flap-hinge.png" alt="Flap geometry, water depth, hinge and angle in the source coordinate system. The axis coordinates must agree with the actual generated paddle." loading="lazy"></a>
   <figcaption><strong>Figure 35:</strong> Flap geometry, water depth, hinge and angle in the source coordinate system. The axis coordinates must agree with the actual generated paddle.</figcaption>
 </figure>
 
@@ -6053,7 +5986,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-49-21"><a id="__codelineno-49-21" name="__codelineno-49-21" href="#__codelineno-49-21"></a><span class="w">        </span><span class="nt">&lt;/piston_solitary&gt;</span>
 </span></code></pre></div>
 <figure>
-  <a href="../assets/images/xml_guide/general/multiple-solitary-piston-motion.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/multiple-solitary-piston-motion.png" alt="Prescribed piston displacement for multiple solitary waves." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/multiple-solitary-piston-motion.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/multiple-solitary-piston-motion.png" alt="Prescribed piston displacement for multiple solitary waves." loading="lazy"></a>
   <figcaption><strong>Figure 37:</strong> Prescribed piston displacement for multiple solitary waves.</figcaption>
 </figure>
 
@@ -6171,7 +6104,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-52-27"><a id="__codelineno-52-27" name="__codelineno-52-27" href="#__codelineno-52-27"></a><span class="nt">&lt;/special&gt;</span>
 </span></code></pre></div></p>
 <figure>
-  <a href="../assets/images/xml_guide/general/damping-profiles.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/damping-profiles.png" alt="Source one-zone and two-zone damping profiles. The limits, extension and velocity-factor colour scale describe the configured regions." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/damping-profiles.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/damping-profiles.png" alt="Source one-zone and two-zone damping profiles. The limits, extension and velocity-factor colour scale describe the configured regions." loading="lazy"></a>
   <figcaption><strong>Figure 39:</strong> Source one-zone and two-zone damping profiles. The limits, extension and velocity-factor colour scale describe the configured regions.</figcaption>
 </figure>
 
@@ -6215,7 +6148,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </span><span id="__span-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a><span class="nt">&lt;/damping&gt;</span>
 </span></code></pre></div>
 <figure>
-  <a href="../assets/images/xml_guide/general/oblique-bounded-damping.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/oblique-bounded-damping.png" alt="Damping along an arbitrary direction and damping restricted to a defined footprint; axes and velocity-factor legends are retained." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/oblique-bounded-damping.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/oblique-bounded-damping.png" alt="Damping along an arbitrary direction and damping restricted to a defined footprint; axes and velocity-factor legends are retained." loading="lazy"></a>
   <figcaption><strong>Figure 40:</strong> Damping along an arbitrary direction and damping restricted to a defined footprint; axes and velocity-factor legends are retained.</figcaption>
 </figure>
 
@@ -7023,7 +6956,7 @@ m=\rho_0 dp^3\quad\text{(3D)},\qquad m=\rho_0 dp^2\quad\text{(2D representation)
 </table>
 <p>The source compares an X-periodic increment in Z of 0.3 m with a Y-periodic increment in Z of zero. These define different periodic geometries. Combined <code>XYPeriodic</code>, <code>XZPeriodic</code> and <code>YZPeriodic</code> use Y/N in the current syntax. A legacy unprefixed combined-periodicity key was activated by its presence, including a stored zero; preserving that old configuration requires Y. An absent or disabled legacy periodic option must not be activated by filling in all template entries.</p>
 <figure>
-  <a href="../assets/images/xml_guide/general/periodic-translation.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../assets/images/xml_guide/general/periodic-translation.png" alt="Vertical translation of 0.3 m across X-periodic boundaries and zero translation across Y-periodic boundaries." loading="lazy"></a>
+  <a href="../../assets/images/xml_guide/general/periodic-translation.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../assets/images/xml_guide/general/periodic-translation.png" alt="Vertical translation of 0.3 m across X-periodic boundaries and zero translation across Y-periodic boundaries." loading="lazy"></a>
   <figcaption><strong>Figure 41:</strong> Vertical translation of 0.3 m across X-periodic boundaries and zero translation across Y-periodic boundaries.</figcaption>
 </figure>
 
