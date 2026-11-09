@@ -1,0 +1,4636 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/xml_guides/mdbc/">
+      
+      
+        <link rel="prev" href="../general/">
+      
+      
+        <link rel="next" href="../inletoutlet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/dualsphysics-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>mDBC - DualSPHysics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modified-dynamic-boundary-conditions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <strong>Draft for internal review.</strong>
+  Some pages, figures and videos are still in progress.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../home/" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DualSPHysics Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              mDBC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../home/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../theory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Theory
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../couplings/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Couplings
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../gallery/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Gallery
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting_started/getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples_catalogue/catalogue/main-catalogue/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Examples Catalogue
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../benchmarks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Benchmarks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XML Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faq/faq/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../licenses/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Licenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../contributing/setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../home/" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    DualSPHysics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../home/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../couplings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couplings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gallery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Your First Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DualSPHysics Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/cpu-gpu-multigpu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU, GPU and Multi-GPU Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/case_definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Definition (XML)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/designsphysics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DesignSPHysics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples Catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples Catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/main-catalogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mdbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/inletmesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InletMesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/wavecoupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wavecoupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/divclean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divergence cleaning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mphase_liquidgas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase LiquidGas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase NNewtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../benchmarks/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_2d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 2D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/sloshing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sloshing Tank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/wave_generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/floating_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floating Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XML Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boundary-treatment-and-xml-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary treatment and XML organisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boundary-normals-and-particle-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary normals and particle layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boundary normals and particle layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#surface-offset-orientation-and-ghost-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface offset, orientation and ghost nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-normal-generation-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a normal-generation method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-normals-from-actual-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating normals from actual geometry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating normals from actual geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructing-the-physical-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructing the physical surface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-surface-and-controlling-the-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the surface and controlling the search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-normals-analytically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining normals analytically
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining normals analytically">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planar-walls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planar walls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cylindrical-and-spherical-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cylindrical and spherical surfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-vectors-and-local-selections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed vectors and local selections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density-reconstruction-and-slip-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density reconstruction and slip modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density reconstruction and slip modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ghost-node-density-and-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ghost-node density and pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Velocity conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activating-uniform-mdbc-in-v6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activating uniform mDBC in v6
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-no-penetration-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional no-penetration correction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-configurations-in-package-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing configurations in package cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing configurations in package cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sloshing-with-moving-walls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sloshing with moving walls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-flow-and-wall-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel flow and wall behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-boundary-conditions-by-boundary-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed boundary conditions by boundary identifier
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialising-from-a-previous-particle-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialising from a previous particle field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-normal-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspecting normal vectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-and-diagnostic-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements and diagnostic checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xml-reference-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XML reference coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase non-Newtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/new_floating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Add a Floating Object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Resolution/Particle Size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_viscosity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Viscosity Formulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_time_duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Simulation Time Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_still_water_level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Still-Water Level (Pending)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/simulation_domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand the Simulation Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/mk_labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand MK Labels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_pressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_free_surface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Free-Surface Elevation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_force/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Force
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/visualise_paraview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise Results in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/visualise_mdbc_normals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise mDBC Normals in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/floating_body_motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Compute the Motion of a Floating Body
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../licenses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licenses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Licenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/dualsphysics-lgpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (LGPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/dualsphysics-bsd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (BSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/tinyxml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TinyXML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/random-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random number generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/project-chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDyn+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boundary-treatment-and-xml-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary treatment and XML organisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boundary-normals-and-particle-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary normals and particle layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boundary normals and particle layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#surface-offset-orientation-and-ghost-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface offset, orientation and ghost nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-normal-generation-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a normal-generation method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-normals-from-actual-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating normals from actual geometry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating normals from actual geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructing-the-physical-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructing the physical surface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-surface-and-controlling-the-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the surface and controlling the search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-normals-analytically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining normals analytically
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining normals analytically">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planar-walls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planar walls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cylindrical-and-spherical-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cylindrical and spherical surfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-vectors-and-local-selections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed vectors and local selections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density-reconstruction-and-slip-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density reconstruction and slip modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density reconstruction and slip modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ghost-node-density-and-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ghost-node density and pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Velocity conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activating-uniform-mdbc-in-v6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activating uniform mDBC in v6
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-no-penetration-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional no-penetration correction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-configurations-in-package-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing configurations in package cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing configurations in package cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sloshing-with-moving-walls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sloshing with moving walls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-flow-and-wall-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel flow and wall behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-boundary-conditions-by-boundary-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed boundary conditions by boundary identifier
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialising-from-a-previous-particle-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialising from a previous particle field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-normal-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspecting normal vectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-and-diagnostic-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements and diagnostic checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xml-reference-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XML reference coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="modified-dynamic-boundary-conditions">Modified Dynamic Boundary Conditions<a class="headerlink" href="#modified-dynamic-boundary-conditions" title="Link to this heading">&para;</a></h1>
+<p style="margin-top: -2.5em; font-size: 0.95em; color: gray;">
+  Under review by Aaron English and José Domínguez
+</p>
+
+<p><em>Boundary geometry, normal vectors, slip modes and no-penetration configuration in DualSPHysics v6.</em></p>
+<h2 id="boundary-treatment-and-xml-organisation">Boundary treatment and XML organisation<a class="headerlink" href="#boundary-treatment-and-xml-organisation" title="Link to this heading">&para;</a></h2>
+<p>The modified Dynamic Boundary Condition (mDBC) uses information reconstructed inside the fluid to prescribe the state of boundary particles. A normal vector connects each boundary particle to the physical boundary surface; reflection across that surface defines a ghost node inside the fluid. Fluid neighbours around the ghost node provide the data used in the reconstruction. This differs from DBC, in which the boundary-particle density evolves through the continuity equation and the associated pressure supplies the repulsive interaction. The mDBC formulation addresses the non-physical boundary density and pressure, and the fluid–wall separation associated with DBC. These are motivations for the method, rather than an accuracy guarantee for an arbitrary case.</p>
+<p>DualSPHysics v6 supports uniform DBC, uniform mDBC and boundary conditions selected separately by boundary identifier. The geometric description, normal generation and solver selection occupy different XML sections:</p>
+<table>
+<thead>
+<tr>
+<th>XML location</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>case/casedef/geometry</code></td>
+<td>Physical surface representation, boundary layers and fluid particles</td>
+</tr>
+<tr>
+<td><code>case/casedef/normals</code></td>
+<td>Generation or assignment of boundary normal vectors</td>
+</tr>
+<tr>
+<td><code>case/casedef/initials</code></td>
+<td>Initial fields, including interpolation from previous particle data</td>
+</tr>
+<tr>
+<td><code>case/execution/parameters</code></td>
+<td><code>Boundary</code>, <code>SlipMode</code>, <code>NoPenetration</code> and numerical settings</td>
+</tr>
+<tr>
+<td><code>case/execution/special/mixboundary</code></td>
+<td>Boundary treatment for individual <code>mkbound</code> values when <code>Boundary=MIX</code></td>
+</tr>
+</tbody>
+</table>
+<p>The excerpts below are independent selections from the stated case or format reference. Retain their enclosing case, geometry, input files and numerical settings. Combining excerpts from different cases does not produce a complete simulation.</p>
+<figure>
+<p><img alt="Ghost-node reflection at a flat wall and a corner. Crosses locate ghost nodes; circles show kernel support, and pink particles identify fluid neighbours used in the reconstruction." src="../../assets/images/xml_guide/mdbc/ghost-neighbours.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 1:</strong> Ghost-node reflection at a flat wall and a corner. Crosses locate ghost nodes; circles show kernel support, and pink particles identify fluid neighbours used in the reconstruction.</figcaption>
+</figure>
+<h2 id="boundary-normals-and-particle-layers">Boundary normals and particle layers<a class="headerlink" href="#boundary-normals-and-particle-layers" title="Link to this heading">&para;</a></h2>
+<h3 id="surface-offset-orientation-and-ghost-nodes">Surface offset, orientation and ghost nodes<a class="headerlink" href="#surface-offset-orientation-and-ghost-nodes" title="Link to this heading">&para;</a></h3>
+<p>The stored geometric normal is a displacement from a boundary particle to the actual boundary surface. Its length therefore carries geometric information; it is not merely a unit direction. Normals point towards the fluid. For a solid obstacle this means outwards from the solid; for a container it means into the container. At corners the vector connects the boundary particle to the represented surface intersection, so replacing all vectors by unit vectors destroys the required distances.</p>
+<p>Let <span class="arithmatex">\(\mathbf{x}_b\)</span> be a boundary-particle position and <span class="arithmatex">\(\mathbf{N}_s\)</span> its displacement to the surface. Reflection gives</p>
+<div class="arithmatex">\[
+\begin{gathered}
+\mathbf{x}_s=\mathbf{x}_b+\mathbf{N}_s,\\
+\mathbf{x}_g=\mathbf{x}_b+2\mathbf{N}_s.
+\end{gathered}
+\]</div>
+<p>The nearest boundary-particle layer is placed half an initial particle spacing, <span class="arithmatex">\(d_p/2\)</span>, behind the physical surface. Additional layers lie farther inside the solid. The required number of layers depends on the kernel support and smoothing length <span class="arithmatex">\(h\)</span>: the teaching configuration uses three or more layers, with three sufficient when <span class="arithmatex">\(2h\leq3d_p\)</span>. This condition must be checked for the chosen <span class="arithmatex">\(h/d_p\)</span>; three layers are not a universal prescription. The sloshing example below uses <span class="arithmatex">\(h=2d_p\)</span> and four layers.</p>
+<figure>
+<p><img alt="Boundary particles lie behind the physical surface, with the nearest layer offset by half the particle spacing. Displacement vectors terminate on the surface and point towards the fluid." src="../../assets/images/xml_guide/mdbc/normal-offset.png" style="max-width:100%;height:auto;" width="420" />
+  </p>
+<figcaption><strong>Figure 2:</strong> Boundary particles lie behind the physical surface, with the nearest layer offset by half the particle spacing. Displacement vectors terminate on the surface and point towards the fluid.</figcaption>
+</figure>
+<h3 id="choosing-a-normal-generation-method">Choosing a normal-generation method<a class="headerlink" href="#choosing-a-normal-generation-method" title="Link to this heading">&para;</a></h3>
+<p>Two complementary approaches are available. Geometry-based generation computes the vectors from a VTK representation of the actual boundary surface. Analytical definitions instead use planes, cylinders or spheres and select particles by <code>mkbound</code>. They can be combined: an initial geometry reconstruction may be followed by local analytical definitions. Review the <code>clear</code> setting before applying a later definition over existing normal data.</p>
+<p>Use a separate <code>mkbound</code> for surfaces that require different analytical definitions or different boundary conditions. The boundary identifier is not the complete particle <code>mk</code>: the latter also depends on the case's marker configuration. The cylinder diagram retains its own marker assignment and must not be used to infer marker numbers in another case.</p>
+<h2 id="generating-normals-from-actual-geometry">Generating normals from actual geometry<a class="headerlink" href="#generating-normals-from-actual-geometry" title="Link to this heading">&para;</a></h2>
+<h3 id="constructing-the-physical-surface">Constructing the physical surface<a class="headerlink" href="#constructing-the-physical-surface" title="Link to this heading">&para;</a></h3>
+<p>The actual surface used for normals must be distinguished from the boundary-particle drawing. In the tank-and-obstacle construction, the container surface is drawn half a spacing inside the first container-particle layer, whereas the solid-obstacle surface extends half a spacing beyond its outermost particles. Container surface normals are inverted to face the fluid; normal inversion is disabled again before drawing solid obstacles. These operations change the geometry used for normals, rather than adding fluid particles.</p>
+<p>The illustrative tank has width <span class="arithmatex">\(0.5\,\mathrm{m}\)</span>, height <span class="arithmatex">\(0.3\,\mathrm{m}\)</span>, obstacle width <span class="arithmatex">\(0.2\,\mathrm{m}\)</span>, obstacle height <span class="arithmatex">\(0.06\,\mathrm{m}\)</span>, and a water-level setting of 40%. Variables keep repeated dimensions consistent between the surface and particle drawings. These dimensions describe the illustration; they are not the dimensions of the separate sloshing XML excerpt below.</p>
+<figure>
+<p><img alt="Tank and internal obstacle with their actual surface outlines, boundary layers and fluid particles. The annotated dimensions describe this illustrative geometry." src="../../assets/images/xml_guide/mdbc/tank-obstacle.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 3:</strong> Tank and internal obstacle with their actual surface outlines, boundary layers and fluid particles. The annotated dimensions describe this illustrative geometry.</figcaption>
+</figure>
+<p>The following named drawing list is copied from the sloshing case. <code>drawpoints="0"</code> and <code>drawshapes="1"</code> generate the surface representation; <code>setshapemode</code> selects actual boundary shapes, and <code>shapeout file="hdp"</code> writes the geometry used by the later normal definition. <code>resetdraw</code> restores the drawing configuration afterwards. The list must be called from the case’s <code>mainlist</code>; defining it alone does not execute it.</p>
+<p><strong>XML excerpt — surface-geometry.</strong> XML location: <code>case/casedef/geometry/commands</code>. Source: <code>examples/mdbc/03_Sloshing/CaseSloshingLR_NSNP_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;GeometryForNormals&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;setactive</span><span class="w"> </span><span class="na">drawpoints=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">drawshapes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;setshapemode&gt;</span>actual<span class="w"> </span>|<span class="w"> </span>bound<span class="nt">&lt;/setshapemode&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;setnormalinvert</span><span class="w"> </span><span class="na">invert=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&lt;boxfill&gt;</span>all<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-0.45&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-0.1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.90&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.512&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;-0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;/drawbox&gt;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;hdp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">&lt;resetdraw</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nt">&lt;/list&gt;</span>
+</span></code></pre></div>
+<p><strong>XML excerpt — surface-list-call.</strong> XML location: <code>case/casedef/geometry/commands/mainlist</code>. Source: <code>examples/mdbc/03_Sloshing/CaseSloshingLR_NSNP_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;runlist</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;GeometryForNormals&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>The particle drawing is a separate step. Here the tank has four layers at <code>0,1,2,3</code> times the initial spacing. The negative half-spacing used by the surface drawing is deliberately absent from this particle drawing. In the tank-and-obstacle illustration, a solid obstacle can instead be filled throughout; the layer specification is then unnecessary for that obstacle.</p>
+<p><strong>XML excerpt — boundary-particles.</strong> XML location: <code>case/casedef/geometry/commands/mainlist</code>. Source: <code>examples/mdbc/03_Sloshing/CaseSloshingLR_NSNP_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>all<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-0.45&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-0.1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.90&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.512&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;0,1,2,3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">&lt;/drawbox&gt;</span>
+</span></code></pre></div>
+<h3 id="reading-the-surface-and-controlling-the-search">Reading the surface and controlling the search<a class="headerlink" href="#reading-the-surface-and-controlling-the-search" title="Link to this heading">&para;</a></h3>
+<p>Place <code>norgeometry</code> inside <code>casedef/normals</code>. The following complete <code>normals</code> element comes from the mixed dam-break case and includes the optional diagnostic controls. The geometry file must already exist when its normals are generated. <code>[CaseName]_hdp_Actual.vtk</code> follows the surface-export naming convention.</p>
+<p><strong>XML excerpt — geometry-normals.</strong> XML location: <code>case/casedef</code>. Source: <code>examples/mdbc/11_MixBC/CaseDamBreak3D_Mix_NS_FR_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;normals</span><span class="w"> </span><span class="na">active=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;norgeometry</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Define initial configuration of normals before applying other configurations&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="nt">&lt;geometryfile</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;[CaseName]_hdp_Actual.vtk&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;File with boundary geometry (VTK format)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="nt">&lt;distanceh</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum orthogonal distance (H*value) to compute normals data (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">&lt;maxsizeh</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum allowed normal size (H*value) (disabled=0, default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">&lt;svshapes</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Saves VTK with geometry in triangles and quads with its normals for debug (default=false)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&lt;/norgeometry&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">&lt;/normals&gt;</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Child of <code>norgeometry</code></th>
+<th>Meaning</th>
+<th>Reference convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geometryfile/@file</code></td>
+<td>VTK boundary geometry</td>
+<td><code>NONE</code> selects no external geometry file</td>
+</tr>
+<tr>
+<td><code>distanceh/@v</code></td>
+<td>Maximum orthogonal search distance</td>
+<td>Distance is the value multiplied by <span class="arithmatex">\(h\)</span>; documented default 2</td>
+</tr>
+<tr>
+<td><code>maxsizeh/@v</code></td>
+<td>Maximum allowed normal length</td>
+<td>Value multiplied by <span class="arithmatex">\(h\)</span>; 0 disables this limit</td>
+</tr>
+<tr>
+<td><code>svshapes/@v</code></td>
+<td>Save triangles/quads with surface normals for inspection</td>
+<td>Boolean; reference default <code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>The orthogonal search distance and the maximum resulting vector length are separate controls, especially near corners. Their numerical values are not interchangeable. The example's <code>maxsizeh=2.1</code> is an explicit choice, not the default. Geometry triangles and quadrilaterals must have consistent fluid-facing orientation.</p>
+<figure>
+<p><img alt="Surface triangles and quadrilaterals of the tank and obstacle, with orthogonal vectors showing the orientation used for normal generation." src="../../assets/images/xml_guide/mdbc/geometry-shapes.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 4:</strong> Surface triangles and quadrilaterals of the tank and obstacle, with orthogonal vectors showing the orientation used for normal generation.</figcaption>
+</figure>
+<figure>
+<p><img alt="Boundary-particle normal vectors around the tank and internal obstacle. Corner vectors and vectors from deeper layers have different lengths." src="../../assets/images/xml_guide/mdbc/tank-normals.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 5:</strong> Boundary-particle normal vectors around the tank and internal obstacle. Corner vectors and vectors from deeper layers have different lengths.</figcaption>
+</figure>
+<h2 id="defining-normals-analytically">Defining normals analytically<a class="headerlink" href="#defining-normals-analytically" title="Link to this heading">&para;</a></h2>
+<p>Analytical definitions belong under <code>case/casedef/normals</code>. <code>mkbound</code> accepts a single boundary identifier, a comma-separated list or ranges. Select only the intended particle sets: reusing one identifier for unrelated surfaces makes a single plane or cylinder definition ambiguous.</p>
+<h3 id="planar-walls">Planar walls<a class="headerlink" href="#planar-walls" title="Link to this heading">&para;</a></h3>
+<p>For a plane, specify a surface point and a normal direction. The direction is common to the wall, but each particle's displacement length depends on its distance to that plane. The reference also supports <code>point auto="true"</code>, which locates the plane from the selected particles and the direction. <code>limitdist/@vdp</code> controls the minimum particle-to-plane distance in multiples of <span class="arithmatex">\(d_p\)</span>; its reference default is 0.5.</p>
+<p>The Poiseuille case uses two automatically located walls. Its opposing directions point from the upper and lower boundaries into the channel. These definitions preserve the case's <code>maxdisth=2.0</code> search limit.</p>
+<p><strong>XML excerpt — channel-planes.</strong> XML location: <code>case/casedef/normals</code>. Source: <code>examples/mdbc/02_Poiseuille/CasePoiseuille_NS_LR_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;norplane</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Point is calculated automatically accoding to normal configuration&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;normal</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;maxdisth</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance to boundary limit. It uses H*maxdisth (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">&lt;/norplane&gt;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">&lt;norplane</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Point is calculated automatically accoding to normal configuration&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">&lt;normal</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nt">&lt;maxdisth</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance to boundary limit. It uses H*maxdisth (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nt">&lt;/norplane&gt;</span>
+</span></code></pre></div>
+<p>The following reference alternatives illustrate an explicit plane, a positional filter, and an automatically located plane with an explicit half-spacing limit. Their marker numbers and coordinates are illustrative reference values; they are not additions to the channel case.</p>
+<p><strong>XML excerpt — plane-reference.</strong> XML location: <code>case/casedef/normals</code>. Source: <code>doc/xml_format/GenCase_CaseTemplate.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;norplane</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;onlypos&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&lt;/onlypos&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&lt;normal</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&lt;maxdisth</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance to boundary limit. It uses H*maxdisth (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">&lt;clear</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Clears previous normal data (default=true)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nt">&lt;/norplane&gt;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nt">&lt;norplane</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Point is calculated automatically accoding to normal configuration&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">&lt;limitdist</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimun distance (Dp*vdp) between particles and boundary limit to calculate the point (default=0.5)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nt">&lt;normal</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nt">&lt;maxdisth</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance to boundary limit. It uses H*maxdisth (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="nt">&lt;clear</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Clears previous normal data (default=true)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="nt">&lt;/norplane&gt;</span>
+</span></code></pre></div>
+<h3 id="cylindrical-and-spherical-surfaces">Cylindrical and spherical surfaces<a class="headerlink" href="#cylindrical-and-spherical-surfaces" title="Link to this heading">&para;</a></h3>
+<p>A cylinder is defined by two points on its axis and its radius. <code>inside=true</code> selects boundary particles inside a solid cylinder, producing fluid-facing vectors towards its exterior. <code>inside=false</code> is the container-cylinder alternative. The reference's <code>limit1</code> and <code>limit2</code> control the end limits for inside mode. A sphere uses its centre and radius, with the same solid/container distinction.</p>
+<p>The following are reference options with their original coordinates, marker numbers and limits. In both definitions <code>maxdisth</code> is measured in multiples of <span class="arithmatex">\(h\)</span>; it is not a dimensional distance in metres.</p>
+<p><strong>XML excerpt — cylinder-reference.</strong> XML location: <code>case/casedef/normals</code>. Source: <code>doc/xml_format/GenCase_CaseTemplate.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;norcylinder</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;8-9&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&lt;center1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;center2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&lt;radius</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&lt;inside</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary particles inside the cylinder&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&lt;limit1</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Active normals to limit 1 for inside mode (default=true)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&lt;limit2</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Active normals to limit 2 for inside mode (default=true)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">&lt;maxdisth</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance to boundary limit. It uses H*maxdisth (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">&lt;clear</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Clears previous normal data (default=true)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nt">&lt;/norcylinder&gt;</span>
+</span></code></pre></div>
+<p><strong>XML excerpt — sphere-reference.</strong> XML location: <code>case/casedef/normals</code>. Source: <code>doc/xml_format/GenCase_CaseTemplate.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;norsphere</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&lt;center</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&lt;radius</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&lt;inside</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary particles inside the sphere&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">&lt;maxdisth</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance to boundary limit. It uses H*maxdisth (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">&lt;clear</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Clears previous normal data (default=true)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nt">&lt;/norsphere&gt;</span>
+</span></code></pre></div>
+<figure>
+<p><img alt="Fluid and boundary-particle sets for a circular cylinder between two walls. Separate boundary markers allow each surface to receive its own analytical normal definition." src="../../assets/images/xml_guide/mdbc/cylinder-particles.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 6:</strong> Fluid and boundary-particle sets for a circular cylinder between two walls. Separate boundary markers allow each surface to receive its own analytical normal definition.</figcaption>
+</figure>
+<figure>
+<p><img alt="Radial normal vectors on the solid cylinder and opposing normal directions on the two channel walls." src="../../assets/images/xml_guide/mdbc/cylinder-normals.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 7:</strong> Radial normal vectors on the solid cylinder and opposing normal directions on the two channel walls.</figcaption>
+</figure>
+<h3 id="fixed-vectors-and-local-selections">Fixed vectors and local selections<a class="headerlink" href="#fixed-vectors-and-local-selections" title="Link to this heading">&para;</a></h3>
+<p><code>norset</code> assigns the same displacement vector, including its length, to every selected particle. It does not calculate a different distance for each layer. Use it only where that common displacement is geometrically appropriate. <code>onlypos</code> restricts the selection by coordinate limits; omitted coordinate bounds remain unspecified by the excerpt.</p>
+<p><strong>XML excerpt — fixed-normal-reference.</strong> XML location: <code>case/casedef/normals</code>. Source: <code>doc/xml_format/GenCase_CaseTemplate.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;norset</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;0,2-4&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&lt;onlypos&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;22&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;33&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&lt;/onlypos&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">&lt;normal</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="nt">&lt;/norset&gt;</span>
+</span></code></pre></div>
+<p>The reference additionally provides <code>norparts</code> for selected boundary particles. It exposes a <code>maxdisth</code> search limit; the short option definition does not establish that particle-based reconstruction is a replacement for an accurately represented surface at a complex corner.</p>
+<p><strong>XML excerpt — particle-normal-reference.</strong> XML location: <code>case/casedef/normals</code>. Source: <code>doc/xml_format/GenCase_CaseTemplate.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;norparts</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;5,7-9&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&lt;maxdisth</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance to boundary limit. It uses H*maxdisth (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">&lt;/norparts&gt;</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Normal definition</th>
+<th>Geometric information supplied</th>
+<th>Important distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>norgeometry</code></td>
+<td>Actual boundary surface in VTK</td>
+<td>Surface orientation and offset must be correct</td>
+</tr>
+<tr>
+<td><code>norplane</code></td>
+<td>Point and direction, or automatic plane location</td>
+<td>Displacement length varies with particle position</td>
+</tr>
+<tr>
+<td><code>norcylinder</code></td>
+<td>Axis points, radius and inside/outside selection</td>
+<td>End-limit settings are separate controls</td>
+</tr>
+<tr>
+<td><code>norsphere</code></td>
+<td>Centre, radius and inside/outside selection</td>
+<td>Select the intended spherical particle set</td>
+</tr>
+<tr>
+<td><code>norset</code></td>
+<td>One complete displacement vector</td>
+<td>Same direction and length for all selected particles</td>
+</tr>
+<tr>
+<td><code>norparts</code></td>
+<td>Selected particles and search limit</td>
+<td>Inspect the resulting vectors before use</td>
+</tr>
+</tbody>
+</table>
+<h2 id="density-reconstruction-and-slip-modes">Density reconstruction and slip modes<a class="headerlink" href="#density-reconstruction-and-slip-modes" title="Link to this heading">&para;</a></h2>
+<h3 id="ghost-node-density-and-pressure">Ghost-node density and pressure<a class="headerlink" href="#ghost-node-density-and-pressure" title="Link to this heading">&para;</a></h3>
+<p>The original mDBC formulation, selected by <code>M22</code>, reconstructs the ghost-node density and its gradient using the Liu and Liu correction matrix, with a normalised Shepard fallback when the matrix cannot be inverted. Fluid particles interact with the boundary particles in their kernel support. In three dimensions, its local system can be written as</p>
+<div class="arithmatex">\[
+\mathbf A_g\begin{bmatrix}\rho_g&amp;\partial_x\rho_g&amp;\partial_y\rho_g&amp;\partial_z\rho_g\end{bmatrix}^{T}=\mathbf b_g.
+\]</div>
+<p>For an explicit definition of that matrix, let <span class="arithmatex">\(q_{j0}=1\)</span>, <span class="arithmatex">\(q_{j1}=x_j-x_g\)</span>, <span class="arithmatex">\(q_{j2}=y_j-y_g\)</span>, <span class="arithmatex">\(q_{j3}=z_j-z_g\)</span>, and let <span class="arithmatex">\(D_0 W=W\)</span>, <span class="arithmatex">\(D_1 W=\partial_xW\)</span>, <span class="arithmatex">\(D_2 W=\partial_yW\)</span>, <span class="arithmatex">\(D_3 W=\partial_zW\)</span>. With fluid-particle volume <span class="arithmatex">\(V_j=m_j/\rho_j\)</span>, the entries are</p>
+<div class="arithmatex">\[
+\begin{gathered}
+(A_g)_{kl}=\sum_j V_j q_{jl}D_kW_{gj},\\
+(b_g)_k=\sum_j\rho_j V_jD_kW_{gj},\\
+ k,l=0,1,2,3.
+\end{gathered}
+\]</div>
+<p>The boundary density in this formulation is then extrapolated from the ghost node:</p>
+<div class="arithmatex">\[
+\rho_b=\rho_g+(\mathbf x_b-\mathbf x_g)\cdot\nabla\rho_g.
+\]</div>
+<p>The newer density treatment used by <code>NS</code>, <code>FS</code> and <code>V0</code> first reconstructs ghost-node density, using matrix inversion when sufficiently well conditioned and a normalised Shepard sum otherwise. A pressure-cloning step accounts for gravity and boundary acceleration:</p>
+<div class="arithmatex">\[
+\begin{gathered}
+p_g=c_0^2(\rho_g-\rho_0),\\
+p_b=p_g+\rho_0\big[(\mathbf g-\mathbf a_b)\cdot\widehat{\mathbf n}_b\big]
+\big[(\mathbf x_g-\mathbf x_b)\cdot\widehat{\mathbf n}_b\big],\\
+\rho_b=\rho_0+\frac{p_b}{c_0^2}.
+\end{gathered}
+\]</div>
+<p>Here <span class="arithmatex">\(c_0\)</span> is the reference speed of sound, <span class="arithmatex">\(\rho_0\)</span> the reference density, <span class="arithmatex">\(\mathbf a_b\)</span> the boundary acceleration and <span class="arithmatex">\(\widehat{\mathbf n}_b\)</span> the unit normal. The unit direction in these equations is distinct from the geometric displacement supplied to normal generation. These relations describe the boundary reconstruction; they do not replace the fluid equation-of-state configuration.</p>
+<p>The newer method also checks the divergence of position at the ghost node to distinguish submerged and unsubmerged boundary particles. Submerged particles have their density, pressure and velocity updated. Unsubmerged particles are switched off for fluid interaction and assigned reference density. This interaction state is not removal of boundary geometry.</p>
+<figure>
+<p><img alt="Boundary particles below and above the fluid surface illustrate the distinction between submerged particles participating in reconstruction and unsubmerged particles switched off for fluid interaction." src="../../assets/images/xml_guide/mdbc/submerged-boundary.png" style="max-width:100%;height:auto;" width="330" />
+  </p>
+<figcaption><strong>Figure 8:</strong> Boundary particles below and above the fluid surface illustrate the distinction between submerged particles participating in reconstruction and unsubmerged particles switched off for fluid interaction.</figcaption>
+</figure>
+<h3 id="velocity-conditions">Velocity conditions<a class="headerlink" href="#velocity-conditions" title="Link to this heading">&para;</a></h3>
+<p>Let <span class="arithmatex">\(\mathbf u_w\)</span> denote wall velocity and <span class="arithmatex">\(\mathbf u_g\)</span> the interpolated ghost-node velocity. The normalised interpolation is</p>
+<div class="arithmatex">\[
+\mathbf u_g=\frac{\sum_j\mathbf u_j V_jW_{gj}}{\sum_jV_jW_{gj}}.
+\]</div>
+<p>The no-slip reconstruction uses the reflected velocity <span class="arithmatex">\(\mathbf u_b=2\mathbf u_w-\mathbf u_g\)</span>. For a stationary wall this becomes <span class="arithmatex">\(\mathbf u_b=-\mathbf u_g\)</span>. Its normal and tangential projections are</p>
+<div class="arithmatex">\[
+\begin{gathered}
+\mathbf u_b^{\perp}=(\mathbf u_b\cdot\widehat{\mathbf n}_b)\widehat{\mathbf n}_b,\\
+\mathbf u_b^{\parallel}=\mathbf u_b-\mathbf u_b^{\perp}.
+\end{gathered}
+\]</div>
+<p>The tangential component enters the viscous treatment, whereas the wall velocity is used for the boundary contribution to the density-gradient continuity calculation. This distinction matters: the reflected ghost velocity is not simply substituted into every boundary interaction.</p>
+<p>In the laminar interaction equations used to illustrate this distinction, the viscous term depends on the relative velocity, while the continuity equation uses its own relative-velocity contribution:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{d\mathbf u_i}{dt}={}&amp;-\sum_j m_j\frac{p_i+p_j}{\rho_i\rho_j}\nabla W_{ij}\\
+&amp;+\sum_j\frac{4\nu m_j\,\mathbf r_{ij}\cdot\nabla W_{ij}}
+{(\rho_i+\rho_j)(r_{ij}^2+0.01h^2)}\mathbf u_{ij}+\mathbf g_i.
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\frac{d\rho_i}{dt}=\rho_i\sum_j\frac{m_j}{\rho_j}\mathbf u_{ij}\cdot\nabla W_{ij}+\mathrm{DDT}.
+\]</div>
+<p>Here <span class="arithmatex">\(\nu\)</span> is kinematic viscosity, <span class="arithmatex">\(\mathbf r_{ij}\)</span> is particle separation and <span class="arithmatex">\(\mathbf u_{ij}\)</span> denotes the relative velocity appropriate to the term. For a boundary neighbour, the viscous contribution uses the tangential boundary velocity, while continuity uses wall velocity. These equations explain the laminar treatment; artificial-viscosity cases retain their own selected formulation.</p>
+<p>For free slip, the teaching relation is <span class="arithmatex">\(\mathbf u_b=\mathbf u_g\)</span>, with the tangential component obtained by the same projection. This relation describes the reconstructed boundary state and should not be read as cancelling the separate normal-wall treatment of a moving boundary. The <code>V0</code> option instead imposes the wall velocity, giving zero boundary velocity for a stationary wall, while retaining the newer density reconstruction. <code>M22</code> also imposes wall velocity but retains the original density extrapolation.</p>
+<table>
+<thead>
+<tr>
+<th><code>SlipMode</code> value</th>
+<th>Boundary treatment</th>
+<th>Density reconstruction</th>
+<th>Additional <code>NoPenetration</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NS</code></td>
+<td>No slip; reflected ghost velocity</td>
+<td>New pressure-cloning treatment</td>
+<td>Available</td>
+</tr>
+<tr>
+<td><code>FS</code></td>
+<td>Free slip; ghost velocity used for the tangential treatment</td>
+<td>New pressure-cloning treatment</td>
+<td>Available</td>
+</tr>
+<tr>
+<td><code>V0</code></td>
+<td>TanVel=0; boundary velocity follows wall velocity</td>
+<td>New pressure-cloning treatment</td>
+<td>Available</td>
+</tr>
+<tr>
+<td><code>M22</code></td>
+<td>Original mDBC 2022 velocity treatment</td>
+<td>Original density extrapolation</td>
+<td>Not applied</td>
+</tr>
+</tbody>
+</table>
+<p>Use <code>ViscoBoundFactor=1</code> for the documented viscous wall treatment. The teaching material specifies this for <code>NS</code> and <code>V0</code>; the current reader also warns when the factor differs from 1 for <code>NS</code> or <code>FS</code>. This factor multiplies boundary viscosity and is not the switch selecting a slip mode. Retain the chosen viscosity formulation and magnitude of the complete example.</p>
+<h3 id="activating-uniform-mdbc-in-v6">Activating uniform mDBC in v6<a class="headerlink" href="#activating-uniform-mdbc-in-v6" title="Link to this heading">&para;</a></h3>
+<p>The sloshing case below explicitly selects no slip and enables the additional no-penetration correction. Its density diffusion is Fourtakas (<code>FO</code>) with coefficient 0.1. Density diffusion is recommended in the mDBC teaching workflow to control fluid instabilities; this excerpt states the case's explicit configuration rather than relying on an implicit default.</p>
+<p><strong>XML excerpt — uniform-mdbc.</strong> XML location: <code>case/execution/parameters</code>. Source: <code>examples/mdbc/03_Sloshing/CaseSloshingLR_NSNP_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Boundary&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;mDBC&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SlipMode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NS&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;NoPenetration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Activate No-Penetration option for mDBC: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoBoundFactor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Multiply viscosity value with boundary (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=FO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><code>Boundary=mDBC</code> activates the uniform method, and <code>SlipMode</code> chooses its velocity/density treatment. The documented default slip mode is <code>NS</code>. <code>NoPenetration</code> is a separate Boolean parameter, with <code>N</code> as its default. Set it explicitly when comparing options. Use the named v6 values shown here; older numeric boundary and slip selections are deprecated.</p>
+<h2 id="additional-no-penetration-correction">Additional no-penetration correction<a class="headerlink" href="#additional-no-penetration-correction" title="Link to this heading">&para;</a></h2>
+<p><code>NoPenetration=Y</code> activates an additional near-wall velocity correction for <code>NS</code>, <code>FS</code> and <code>V0</code>. It does not select free slip or no slip, and it does not make inaccurate normals acceptable. <code>N</code> disables this extra correction; the selected boundary condition still remains active.</p>
+<p>The correction acts on nearby fluid particles approaching an enabled boundary. The current implementation first restricts boundary neighbours by particle separation, projected distance and normal length, then treats each Cartesian component separately. Consequently, proximity alone does not imply that a correction will be applied.</p>
+<p>For the following description, <span class="arithmatex">\(\mathbf N=\mathbf x_g-\mathbf x_b=2\mathbf N_s\)</span> is the internal displacement to the ghost node, <span class="arithmatex">\(N=|\mathbf N|\)</span>, <span class="arithmatex">\(\widehat{\mathbf n}=\mathbf N/N\)</span>, and <span class="arithmatex">\(\mathbf r=\mathbf x_f-\mathbf x_b\)</span>. The initial geometric gates are</p>
+<div class="arithmatex">\[
+\begin{gathered}
+|\mathbf r|&lt;1.25d_p,\\
+|\mathbf r\cdot\widehat{\mathbf n}|&lt;0.75N,\\
+N&lt;1.75d_p.
+\end{gathered}
+\]</div>
+<p>For a non-negligible normal component <span class="arithmatex">\(N_k\)</span>, the component is considered only when <span class="arithmatex">\(|r_k\widehat n_k|&lt;0.75|N_k|\)</span> and <span class="arithmatex">\(|N_k|&gt;0.001d_p\)</span>. Its relative velocity must point towards the wall: <span class="arithmatex">\((u_{f,k}-u_{w,k})\widehat n_k&lt;0\)</span>. The clipped distance ratio and the current cubic factor are</p>
+<div class="arithmatex">\[
+\begin{gathered}
+q_k=\max\!\left(0.25,\min\!\left(\left|\frac{r_k}{N_k}\right|,0.75\right)\right),\\
+f(q_k)=32q_k^3-48q_k^2+18q_k.
+\end{gathered}
+\]</div>
+<p>Each accepted neighbour contributes</p>
+<div class="arithmatex">\[
+\delta u_k=-f(q_k)(u_{f,k}-u_{w,k})\widehat n_k^{\,2}.
+\]</div>
+<p>The accepted contributions are averaged separately for each direction before application. Particles moving away from the boundary receive no contribution from that component. The ratio is limited to 0.25–0.75; the cubic factor decreases from 2 to 0 over that interval. These are algorithm constants, not additional XML parameters to add to the case.</p>
+<figure>
+<p><img alt="Near-wall distances and velocity directions in the no-penetration mechanism." src="../../assets/images/xml_guide/mdbc/no-penetration-mechanism.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 17:</strong> Near-wall distances and velocity directions in the no-penetration mechanism. The schematic illustrates the geometry; the component-wise conditions above define when the correction applies.</figcaption>
+</figure>
+<h2 id="comparing-configurations-in-package-cases">Comparing configurations in package cases<a class="headerlink" href="#comparing-configurations-in-package-cases" title="Link to this heading">&para;</a></h2>
+<h3 id="sloshing-with-moving-walls">Sloshing with moving walls<a class="headerlink" href="#sloshing-with-moving-walls" title="Link to this heading">&para;</a></h3>
+<p><code>examples/mdbc/03_Sloshing/CaseSloshingLR_NSNP_Def.xml</code> demonstrates a moving container with geometry-generated normals, <code>SlipMode=NS</code> and <code>NoPenetration=Y</code>. The particle spacing is 0.004 m and <span class="arithmatex">\(h/d_p=2\)</span>. The named drawing list exports the half-spacing surface, while four boundary layers support the selected smoothing length. The wall motion remains defined by the complete case and its <code>SloshingMotionData.dat</code> input. The normal-generation excerpt does not replace that motion definition.</p>
+<h3 id="channel-flow-and-wall-behaviour">Channel flow and wall behaviour<a class="headerlink" href="#channel-flow-and-wall-behaviour" title="Link to this heading">&para;</a></h3>
+<p>The Poiseuille examples provide planar normals and contrasting wall treatments. Read the parameter value inside each file: a filename suffix is not a reliable substitute for <code>SlipMode</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Package path under <code>examples/mdbc/02_Poiseuille/</code></th>
+<th>Actual <code>SlipMode</code></th>
+<th><code>NoPenetration</code></th>
+<th>Laminar viscosity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CasePoiseuille_LR_Def.xml</code></td>
+<td><code>M22</code></td>
+<td><code>N</code></td>
+<td>0.1 m²/s</td>
+</tr>
+<tr>
+<td><code>CasePoiseuille_NS_LR_Def.xml</code></td>
+<td><code>V0</code></td>
+<td><code>N</code></td>
+<td>0.1 m²/s</td>
+</tr>
+<tr>
+<td><code>CasePoiseuille_FS_LR_Def.xml</code></td>
+<td><code>FS</code></td>
+<td><code>N</code></td>
+<td>0.1 m²/s</td>
+</tr>
+<tr>
+<td><code>CaseRunDown_NS_Def.xml</code></td>
+<td><code>NS</code></td>
+<td><code>N</code></td>
+<td>0.1 m²/s</td>
+</tr>
+<tr>
+<td><code>CaseRunDown_FS_Def.xml</code></td>
+<td><code>FS</code></td>
+<td><code>N</code></td>
+<td>0.1 m²/s</td>
+</tr>
+</tbody>
+</table>
+<p>The last two files concern run-down and are not interchangeable initial conditions for the steady channel comparison. The following selection retains the actual settings in <code>CasePoiseuille_NS_LR_Def.xml</code>, including its <code>V0</code> value and laminar viscosity.</p>
+<p><strong>XML excerpt — poiseuille-settings.</strong> XML location: <code>case/execution/parameters</code>. Source: <code>examples/mdbc/02_Poiseuille/CasePoiseuille_NS_LR_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SlipMode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;V0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;NoPenetration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Activate No-Penetration option for mDBC: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;LAM&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation: LAM:Laminar, ART:Artificial (default=LAM)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Visco&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoBoundFactor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Multiply viscosity value with boundary (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=FO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h2 id="mixed-boundary-conditions-by-boundary-identifier">Mixed boundary conditions by boundary identifier<a class="headerlink" href="#mixed-boundary-conditions-by-boundary-identifier" title="Link to this heading">&para;</a></h2>
+<p>Select <code>Boundary=MIX</code> in <code>execution/parameters</code>, then specify the per-boundary conditions in <code>execution/special/mixboundary</code>. The global <code>SlipMode</code> and <code>NoPenetration</code> parameters are not the selectors for mixed boundaries; <code>boundtype</code> and <code>nopenetration</code> on each mixed-boundary entry determine the treatment.</p>
+<table>
+<thead>
+<tr>
+<th><code>boundtype</code></th>
+<th>Equivalent uniform treatment</th>
+<th>Per-entry <code>nopenetration</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DBC</code></td>
+<td>DBC</td>
+<td>No additional mDBC correction</td>
+</tr>
+<tr>
+<td><code>MDBC_V0</code></td>
+<td><code>M22</code></td>
+<td>No additional mDBC correction</td>
+</tr>
+<tr>
+<td><code>MDBC_T0</code></td>
+<td><code>V0</code></td>
+<td><code>0</code> or <code>1</code></td>
+</tr>
+<tr>
+<td><code>MDBC_NS</code></td>
+<td><code>NS</code></td>
+<td><code>0</code> or <code>1</code></td>
+</tr>
+<tr>
+<td><code>MDBC_FR</code></td>
+<td><code>FS</code></td>
+<td><code>0</code> or <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p>The mixed-boundary names are deliberately different from the uniform <code>SlipMode</code> names: <code>MDBC_V0</code> means the old mDBC, whereas <code>MDBC_T0</code> means the newer TanVel=0 treatment. Preserve <code>MDBC_FR</code> exactly for free slip. The local Boolean attribute uses <code>0/1</code> in the reference and examples; the global v6 parameter uses <code>N/Y</code>.</p>
+<p><strong>XML excerpt — mixed-activation.</strong> XML location: <code>case/execution/parameters</code>. Source: <code>examples/mdbc/11_MixBC/CaseDamBreak3D_Mix_NS_FR_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Boundary&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;MIX&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><strong>XML excerpt — mixed-assignment.</strong> XML location: <code>case/execution/special</code>. Source: <code>examples/mdbc/11_MixBC/CaseDamBreak3D_Mix_NS_FR_Def.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;mixboundary&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="cm">&lt;!-- boundtype: DBC, MDBC_V0 (Old mDBC), MDBC_T0 (mDBC2 tanvel=0), MDBC_NS (mDBC2 No-slip), MDBC_FR (mDBC2 Free slip) --&gt;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="cm">&lt;!-- nopenetration: 1/0 Activate No-Penetration option for TanVel=0, No-slip or Free-slip mDBC --&gt;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="cm">&lt;!-- mkbound: mkbound value or list of values (2,5,7-8) --&gt;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nt">&lt;default</span><span class="w"> </span><span class="na">boundtype=</span><span class="s">&quot;MDBC_NS&quot;</span><span class="w"> </span><span class="na">nopenetration=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nt">&lt;bcmk</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;0-1&quot;</span><span class="w"> </span><span class="na">boundtype=</span><span class="s">&quot;MDBC_NS&quot;</span><span class="w"> </span><span class="na">nopenetration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="nt">&lt;bcmk</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;2,3&quot;</span><span class="w"> </span><span class="na">boundtype=</span><span class="s">&quot;MDBC_FR&quot;</span><span class="w"> </span><span class="na">nopenetration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nt">&lt;/mixboundary&gt;</span>
+</span></code></pre></div>
+<p>The <code>default</code> entry supplies the treatment for markers without a specific assignment. The two <code>bcmk</code> entries above assign no slip with no penetration to <code>0-1</code>, and free slip with no penetration to <code>2,3</code>. Both <code>boundtype</code> and <code>nopenetration</code> must be supplied on these entries. If no default is supplied, every relevant boundary marker needs a specific assignment. Avoid overlapping marker selections: the reader applies later matching entries after earlier ones.</p>
+<p>Prepare and inspect normals across the boundary geometry used by the mixed case, including transitions between boundary types. The workshop workflow defines normals for all boundaries, including DBC portions; the mixed dam-break case follows a geometry-wide normal-generation step. The presence of a DBC assignment does not remove the geometric requirements of neighbouring mDBC portions.</p>
+<p>Mixed conditions can also distinguish side walls from the beach and cylinder in a wave tank. Mixed conditions should follow the intended wall physics.</p>
+<h2 id="initialising-from-a-previous-particle-field">Initialising from a previous particle field<a class="headerlink" href="#initialising-from-a-previous-particle-field" title="Link to this heading">&para;</a></h2>
+<p>A previous particle dataset can supply initial velocity, density or pressure and a free-surface shape. This is useful when a new discretisation should begin from an established flow rather than from rest. It is an interpolation workflow, with its own consistency checks; it is not an exact restart of every solver state.</p>
+<p>For a field <span class="arithmatex">\(F\)</span>, the documented normalised interpolation has the form</p>
+<div class="arithmatex">\[
+F_i=\frac{\sum_j F_j(m_j/\rho_j)W_{ij}}{\sum_j(m_j/\rho_j)W_{ij}}.
+\]</div>
+<p>The current GenCase template names the velocity element <code>velpart</code> and the density element <code>densitypart</code>. Both belong in <code>casedef/initials</code>. The following two reference options retain the template's <code>Part_0028.bi4</code> input and minimum fluid-volume ratio of 0.5. They require a compatible, available PART dataset; the filename is not an instruction to generate that file automatically.</p>
+<p><strong>XML excerpt — previous-velocity.</strong> XML location: <code>case/casedef/initials</code>. Source: <code>doc/xml_format/GenCase_CaseTemplate.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;velpart</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Part_0028.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nt">&lt;/velpart&gt;</span>
+</span></code></pre></div>
+<p><strong>XML excerpt — previous-density.</strong> XML location: <code>case/casedef/initials</code>. Source: <code>doc/xml_format/GenCase_CaseTemplate.xml</code>. This is a fragment, not a complete case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;densitypart</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Part_0028.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&lt;fitpress</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fits the pressure instead of density&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nt">&lt;/densitypart&gt;</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Element or attribute</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>velpart/@mkfluid</code></td>
+<td>Fluid set receiving interpolated velocity</td>
+</tr>
+<tr>
+<td><code>densitypart/@mkfluid</code></td>
+<td>Fluid set receiving interpolated density/pressure</td>
+</tr>
+<tr>
+<td><code>minratio/@v</code></td>
+<td>Minimum supporting fluid volume ratio for applying interpolated values</td>
+</tr>
+<tr>
+<td><code>partfile/@v</code></td>
+<td>Source PART data file</td>
+</tr>
+<tr>
+<td><code>fitpress/@v</code></td>
+<td>With <code>true</code>, fit pressure rather than density</td>
+</tr>
+</tbody>
+</table>
+<p>A free-surface reconstruction is a separate geometry operation. The workshop workflow first fills the target domain with fluid particles and then filters that set against the previous BI4 fluid field, removing particles outside the reconstructed surface. This permits a finer target spacing while retaining the previous surface profile. Check the target <code>mkfluid</code>, coordinate alignment, source time and available fluid support. Interpolating properties alone does not trim the free surface.</p>
+<figure>
+<p><img alt="A finer initial fluid distribution reconstructed from the free surface of a previous, coarser particle field." src="../../assets/images/xml_guide/mdbc/initial-surface.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 14:</strong> A finer initial fluid distribution reconstructed from the free surface of a previous, coarser particle field.</figcaption>
+</figure>
+<p>Transfer to a new spacing still requires examination of the initial transient and the target flow state.</p>
+<h2 id="inspecting-normal-vectors">Inspecting normal vectors<a class="headerlink" href="#inspecting-normal-vectors" title="Link to this heading">&para;</a></h2>
+<p>Normal checks should compare vectors with both the boundary particles and the actual surface. In ParaView, open the boundary and fluid VTK files together, add the actual-surface VTK where available, and display the normal vector field with glyphs. Choose the normal field explicitly and check its magnitude as well as its direction. Glyph scaling used for visualisation must not be mistaken for a change to the stored vectors.</p>
+<p>Inspect flat surfaces first, then corners, oblique faces and transitions between marker sets. Vectors should point from boundary particles towards the fluid-facing surface, with lengths consistent with particle depth and the half-spacing offset. A particle-based estimate that appears reasonable on a flat wall can be misleading at a wedge or a complex intersection; overlay the actual geometry when checking such regions.</p>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[CaseName]_hdp_Actual.vtk</code></td>
+<td>Actual surface used by the geometry-based workflow</td>
+</tr>
+<tr>
+<td>Geometry-shape VTK produced with <code>svshapes</code></td>
+<td>Triangles/quads and their surface-normal orientation</td>
+</tr>
+<tr>
+<td><code>CfgInit_Normals.vtk</code></td>
+<td>Initial vectors from boundary particles to the surface</td>
+</tr>
+<tr>
+<td><code>CfgInit_NormalsGhost.vtk</code></td>
+<td>Vectors from boundary particles to ghost nodes; twice the surface displacement for a fresh initialisation</td>
+</tr>
+</tbody>
+</table>
+<p>The last two files are solver initialisation outputs; generating a geometry VTK alone does not produce them. Restart variants append <code>_Restart</code> to the names. Zero vectors indicate particles without assigned normal data; inspect their location rather than hiding them through glyph sampling. A complete absence of valid vectors prevents the intended mDBC reconstruction.</p>
+<p>The source wedge view displays <code>CaseStillWedgeHR_Bound.vtk</code>, its <code>Glyph1</code> normals and <code>CaseStillWedgeHR_hdp_Actual.vtk</code>. These are the original inspection filenames, rather than fixed names required by other cases. The figure retains the normal-length colour scales and both corner views.</p>
+<figure>
+<p><img alt="Surface-normal glyphs on a wedge and adjoining flat boundary, including an enlarged view of the oblique faces and corner. The colour scale identifies vector length." src="../../assets/images/xml_guide/mdbc/wedge-normals.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 15:</strong> Surface-normal glyphs on a wedge and adjoining flat boundary, including an enlarged view of the oblique faces and corner. The colour scale identifies vector length.</figcaption>
+</figure>
+<p>The source 3D inspection uses <code>CaseDamBreak3D_Mix_NS_FR_Bound.vtk</code> and <code>CaseDamBreak3D_Mix_NS_FR_hdp_Actual.vtk</code>; its ParaView controls are omitted from the scientific figure. The complete normal-size colour scale and wall/corner normal distributions are retained.</p>
+<figure>
+<p><img alt="Section through a three-dimensional boundary showing normal vectors near the container and an obstacle. The section exposes vectors that would otherwise be hidden by the outer geometry." src="../../assets/images/xml_guide/mdbc/three-dimensional-normals.png" style="max-width:100%;height:auto;" width="720" />
+  </p>
+<figcaption><strong>Figure 16:</strong> Section through a three-dimensional boundary showing normal vectors near the container and an obstacle. The section exposes vectors that would otherwise be hidden by the outer geometry.</figcaption>
+</figure>
+<h2 id="requirements-and-diagnostic-checks">Requirements and diagnostic checks<a class="headerlink" href="#requirements-and-diagnostic-checks" title="Link to this heading">&para;</a></h2>
+<p>Retain sufficient boundary layers for the smoothing length, the correct physical surface offset and fluid-facing vector orientation. Increasing a search distance cannot correct an incorrectly oriented or misplaced surface. Check that the normal-generation selection covers the particle sets used by mDBC, and that diagnostic output is interpreted with the appropriate surface/ghost length convention.</p>
+<p>For moving or floating boundaries, use the actual wall motion in the case and preserve its collision model. The solver recommends Chrono collisions when applying mDBC to floating bodies; the <a href="../chrono/">Chrono XML Guide</a> explains that separate configuration. Flexible-structure coupling imposes further integration and slip-mode restrictions, so a general mDBC excerpt must not be treated as a complete flexible-structure setup.</p>
+<table>
+<thead>
+<tr>
+<th>Observation</th>
+<th>Configuration to inspect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missing or zero normal vectors</td>
+<td>Marker selection, search limits and availability of the geometry file</td>
+</tr>
+<tr>
+<td>Vectors pointing away from the fluid</td>
+<td>Surface orientation and container normal inversion</td>
+</tr>
+<tr>
+<td>Incorrect corner vectors</td>
+<td>Actual geometry, layer placement and the maximum normal length</td>
+</tr>
+<tr>
+<td>Unexpected channel profile</td>
+<td>Actual <code>SlipMode</code>, wall motion, viscosity formulation and <code>ViscoBoundFactor</code></td>
+</tr>
+<tr>
+<td>No additional near-wall correction</td>
+<td><code>NoPenetration</code>, eligible slip mode, local mixed assignment and geometric/approach gates</td>
+</tr>
+<tr>
+<td>Different conditions not applied by marker</td>
+<td><code>Boundary=MIX</code>, marker coverage and overlapping <code>bcmk</code> entries</td>
+</tr>
+<tr>
+<td>Poor transferred initial field</td>
+<td>PART availability, source/target coordinates, support ratio and free-surface reconstruction</td>
+</tr>
+</tbody>
+</table>
+<p>For the available case families and variants, see the <a href="../../examples_catalogue/catalogue/mdbc/">mDBC Examples Catalogue</a>.</p>
+<h2 id="xml-reference-coverage">XML reference coverage<a class="headerlink" href="#xml-reference-coverage" title="Link to this heading">&para;</a></h2>
+<p>The relevant definitions are distributed across <code>doc/xml_format/GenCase_CaseTemplate.xml</code> (geometry, <code>initials</code> and <code>normals</code>), <code>doc/xml_format/_FmtXML__Parameters.xml</code> (solver parameters) and <code>doc/xml_format/_FmtXML_MixBoundary.xml</code> (per-marker boundary assignments). There is no single dedicated complete mDBC format file in this reference set. The verified excerpts above document these specific configurations without reproducing the unrelated sections of the generic case template.</p>
+<p><code>doc/xml_format/_FmtXML_Initialize.xml</code> is a limited developer-oriented initialisation example. It is not the full normal-generation reference and does not replace <code>casedef/normals</code> in the GenCase template.</p>
+<h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Link to this heading">&para;</a></h2>
+<p>The original reconstruction is described by English et al., <em>Modified dynamic boundary conditions (mDBC) for general-purpose smoothed particle hydrodynamics (SPH): application to tank sloshing, dam break and fish pass problems</em>, Computational Particle Mechanics 9, 1–15 (2022), DOI <code>10.1007/s40571-021-00403-3</code>. The pressure-cloning approach is discussed by Antuono et al., <em>Clone particles: A simplified technique to enforce solid boundary conditions in SPH</em>, Computer Methods in Applied Mechanics and Engineering 409, 115973 (2023). These formulations provide context for the boundary treatment; case-specific numerical and physical validation remains necessary.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../general/" class="md-footer__link md-footer__link--prev" aria-label="Previous: XML Configuration">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                XML Configuration
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../inletoutlet/" class="md-footer__link md-footer__link--next" aria-label="Next: Inlet/Outlet">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Inlet/Outlet
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 DualSPHysics Team &middot; Edited by Bonaventura Tagliafierro
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/DualSPHysics/DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/catalogue-overview.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

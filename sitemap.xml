@@ -1,431 +1,431 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>http://127.0.0.1:8000/index.html</loc>
+         <loc>http://127.0.0.1:8000/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/features.html</loc>
+         <loc>http://127.0.0.1:8000/features/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses.html</loc>
+         <loc>http://127.0.0.1:8000/licenses/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/index.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/dambreak_2d.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/dambreak_2d/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/dambreak_3d.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/dambreak_3d/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/dambreak_debris.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/dambreak_debris/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/flexible_gate.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/flexible_gate/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/floating_box.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/floating_box/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/heave_decay.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/heave_decay/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/intro.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/moored_box/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/moored_box.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/runup/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/runup.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/sloshing/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/sloshing.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/turek/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/turek.html</loc>
+         <loc>http://127.0.0.1:8000/benchmarks/wave_generation/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/wave_generation.html</loc>
+         <loc>http://127.0.0.1:8000/contributing/setup/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/contributing/setup.html</loc>
+         <loc>http://127.0.0.1:8000/couplings/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/index.html</loc>
+         <loc>http://127.0.0.1:8000/couplings/chrono/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/chrono.html</loc>
+         <loc>http://127.0.0.1:8000/couplings/dem/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/dem.html</loc>
+         <loc>http://127.0.0.1:8000/couplings/moordynplus/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/moordynplus.html</loc>
+         <loc>http://127.0.0.1:8000/couplings/wave_propagation/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/wave_propagation.html</loc>
+         <loc>http://127.0.0.1:8000/couplings/wavegen/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/wavegen.html</loc>
+         <loc>http://127.0.0.1:8000/examples/catalogue/flexstruc/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples/catalogue/flexstruc.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/overview/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/overview.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/index.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/chrono/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/chrono.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/chronofea/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/chronofea.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/divclean/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/divclean.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/flexstruc/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/flexstruc.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/geomech/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/geomech.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/inletmesh/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/inletmesh.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/inletoutlet/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/inletoutlet.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main-catalogue/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main-catalogue.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mdbc/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mdbc.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/moordynplus/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/moordynplus.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/motion/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/motion.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mphase_liquidgas/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mphase_liquidgas.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mphase_nnewtonian/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mphase_nnewtonian.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/shiftingadv/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/shiftingadv.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/vresolution/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/vresolution.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/wavecoupling/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/wavecoupling.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/index.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/01-dambreak/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/01-dambreak.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/02-periodicity/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/02-periodicity.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/03-movingsquare/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/03-movingsquare.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/04-externalforces/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/04-externalforces.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/05-sloshingtank/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/05-sloshingtank.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/06-wavemaker/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/06-wavemaker.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/07-wavemakerfile/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/07-wavemakerfile.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/08-wavesflap/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/08-wavesflap.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/09-wavespiston/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/09-wavespiston.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/10-wavespistonawas/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/10-wavespistonawas.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/11-floating/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/11-floating.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/12-floatingwaves/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/12-floatingwaves.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/13-pump/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/13-pump.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/14-dem/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/14-dem.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/15-poiseuille/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/15-poiseuille.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/16-solitarywaves/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/16-solitarywaves.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/17-waverunup/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/17-waverunup.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/18-bathymetry/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/18-bathymetry.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/19-focusedwaves/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/19-focusedwaves.html</loc>
+         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/20-damping/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/20-damping.html</loc>
+         <loc>http://127.0.0.1:8000/faq/faq/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/faq.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/change_resolution/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/change_resolution.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/change_still_water_level/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/change_still_water_level.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/change_time_duration/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/change_time_duration.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/change_viscosity/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/change_viscosity.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/floating_body_motion/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/floating_body_motion.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/measure_force/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/measure_force.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/measure_free_surface/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/measure_free_surface.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/measure_pressure/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/measure_pressure.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/measure_velocity/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/measure_velocity.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/mk_labels/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/mk_labels.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/new_floating/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/new_floating.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/simulation_domain/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/simulation_domain.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/visualise_mdbc_normals/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/visualise_mdbc_normals.html</loc>
+         <loc>http://127.0.0.1:8000/faq/howto/visualise_paraview/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/visualise_paraview.html</loc>
+         <loc>http://127.0.0.1:8000/gallery/intro/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/gallery/intro.html</loc>
+         <loc>http://127.0.0.1:8000/getting_started/advanced/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/advanced.html</loc>
+         <loc>http://127.0.0.1:8000/getting_started/case_definition/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/case_definition.html</loc>
+         <loc>http://127.0.0.1:8000/getting_started/cpu-gpu-multigpu/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/cpu-gpu-multigpu.html</loc>
+         <loc>http://127.0.0.1:8000/getting_started/designsphysics/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/designsphysics.html</loc>
+         <loc>http://127.0.0.1:8000/getting_started/examples_intro/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/examples_intro.html</loc>
+         <loc>http://127.0.0.1:8000/getting_started/getting_started/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/getting_started.html</loc>
+         <loc>http://127.0.0.1:8000/getting_started/workflow/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/workflow.html</loc>
+         <loc>http://127.0.0.1:8000/home/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/home/index.html</loc>
+         <loc>http://127.0.0.1:8000/home/introduction/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/home/introduction.html</loc>
+         <loc>http://127.0.0.1:8000/licenses/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/index.html</loc>
+         <loc>http://127.0.0.1:8000/licenses/dualsphysics-bsd/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/dualsphysics-bsd.html</loc>
+         <loc>http://127.0.0.1:8000/licenses/dualsphysics-lgpl/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/dualsphysics-lgpl.html</loc>
+         <loc>http://127.0.0.1:8000/licenses/moordynplus/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/moordynplus.html</loc>
+         <loc>http://127.0.0.1:8000/licenses/project-chrono/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/project-chrono.html</loc>
+         <loc>http://127.0.0.1:8000/licenses/random-generator/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/random-generator.html</loc>
+         <loc>http://127.0.0.1:8000/licenses/tinyxml/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/tinyxml.html</loc>
+         <loc>http://127.0.0.1:8000/theory/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/theory/index.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/chrono/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/chrono.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/chronofea/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/chronofea.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/flexstruc/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/flexstruc.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/general/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/general.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/geomech/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/geomech.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/inletoutlet/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/inletoutlet.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/introduction/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/mdbc.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/mdbc/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/moordynplus.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/moordynplus/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/mphase_nnewtonian.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/mphase_nnewtonian/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/shiftingadv.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/shiftingadv/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/vresolution.html</loc>
+         <loc>http://127.0.0.1:8000/xml_guides/vresolution/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
 </urlset>
