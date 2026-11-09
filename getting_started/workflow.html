@@ -1,0 +1,5270 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/getting_started/workflow.html">
+      
+      
+        <link rel="prev" href="getting_started.html">
+      
+      
+        <link rel="next" href="cpu-gpu-multigpu.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/dualsphysics-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>The DualSPHysics Workflow - DualSPHysics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-dualsphysics-workflow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <strong>Draft for internal review.</strong>
+  Some pages, figures and videos are still in progress.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../home/" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DualSPHysics Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The DualSPHysics Workflow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../home/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Theory
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../couplings/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Couplings
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gallery/intro.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Gallery
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="getting_started.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples_catalogue/catalogue/main-catalogue.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Examples Catalogue
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../benchmarks/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Benchmarks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../xml_guides/general.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XML Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../faq/faq.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../licenses/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Licenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../contributing/setup.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../home/" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    DualSPHysics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../home/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../couplings/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couplings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gallery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gallery/intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Your First Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DualSPHysics Workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="workflow.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DualSPHysics Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-processing-defining-the-case-with-gencase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-processing: defining the case with GenCase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-processing: defining the case with GenCase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-particles-are-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How particles are created
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawing-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawing geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#particle-types-and-the-mk-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particle types and the mk number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-gencase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running GenCase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the case
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The solver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-batch-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The batch files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-post-processing-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running a post-processing tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualising-the-results-in-paraview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualising the results in ParaView
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cpu-gpu-multigpu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU, GPU and Multi-GPU Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="case_definition.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Definition (XML)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="designsphysics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DesignSPHysics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples Catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples Catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/main-catalogue.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/mdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/inletoutlet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/inletmesh.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InletMesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/wavecoupling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wavecoupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/vresolution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/flexstruc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/moordynplus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/chrono.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/chronofea.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/shiftingadv.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/divclean.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divergence cleaning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/mphase_liquidgas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase LiquidGas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/mphase_nnewtonian.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase NNewtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/geomech.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/motion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../benchmarks/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/dambreak_2d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 2D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/dambreak_3d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/sloshing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sloshing Tank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/wave_generation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/runup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/dambreak_debris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/floating_box.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floating Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/moored_box.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/heave_decay.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XML Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/general.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/mdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/inletoutlet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/vresolution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/flexstruc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/moordynplus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/chrono.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/chronofea.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/shiftingadv.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/mphase_nnewtonian.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase non-Newtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml_guides/geomech.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/new_floating.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Add a Floating Object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/change_resolution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Resolution/Particle Size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/change_viscosity.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Viscosity Formulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/change_time_duration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Simulation Time Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/change_still_water_level.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Still-Water Level (Pending)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/simulation_domain.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand the Simulation Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/mk_labels.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand MK Labels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/measure_velocity.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/measure_pressure.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/measure_free_surface.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Free-Surface Elevation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/measure_force.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Force
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/visualise_paraview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise Results in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/visualise_mdbc_normals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise mDBC Normals in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/floating_body_motion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Compute the Motion of a Floating Body
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../licenses/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licenses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Licenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/dualsphysics-lgpl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (LGPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/dualsphysics-bsd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (BSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/tinyxml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TinyXML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/random-generator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random number generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/project-chrono.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/moordynplus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDyn+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/setup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-processing-defining-the-case-with-gencase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-processing: defining the case with GenCase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-processing: defining the case with GenCase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-particles-are-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How particles are created
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawing-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawing geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#particle-types-and-the-mk-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particle types and the mk number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-gencase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running GenCase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the case
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The solver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-batch-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The batch files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-post-processing-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running a post-processing tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualising-the-results-in-paraview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualising the results in ParaView
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-dualsphysics-workflow">The DualSPHysics Workflow<a class="headerlink" href="#the-dualsphysics-workflow" title="Link to this heading">&para;</a></h1>
+<p>Every DualSPHysics simulation goes through the same three stages:</p>
+<ol>
+<li><strong>Pre-processing.</strong> <em>GenCase</em> reads your case definition (an XML file) and creates the initial particles.</li>
+<li><strong>Running the case.</strong> The <em>DualSPHysics</em> solver advances the particles in time and writes the results.</li>
+<li><strong>Post-processing.</strong> A set of small tools turn those results into files you can visualise (in ParaView) or plot (in Python, Excel, MATLAB, …).</li>
+</ol>
+<p>The three stages are separate programs that communicate only through files. A <strong>batch file</strong> in each case folder runs them in the right order, so a simulation normally starts with a single command. This page follows the <code>01_DamBreak</code> example through all three stages.</p>
+<style>
+  .sph-scheme-container {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    width: 100%;
+    max-width: 820px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Tight vertical spacing */
+    box-sizing: border-box;
+  }
+
+  /* Compact Section Cards */
+  .sph-section {
+    position: relative;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .sph-section-badge {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  /* Pre-processing (Red Theme) */
+  .sph-pre {
+    background: linear-gradient(180deg, #fff5f5 0%, #fde8e8 100%);
+    border: 1.5px solid #f2b8b5;
+  }
+  .sph-pre .sph-section-badge {
+    background-color: #ffffff;
+    color: #c5221f;
+    border: 1px solid #c5221f;
+  }
+
+  /* Processing (Blue Theme) */
+  .sph-pro {
+    background: linear-gradient(180deg, #f8faff 0%, #e8f0fe 100%);
+    border: 1.5px solid #aecbfa;
+  }
+  .sph-pro .sph-section-badge {
+    background-color: #ffffff;
+    color: #174ea6;
+    border: 1px solid #174ea6;
+  }
+
+  /* Post-processing (Green Theme) */
+.sph-post {
+  background: linear-gradient(180deg, #f6fbf7 0%, #e6f4ea 100%);
+  border: 1.5px solid #a8dab5;
+  padding: 35px 14px 20px 14px; /* [Top] [Right] [Bottom] [Left] */
+  min-height: 150px;
+}
+  .sph-post .sph-section-badge {
+    background-color: #ffffff;
+    color: #137333;
+    border: 1px solid #137333;
+  }
+
+  /* Main Executable Process Boxes */
+  .sph-exe-box {
+    background: #ffffff;
+    border: 1.5px solid #202124;
+    padding: 4px 16px;
+    font-weight: 800;
+    font-size: 14px;
+    color: #202124;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .sph-exe-box:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+  }
+
+  /* Output / File Group Boxes */
+  .sph-file-pill {
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 11px;
+    color: #3c4043;
+    line-height: 1.35;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    transition: border-color 0.15s ease;
+  }
+  .sph-file-pill:hover {
+    border-color: #1a73e8;
+  }
+
+  /* Connector Arrows */
+  .sph-arrow-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f6368;
+    margin: 1px 0;
+  }
+  .sph-arrow-down svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Pre-processing Layout Grid */
+  .sph-pre-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .sph-pre-outputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  /* Logo Container for Processing */
+  .sph-logo-box {
+    padding: 2px 10px;
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #aecbfa;
+    box-shadow: 0 1px 3px rgba(66,133,244,0.15);
+  }
+
+  .sph-logo-box img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  /* Post-processing Layout Grid */
+  .sph-post-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .sph-post-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sph-post-column .sph-exe-box {
+    font-size: 11px;
+    padding: 4px 2px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sph-post-column .sph-file-pill {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px;
+  }
+
+  /* File Accent Colors */
+  .txt-xml { color: #d93025; font-weight: bold; }
+  .txt-bi4 { color: #1a73e8; font-weight: bold; }
+  .txt-vtk { color: #1e8e3e; }
+  .txt-csv { color: #e37400; }
+
+  @media (max-width: 680px) {
+    .sph-post-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+
+<div class="sph-scheme-container">
+
+  <!-- ================= PRE-PROCESSING SECTION ================= -->
+  <div class="sph-section sph-pre">
+    <div class="sph-section-badge">Pre-processing</div>
+
+    <!-- Case_Def Input Files -->
+    <div class="sph-pre-top">
+      <div class="sph-file-pill txt-xml">📄 Case_Def.xml</div>
+      <div class="sph-file-pill txt-vtk">
+        <span>object.vtk</span> • <span>object.stl</span> • <span>object.ply</span>
+      </div>
+    </div>
+
+    <!-- Arrow down to GENCASE -->
+    <div class="sph-arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg>
+    </div>
+
+    <!-- GENCASE Executable -->
+    <div class="sph-exe-box">GENCASE</div>
+
+    <!-- Arrow down to Outputs -->
+    <div class="sph-arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg>
+    </div>
+
+    <!-- GENCASE Output Data Files -->
+    <div class="sph-pre-outputs">
+      <div class="sph-file-pill txt-csv">mov.dat<br>forces.csv</div>
+      <div class="sph-file-pill">
+        <span class="txt-xml">Case.xml</span><br>
+        <span class="txt-bi4">Case.bi4</span>
+      </div>
+      <div class="sph-file-pill txt-vtk">
+        Case_All.vtk • Case_Bound.vtk<br>
+        Case_Fluid.vtk • Case__Dp.vtk
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrow Transition to Processing -->
+  <div class="sph-arrow-down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 19 15"></polyline></svg>
+  </div>
+
+  <!-- ================= PROCESSING SECTION ================= -->
+  <div class="sph-section sph-pro">
+    <div class="sph-section-badge">Processing</div>
+
+    <!-- DualSPHysics Logo Header -->
+    <div class="sph-logo-box">
+      <img src="../assets/images/dualsphysics-logo.svg" alt="DualSPHysics Logo" />
+    </div>
+
+    <!-- Arrow down -->
+    <div class="sph-arrow-down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 19 15"></polyline></svg>
+    </div>
+
+    <!-- Output Files -->
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+      <div class="sph-file-pill txt-bi4">Part_Head.ibi4 • PartFloat.fbi4</div>
+      <div class="sph-file-pill txt-bi4">Part_xxxx.bi4 • PartOut.obi4</div>
+      <div class="sph-file-pill">Run.out</div>
+    </div>
+  </div>
+
+  <!-- Arrow Transition to Post-Processing -->
+  <div class="sph-arrow-down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 19 15"></polyline></svg>
+  </div>
+
+  <!-- ================= POST-PROCESSING SECTION ================= -->
+  <div class="sph-section sph-post">
+    <div class="sph-section-badge">Post-processing</div>
+
+    <!-- Right Top File Accent Badge -->
+    <div style="position: absolute; top: 6px; right: 10px;">
+      <div class="sph-file-pill txt-csv" style="padding: 2px 6px; font-size: 10px;">
+        PointsPos.csv • Points.txt
+      </div>
+    </div>
+
+    <!-- Post Processing Tools Grid -->
+    <div class="sph-post-grid">
+
+      <!-- PARTVTK -->
+      <div class="sph-post-column">
+        <div class="sph-exe-box">PARTVTK</div>
+        <div class="sph-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg></div>
+        <div class="sph-file-pill txt-vtk">
+          PartFluid.vtk<br>
+          PartBound.vtk<br>
+          PartMoving.vtk
+        </div>
+      </div>
+
+      <!-- BOUNDARYVTK -->
+      <div class="sph-post-column">
+        <div class="sph-exe-box">BOUNDARYVTK</div>
+        <div class="sph-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg></div>
+        <div class="sph-file-pill txt-vtk">
+          Fixed.vtk<br>
+          Moving_xxxx.vtk<br>
+          Floating_xxxx.vtk
+        </div>
+      </div>
+
+      <!-- ISOSURFACE -->
+      <div class="sph-post-column">
+        <div class="sph-exe-box">ISOSURFACE</div>
+        <div class="sph-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg></div>
+        <div class="sph-file-pill txt-vtk">
+          Surface_xxxx.vtk
+        </div>
+      </div>
+
+      <!-- MEASURETOOL -->
+      <div class="sph-post-column">
+        <div class="sph-exe-box">MEASURETOOL</div>
+        <div class="sph-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="6 15 12 22 18 15"></polyline></svg></div>
+        <div class="sph-file-pill txt-csv">
+          Pressure.csv<br>
+          Velocity.csv<br>
+          Height_xxxx.vtk
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Program</th>
+<th>Reads</th>
+<th>Writes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pre-processing</td>
+<td>GenCase</td>
+<td><code>CaseName_Def.xml</code></td>
+<td><code>CaseName.xml</code>, <code>CaseName.bi4</code>, geometry files (<code>.vtk</code>)</td>
+</tr>
+<tr>
+<td>Running</td>
+<td>DualSPHysics (CPU or GPU)</td>
+<td><code>CaseName.xml</code>, <code>CaseName.bi4</code></td>
+<td><code>data/Part_####.bi4</code>, <code>Run.out</code>, <code>Run.csv</code></td>
+</tr>
+<tr>
+<td>Post-processing</td>
+<td>PartVTK, MeasureTool, ComputeForces, IsoSurface, …</td>
+<td><code>data/Part_####.bi4</code></td>
+<td><code>.vtk</code> for ParaView, <code>.csv</code> for plots</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">About the file names</p>
+<p><code>CaseName</code> stands for the name of your case, e.g. <code>CaseDambreak</code>. The <code>.bi4</code> files are DualSPHysics' own binary format: compact and fast to write, but not readable by other programs. That is why the post-processing stage exists.</p>
+</div>
+<hr />
+<h2 id="pre-processing-defining-the-case-with-gencase">Pre-processing: defining the case with GenCase<a class="headerlink" href="#pre-processing-defining-the-case-with-gencase" title="Link to this heading">&para;</a></h2>
+<p><strong>GenCase</strong> builds the initial state of the simulation from a definition file, <code>CaseName_Def.xml</code>. This file contains everything about the case:</p>
+<ul>
+<li>the <strong>geometry</strong>: tanks, walls, obstacles, wavemakers, floating objects;</li>
+<li>the <strong>fluid</strong>: where it is initially and with which properties;</li>
+<li>the <strong>motion</strong> of moving objects, e.g. a piston wavemaker;</li>
+<li>the <strong>simulation parameters</strong>: particle spacing, physical constants, formulation options, simulated time.</li>
+</ul>
+<p>GenCase is very fast: it creates millions of particles in seconds on an ordinary CPU.</p>
+<h3 id="how-particles-are-created">How particles are created<a class="headerlink" href="#how-particles-are-created" title="Link to this heading">&para;</a></h3>
+<p>GenCase places all particles on a regular <strong>Cartesian lattice</strong>. The spacing between lattice nodes is the particle spacing <code>dp</code>, the single most important parameter of a simulation: halving <code>dp</code> doubles the resolution, but multiplies the number of particles by 4 in 2-D and by 8 in 3-D.</p>
+<p>Objects are drawn <em>onto</em> the lattice. For each object, GenCase selects the lattice nodes that fall inside it, or on its surface, and creates particles only there. The diagram below shows this for a triangle in 2-D: the lattice is laid over the triangle's bounding box, the triangle's edges are traced, and particles are created at the nodes inside.</p>
+<style>
+  .sph-gen-container {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    width: 100%;
+    max-width: 820px;
+    margin: 16px 0;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    box-sizing: border-box;
+  }
+
+  /* Canvas Stage Wrapper */
+  .sph-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    background: radial-gradient(circle at center, #ffffff 0%, #f4f6f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Overlay Step Label */
+  .sph-step-overlay {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    border: 1px solid #dadce0;
+    border-radius: 20px;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 5;
+  }
+
+  .sph-step-badge {
+    background: #1a73e8;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+
+  .sph-step-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #202124;
+  }
+
+  /* Control Bar */
+  .sph-control-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .sph-play-btn {
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #3c4043;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+  }
+  .sph-play-btn:hover {
+    background: #f1f3f4;
+    border-color: #bdc1c6;
+  }
+
+  .sph-progress-track {
+    flex-grow: 1;
+    height: 6px;
+    background: #e8eaed;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .sph-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #1a73e8;
+    transition: width 0.1s linear;
+  }
+
+  /* Text Explanations Grid */
+  .sph-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .sph-step-card {
+    background: #f8f9fa;
+    border: 1px solid #e8eaed;
+    border-radius: 8px;
+    padding: 12px 14px;
+    transition: all 0.25s ease;
+  }
+
+  .sph-step-card.active {
+    background: #e8f0fe;
+    border-color: #8ab4f8;
+    box-shadow: 0 2px 8px rgba(26,115,232,0.12);
+  }
+
+  .sph-card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 4px;
+  }
+
+  .sph-card-desc {
+    font-size: 12px;
+    color: #3c4043;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 600px) {
+    .sph-steps-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sph-gen-container">
+
+  <!-- Canvas Stage -->
+  <div class="sph-canvas-wrapper" id="canvas-container">
+    <div class="sph-step-overlay">
+      <span class="sph-step-badge" id="step-badge">Step 1</span>
+      <span class="sph-step-name" id="step-name">Geometry Definition</span>
+    </div>
+    <canvas id="genCanvas"></canvas>
+  </div>
+
+  <!-- Progress Bar & Pause/Play -->
+  <div class="sph-control-bar">
+    <button class="sph-play-btn" onclick="togglePlay()" id="play-btn" title="Pause / Play">
+      <svg id="pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      <svg id="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <div class="sph-progress-track">
+      <div class="sph-progress-bar" id="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Process Steps Text -->
+  <div class="sph-steps-grid">
+    <div class="sph-step-card active" id="card-1">
+      <div class="sph-card-title">1. Geometry Definition</div>
+      <div class="sph-card-desc">
+        The user inputs the boundary geometric definition (XML surface description, STL mesh, or PLY CAD model) establishing the continuous shape volume.
+      </div>
+    </div>
+
+    <div class="sph-step-card" id="card-2">
+      <div class="sph-card-title">2. Lattice Creation</div>
+      <div class="sph-card-desc">
+        GenCase overlays a uniform background 2D/3D grid (lattice) of candidate points spaced at inter-particle distance <strong>dp</strong> across the domain.
+      </div>
+    </div>
+
+    <div class="sph-step-card" id="card-3">
+      <div class="sph-card-title">3. Point-in-Polygon Testing</div>
+      <div class="sph-card-desc">
+        A ray-casting / point-in-polyhedron algorithm evaluates each candidate point to test whether its coordinates lie strictly inside the defined shape.
+      </div>
+    </div>
+
+    <div class="sph-step-card" id="card-4">
+      <div class="sph-card-title">4. Particle Selection & Pruning</div>
+      <div class="sph-card-desc">
+        All points outside the boundary are discarded. The surviving internal points are assigned SPH properties and exported as initial simulation particles.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const canvas = document.getElementById('genCanvas');
+  const ctx = canvas.getContext('2d');
+  const container = document.getElementById('canvas-container');
+
+  let isPlaying = true;
+  let cycleProgress = 0; // 0.0 to 4.0
+  const cycleDuration = 10000; // 10s per full loop
+  let lastTime = null;
+  let dpr = 1;
+
+  // Grid Resolution Parameters (Higher Resolution Grid)
+  const spacing = 12;
+  const cols = 28;
+  const rows = 22;
+  const pRadius = 4.2;
+
+  const stepNames = [
+    "Geometry Definition",
+    "Lattice Creation",
+    "Point-in-Polygon Testing",
+    "Particle Selection"
+  ];
+
+  // High-DPI Canvas Scaling for Crisp Rendering
+  function resizeCanvas() {
+    dpr = window.devicePixelRatio || 1;
+    const rect = container.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+  }
+  window.addEventListener('resize', resizeCanvas);
+
+  function getTriangle() {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    const cx = width / 2;
+    const cy = height / 2;
+    const size = 200;
+    return {
+      p1: { x: cx - size / 2, y: cy - size / 2 },
+      p2: { x: cx - size / 2, y: cy + size / 2 },
+      p3: { x: cx + size / 2, y: cy + size / 2 }
+    };
+  }
+
+  function isInsideTriangle(pt, tri) {
+    const { p1, p2, p3 } = tri;
+    const denominator = ((p2.y - p3.y) * (p1.x - p3.x) + (p3.x - p2.x) * (p1.y - p3.y));
+    const a = ((p2.y - p3.y) * (pt.x - p3.x) + (p3.x - p2.x) * (pt.y - p3.y)) / denominator;
+    const b = ((p3.y - p1.y) * (pt.x - p3.x) + (p1.x - p3.x) * (pt.y - p3.y)) / denominator;
+    const c = 1 - a - b;
+    return a >= 0 && b >= 0 && c >= 0;
+  }
+
+  function togglePlay() {
+    isPlaying = !isPlaying;
+    document.getElementById('pause-icon').style.display = isPlaying ? 'block' : 'none';
+    document.getElementById('play-icon').style.display = isPlaying ? 'none' : 'block';
+    if (isPlaying) requestAnimationFrame(loop);
+  }
+
+  function updateUI(currentStep) {
+    document.getElementById('step-badge').innerText = `Step ${currentStep}`;
+    document.getElementById('step-name').innerText = stepNames[currentStep - 1];
+    document.getElementById('progress-bar').style.width = `${(cycleProgress / 4) * 100}%`;
+
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById(`card-${i}`).classList.toggle('active', i === currentStep);
+    }
+  }
+
+  // Draw 3D Shaded Sphere
+  function drawSphere(x, y, radius, type, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+
+    if (type === 'wire') {
+      // Semi-transparent sphere shell
+      const grad = ctx.createRadialGradient(
+        x - radius * 0.3, y - radius * 0.3, radius * 0.1,
+        x, y, radius
+      );
+      grad.addColorStop(0, '#ffffff');
+      grad.addColorStop(0.7, '#a0c3ff');
+      grad.addColorStop(1, '#609af8');
+
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      ctx.strokeStyle = '#2b7fff';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+    } else if (type === 'solid') {
+      // Full 3D SPH Particle Sphere
+      const grad = ctx.createRadialGradient(
+        x - radius * 0.35, y - radius * 0.35, radius * 0.1,
+        x, y, radius
+      );
+      grad.addColorStop(0, '#8ab4f8');  // Specular Highlight
+      grad.addColorStop(0.4, '#1a73e8'); // Main SPH Blue
+      grad.addColorStop(1, '#0d47a1');   // Deep 3D Shadow Edge
+
+      // Soft drop shadow under particle
+      ctx.shadowColor = 'rgba(13, 71, 161, 0.3)';
+      ctx.shadowBlur = 4;
+      ctx.shadowOffsetY = 1.5;
+
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function draw() {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    ctx.clearRect(0, 0, width, height);
+
+    const tri = getTriangle();
+    const cx = width / 2;
+    const cy = height / 2;
+
+    const gridW = cols * spacing;
+    const gridH = rows * spacing;
+    const startX = cx - gridW / 2 + spacing / 2;
+    const startY = cy - gridH / 2 + spacing / 2;
+
+    const currentStep = Math.min(4, Math.floor(cycleProgress) + 1);
+    const stepLocalProgress = cycleProgress % 1.0;
+
+    updateUI(currentStep);
+
+    // --- DRAW PARTICLES ---
+    if (cycleProgress >= 1.0) {
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const px = startX + c * spacing;
+          const py = startY + r * spacing;
+          const inside = isInsideTriangle({ x: px, y: py }, tri);
+
+          let sphereType = 'wire';
+          let alpha = 1.0;
+
+          if (currentStep === 2) {
+            // Step 2: Fade in candidate sphere lattice
+            alpha = Math.min(1, stepLocalProgress * 1.5);
+            sphereType = 'wire';
+          } else if (currentStep === 3) {
+            // Step 3: Progressive in-out testing
+            const sweep = (c + r) / (cols + rows);
+            if (inside) {
+              if (stepLocalProgress >= sweep) {
+                sphereType = 'solid';
+              } else {
+                sphereType = 'wire';
+              }
+            } else {
+              sphereType = 'wire';
+            }
+          } else if (currentStep === 4) {
+            // Step 4: Discard external candidates
+            if (inside) {
+              sphereType = 'solid';
+            } else {
+              alpha = Math.max(0, 1 - stepLocalProgress * 2.0);
+              sphereType = 'wire';
+            }
+          }
+
+          if (alpha > 0) {
+            drawSphere(px, py, pRadius, sphereType, alpha);
+          }
+        }
+      }
+    }
+
+    // --- DRAW GEOMETRY BOUNDARY ---
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(tri.p1.x, tri.p1.y);
+    ctx.lineTo(tri.p2.x, tri.p2.y);
+    ctx.lineTo(tri.p3.x, tri.p3.y);
+    ctx.closePath();
+
+    ctx.strokeStyle = "#d93025";
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+
+    // Step 1 tint
+    if (currentStep === 1) {
+      const tintAlpha = Math.min(0.08, stepLocalProgress * 0.12);
+      ctx.fillStyle = `rgba(217, 48, 37, ${tintAlpha})`;
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function loop(timestamp) {
+    if (!lastTime) lastTime = timestamp;
+    const delta = timestamp - lastTime;
+    lastTime = timestamp;
+
+    if (isPlaying) {
+      cycleProgress += (delta / cycleDuration) * 4.0;
+      if (cycleProgress >= 4.0) {
+        cycleProgress = 0;
+      }
+    }
+
+    draw();
+
+    if (isPlaying) {
+      requestAnimationFrame(loop);
+    }
+  }
+
+  // Initializing canvas sizing & loop
+  setTimeout(() => {
+    resizeCanvas();
+    requestAnimationFrame(loop);
+  }, 50);
+</script>
+
+<p>Because the geometry is described independently of the lattice, the same case can be run at any resolution just by changing <code>dp</code>. Nothing else in the definition file needs to change.</p>
+<h3 id="drawing-geometry">Drawing geometry<a class="headerlink" href="#drawing-geometry" title="Link to this heading">&para;</a></h3>
+<p>The definition file offers a set of drawing commands:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Points and lines</td>
+<td><code>&lt;drawpoint /&gt;</code>, <code>&lt;drawpoints /&gt;</code>, <code>&lt;drawline /&gt;</code>, <code>&lt;drawlines /&gt;</code></td>
+</tr>
+<tr>
+<td>Surfaces</td>
+<td><code>&lt;drawtriangle /&gt;</code>, <code>&lt;drawquadri /&gt;</code>, <code>&lt;drawtrianglesstrip /&gt;</code>, <code>&lt;drawtrianglesfan /&gt;</code>, <code>&lt;drawpolygon&gt;</code>, <code>&lt;drawtriangles /&gt;</code></td>
+</tr>
+<tr>
+<td>Volumes</td>
+<td><code>&lt;drawpyramid /&gt;</code>, <code>&lt;drawprism /&gt;</code>, <code>&lt;drawbox /&gt;</code>, <code>&lt;drawbeach /&gt;</code>, <code>&lt;drawsphere /&gt;</code>, <code>&lt;drawellipsoid /&gt;</code>, <code>&lt;drawcylinder /&gt;</code>, <code>&lt;drawwave /&gt;</code></td>
+</tr>
+<tr>
+<td>Imported geometry</td>
+<td><code>&lt;drawfilestl /&gt;</code>, <code>&lt;drawfileply /&gt;</code>, <code>&lt;drawfilevtk /&gt;</code></td>
+</tr>
+<tr>
+<td>Transformations</td>
+<td><code>&lt;move /&gt;</code>, <code>&lt;scale /&gt;</code>, <code>&lt;rotate /&gt;</code>, <code>&lt;rotateline /&gt;</code></td>
+</tr>
+<tr>
+<td>Filling with fluid</td>
+<td><code>&lt;fillpoint /&gt;</code>, <code>&lt;fillbox /&gt;</code>, <code>&lt;fillfigure /&gt;</code>, <code>&lt;fillprism /&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>For complex, real-world geometry, draw the object in any CAD tool, export it as <strong>STL</strong>, <strong>PLY</strong> or <strong>VTK</strong>, and load it with the matching <code>&lt;drawfile... /&gt;</code> command. Imported and drawn objects can be combined freely in the same case.</p>
+<p>The <strong>draw mode</strong> decides which lattice nodes of an object receive particles:</p>
+<ul>
+<li><code>&lt;setdrawmode mode="face" /&gt;</code>: only the surface of the object;</li>
+<li><code>&lt;setdrawmode mode="solid" /&gt;</code>: only the inside;</li>
+<li><code>&lt;setdrawmode mode="full" /&gt;</code>: both.</li>
+</ul>
+<p>Once the walls exist, the fill commands flood a region with fluid up to those walls, which works even for very complex containers.</p>
+<h3 id="particle-types-and-the-mk-number">Particle types and the mk number<a class="headerlink" href="#particle-types-and-the-mk-number" title="Link to this heading">&para;</a></h3>
+<p>Each particle created is of one of three types, set before drawing:</p>
+<ul>
+<li><strong>fluid</strong>: <code>&lt;setmkfluid mk="..." /&gt;</code></li>
+<li><strong>boundary</strong>: <code>&lt;setmkbound mk="..." /&gt;</code></li>
+<li><strong>none</strong> (the nodes are left empty): <code>&lt;setmkvoid /&gt;</code></li>
+</ul>
+<p>The <code>mk</code> value is a marker that labels a group of particles sharing the same role, for example "the tank walls" or "the moving gate". Later you use it to give that group a motion, to make it a floating body, or to compute the force acting on it.</p>
+<p>The marker you write in the XML is not the final <code>mk</code> stored with the particles. GenCase shifts the numbers so that fluid and boundary markers never overlap:</p>
+<ul>
+<li><strong>mk of fluid particles</strong> = <code>mkfluid</code> + 1</li>
+<li><strong>mk of boundary particles</strong> = <code>mkbound</code> + 1 + <code>fluidcount</code> (usually <code>fluidcount</code> = 9)</li>
+</ul>
+<style>
+  .sph-gif-container {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    width: 100%;
+    max-width: 800px;
+    margin: 16px 0;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    box-sizing: border-box;
+  }
+
+  .array-stage {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    background: #f8f9fa;
+    border: 1px solid #e8eaed;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .array-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .label-fluid { 
+    color: #1a73e8; 
+    margin-bottom: 8px;
+  }
+
+  .label-target { 
+    color: #202124; 
+    margin-top: 10px; 
+    text-align: center;
+  }
+
+  /* Containers */
+  .source-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: #ffffff;
+    border: 1.5px dashed #bdc1c6;
+    border-radius: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .target-container {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background: #ffffff;
+    border: 1.5px solid #dadce0;
+    border-radius: 8px;
+    padding: 12px 12px 8px 12px;
+    box-sizing: border-box;
+  }
+
+  /* Grid Layouts */
+  .grid-track {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Target Slot Cell */
+  .cell {
+    height: 52px;
+    border-radius: 6px;
+    border: 1.5px dashed #bdc1c6;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #5f6368;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+  }
+
+  .cell-reserve {
+    background: #f1f3f4;
+    border: 1px solid #e0e0e0;
+    color: #9aa0a6;
+  }
+
+  /* Sub-label text rendered directly BELOW each slot cell */
+  .slot-id-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #3c4043;
+    text-align: center;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  /* Animated Moving Blocks */
+  .block {
+    position: absolute;
+    width: calc((100% - 56px - 48px) / 8);
+    height: 52px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    box-sizing: border-box;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    text-align: center;
+    line-height: 1.2;
+    padding: 4px;
+    z-index: 10;
+  }
+
+  .block-subtext {
+    font-size: 11px;
+    margin-top: 1px;
+    white-space: nowrap;
+  }
+
+  .block-title {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .block-fluid {
+    background: #e8f0fe;
+    border: 1.5px solid #1a73e8;
+    color: #1a73e8;
+  }
+
+  .block-bound {
+    background: #fef7e0;
+    border: 1.5px solid #e37400;
+    color: #e37400;
+  }
+
+  /* Initial Source Positions: Top = 60px (Fluid) and 124px (Bound) */
+  /* Target Landed Position: Top = 308px */
+
+  .f0 {
+    top: 60px;
+    left: calc(28px + 0 * ((100% - 56px) / 8));
+    animation-name: anim-f0;
+  }
+
+  .f1 {
+    top: 60px;
+    left: calc(28px + 1 * ((100% - 56px) / 8));
+    animation-name: anim-f1;
+  }
+
+  .b0 {
+    top: 124px;
+    left: calc(28px + 0 * ((100% - 56px) / 8));
+    animation-name: anim-b0;
+  }
+
+  .b1 {
+    top: 124px;
+    left: calc(28px + 1 * ((100% - 56px) / 8));
+    animation-name: anim-b1;
+  }
+
+  .b2 {
+    top: 124px;
+    left: calc(28px + 2 * ((100% - 56px) / 8));
+    animation-name: anim-b2;
+  }
+
+  /* KEYFRAME ANIMATIONS WITH SNAP / LOCKING IMPACT EFFECT */
+
+  @keyframes anim-f0 {
+    0%, 15% {
+      top: 60px;
+      left: calc(28px + 0 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    26% {
+      top: 314px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    29% {
+      top: 308px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.35);
+    }
+    32%, 85% {
+      top: 308px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 60px;
+      left: calc(28px + 0 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim-f1 {
+    0%, 18% {
+      top: 60px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    29% {
+      top: 314px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    32% {
+      top: 308px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.35);
+    }
+    35%, 85% {
+      top: 308px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 60px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim-b0 {
+    0%, 40% {
+      top: 124px;
+      left: calc(28px + 0 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    51% {
+      top: 314px;
+      left: calc(28px + 5 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    54% {
+      top: 308px;
+      left: calc(28px + 5 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(227, 116, 0, 0.35);
+    }
+    57%, 85% {
+      top: 308px;
+      left: calc(28px + 5 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 124px;
+      left: calc(28px + 0 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim-b1 {
+    0%, 43% {
+      top: 124px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    54% {
+      top: 314px;
+      left: calc(28px + 6 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    57% {
+      top: 308px;
+      left: calc(28px + 6 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(227, 116, 0, 0.35);
+    }
+    60%, 85% {
+      top: 308px;
+      left: calc(28px + 6 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 124px;
+      left: calc(28px + 1 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim-b2 {
+    0%, 46% {
+      top: 124px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    57% {
+      top: 314px;
+      left: calc(28px + 7 * ((100% - 56px) / 8));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    60% {
+      top: 308px;
+      left: calc(28px + 7 * ((100% - 56px) / 8));
+      transform: scale(0.92, 0.88);
+      box-shadow: 0 0 0 4px rgba(227, 116, 0, 0.35);
+    }
+    63%, 85% {
+      top: 308px;
+      left: calc(28px + 7 * ((100% - 56px) / 8));
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    100% {
+      top: 124px;
+      left: calc(28px + 2 * ((100% - 56px) / 8));
+      transform: scale(1);
+    }
+  }
+</style>
+
+<div class="sph-gif-container">
+  <div class="array-stage">
+
+    <!-- Source Container Box -->
+    <div class="source-container">
+      <div class="array-section-label label-fluid">Source Container: mkfluid & mkbound Arrays</div>
+    </div>
+
+    <!-- Target Container Box -->
+    <div class="target-container">
+      <div class="grid-track">
+        <div class="cell"><span style="color:#202124;">Void</span></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell cell-reserve">...</div>
+        <div class="cell cell-reserve"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+
+      <!-- Labels positioned below each slot -->
+      <div class="grid-track" style="margin-top: 4px;">
+        <div class="slot-id-label">mk=0</div>
+        <div class="slot-id-label">mk=1</div>
+        <div class="slot-id-label">mk=2</div>
+        <div class="slot-id-label" style="color:#9aa0a6;">mk=3..8</div>
+        <div class="slot-id-label" style="color:#9aa0a6;">mk=9</div>
+        <div class="slot-id-label">mk=10</div>
+        <div class="slot-id-label">mk=11</div>
+        <div class="slot-id-label">mk=12</div>
+      </div>
+
+      <div class="array-section-label label-target">Target Container: mk Array (fluidcount = 9)</div>
+    </div>
+
+    <!-- Animated Blocks with Lock Snap Effect -->
+    <div class="block block-fluid f0">
+      <span class="block-title">mkfluid=0</span>
+      <span class="block-subtext">Fluid 0</span>
+    </div>
+
+    <div class="block block-fluid f1">
+      <span class="block-title">mkfluid=1</span>
+      <span class="block-subtext">Fluid 1</span>
+    </div>
+
+    <div class="block block-bound b0">
+      <span class="block-title">mkbound=0</span>
+      <span class="block-subtext">Bound 0</span>
+    </div>
+
+    <div class="block block-bound b1">
+      <span class="block-title">mkbound=1</span>
+      <span class="block-subtext">Bound 1</span>
+    </div>
+
+    <div class="block block-bound b2">
+      <span class="block-title">mkbound=2</span>
+      <span class="block-subtext">Bound 2</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="admonition tip">
+<p class="admonition-title">Check the final mk values</p>
+<p>GenCase writes the final <code>mk</code> of every particle group to <code>CaseName.out</code>. When a post-processing command needs an <code>mk</code> (for example <code>-onlymk:</code> in ComputeForces), take the value from that file.</p>
+</div>
+<p>Fluid particles can also receive initial conditions with <code>&lt;initials /&gt;</code>, for example an initial velocity (<code>&lt;velocity /&gt;</code>) or a solitary wave (<code>&lt;velwave /&gt;</code>), and groups of boundary particles can be declared as floating bodies with <code>&lt;floatings /&gt;</code>.</p>
+<h3 id="running-gencase">Running GenCase<a class="headerlink" href="#running-gencase" title="Link to this heading">&para;</a></h3>
+<p>GenCase takes the definition file (without the <code>_Def.xml</code> ending) and the output name:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GenCase_win64.exe CaseDambreak_Def CaseDambreak_out/CaseDambreak -save:all
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./GenCase_linux64<span class="w"> </span>CaseDambreak_Def<span class="w"> </span>CaseDambreak_out/CaseDambreak<span class="w"> </span>-save:all
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p><code>-save:all</code> asks GenCase to also write the geometry as VTK files. Inside <code>CaseDambreak_out/</code> you then find:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CaseDambreak.xml</code></td>
+<td>the full case configuration, as read by the solver</td>
+</tr>
+<tr>
+<td><code>CaseDambreak.bi4</code></td>
+<td>the initial particles (binary)</td>
+</tr>
+<tr>
+<td><code>CaseDambreak.out</code></td>
+<td>GenCase's log: number of particles, final <code>mk</code> values, warnings</td>
+</tr>
+<tr>
+<td><code>CaseDambreak_All.vtk</code>, <code>_Bound.vtk</code>, <code>_Fluid.vtk</code></td>
+<td>the initial particles (all, boundary only, fluid only) for ParaView</td>
+</tr>
+<tr>
+<td>other <code>.vtk</code> files</td>
+<td>additional diagnostic geometry</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Look before you run</p>
+<p>Open <code>CaseDambreak_Bound.vtk</code> and <code>CaseDambreak_Fluid.vtk</code> in ParaView before starting a long simulation. A misplaced wall or a tank filled to the wrong level is much cheaper to spot here than after hours of computation.</p>
+</div>
+<hr />
+<h2 id="running-the-case">Running the case<a class="headerlink" href="#running-the-case" title="Link to this heading">&para;</a></h2>
+<p>GenCase prepares the initial particles and case files; the DualSPHysics solver then runs the numerical simulation. CPU execution uses the host processor, while GPU execution uses a compatible NVIDIA GPU with CUDA. Executables are available for Windows and Linux. Windows examples typically use BAT scripts; Linux examples use shell scripts or equivalent commands. These scripts show the complete preparation, simulation and post-processing sequence.</p>
+<p>For executable selection, command-line options, hardware requirements and Multi-GPU execution, see <a href="cpu-gpu-multigpu.html">CPU, GPU and Multi-GPU Execution</a>.</p>
+<h3 id="the-solver">The solver<a class="headerlink" href="#the-solver" title="Link to this heading">&para;</a></h3>
+<p>The <strong>DualSPHysics</strong> executable reads the files written by GenCase and simulates the flow. It comes in two versions:</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Windows</th>
+<th>Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU (NVIDIA, CUDA)</td>
+<td><code>DualSPHysics5.4_win64.exe</code></td>
+<td><code>DualSPHysics5.4_linux64</code></td>
+</tr>
+<tr>
+<td>CPU (multi-core, OpenMP)</td>
+<td><code>DualSPHysics5.4CPU_win64.exe</code></td>
+<td><code>DualSPHysics5.4CPU_linux64</code></td>
+</tr>
+</tbody>
+</table>
+<p>The version number in the name (<code>5.4</code> here) changes between releases; check the <code>bin/windows</code> or <code>bin/linux</code> folder of your installation for the exact names. CPU and GPU availability does not establish identical numerical results or a fixed speedup. Check feature compatibility and assess numerical agreement and runtime for the intended case, software build and hardware.</p>
+<p>The solver takes the case name (as written by GenCase, without extension) and the output folder:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Windows</label><label for="__tabbed_2_2">Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DualSPHysics5.4_win64.exe -gpu CaseDambreak_out/CaseDambreak CaseDambreak_out
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./DualSPHysics5.4_linux64<span class="w"> </span>-gpu<span class="w"> </span>CaseDambreak_out/CaseDambreak<span class="w"> </span>CaseDambreak_out
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p><code>-gpu</code> selects the graphics card; use <code>-cpu</code> to run on the processor instead. While it runs, the solver prints its progress in the terminal: the simulated time reached, the number of particles, and an estimate of the remaining run time.</p>
+<p>The results are written to <code>CaseDambreak_out/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data/Part_0000.bi4</code>, <code>Part_0001.bi4</code>, …</td>
+<td>the state of all particles at each output time (one file per saved instant)</td>
+</tr>
+<tr>
+<td><code>data/PartOut_000.obi4</code></td>
+<td>particles that left the domain during the simulation</td>
+</tr>
+<tr>
+<td><code>Run.out</code></td>
+<td>the solver's log: configuration, progress, warnings, total run time</td>
+</tr>
+<tr>
+<td><code>Run.csv</code>, <code>RunPARTs.csv</code></td>
+<td>run statistics, per output step, in table form</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Command-line options</p>
+<p>Run the solver with <code>-h</code> to list every option it accepts. Many parameters of the XML file (for example the simulated time or the formulation options) can be overridden from the command line. This is handy for quick tests without editing the case.</p>
+</div>
+<h3 id="the-batch-files">The batch files<a class="headerlink" href="#the-batch-files" title="Link to this heading">&para;</a></h3>
+<p>Typing these commands by hand every time would be tedious, and the post-processing steps add many more. Each example therefore comes with <strong>batch files</strong> that run the whole chain. Their names tell you the system (<code>w…_win64</code> for Windows, <code>x…_linux64</code> for Linux) and the processor they use:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>System</th>
+<th>Runs on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wCaseDambreak_win64_GPU.bat</code></td>
+<td>Windows</td>
+<td>GPU</td>
+</tr>
+<tr>
+<td><code>wCaseDambreak_win64_CPU.bat</code></td>
+<td>Windows</td>
+<td>CPU</td>
+</tr>
+<tr>
+<td><code>xCaseDambreak_linux64_GPU.sh</code></td>
+<td>Linux</td>
+<td>GPU</td>
+</tr>
+<tr>
+<td><code>xCaseDambreak_linux64_CPU.sh</code></td>
+<td>Linux</td>
+<td>CPU</td>
+</tr>
+</tbody>
+</table>
+<p>A batch file is a plain text file: open it in any text editor to read or change it. All DualSPHysics batch files follow the same structure, in five blocks. The excerpts below are from <code>xCaseDambreak_linux64_GPU.sh</code>; the Windows <code>.bat</code> files contain the same steps in Windows syntax (<code>set name=...</code> instead of <code>export name=...</code>, and <code>%name%</code> instead of <code>${name}</code>).</p>
+<h4 id="1-case-name-and-output-folders">1. Case name and output folders<a class="headerlink" href="#1-case-name-and-output-folders" title="Link to this heading">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">name</span><span class="o">=</span>CaseDambreak
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">dirout</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span>_out
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">diroutdata</span><span class="o">=</span><span class="si">${</span><span class="nv">dirout</span><span class="si">}</span>/data
+</span></code></pre></div>
+<p><code>name</code> must match the definition file (<code>CaseDambreak_Def.xml</code>). All results go to <code>CaseDambreak_out/</code>, with the particle data in its <code>data/</code> subfolder.</p>
+<h4 id="2-where-the-executables-are">2. Where the executables are<a class="headerlink" href="#2-where-the-executables-are" title="Link to this heading">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">dirbin</span><span class="o">=</span>../../../bin/linux
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">gencase</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">dirbin</span><span class="si">}</span><span class="s2">/GenCase_linux64&quot;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">dualsphysicsgpu</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">dirbin</span><span class="si">}</span><span class="s2">/DualSPHysics5.4_linux64&quot;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">partvtk</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">dirbin</span><span class="si">}</span><span class="s2">/PartVTK_linux64&quot;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">measuretool</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">dirbin</span><span class="si">}</span><span class="s2">/MeasureTool_linux64&quot;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># ... one line for each post-processing tool</span>
+</span></code></pre></div>
+<p><code>dirbin</code> points to the folder with the programs, relative to the case folder. If you copy a case to another location, this is the line to update.</p>
+<h4 id="3-what-to-do-if-results-already-exist">3. What to do if results already exist<a class="headerlink" href="#3-what-to-do-if-results-already-exist" title="Link to this heading">&para;</a></h4>
+<p>If <code>CaseDambreak_out/</code> already exists, the batch file stops and asks:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>The folder &quot;CaseDambreak_out&quot; already exists. Choose an option.
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  [1]- Delete it and continue.
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  [2]- Execute post-processing.
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  [3]- Abort and exit.
+</span></code></pre></div>
+<p>Option <strong>2</strong> is worth remembering: it keeps the simulation results and only reruns the post-processing, for example after you have changed which variables PartVTK writes.</p>
+<h4 id="4-pre-processing-and-simulation">4. Pre-processing and simulation<a class="headerlink" href="#4-pre-processing-and-simulation" title="Link to this heading">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="si">${</span><span class="nv">gencase</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">name</span><span class="si">}</span>_Def<span class="w"> </span><span class="si">${</span><span class="nv">dirout</span><span class="si">}</span>/<span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="w"> </span>-save:all
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>fail<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="si">${</span><span class="nv">dualsphysicsgpu</span><span class="si">}</span><span class="w"> </span>-gpu<span class="w"> </span><span class="si">${</span><span class="nv">dirout</span><span class="si">}</span>/<span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">dirout</span><span class="si">}</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>fail<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div>
+<p>These are exactly the two commands of the previous sections. The line after each one checks whether the program finished successfully, and stops the whole chain if it did not. That way a GenCase error is never followed by a meaningless simulation.</p>
+<h4 id="5-post-processing">5. Post-processing<a class="headerlink" href="#5-post-processing" title="Link to this heading">&para;</a></h4>
+<p>The rest of the file runs the post-processing tools, each writing to its own subfolder of <code>CaseDambreak_out/</code> (<code>particles/</code>, <code>measuretool/</code>, <code>forces/</code>, <code>surface/</code>, <code>flow/</code>). These commands are explained in the next section.</p>
+<div class="admonition tip">
+<p class="admonition-title">Adapting a batch file to your own case</p>
+<p>The easiest way to set up a new case is to copy an example folder and change:</p>
+<ol>
+<li><code>name</code>, to match your <code>_Def.xml</code> file;</li>
+<li><code>dirbin</code>, if the folder has moved relative to <code>bin/</code>;</li>
+<li>the post-processing commands: delete those you do not need and adjust the options of the others (particle types, <code>mk</code> values, measurement points).</li>
+</ol>
+<p>On clusters, the same commands go into the job submission script. See the notes on cluster machines in <a href="getting_started.html#install-dualsphysics">Run Your First Simulation</a>.</p>
+</div>
+<hr />
+<h2 id="post-processing">Post-processing<a class="headerlink" href="#post-processing" title="Link to this heading">&para;</a></h2>
+<p>The solver's output, <code>data/Part_####.bi4</code>, is complete but not directly usable. The post-processing tools read it and extract what you need.</p>
+<h3 id="the-tools">The tools<a class="headerlink" href="#the-tools" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it does</th>
+<th>Typical output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PartVTK</strong></td>
+<td>converts particles to VTK or CSV, with a choice of particles and variables</td>
+<td><code>particles/PartFluid_####.vtk</code></td>
+</tr>
+<tr>
+<td><strong>PartVTKOut</strong></td>
+<td>the same for particles that left the domain</td>
+<td><code>particles/PartFluidOut_####.vtk</code></td>
+</tr>
+<tr>
+<td><strong>BoundaryVTK</strong></td>
+<td>writes the geometry of moving and floating boundaries at each output time</td>
+<td>surface <code>.vtk</code> files</td>
+</tr>
+<tr>
+<td><strong>MeasureTool</strong></td>
+<td>interpolates velocity, pressure or free-surface elevation at chosen points (numerical gauges)</td>
+<td><code>.csv</code> time series, <code>.vtk</code> points</td>
+</tr>
+<tr>
+<td><strong>ComputeForces</strong></td>
+<td>computes the force exerted by the fluid on a group of boundary particles</td>
+<td><code>.csv</code> time series</td>
+</tr>
+<tr>
+<td><strong>FloatingInfo</strong></td>
+<td>reports the motion of floating bodies: position, velocity, rotation</td>
+<td><code>.csv</code> time series</td>
+</tr>
+<tr>
+<td><strong>IsoSurface</strong></td>
+<td>builds the free surface as a surface mesh, and slices through it</td>
+<td><code>surface/Surface_####.vtk</code></td>
+</tr>
+<tr>
+<td><strong>FlowTool</strong></td>
+<td>counts particles and flow through user-defined boxes</td>
+<td><code>.csv</code>, <code>.vtk</code></td>
+</tr>
+<tr>
+<td><strong>TracerParts</strong></td>
+<td>follows the trajectories of selected particles</td>
+<td><code>.vtk</code> lines</td>
+</tr>
+</tbody>
+</table>
+<p>Every tool prints the full list of its options when run with <code>-h</code>.</p>
+<h3 id="running-a-post-processing-tool">Running a post-processing tool<a class="headerlink" href="#running-a-post-processing-tool" title="Link to this heading">&para;</a></h3>
+<p>All tools share the same pattern: <code>-dirdata</code> says where the particle data are, and one or more <code>-save...</code> options say what to write. For example, the Dam Break batch file converts the fluid particles to VTK with:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Windows</label><label for="__tabbed_3_2">Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>PartVTK_win64.exe -dirdata CaseDambreak_out/data -savevtk CaseDambreak_out/particles/PartFluid -onlytype:-all,+fluid
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./PartVTK_linux64<span class="w"> </span>-dirdata<span class="w"> </span>CaseDambreak_out/data<span class="w"> </span>-savevtk<span class="w"> </span>CaseDambreak_out/particles/PartFluid<span class="w"> </span>-onlytype:-all,+fluid
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-dirdata CaseDambreak_out/data</code></td>
+<td>read the particle data from this folder</td>
+</tr>
+<tr>
+<td><code>-savevtk .../PartFluid</code></td>
+<td>write VTK files named <code>PartFluid_0000.vtk</code>, <code>PartFluid_0001.vtk</code>, …</td>
+</tr>
+<tr>
+<td><code>-onlytype:-all,+fluid</code></td>
+<td>start from no particles (<code>-all</code>), then add the fluid ones (<code>+fluid</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>The particle selection reads left to right: <code>-all</code> removes everything, then each <code>+</code> adds a group back. The available groups are <code>all</code>, <code>bound</code>, <code>fixed</code>, <code>moving</code>, <code>floating</code> and <code>fluid</code>. Particles can also be selected by marker (<code>-onlymk:</code>), by position (<code>-onlypos:</code>) or by velocity (<code>-onlyvel:</code>).</p>
+<p>Two more options are worth knowing from the start:</p>
+<ul>
+<li><code>-vars:</code> chooses the variables written with each particle, for example <code>-vars:+idp,+vel,+rhop,+press</code> for particle id, velocity, density and pressure. Fewer variables make smaller files.</li>
+<li><code>-savecsv</code> writes a table instead of VTK files, ready to open in Python or Excel.</li>
+</ul>
+<h3 id="visualising-the-results-in-paraview">Visualising the results in ParaView<a class="headerlink" href="#visualising-the-results-in-paraview" title="Link to this heading">&para;</a></h3>
+<p><a href="https://www.paraview.org">ParaView</a> is a free, open-source visualisation program that reads VTK files directly. The steps below show the Dam Break particles coloured by velocity.</p>
+<p><strong>1. Load the particles.</strong>
+<strong>File → Open</strong>, go to <code>CaseDambreak_out/particles/</code> and select <code>PartFluid_..vtk</code>. ParaView groups the numbered files into a single time series. Click <strong>Apply</strong> in the Properties panel.</p>
+<!-- clip: docs/assets/images/user_guide/paraview/pv_open_series.gif -->
+
+<p><strong>2. Colour by velocity.</strong>
+In the toolbar, change the colouring from <em>Solid Color</em> to <strong>Vel</strong>. Click <em>Rescale to Data Range</em> if the colours look washed out.</p>
+<!-- clip: docs/assets/images/user_guide/paraview/pv_colour_by_velocity.gif -->
+
+<p><strong>3. Show the tank.</strong>
+Open <code>CaseDambreak_out/CaseDambreak_Bound.vtk</code> (written by GenCase) and click <strong>Apply</strong>. The walls give the flow its context. In the Properties panel, lower their <em>Opacity</em> so they do not hide the fluid.</p>
+<p><strong>4. Play the simulation.</strong>
+Press <strong>Play</strong> in the toolbar at the top. The time shown in the toolbar is the simulated time.</p>
+<!-- clip: docs/assets/images/user_guide/paraview/pv_play_animation.gif -->
+
+<p><strong>5. Save an image or a video.</strong>
+<strong>File → Save Screenshot</strong> saves the current view; <strong>File → Save Animation</strong> saves every time step as images or as a video.</p>
+<div class="admonition tip">
+<p class="admonition-title">Large simulations</p>
+<p>3-D simulations can have millions of particles per file. For a first look, write only the variables you need with <code>-vars:</code>, or only some output times with the <code>-first:</code> and <code>-last:</code> options of PartVTK.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="getting_started.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Run Your First Simulation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Run Your First Simulation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="cpu-gpu-multigpu.html" class="md-footer__link md-footer__link--next" aria-label="Next: CPU, GPU and Multi-GPU Execution">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                CPU, GPU and Multi-GPU Execution
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 DualSPHysics Team &middot; Edited by Bonaventura Tagliafierro
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/DualSPHysics/DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/catalogue-overview.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4387 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/xml_guides/mphase_nnewtonian.html">
+      
+      
+        <link rel="prev" href="shiftingadv.html">
+      
+      
+        <link rel="next" href="geomech.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/dualsphysics-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Multiphase non-Newtonian - DualSPHysics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#multiphase-non-newtonian" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <strong>Draft for internal review.</strong>
+  Some pages, figures and videos are still in progress.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../home/" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DualSPHysics Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Multiphase non-Newtonian
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../home/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Theory
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../couplings/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Couplings
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../gallery/intro.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Gallery
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting_started/getting_started.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples_catalogue/catalogue/main-catalogue.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Examples Catalogue
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../benchmarks/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Benchmarks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="general.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XML Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../faq/faq.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../licenses/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Licenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../contributing/setup.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../home/" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    DualSPHysics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../home/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../couplings/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couplings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gallery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gallery/intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/getting_started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Your First Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/workflow.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DualSPHysics Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/cpu-gpu-multigpu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU, GPU and Multi-GPU Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/case_definition.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Definition (XML)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/designsphysics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DesignSPHysics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples Catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples Catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/main-catalogue.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/mdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/inletoutlet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/inletmesh.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InletMesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/wavecoupling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wavecoupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/vresolution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/flexstruc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/moordynplus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/chrono.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/chronofea.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/shiftingadv.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/divclean.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divergence cleaning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/mphase_liquidgas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase LiquidGas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/mphase_nnewtonian.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase NNewtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/geomech.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_catalogue/catalogue/motion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../benchmarks/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/dambreak_2d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 2D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/dambreak_3d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/sloshing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sloshing Tank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/wave_generation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/runup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/dambreak_debris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/floating_box.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floating Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/moored_box.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/heave_decay.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XML Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="general.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inletoutlet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vresolution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flexstruc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="moordynplus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chrono.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chronofea.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shiftingadv.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase non-Newtonian
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="mphase_nnewtonian.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase non-Newtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-software-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and software context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-assignment-and-material-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase assignment and material properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase assignment and material properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linking-materials-to-particle-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking materials to particle blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-and-equation-of-state-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density and equation-of-state properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herschelbuckleypapanastasiou-rheology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Herschel–Buckley–Papanastasiou rheology
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Herschel–Buckley–Papanastasiou rheology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stress-growth-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stress-growth parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow index
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bingham-bi-viscosity-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bingham bi-viscosity alternative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bingham bi-viscosity alternative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stress-and-viscosity-near-the-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stress and viscosity near the origin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-operators-and-time-step-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical operators and time-step control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical operators and time-step control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocity-gradients-and-viscous-forces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Velocity gradients and viscous forces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viscous-time-step-relaxation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viscous time-step relaxation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historical-example-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical example configurations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Historical example configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-layer-poiseuille-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-layer Poiseuille flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-phase-wet-dam-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three-phase wet dam break
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-dimensional-dam-break-and-bi-viscosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three-dimensional dam break and bi-viscosity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-supplied-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other supplied configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-multiphase-non-newtonian-xml-format-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Multiphase Non-Newtonian XML format reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="geomech.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/new_floating.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Add a Floating Object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/change_resolution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Resolution/Particle Size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/change_viscosity.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Viscosity Formulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/change_time_duration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Simulation Time Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/change_still_water_level.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Still-Water Level (Pending)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/simulation_domain.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand the Simulation Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/mk_labels.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand MK Labels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/measure_velocity.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/measure_pressure.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/measure_free_surface.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Free-Surface Elevation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/measure_force.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Force
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/visualise_paraview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise Results in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/visualise_mdbc_normals.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise mDBC Normals in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/howto/floating_body_motion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Compute the Motion of a Floating Body
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../licenses/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licenses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Licenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/dualsphysics-lgpl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (LGPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/dualsphysics-bsd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (BSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/tinyxml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TinyXML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/random-generator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random number generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/project-chrono.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licenses/moordynplus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDyn+
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/setup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-software-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and software context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-assignment-and-material-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase assignment and material properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase assignment and material properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linking-materials-to-particle-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking materials to particle blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-and-equation-of-state-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density and equation-of-state properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herschelbuckleypapanastasiou-rheology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Herschel–Buckley–Papanastasiou rheology
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Herschel–Buckley–Papanastasiou rheology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stress-growth-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stress-growth parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow index
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bingham-bi-viscosity-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bingham bi-viscosity alternative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bingham bi-viscosity alternative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stress-and-viscosity-near-the-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stress and viscosity near the origin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-operators-and-time-step-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical operators and time-step control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical operators and time-step control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocity-gradients-and-viscous-forces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Velocity gradients and viscous forces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viscous-time-step-relaxation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viscous time-step relaxation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historical-example-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical example configurations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Historical example configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-layer-poiseuille-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-layer Poiseuille flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-phase-wet-dam-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three-phase wet dam break
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-dimensional-dam-break-and-bi-viscosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three-dimensional dam break and bi-viscosity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-supplied-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other supplied configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-multiphase-non-newtonian-xml-format-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Multiphase Non-Newtonian XML format reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="multiphase-non-newtonian">Multiphase non-Newtonian<a class="headerlink" href="#multiphase-non-newtonian" title="Link to this heading">&para;</a></h1>
+<p style="margin-top: -2.5em; font-size: 0.95em; color: gray;">
+  Under review by Georgios Fourtakas
+</p>
+
+<p><em>Phase-dependent fluid properties, Herschel–Buckley–Papanastasiou rheology and the bi-viscosity alternative.</em></p>
+<h2 id="scope-and-software-context">Scope and software context<a class="headerlink" href="#scope-and-software-context" title="Link to this heading">&para;</a></h2>
+<p>The multiphase non-Newtonian formulation described here is the specialised <strong>DualSPHysics v5.0 non-Newtonian module</strong>, documented in July 2020. It represents fluids with phase-dependent density and rheological properties. A phase identifies a material population; a non-Newtonian constitutive model describes how its response changes with deformation. Several phases can therefore have different properties without every phase necessarily exhibiting non-Newtonian behaviour.</p>
+<p>The available module documentation describes the Herschel–Buckley–Papanastasiou (HBP) formulation and a Bingham bi-viscosity alternative. It also distinguishes two velocity-gradient approximations and alternative viscous-force operators. These choices describe different parts of the numerical formulation and must be considered together.</p>
+<p>The XML examples below retain the conventions of that module. They are not established executable configurations for the principal DualSPHysics v6 solver. In particular, the module-specific constitutive-force selector must not be replaced by a similarly numbered v6 viscosity option: the meanings differ. A compatible module version and its corresponding configuration specification are required before using these examples with another release.</p>
+<h2 id="phase-assignment-and-material-properties">Phase assignment and material properties<a class="headerlink" href="#phase-assignment-and-material-properties" title="Link to this heading">&para;</a></h2>
+<h3 id="linking-materials-to-particle-blocks">Linking materials to particle blocks<a class="headerlink" href="#linking-materials-to-particle-blocks" title="Link to this heading">&para;</a></h3>
+<p>Phase definitions belong to <code>case/execution/special/nnphases</code>. Each lowercase <code>phase</code> element has a <code>mkfluid</code> attribute that associates its material properties with the fluid block created by the corresponding <code>setmkfluid</code> command in <code>case/casedef/geometry/commands/mainlist</code>.</p>
+<p>The following two excerpts illustrate that association in the documented v5.0 configuration. They show selected geometry commands and their corresponding phase definitions, rather than a complete case.</p>
+<p><strong>XML excerpt — phase-geometry.</strong> Historical module context; XML location: <code>case/casedef/geometry/commands/mainlist</code>. Source: July 2020 module description.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;setmkfluid</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>solid<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">&lt;/drawbox&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">&lt;setmkfluid</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>solid<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.50&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.25&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">&lt;/drawbox&gt;</span>
+</span></code></pre></div>
+<p><strong>XML excerpt — two-phase-definition.</strong> Historical module context; XML location: <code>case/execution</code>. Source: July 2020 module description.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;special&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;nnphases&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0001&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nt">&lt;/phase&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">            </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="nt">&lt;/phase&gt;</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">&lt;/nnphases&gt;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nt">&lt;/special&gt;</span>
+</span></code></pre></div>
+<p><code>mkfluid="0"</code> and <code>mkfluid="1"</code> refer to the two fluid blocks; they are not a count of all supported phases. Geometry, boundary particles, constants and execution controls still have to be supplied by the surrounding case. The reference uses <code>phasetype=0</code> and describes it as the only non-Newtonian phase type available in the documented historical module; this does not define an enumeration for other releases.</p>
+<h3 id="density-and-equation-of-state-properties">Density and equation-of-state properties<a class="headerlink" href="#density-and-equation-of-state-properties" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Element within <code>phase</code></th>
+<th>Documented meaning</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rhop</code></td>
+<td>Density of the phase</td>
+<td>The reference and cases use <code>rhop</code></td>
+</tr>
+<tr>
+<td><code>csound</code></td>
+<td>Phase speed of sound, m/s</td>
+<td>Optional; otherwise the value calculated by GenCase is used</td>
+</tr>
+<tr>
+<td><code>gamma</code></td>
+<td>Polytropic index in the equation of state</td>
+<td>Optional; otherwise the value in <code>constantsdef</code> is used</td>
+</tr>
+<tr>
+<td><code>phasetype</code></td>
+<td>Phase-model selector</td>
+<td>The documented historical module provides value 0</td>
+</tr>
+</tbody>
+</table>
+<p>The module description uses the phase-specific sound speed when obtaining pressure from the equation of state, but uses the <strong>maximum sound speed across the phases</strong> in the CFL time-step restriction. Specifying a smaller sound speed for one phase therefore does not remove the restriction imposed by a faster phase.</p>
+<p><strong>XML excerpt — phase-eos-properties.</strong> Historical module context; XML location: <code>case/execution/special/nnphases/phase</code>. Source: <code>doc/xml_format/_FmtXML_MphaseNNewtonian.xml</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density of the phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;csound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;80&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Speed of sound for phase (m/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gamma polytropic index value for phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>These are property elements inside a phase, not separate execution parameters. The original module description does not recommend density ratios greater than two. This recommendation belongs to that formulation and should not be interpreted as a general limit for every multiphase method or software release. The supplied documentation does not establish an interface reconstruction scheme, a mixture law or a general maximum phase count.</p>
+<h2 id="herschelbuckleypapanastasiou-rheology">Herschel–Buckley–Papanastasiou rheology<a class="headerlink" href="#herschelbuckleypapanastasiou-rheology" title="Link to this heading">&para;</a></h2>
+<h3 id="material-parameters">Material parameters<a class="headerlink" href="#material-parameters" title="Link to this heading">&para;</a></h3>
+<p>The HBP description uses four principal material parameters: viscosity or consistency, specific yield stress, the flow index and the exponential stress-growth parameter.</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Meaning in the module documentation</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>visco</code></td>
+<td>Kinematic viscosity or consistency index</td>
+<td>A phase property, distinct from the global execution parameter <code>Visco</code></td>
+</tr>
+<tr>
+<td><code>tau_yield</code></td>
+<td>Specific yield stress</td>
+<td>Yield stress divided by density</td>
+</tr>
+<tr>
+<td><code>HBP_m</code></td>
+<td>Papanastasiou exponential stress-growth parameter</td>
+<td>Controls the regularisation of the yield contribution; the reference gives seconds</td>
+</tr>
+<tr>
+<td><code>HBP_n</code></td>
+<td>Herschel–Buckley flow index</td>
+<td>1 gives a linear contribution; values below or above 1 describe shear thinning or shear thickening</td>
+</tr>
+</tbody>
+</table>
+<p>The specific-yield-stress convention is</p>
+<div class="arithmatex">\[
+\tau_{\mathrm{specific}}=\frac{\tau_{\mathrm{yield,dimensional}}}{\rho}.
+\]</div>
+<p>The reference expresses its units as Pa m³/kg. A dimensional yield stress must therefore not be inserted directly in a field defined as a specific stress. The reference labels <code>visco</code> as m²/s while also using the term <em>consistency index</em>. It does not establish the general dimensional convention for non-unit flow index; that label alone is insufficient to define a conversion for a material with <span class="arithmatex">\(n\ne1\)</span>.</p>
+<p>This historical material-property excerpt retains the values in the documented HBP example.</p>
+<p><strong>XML excerpt — hbp-material.</strong> Historical module context; XML location: <code>case/execution/special/nnphases/phase[@mkfluid="0"]</code>. Source: July 2020 module description.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0001&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="stress-growth-parameter">Stress-growth parameter<a class="headerlink" href="#stress-growth-parameter" title="Link to this heading">&para;</a></h3>
+<p>The documented comparison varies <span class="arithmatex">\(m\)</span> between 0, 10 and 100. Increasing this parameter changes the regularised response near yielding. The chart labels describe the illustrated curves; they do not make <code>HBP_m</code> a universal switch between complete constitutive models independently of the other parameters.</p>
+<figure>
+<p><img alt="Illustrated HBP shear-stress response for the stress-growth comparison. The documented curves correspond to m = 0, 10 and 100." src="../assets/images/xml_guide/mphase_nnewtonian/hbp-stress-growth.png" style="max-width:100%;height:auto;" width="600" />
+  </p>
+<figcaption><strong>Figure 1:</strong> Illustrated HBP shear-stress response for the stress-growth comparison. The documented curves correspond to m = 0, 10 and 100.</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>Illustrated value</th>
+<th>Curve</th>
+<th>Label in the documented comparison</th>
+<th>Interpretation of the comparison</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(m=0\)</span></td>
+<td>Blue</td>
+<td>Newtonian</td>
+<td>The yield regularisation contribution is suppressed; a Newtonian reduction also requires the linear flow-index setting</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m=10\)</span></td>
+<td>Gold</td>
+<td>Power law</td>
+<td>Finite stress-growth example; the accompanying description also refers to pseudo-Bingham behaviour</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m=100\)</span></td>
+<td>Green</td>
+<td>Bingham</td>
+<td>A sharper regularised yield response in the illustrated configuration</td>
+</tr>
+</tbody>
+</table>
+<p>A statement that setting <span class="arithmatex">\(m=0\)</span> alone makes every possible HBP parameter combination Newtonian would be too broad. Yield stress, flow index and consistency remain part of the material definition.</p>
+<h3 id="flow-index">Flow index<a class="headerlink" href="#flow-index" title="Link to this heading">&para;</a></h3>
+<p><code>HBP_n</code> controls the flow-index dependence. The documented comparison uses <span class="arithmatex">\(n=0.8\)</span>, <span class="arithmatex">\(n=1\)</span> and <span class="arithmatex">\(n=2\)</span>.</p>
+<figure>
+<p><img alt="Illustrated HBP shear-stress response for flow indices n = 0.8, 1 and 2." src="../assets/images/xml_guide/mphase_nnewtonian/hbp-flow-index.png" style="max-width:100%;height:auto;" width="600" />
+  </p>
+<figcaption><strong>Figure 2:</strong> Illustrated HBP shear-stress response for flow indices n = 0.8, 1 and 2.</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>Illustrated value</th>
+<th>Curve</th>
+<th>Documented response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(n=0.8\)</span></td>
+<td>Blue</td>
+<td>Shear thinning</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(n=1\)</span></td>
+<td>Gold</td>
+<td>Newtonian comparison / linear contribution</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(n=2\)</span></td>
+<td>Green</td>
+<td>Shear thickening</td>
+</tr>
+</tbody>
+</table>
+<p>These plots are schematic comparisons, not tabulated calibration data or validation results for a particular material. Their interpretation depends on the remaining HBP settings. The distinction between <code>HBP_m</code> and <code>HBP_n</code> follows the actual XML elements: the former controls exponential stress growth and the latter is the flow index.</p>
+<h2 id="bingham-bi-viscosity-alternative">Bingham bi-viscosity alternative<a class="headerlink" href="#bingham-bi-viscosity-alternative" title="Link to this heading">&para;</a></h2>
+<p>The module documents a bi-viscosity alternative intended to avoid the singularity and large viscosity values of the ideal Bingham model. It uses the following pair of phase properties.</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Documented role</th>
+<th>Dependency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tau_max</code></td>
+<td>Specific Bingham yield-stress quantity</td>
+<td>Used together with <code>Bi_multi</code></td>
+</tr>
+<tr>
+<td><code>Bi_multi</code></td>
+<td>Bi-viscosity multiplier</td>
+<td>Both elements must be supplied when this alternative is required</td>
+</tr>
+</tbody>
+</table>
+<p><strong>XML excerpt — bi-viscosity-pair.</strong> Historical module context; XML location: <code>case/execution/special/nnphases/phase[@mkfluid="1"]</code>. Source: July 2020 module description.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">&lt;tau_max</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;Bi_multi</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>The historical module description presents <code>tau_max</code> and <code>Bi_multi</code> as overriding the Papanastasiou stress-growth setting. This does not establish that a non-zero <code>HBP_m</code> is inactive in every implementation of the bi-viscosity alternative. Its effective role requires confirmation for the selected module build.</p>
+<p>The reference comment expresses the multiplier relationship as</p>
+<div class="arithmatex">\[
+\tau_{\mathrm{bi}}=\tau_{\mathrm{max}}\,\mathrm{Bi}_{\mathrm{multi}}.
+\]</div>
+<p>The symbols correspond to the reference names <code>tau_bi</code>, <code>tau_max</code> and <code>Bi_multi</code>. This reproduces the relationship named in the reference; it does not define an additional XML element or a complete piecewise viscosity law. The source description refers to multiplication in the yielded region, but does not provide enough mathematical detail to reconstruct all regions or threshold conventions from that statement alone.</p>
+<h3 id="stress-and-viscosity-near-the-origin">Stress and viscosity near the origin<a class="headerlink" href="#stress-and-viscosity-near-the-origin" title="Link to this heading">&para;</a></h3>
+<p>The documented comparison contrasts the ideal Bingham response with the regularised HBP response. The ideal Bingham apparent viscosity becomes singular as shear rate approaches zero, whereas the illustrated HBP curve remains finite at the origin.</p>
+<figure>
+<p><img alt="Comparison of ideal Bingham and regularised HBP shear-stress responses near yielding." src="../assets/images/xml_guide/mphase_nnewtonian/yield-stress-comparison.png" style="max-width:100%;height:auto;" width="600" />
+  </p>
+<figcaption><strong>Figure 3:</strong> Comparison of ideal Bingham and regularised HBP shear-stress responses near yielding.</figcaption>
+</figure>
+<figure>
+<p><img alt="Comparison of the apparent-viscosity responses as shear rate approaches zero; the regularised HBP curve remains finite in this illustration." src="../assets/images/xml_guide/mphase_nnewtonian/viscosity-comparison.png" style="max-width:100%;height:auto;" width="600" />
+  </p>
+<figcaption><strong>Figure 4:</strong> Comparison of the apparent-viscosity responses as shear rate approaches zero; the regularised HBP curve remains finite in this illustration.</figcaption>
+</figure>
+<p>In both comparisons, the gold curve represents the ideal Bingham response and the blue curve represents the regularised HBP response.</p>
+<p>The finite value shown is a property of the illustrated regularised comparison. It is not evidence of a finite zero-shear viscosity for every possible flow index or every parameter combination. The available description supplies these response curves and parameter meanings, rather than a complete analytical HBP equation or a detailed SPH constitutive-stress discretisation.</p>
+<h2 id="numerical-operators-and-time-step-control">Numerical operators and time-step control<a class="headerlink" href="#numerical-operators-and-time-step-control" title="Link to this heading">&para;</a></h2>
+<h3 id="velocity-gradients-and-viscous-forces">Velocity gradients and viscous forces<a class="headerlink" href="#velocity-gradients-and-viscous-forces" title="Link to this heading">&para;</a></h3>
+<p>The v5.0 module separates the rheology treatment, velocity-gradient calculation and viscous-force evaluation.</p>
+<table>
+<thead>
+<tr>
+<th>Execution parameter</th>
+<th>Documented module options</th>
+<th>Qualification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RheologyTreatment</code></td>
+<td>1: single-phase classic; 2: single and multiphase</td>
+<td>The historical presentation restricts the implementation to option 2, despite the reference listing both</td>
+</tr>
+<tr>
+<td><code>VelocityGradientType</code></td>
+<td>1: pairwise finite-difference approach; 2: symmetric SPH gradient</td>
+<td>A gradient choice, distinct from the viscous-force operator</td>
+</tr>
+<tr>
+<td><code>ViscoTreatment</code></td>
+<td>1: artificial viscosity; 2: laminar/Morris operator, labelled Laminar+SPS in the XML; 3: full constitutive equation</td>
+<td>Artificial viscosity is described for Newtonian fluids only</td>
+</tr>
+<tr>
+<td><code>RelaxationDt</code></td>
+<td>Relaxation parameter for the viscous time-step restriction</td>
+<td>The module reference gives 0.2 as its default; examples may use other values</td>
+</tr>
+</tbody>
+</table>
+<p>The method description associates the laminar viscous force with the Morris (1997) operator and distinguishes it from evaluation through the full constitutive equation using SPH. Selecting the same velocity-gradient approximation does not make these force formulations equivalent. The source does not provide a complete governing-equation or boundary-discretisation specification, so no additional stress law, integration guarantee or boundary combination is implied here.</p>
+<p>The following controls are an exact selection from the non-Newtonian Poiseuille case for the specialised module.</p>
+<p><strong>XML excerpt — module-solver-controls.</strong> Historical module context; XML location: <code>case/execution/parameters</code>. Source: <code>examples/mphase_nnewtonian/05_Poiseuille/CasePoiseuilleNN_Def.xml</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RheologyTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reology formulation 1:Single-phase classic, 2: Single and multi-phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;VelocityGradientType&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity gradient formulation 1:FDA, 2:SPH&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation 1:Artificial, 2:Laminar+SPS, 3:Constitutive  eq.&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RelaxationDt&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Relaxation parameter for the viscous time step restricition(default=0.2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>The principal v6 parameter reference instead documents <code>ViscoTreatment</code> using <code>LAM</code> and <code>ART</code>, with turbulence configured separately. Its treatment of old numerical options does not establish an equivalent non-Newtonian constitutive formulation. In particular, the module's option 3 must retain its original meaning when interpreting historical cases.</p>
+<h3 id="viscous-time-step-relaxation">Viscous time-step relaxation<a class="headerlink" href="#viscous-time-step-relaxation" title="Link to this heading">&para;</a></h3>
+<p>The documented relaxation relationship is</p>
+<div class="arithmatex">\[
+\lambda=\frac{1}{\texttt{RelaxationDt}}.
+\]</div>
+<p>For the illustrated <code>RelaxationDt=0.2</code>, this gives <span class="arithmatex">\(\lambda=5\)</span>. The presentation identifies this as part of the viscous-force time-step restriction, but does not specify a complete restriction formula. It must not be treated as a fixed time step or as a complete CFL condition.</p>
+<p>The Newtonian Poiseuille comparison uses a different value:</p>
+<p><strong>XML excerpt — newtonian-relaxation.</strong> Historical module context; XML location: <code>case/execution/parameters</code>. Source: <code>examples/mphase_nnewtonian/05_Poiseuille/CasePoiseuille_Def.xml</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RelaxationDt&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Relaxation parameter for the viscous time step restricition(default=0.2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>That case-specific value is preserved here. It is not a recommendation to replace the non-Newtonian case's 0.2 by 1.0.</p>
+<h2 id="historical-example-configurations">Historical example configurations<a class="headerlink" href="#historical-example-configurations" title="Link to this heading">&para;</a></h2>
+<p>The examples in this section are supplied for the specialised v5.0 module. They illustrate material definitions and operator choices; they do not establish execution compatibility with the principal v6 solver. Each excerpt requires its original surrounding geometry, constants, boundary configuration and execution settings.</p>
+<h3 id="two-layer-poiseuille-flow">Two-layer Poiseuille flow<a class="headerlink" href="#two-layer-poiseuille-flow" title="Link to this heading">&para;</a></h3>
+<p>The package directory <code>examples/mphase_nnewtonian/05_Poiseuille/</code> contains <code>CasePoiseuille_Def.xml</code> and <code>CasePoiseuilleNN_Def.xml</code>. Both define two fluid blocks with density 1000 and <code>visco=0.1</code>, driven by an x-directed acceleration of 0.1 m/s². Their initial particle spacing is 0.025 m.</p>
+<p><strong>XML excerpt — poiseuille-driving.</strong> Historical module context; XML location: <code>case/casedef/constantsdef</code>. Source: <code>examples/mphase_nnewtonian/05_Poiseuille/CasePoiseuilleNN_Def.xml</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;gravity</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gravitational acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th><code>mkfluid</code></th>
+<th><code>tau_yield</code></th>
+<th><code>HBP_m</code></th>
+<th><code>HBP_n</code></th>
+<th><code>RelaxationDt</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CasePoiseuille_Def.xml</code></td>
+<td>0</td>
+<td>0.000</td>
+<td>1</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><code>CasePoiseuille_Def.xml</code></td>
+<td>1</td>
+<td>0.000</td>
+<td>1</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><code>CasePoiseuilleNN_Def.xml</code></td>
+<td>0</td>
+<td>0.000</td>
+<td>1</td>
+<td>1</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td><code>CasePoiseuilleNN_Def.xml</code></td>
+<td>1</td>
+<td>0.04</td>
+<td>10</td>
+<td>1</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+<p>The non-Newtonian input changes the second phase's yield and stress-growth properties, and its time-step relaxation also differs. It is therefore not a comparison in which only the material yield stress changes. All four phase entries retain <code>phasetype=0</code>.</p>
+<h3 id="three-phase-wet-dam-break">Three-phase wet dam break<a class="headerlink" href="#three-phase-wet-dam-break" title="Link to this heading">&para;</a></h3>
+<p><code>examples/mphase_nnewtonian/01_WetDambreak/CaseWetDambreak2DNN_Def.xml</code> defines three materials with the following properties.</p>
+<table>
+<thead>
+<tr>
+<th><code>mkfluid</code></th>
+<th><code>rhop</code></th>
+<th><code>visco</code></th>
+<th><code>tau_yield</code></th>
+<th><code>HBP_m</code></th>
+<th><code>HBP_n</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>2000</td>
+<td>0.2</td>
+<td>0.0001</td>
+<td>100</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1500</td>
+<td>0.1</td>
+<td>0.001</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1000</td>
+<td>0.05</td>
+<td>0.0005</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>All three entries use <code>phasetype=0</code>. The density ratio between the densest and least dense phases is two. The source retains a non-zero <code>tau_yield</code> in phase 2 alongside <code>HBP_m=0</code>; neither value has been replaced by an inferred default. The model interpretation must account for the stress-growth setting together with the flow index.</p>
+<h3 id="three-dimensional-dam-break-and-bi-viscosity">Three-dimensional dam break and bi-viscosity<a class="headerlink" href="#three-dimensional-dam-break-and-bi-viscosity" title="Link to this heading">&para;</a></h3>
+<p><code>examples/mphase_nnewtonian/02_Dambreak3D/CaseDambreakNN_Def.xml</code> uses two phases. Phase 0 has <code>rhop=1000</code>, <code>visco=0.1</code>, <code>tau_yield=0.001</code>, <code>HBP_m=10</code> and <code>HBP_n=1.5</code>, together with the following bi-viscosity pair.</p>
+<p><strong>XML excerpt — dambreak-bi-viscosity.</strong> Historical module context; XML location: <code>case/execution/special/nnphases/phase[@mkfluid="0"]</code>. Source: <code>examples/mphase_nnewtonian/02_Dambreak3D/CaseDambreakNN_Def.xml</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;tau_max</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0015&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;User defined maximum specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">&lt;Bi_multi</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;tau_max multiplier for use with Bingham model or bi-viscosity model(tau_bi=tau_max*Bi_multi)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Phase 1 has <code>rhop=1200</code>, <code>visco=0.01</code>, <code>tau_yield=0.0005</code>, <code>HBP_m=0</code> and <code>HBP_n=1</code>. Both phases retain <code>phasetype=0</code>. The phase-0 <code>HBP_m</code> value remains in the input; its role in the bi-viscosity alternative requires confirmation for the selected module build.</p>
+<h3 id="other-supplied-configurations">Other supplied configurations<a class="headerlink" href="#other-supplied-configurations" title="Link to this heading">&para;</a></h3>
+<p>The same specialised-module family also supplies the following inputs. These are examples of different material and operator selections, rather than independently established v6 configurations.</p>
+<table>
+<thead>
+<tr>
+<th>Package directory and input</th>
+<th>Phase markers</th>
+<th><code>VelocityGradientType</code></th>
+<th>Module <code>ViscoTreatment</code></th>
+<th><code>RelaxationDt</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>03_LockGate/CaseLockGateNN_Def.xml</code></td>
+<td>0, 1</td>
+<td>2</td>
+<td>3</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td><code>04_SloshingMotion/CaseSloshingMotionNN_Def.xml</code></td>
+<td>0–4</td>
+<td>1</td>
+<td>3</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td><code>06_Impellers3D/CaseImpellersNN_Def.xml</code></td>
+<td>0–2</td>
+<td>1</td>
+<td>2</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<p>These paths are relative to <code>examples/mphase_nnewtonian/</code>. The lock-gate and sloshing inputs illustrate the historical constitutive-force option 3. The impeller input supplies <code>tau_max</code> and <code>Bi_multi</code> for all three phases. Their different relaxation and rheological values should be retained when examining the original configurations.</p>
+<h2 id="full-multiphase-non-newtonian-xml-format-reference">Full Multiphase Non-Newtonian XML format reference<a class="headerlink" href="#full-multiphase-non-newtonian-xml-format-reference" title="Link to this heading">&para;</a></h2>
+<p>The directly relevant package reference is <code>doc/xml_format/_FmtXML_MphaseNNewtonian.xml</code>. Its header dates it to <strong>5 April 2020</strong>, for DualSPHysics-NNewtonian. The complete text below preserves that historical module reference, including its alternative examples and comments. It is a syntax-and-options source for that module, not a complete executable simulation or a certified v6 configuration.</p>
+<p>The reference also contains malformed separator comments, literal less-than signs in attribute text, a missing attribute name in its <code>RelaxationDt</code> line and several alternative top-level blocks. These features are retained verbatim for reference fidelity. Consequently, the complete block is not a well-formed standalone XML document and should not be copied wholesale as a simulation input. The focused excerpts above distinguish selected well-formed elements from this unaltered reference.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="cm">&lt;!-- *** DualSPHysics-NNewtonian (05-04-2020) *** --&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cm">&lt;!-------------------------------------------------------------------------------&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="cm">&lt;!-------------------------------------------------------------------------------&gt;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="cm">&lt;!-- *** Example for Non Newtonian simulations. *** --&gt;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nt">&lt;execution&gt;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">&lt;special&gt;</span><span class="w"> </span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="nt">&lt;nnphases&gt;</span><span class="w"> </span>%Defines<span class="w"> </span>non-newtonian<span class="w"> </span>phases<span class="w"> </span>parameters
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">            </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">                </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density of the phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">                </span><span class="nt">&lt;csound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;80&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Speed of sound for phase (m/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">                </span><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gamma polytropic index value for phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">                </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kinematic viscosity (or consistency index) value for phase (m2/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">                </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">                </span><span class="nt">&lt;tau_max</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.00001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;User defined maximum specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">                </span><span class="nt">&lt;Bi_multi</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;tau_max multiplier for use with Bingham model or bi-viscosity model(tau_bi=tau_max*Bi_multi)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">                </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to reduce Newtonian liquid, order of 10 for power law and order of 100 for Bingham (sec) &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">                </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 1 to reduce to Newtonian, &lt;1 for shear thinning &gt;1 for shear thickenning &quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">                </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non-Newtonian=0 only option in beta&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">            </span><span class="nt">&lt;/phase&gt;</span><span class="w">        </span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">        </span><span class="nt">&lt;/nnphases&gt;</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="nt">&lt;/special&gt;</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="nt">&lt;parameters&gt;</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">        </span>%Choice<span class="w"> </span>of<span class="w"> </span>reology<span class="w"> </span>treatment,<span class="w"> </span>velocity<span class="w"> </span>gradient<span class="w"> </span>calculation<span class="w"> </span>and<span class="w"> </span>viscosity<span class="w"> </span>treatment<span class="w">  </span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">        </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RheologyTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reology formulation 1:Single-phase classic, 2: Single and multi-phase  (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">        </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;VelocityGradientType&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity gradient formulation 1:FDA, 2:SPH (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="w">        </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation 1:Artificial, 2:Laminar+SPS, 3:Constitutive  eq. (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="w">        </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RelaxationDt&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="err">&quot;Relaxation</span><span class="w"> </span><span class="err">parameter</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">viscous</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">step</span><span class="w"> </span><span class="err">restricition(</span><span class="na">default=</span><span class="s">0.2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="w">    </span><span class="nt">&lt;/parameters&gt;</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="nt">&lt;/execution&gt;</span>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="cm">&lt;!-------------------------------------------------------------------------------&gt;</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="cm">&lt;!-------------------------------------------------------------------------------&gt;</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="cm">&lt;!-- *** Example of two phases using power law and Bingham using HBP *** --&gt;</span>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="nt">&lt;special&gt;</span>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="w">    </span><span class="nt">&lt;nnphases&gt;</span><span class="w"> </span>%Defines<span class="w"> </span>non-newtonian<span class="w"> </span>phases<span class="w"> </span>parameters
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="w">            </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density of the phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="w">            </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kinematic viscosity (or consistency index) value for phase (m2/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="w">            </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="w">            </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to reduce Newtonian liquid, order of 10 for power law and order of 100 for Bingham (sec) &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a><span class="w">            </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 1 to reduce to Newtonian, &lt;1 for shear thinning &gt;1 for shear thickenning &quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="w">            </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non-Newtonian=0 only option in beta&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                   </span>
+</span><span id="__span-9-45"><a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="w">        </span><span class="nt">&lt;/phase&gt;</span>
+</span><span id="__span-9-46"><a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-47"><a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a><span class="w">            </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density of the phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-48"><a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a><span class="w">            </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kinematic viscosity (or consistency index) value for phase (m2/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-49"><a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a><span class="w">            </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-50"><a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a><span class="w">            </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to reduce Newtonian liquid, order of 10 for power law and order of 100 for Bingham (sec) &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-51"><a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a><span class="w">            </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 1 to reduce to Newtonian, &lt;1 for shear thinning &gt;1 for shear thickenning &quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-52"><a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a><span class="w">            </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non-Newtonian=0 only option in beta&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                   </span>
+</span><span id="__span-9-53"><a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a><span class="w">        </span><span class="nt">&lt;/phase&gt;</span><span class="w">                                                        </span>
+</span><span id="__span-9-54"><a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a><span class="w">    </span><span class="nt">&lt;/nnphases&gt;</span>
+</span><span id="__span-9-55"><a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a><span class="nt">&lt;/special&gt;</span>
+</span><span id="__span-9-56"><a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a><span class="cm">&lt;!-------------------------------------------------------------------------------&gt;</span>
+</span><span id="__span-9-57"><a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a><span class="cm">&lt;!-------------------------------------------------------------------------------&gt;</span>
+</span><span id="__span-9-58"><a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a><span class="cm">&lt;!-- *** Example of two phases using Bignham shear thickening and thinning using HBP *** --&gt;</span>
+</span><span id="__span-9-59"><a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a><span class="nt">&lt;special&gt;</span>
+</span><span id="__span-9-60"><a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a><span class="w">    </span><span class="nt">&lt;nnphases&gt;</span><span class="w"> </span>%Defines<span class="w"> </span>non-newtonian<span class="w"> </span>phases<span class="w"> </span>parameters
+</span><span id="__span-9-61"><a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-62"><a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a><span class="w">            </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density of the phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-63"><a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a><span class="w">            </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kinematic viscosity (or consistency index) value for phase (m2/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-64"><a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a><span class="w">            </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-65"><a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a><span class="w">            </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to reduce Newtonian liquid, order of 10 for power law and order of 100 for Bingham (sec) &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-66"><a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a><span class="w">            </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 1 to reduce to Newtonian, &lt;1 for shear thinning &gt;1 for shear thickenning &quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-67"><a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a><span class="w">            </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non-Newtonian=0 only option in beta&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                   </span>
+</span><span id="__span-9-68"><a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a><span class="w">        </span><span class="nt">&lt;/phase&gt;</span>
+</span><span id="__span-9-69"><a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-70"><a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a><span class="w">            </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density of the phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-71"><a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a><span class="w">            </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kinematic viscosity (or consistency index) value for phase (m2/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-72"><a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a><span class="w">            </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-73"><a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a><span class="w">            </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to reduce Newtonian liquid, order of 10 for power law and order of 100 for Bingham (sec) &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-74"><a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a><span class="w">            </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.9&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 1 to reduce to Newtonian, &lt;1 for shear thinning &gt;1 for shear thickenning &quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-75"><a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a><span class="w">            </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non-Newtonian=0 only option in beta&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                   </span>
+</span><span id="__span-9-76"><a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a><span class="w">        </span><span class="nt">&lt;/phase&gt;</span><span class="w">                                                        </span>
+</span><span id="__span-9-77"><a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a><span class="w">    </span><span class="nt">&lt;/nnphases&gt;</span>
+</span><span id="__span-9-78"><a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a><span class="nt">&lt;/special&gt;</span>
+</span><span id="__span-9-79"><a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a><span class="cm">&lt;!-------------------------------------------------------------------------------&gt;</span>
+</span><span id="__span-9-80"><a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a><span class="cm">&lt;!-------------------------------------------------------------------------------&gt;</span>
+</span><span id="__span-9-81"><a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a><span class="cm">&lt;!-- *** Example of two phases using Bignham (bi-viscosity) and Bingham using HBP *** --&gt;</span>
+</span><span id="__span-9-82"><a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a><span class="nt">&lt;special&gt;</span>
+</span><span id="__span-9-83"><a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a><span class="w">    </span><span class="nt">&lt;nnphases&gt;</span><span class="w"> </span>%Defines<span class="w"> </span>non-newtonian<span class="w"> </span>phases<span class="w"> </span>parameters
+</span><span id="__span-9-84"><a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-85"><a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a><span class="w">            </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density of the phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-86"><a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a><span class="w">            </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kinematic viscosity (or consistency index) value for phase (m2/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-87"><a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a><span class="w">            </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-88"><a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a><span class="w">            </span><span class="nt">&lt;tau_max</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;User defined maximum specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-89"><a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a><span class="w">            </span><span class="nt">&lt;Bi_multi</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;tau_max multiplier for use with Bingham model or bi-viscosity model(tau_bi=tau_max*Bi_multi)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-90"><a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a><span class="w">            </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to reduce Newtonian liquid, order of 10 for power law and order of 100 for Bingham (sec) &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-91"><a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a><span class="w">            </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 1 to reduce to Newtonian, &lt;1 for shear thinning &gt;1 for shear thickenning &quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-92"><a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a><span class="w">            </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non-Newtonian=0 only option in beta&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                   </span>
+</span><span id="__span-9-93"><a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a><span class="w">        </span><span class="nt">&lt;/phase&gt;</span>
+</span><span id="__span-9-94"><a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-95"><a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a><span class="w">            </span><span class="nt">&lt;rhop</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density of the phase&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-96"><a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a><span class="w">            </span><span class="nt">&lt;visco</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kinematic viscosity (or consistency index) value for phase (m2/s)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-97"><a id="__codelineno-9-97" name="__codelineno-9-97" href="#__codelineno-9-97"></a><span class="w">            </span><span class="nt">&lt;tau_yield</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Specific yield stress of phase (Pa m3/kg)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-98"><a id="__codelineno-9-98" name="__codelineno-9-98" href="#__codelineno-9-98"></a><span class="w">            </span><span class="nt">&lt;HBP_m</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to reduce Newtonian liquid, order of 10 for power law and order of 100 for Bingham (sec) &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-99"><a id="__codelineno-9-99" name="__codelineno-9-99" href="#__codelineno-9-99"></a><span class="w">            </span><span class="nt">&lt;HBP_n</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 1 to reduce to Newtonian, &lt;1 for shear thinning &gt;1 for shear thickenning &quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                    </span>
+</span><span id="__span-9-100"><a id="__codelineno-9-100" name="__codelineno-9-100" href="#__codelineno-9-100"></a><span class="w">            </span><span class="nt">&lt;phasetype</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non-Newtonian=0 only option in beta&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                   </span>
+</span><span id="__span-9-101"><a id="__codelineno-9-101" name="__codelineno-9-101" href="#__codelineno-9-101"></a><span class="w">        </span><span class="nt">&lt;/phase&gt;</span><span class="w">                                                        </span>
+</span><span id="__span-9-102"><a id="__codelineno-9-102" name="__codelineno-9-102" href="#__codelineno-9-102"></a><span class="w">    </span><span class="nt">&lt;/nnphases&gt;</span>
+</span><span id="__span-9-103"><a id="__codelineno-9-103" name="__codelineno-9-103" href="#__codelineno-9-103"></a><span class="nt">&lt;/special&gt;</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="shiftingadv.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Advanced shifting">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Advanced shifting
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="geomech.html" class="md-footer__link md-footer__link--next" aria-label="Next: Geomechanics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Geomechanics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 DualSPHysics Team &middot; Edited by Bonaventura Tagliafierro
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/DualSPHysics/DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/catalogue-overview.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
