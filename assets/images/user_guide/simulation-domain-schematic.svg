@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="575" viewBox="0 0 400 575" role="img" aria-label="Particle-generation bounds, generated particles and the default simulation domain; explicit limits may differ.">
+<rect width="400" height="575" fill="#ffffff"/>
+<text x="20" y="34" font-family="Arial,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#263747">Generation and simulation</text>
+<text x="20" y="65" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#263747">Schematic; not to scale</text>
+<rect x="18" y="83" width="364" height="203" rx="8" fill="#fff9f8" stroke="#ca4335" stroke-width="3"/>
+<text x="32" y="113" font-family="Arial,DejaVu Sans,sans-serif" font-size="24" font-weight="700" fill="#263747">Particle-generation domain</text>
+<text x="32" y="145" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">pointmin / pointmax</text>
+<text x="32" y="178" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#263747">GenCase generates particles</text>
+<path d="M45 196 V260 H355" fill="none" stroke="#2f3942" stroke-width="8"/>
+<circle cx="60" cy="204" r="4" fill="#087da5"/>
+<circle cx="74" cy="204" r="4" fill="#087da5"/>
+<circle cx="88" cy="204" r="4" fill="#087da5"/>
+<circle cx="102" cy="204" r="4" fill="#087da5"/>
+<circle cx="116" cy="204" r="4" fill="#087da5"/>
+<circle cx="130" cy="204" r="4" fill="#087da5"/>
+<circle cx="144" cy="204" r="4" fill="#087da5"/>
+<circle cx="158" cy="204" r="4" fill="#087da5"/>
+<circle cx="172" cy="204" r="4" fill="#087da5"/>
+<circle cx="60" cy="218" r="4" fill="#087da5"/>
+<circle cx="74" cy="218" r="4" fill="#087da5"/>
+<circle cx="88" cy="218" r="4" fill="#087da5"/>
+<circle cx="102" cy="218" r="4" fill="#087da5"/>
+<circle cx="116" cy="218" r="4" fill="#087da5"/>
+<circle cx="130" cy="218" r="4" fill="#087da5"/>
+<circle cx="144" cy="218" r="4" fill="#087da5"/>
+<circle cx="158" cy="218" r="4" fill="#087da5"/>
+<circle cx="172" cy="218" r="4" fill="#087da5"/>
+<circle cx="60" cy="232" r="4" fill="#087da5"/>
+<circle cx="74" cy="232" r="4" fill="#087da5"/>
+<circle cx="88" cy="232" r="4" fill="#087da5"/>
+<circle cx="102" cy="232" r="4" fill="#087da5"/>
+<circle cx="116" cy="232" r="4" fill="#087da5"/>
+<circle cx="130" cy="232" r="4" fill="#087da5"/>
+<circle cx="144" cy="232" r="4" fill="#087da5"/>
+<circle cx="158" cy="232" r="4" fill="#087da5"/>
+<circle cx="172" cy="232" r="4" fill="#087da5"/>
+<circle cx="60" cy="246" r="4" fill="#087da5"/>
+<circle cx="74" cy="246" r="4" fill="#087da5"/>
+<circle cx="88" cy="246" r="4" fill="#087da5"/>
+<circle cx="102" cy="246" r="4" fill="#087da5"/>
+<circle cx="116" cy="246" r="4" fill="#087da5"/>
+<circle cx="130" cy="246" r="4" fill="#087da5"/>
+<circle cx="144" cy="246" r="4" fill="#087da5"/>
+<circle cx="158" cy="246" r="4" fill="#087da5"/>
+<circle cx="172" cy="246" r="4" fill="#087da5"/>
+<text x="197" y="218" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#263747">Generated</text>
+<text x="197" y="247" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#263747">particles</text>
+<path d="M200 297 V324 M192 316 L200 324 L208 316" fill="none" stroke="#344b5a" stroke-width="3"/>
+<rect x="18" y="337" width="364" height="119" rx="8" fill="#f3faf5" stroke="#267344" stroke-width="3" stroke-dasharray="9 6"/>
+<text x="32" y="369" font-family="Arial,DejaVu Sans,sans-serif" font-size="24" font-weight="700" fill="#263747">Default simulation domain</text>
+<text x="32" y="402" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#263747">Derived from generated</text>
+<text x="32" y="433" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#263747">particle positions</text>
+<text x="20" y="491" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#263747">Domains may differ.</text>
+<text x="20" y="525" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#263747">Custom limits:</text>
+<text x="20" y="556" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="22" font-weight="400" fill="#263747">simulationdomain</text>
+</svg>

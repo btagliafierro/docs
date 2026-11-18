@@ -1,0 +1,4421 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/benchmarks/heave_decay/">
+      
+      
+        <link rel="prev" href="../moored_box/">
+      
+      
+        <link rel="next" href="../../xml_guides/introduction/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/dualsphysics-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Heave Decay - DualSPHysics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#heave-decay" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <strong>Draft for internal review.</strong>
+  Some pages, figures, and videos are still in progress.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../home/" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DualSPHysics Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Heave Decay
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../home/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../theory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Theory
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../couplings/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Couplings
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../gallery/intro/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Gallery
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting_started/getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples_catalogue/catalogue/main-catalogue/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Examples Catalogue
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Benchmarks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../xml_guides/introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XML Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faq/faq/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../licenses/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Licenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../contributing/setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../home/" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    DualSPHysics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../home/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../couplings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couplings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Your First Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DualSPHysics Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/cpu-gpu-multigpu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU, GPU and Multi-GPU Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/case_definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Definition (XML)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/designsphysics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DesignSPHysics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+        
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples Catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples Catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+          <li class="md-nav__item">
+            <a href="../" class="md-nav__link">
+              <span class="md-ellipsis">Benchmarks</span>
+            </a>
+          </li>
+        
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/main-catalogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mdbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/inletmesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InletMesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/wavecoupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wavecoupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/divclean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divergence cleaning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mphase_liquidgas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase LiquidGas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase NNewtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples_catalogue/catalogue/motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dambreak_2d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 2D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dambreak_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sloshing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sloshing Tank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wave_generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#case-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Case Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-setup-and-selected-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Setup and Selected Condition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometry-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry Definition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometry Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dimensions-grid-and-initial-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimensions, Grid and Initial Placement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-geometry-for-normals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface Geometry for Normals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tank-and-water-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tank and Water Particles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-body-particles-and-fluid-exclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating-body Particles and Fluid Exclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-body-properties-and-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating-body Properties and Release
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Floating-body Properties and Release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free-decay-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Free-decay Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passive-damping-and-simulation-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passive Damping and Simulation Domain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constants-and-boundary-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants and Boundary Treatment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shifting-and-body-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shifting and Body Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-control-and-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Control and Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-reference-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Reference Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental Reference Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#float-1-and-displacement-datum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Float 1 and Displacement Datum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-numerical-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with Numerical Motion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-windows-gpu-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Windows GPU Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-outputs-and-final-release-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Outputs and Final Release Platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results and Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figure-1-float-1-heave-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Figure 1 – Float 1 Heave Decay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XML Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/mdbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase non-Newtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xml_guides/geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/new_floating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Add a Floating Object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Resolution/Particle Size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_viscosity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Viscosity Formulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_time_duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Simulation Time Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/change_still_water_level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Still-Water Level (Pending)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/simulation_domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand the Simulation Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/mk_labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand MK Labels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_pressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_free_surface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Free-Surface Elevation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/measure_force/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Force
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/visualise_paraview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise Results in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/visualise_mdbc_normals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise mDBC Normals in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/howto/floating_body_motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Compute the Motion of a Floating Body
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../licenses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licenses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Licenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/dualsphysics-lgpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (LGPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/dualsphysics-bsd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (BSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/tinyxml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TinyXML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/random-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random number generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/project-chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#case-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Case Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-setup-and-selected-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Setup and Selected Condition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometry-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry Definition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometry Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dimensions-grid-and-initial-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimensions, Grid and Initial Placement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-geometry-for-normals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface Geometry for Normals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tank-and-water-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tank and Water Particles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-body-particles-and-fluid-exclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating-body Particles and Fluid Exclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-body-properties-and-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating-body Properties and Release
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Floating-body Properties and Release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free-decay-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Free-decay Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passive-damping-and-simulation-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passive Damping and Simulation Domain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constants-and-boundary-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants and Boundary Treatment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shifting-and-body-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shifting and Body Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-control-and-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Control and Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-reference-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Reference Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental Reference Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#float-1-and-displacement-datum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Float 1 and Displacement Datum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-numerical-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with Numerical Motion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-windows-gpu-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Windows GPU Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-outputs-and-final-release-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Outputs and Final Release Platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results and Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figure-1-float-1-heave-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Figure 1 – Float 1 Heave Decay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="heave-decay">Heave Decay<a class="headerlink" href="#heave-decay" title="Link to this heading">&para;</a></h1>
+<p style="margin-top: -2.5em; font-size: 0.95em; color: gray;">
+  Under review by Bonaventura Tagliafierro 
+</p>
+
+<p>This example considers the free vertical response of an axisymmetric floating body released after an initial upward displacement. It follows <a href="#SPHERIC_14">SPHERIC Test Case 14</a>, with <strong>Float 1 and a nominal +76 mm initial offset</strong> selected by the current geometry. The body oscillates under gravity and fluid loading as its motion decays; it is not driven by a periodic wavemaker or an imposed vertical velocity.</p>
+<p>The case is supplied at <code>DualSPHysics_v6.0/examples/benchmarks/08_HeaveDecay</code>. The intended comparison is Float 1 vertical displacement against the corresponding experimental history. Final verification of the numerical motion output, compatible time/displacement references and the comparison remains pending. The alternative negative-displacement reference is available but is not the numerical condition configured here.</p>
+<div class="admonition abstract">
+<p class="admonition-title">What's Covered in This Tutorial</p>
+<ul>
+<li>Three-dimensional tank and primitive-based floating-body particles</li>
+<li>STL surface geometry for boundary normals, distinct from particle generation</li>
+<li>A displaced floating body with translation restricted to heave</li>
+<li>Free-slip mDBC, laminar viscosity and the selected diffusion/shifting settings</li>
+<li>Floating-body motion extraction and experimental displacement references</li>
+<li>A comparison workflow that distinguishes equilibrium displacement from absolute position</li>
+</ul>
+</div>
+<p><strong>Video pending – Heave Decay benchmark simulation.</strong></p>
+<p>All XML blocks below are labelled excerpts copied from <code>HeaveDecay_Def.xml</code>. They preserve original elements, attributes, expressions, comments and nesting; separate extracts do not form a complete runnable case.</p>
+<h2 id="case-configuration">Case Configuration<a class="headerlink" href="#case-configuration" title="Link to this heading">&para;</a></h2>
+<h3 id="physical-setup-and-selected-condition">Physical Setup and Selected Condition<a class="headerlink" href="#physical-setup-and-selected-condition" title="Link to this heading">&para;</a></h3>
+<p>The model is a <strong>three-dimensional tank</strong>, with X/Y horizontal and Z upwards. The initial still-water surface is Z=0 and the floor is at <code>-depth</code>. The floating body is centred on X=Y=0. Its particle geometry combines a rounded lower end with an upper cylindrical portion; only Z translation is permitted by the explicit body constraints.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Source configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Float</td>
+<td>Float 1, nominal radius 0.150 m</td>
+</tr>
+<tr>
+<td>Upper cylindrical height</td>
+<td>0.1370 m in the active primitive draw</td>
+</tr>
+<tr>
+<td>Nominal total body height</td>
+<td>0.150 + 0.1370 = 0.2870 m</td>
+</tr>
+<tr>
+<td>Body mass</td>
+<td>9.75 kg</td>
+</tr>
+<tr>
+<td>Initial bottom elevation</td>
+<td><code>-0.150-0.037+0.07600</code> = −0.111 m</td>
+</tr>
+<tr>
+<td>Nominal equilibrium bottom used by the offset expression</td>
+<td>−0.150−0.037 = −0.187 m</td>
+</tr>
+<tr>
+<td>Nominal upward displacement</td>
+<td>+0.076 m = +76 mm</td>
+</tr>
+<tr>
+<td>Particle spacing</td>
+<td><code>radius/15</code> = 0.010 m</td>
+</tr>
+<tr>
+<td>Water depth</td>
+<td><code>roundpos(3*height,0,Dp)</code>, 0.99 m for <code>height=0.33</code></td>
+</tr>
+<tr>
+<td>Tank internal horizontal extent</td>
+<td>X/Y = <code>±TankHalf</code>, with <code>TankHalf=1.20 m</code></td>
+</tr>
+<tr>
+<td>Simulation duration / regular output interval</td>
+<td>5.4 s / 0.0225 s</td>
+</tr>
+</tbody>
+</table>
+<p>The imposed offset is part of the <strong>initial geometry placement</strong>, not an active motion history. The nominal equilibrium reference in the expression does not establish the exact equilibrium of the discretised numerical body. Its generated centre of mass and the reference needed for the eventual displacement comparison must be checked separately.</p>
+<h3 id="source-files">Source Files<a class="headerlink" href="#source-files" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HeaveDecay_Def.xml</code></td>
+<td>Geometry, floating-body constraints, damping and numerical parameters</td>
+</tr>
+<tr>
+<td><code>wHeaveDecay_win64_GPU.bat</code></td>
+<td>Current Windows GPU generation, simulation and extraction sequence</td>
+</tr>
+<tr>
+<td><code>float_1.stl</code></td>
+<td>Active floating-surface input for the geometry-normal export</td>
+</tr>
+<tr>
+<td><code>reference/Fl1+0p76.txt</code></td>
+<td>Selected positive-offset experimental displacement history</td>
+</tr>
+<tr>
+<td><code>reference/Fl1-0p074.txt</code></td>
+<td>Alternative negative-offset Float 1 history</td>
+</tr>
+<tr>
+<td><code>reference/SPHERIC_TestCase14_Free_heave.pdf</code></td>
+<td>Experimental geometry, units, datum and condition descriptions</td>
+</tr>
+</tbody>
+</table>
+<p>The folder also contains a Windows shortcut and numerical output under <code>HeaveDecay_out/</code>. The current BAT extracts body motion using FloatingInfo; no MeasureTool elevation stage is active.</p>
+<h2 id="geometry-definition">Geometry Definition<a class="headerlink" href="#geometry-definition" title="Link to this heading">&para;</a></h2>
+<h3 id="dimensions-grid-and-initial-placement">Dimensions, Grid and Initial Placement<a class="headerlink" href="#dimensions-grid-and-initial-placement" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — geometry/predefinition</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">   </span><span class="nt">&lt;predefinition&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="cm">&lt;!-- User-defined variables  --&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;0.80&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water level&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;0.33&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water level&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">density=</span><span class="s">&quot;500&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water level&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;0.150&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;radius&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Dp=</span><span class="s">&quot;radius/15&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Dpm=</span><span class="s">&quot;Dp/2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">depth=</span><span class="s">&quot;roundpos(3*height,0,Dp)&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water level (whole number of Dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">expectedPeriod=</span><span class="s">&quot;0.90&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Wave parameters: Period and Wave height&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeMax=</span><span class="s">&quot;6*expectedPeriod&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainDown=</span><span class="s">&quot;-3.0*base&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">       </span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainUp=</span><span class="s">&quot;3.0*base&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">scale=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeOut=</span><span class="s">&quot;expectedPeriod/40&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">initialDraft=</span><span class="s">&quot;-0.150-0.037+0.07600&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">  </span><span class="cm">&lt;!-- Tank (whole numbers of Dp): real surfaces at the walls, the floor (-depth) and SWL (z=0) --&gt;</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">TankHalf=</span><span class="s">&quot;roundpos(abs(domainDown)/2,0,Dp)&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Half width of the tank&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">TopZ=</span><span class="s">&quot;roundpos(0.40,0,Dp)&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Top of the walls&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="cm">&lt;!-- Particle grid: nodes at Dp/2 from the real surfaces --&gt;</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">  </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PminXY=</span><span class="s">&quot;-TankHalf-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="na">PminZ=</span><span class="s">&quot;-depth-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="nt">&lt;/predefinition&gt;</span>
+</span></code></pre></div>
+<p><code>base=0.80</code> and the domain variables size the tank rather than the body. <code>height=0.33</code> sets the depth expression; the active body height is 0.287 m. <code>density=500</code> does not override the explicit body mass. <code>expectedPeriod=0.90</code> is a sizing/timing input, not a measured natural period: it sets <code>timeMax=6*expectedPeriod=5.4</code> s and <code>timeOut=expectedPeriod/40=0.0225</code> s.</p>
+<p>The real walls are at X/Y=±1.20 m, giving a 2.40 m square tank, with floor −0.99 m and grid-rounded wall top <code>TopZ=0.40 m</code>. The particle-grid reference lies half a spacing plus ten spacings beyond these horizontal boundaries, at <code>PminXY=−1.305 m</code>. It is a bounding-grid origin, not an inner tank wall:</p>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — geometry/definition</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;definition</span><span class="w"> </span><span class="na">dp=</span><span class="s">&quot;#Dp&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;pointref</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#PminXY&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#PminXY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#PminZ&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Origin of the particle grid: same as pointmin&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;pointmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#PminXY&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#PminXY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#PminZ&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;pointmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#-PminXY&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#-PminXY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#TopZ+10*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">&lt;/definition&gt;</span>
+</span></code></pre></div>
+<p>Nonzero extents in X, Y and Z establish the 3-D case. No periodic-boundary parameters are configured. Real surfaces, grid bounds and boundary/fluid particle centres must not be treated as identical positions. Generated particle counts and final discretised bounds are not asserted without GenCase output.</p>
+<h3 id="surface-geometry-for-normals">Surface Geometry for Normals<a class="headerlink" href="#surface-geometry-for-normals" title="Link to this heading">&para;</a></h3>
+<p>This complete named list draws surfaces with particle drawing disabled:</p>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — geometry/commands/list</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;GeometryForNormals&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;setactive</span><span class="w"> </span><span class="na">drawpoints=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">drawshapes=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="cm">&lt;!-- Tank --&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&lt;setfrdrawmode</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&lt;setnormalinvert</span><span class="w"> </span><span class="na">invert=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="nt">&lt;boxfill&gt;</span>all^top<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#-TankHalf&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#-TankHalf&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#-depth&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">&lt;endpoint</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#TankHalf&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#TankHalf&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#TopZ&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&lt;/drawbox&gt;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">&lt;setnormalinvert</span><span class="w"> </span><span class="na">invert=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">&lt;setfrdrawmode</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="cm">&lt;!-- floater --&gt;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">     </span><span class="nt">&lt;drawfilestl</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;float_1.stl&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="nt">&lt;drawscale</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#scale&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#scale&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#scale&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="nt">&lt;drawrotate</span><span class="w"> </span><span class="na">angx=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">angy=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">angz=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="nt">&lt;drawmove</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                     </span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="nt">&lt;depth</span><span class="w"> </span><span class="na">depthmin=</span><span class="s">&quot;#0*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nt">&lt;/drawfilestl&gt;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;hdp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">                                                            </span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="nt">&lt;resetdraw</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nt">&lt;/list&gt;</span><span class="w">        </span>
+</span></code></pre></div>
+<p>The fixed tank uses <code>mkbound=0</code>, with inward-facing normals selected for its closed-bottom/sidewall surface. The floating surface uses <code>mkbound=50</code> and imports <code>float_1.stl</code> at unit scale, zero rotation and translation Z=<code>#initialDraft</code>. Its untransformed mesh spans approximately X/Y=±0.150 m and Z=0…0.287 m; the translation therefore gives a nominal body bottom −0.111 m and top 0.176 m. This is a static inspection of the supplied mesh and placement, not a generated particle cloud.</p>
+<p>The list exports <code>hdp</code> geometry and resets drawing. The main list calls <code>GeometryForNormals</code> before switching to particle generation. The normal-data configuration consumes the resulting actual-geometry file:</p>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — normals</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;normals&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;distanceh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance (H*distanceh) to compute normals data (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&lt;geometryfile</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;[CaseName]_hdp_Actual.vtk&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;File with boundary geometry (VTK format). Use NONE to ignore it.&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;/normals&gt;</span><span class="w">         </span>
+</span></code></pre></div>
+<p><code>[CaseName]_hdp_Actual.vtk</code> is an expected geometry-generation product. <code>distanceh=2.0</code> sets the normal-data search distance relative to H. The STL is not a Chrono collision mesh, and no Chrono coupling is configured.</p>
+<h3 id="tank-and-water-particles">Tank and Water Particles<a class="headerlink" href="#tank-and-water-particles" title="Link to this heading">&para;</a></h3>
+<p>The active main list changes to <code>drawpoints=1</code>, <code>drawshapes=0</code> and <code>actual | dp | bound</code>. Tank particles are drawn on the bottom and four sidewalls using the original layer specification:</p>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — mainlist/tank drawbox</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>bottom<span class="w"> </span>|<span class="w"> </span>left<span class="w"> </span>|<span class="w"> </span>right<span class="w"> </span>|<span class="w"> </span>front<span class="w"> </span>|<span class="w"> </span>back<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#-TankHalf-Dpm&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#-TankHalf-Dpm&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#-depth-Dpm&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;endpoint</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#TankHalf+Dpm&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#TankHalf+Dpm&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#TopZ-Dpm&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;0*,1,2,3,4&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">&lt;/drawbox&gt;</span><span class="w">      </span>
+</span></code></pre></div>
+<p>The half-spacing offsets distinguish the first boundary-particle positions from the wall surfaces. The active fluid fill follows, before the floating particles are drawn:</p>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — geometry/commands/mainlist/fillbox</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;fillbox</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Dpm+40*Dp&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Dpm&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#-depth+Dpm+5*Dp&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;modefill&gt;</span>void<span class="nt">&lt;/modefill&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#-TankHalf&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#-TankHalf&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#-depth&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#2*TankHalf&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#2*TankHalf&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#depth&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nt">&lt;/fillbox&gt;</span>
+</span></code></pre></div>
+<p>This fills the interior from the floor to still water. The seed is inside the fluid region; the body interior is subsequently cleared by explicit void draws. The source contains an alternative direct STL particle import inside an XML comment, but it is not the active particle-generation route.</p>
+<h3 id="floating-body-particles-and-fluid-exclusion">Floating-body Particles and Fluid Exclusion<a class="headerlink" href="#floating-body-particles-and-fluid-exclusion" title="Link to this heading">&para;</a></h3>
+<p>The following contiguous source segment begins at the void selection and ends with the active cylindrical shell:</p>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — mainlist (floating geometry excerpt)</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;setmkvoid</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">&lt;drawsphere</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;#radius&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft+0.150&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">&lt;/drawsphere&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nt">&lt;drawcylinder</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;#radius&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft+0.150&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft+0.150+0.1370&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nt">&lt;/drawcylinder&gt;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nt">&lt;setfrdrawmode</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="nt">&lt;drawsphere</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;#radius&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft+0.150&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;-0.5,-1.5,-2.5,-3.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nt">&lt;/drawsphere&gt;</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="nt">&lt;setmkvoid</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- to remove half sphere --&gt;</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="nt">&lt;drawcylinder</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;#radius&quot;</span><span class="w"> </span><span class="na">mask=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft+0.150&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft+1.00&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="nt">&lt;/drawcylinder&gt;</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="nt">&lt;drawcylinder</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;#radius&quot;</span><span class="w"> </span><span class="na">mask=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft+0.150&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#initialDraft+0.150+0.1370&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;-0.5,-1.5,-2.5,-3.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="nt">&lt;/drawcylinder&gt;</span>
+</span></code></pre></div>
+<p>Void sphere/cylinder draws remove fluid from the hull volume. The body sphere is centred at <code>initialDraft+0.150</code>, and the upper half is removed by the intervening void cylinder. The final cylinder extends from that join to <code>initialDraft+0.150+0.1370</code>. The inward layer values <code>-0.5,-1.5,-2.5,-3.5</code> are retained literally. Together these active primitive operations define the hemispherical lower end and cylindrical upper part. They must not be described as an STL-derived particle import.</p>
+<h2 id="floating-body-properties-and-release">Floating-body Properties and Release<a class="headerlink" href="#floating-body-properties-and-release" title="Link to this heading">&para;</a></h2>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — floatings</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;floatings&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&lt;floating</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;50&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="nt">&lt;massbody</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;9.75&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="cm">&lt;!-- &lt;center x=&quot;0&quot; y=&quot;0&quot; z=&quot;0.090&quot; /&gt;                --&gt;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">&lt;translationDOF</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to restrict Degrees Of Freedon for translation (default=(1,1,1))&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="nt">&lt;rotationDOF</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to restrict Degrees Of Freedon for rotation (default=(1,1,1))&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">               </span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nt">&lt;/floating&gt;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nt">&lt;/floatings&gt;</span>
+</span></code></pre></div>
+<p>One body is selected by local <code>mkbound=50</code>; <code>massbody=9.75 kg</code> matches Float 1. Translation is restricted explicitly to <code>(0,0,1)</code>, while rotation is restricted to <code>(0,0,0)</code>: the numerical body has <strong>heave only</strong>, with X/Y translations and all rotations locked. These are configured constraints, not an inference from the chosen validation observable.</p>
+<p>The centre line is an XML comment and is not an active prescribed centre. No active centre, inertia tensor or body-density value is supplied in this floating definition. They must not be replaced by the experimental centre-of-gravity height or a simplified analytical inertia formula. Generated body metadata are needed to identify the numerical centre and inertia used by the solver. Rotations remain locked regardless of that metadata.</p>
+<p>No initial translational or angular velocity, imposed motion or external forcing history is specified. The optional velocity readers use zero when such entries are absent. <code>FtPause=0.0</code> requests no initial floating freeze: the normal simulation starts from the displaced configuration, without a separate delayed-release command. The current <code>RigidAlgorithm=FREE</code> uses the internal collision-free floating-body treatment, not Chrono or a mooring solver. Fluid forces, buoyancy and weight govern the permitted vertical response.</p>
+<h3 id="free-decay-interpretation">Free-decay Interpretation<a class="headerlink" href="#free-decay-interpretation" title="Link to this heading">&para;</a></h3>
+<p>Raising the body relative to its still-water reference changes immersion and the vertical force balance. The subsequent free response can generate waves and lose oscillation amplitude through the modelled fluid–body dynamics and numerical dissipation. It is not forced periodic heave. A physical damping ratio, natural period, radiation/drag decomposition or decay coefficient cannot be inferred from the viscosity choice or the sizing variable <code>expectedPeriod</code>; no fitting or result analysis is performed here.</p>
+<p>The reference experiment releases a body without an external constraint, whereas this XML explicitly restricts motion to heave. The present comparison target is the vertical history; it does not validate unrestricted six-degree-of-freedom behaviour.</p>
+<h2 id="passive-damping-and-simulation-domain">Passive Damping and Simulation Domain<a class="headerlink" href="#passive-damping-and-simulation-domain" title="Link to this heading">&para;</a></h2>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — damping</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;damping&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="cm">&lt;!-- Damping definition accoding to a box domain --&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&lt;dampingbox</span><span class="w"> </span><span class="na">active=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="nt">&lt;directions</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;all,-top&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Active directions (top/bottom/left/right/front/back) (default=all)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="nt">&lt;limitmin</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Limit where minimum reduction is applied&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">            </span><span class="nt">&lt;pointini</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#-domainUp/3&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#-domainUp/3&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-0.60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">            </span><span class="nt">&lt;pointend</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#domainUp/3&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#domainUp/3&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="nt">&lt;/limitmin&gt;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="nt">&lt;limitmax</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Limit where maximum reduction is applied&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">            </span><span class="nt">&lt;pointini</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#-domainUp/2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#-domainUp/2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#-depth&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">            </span><span class="nt">&lt;pointend</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#domainUp/2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#domainUp/2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="nt">&lt;/limitmax&gt;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="nt">&lt;overlimit</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;The scope of maximum reduction over limitmax (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">        </span><span class="nt">&lt;redumax</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum reduction in location limitmax (default=10)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">        </span><span class="nt">&lt;factorxyz</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Application factor in components (default x=1,y=1,z=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="nt">&lt;/dampingbox&gt;</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="nt">&lt;/damping&gt;</span>
+</span></code></pre></div>
+<p>The damping box is active in all specified directions except the top. Its inner limits are X/Y=±<code>domainUp/3</code>=±0.80 m, Z=−0.60…0.50 m. Maximum-reduction limits are X/Y=±<code>domainUp/2</code>=±1.20 m and Z=−depth…0.50 m. <code>overlimit=0.1</code>, <code>redumax=10</code> and component factors <code>(1,1,1)</code> retain the source selections. This outer/bottom numerical absorption is distinct from a measured experimental body-damping coefficient.</p>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — simulationdomain</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;simulationdomain</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default + 50%&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">&lt;/simulationdomain&gt;</span>
+</span></code></pre></div>
+<p>The solver retains generated minimum/maximum bounds and extends the upper Z domain by the source's <code>default + 50%</code> expression. The commented <code>outputparts</code> block is not an active output filter and its expressions are not used to describe the current output selection.</p>
+<h2 id="numerical-parameters">Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Link to this heading">&para;</a></h2>
+<h3 id="constants-and-boundary-treatment">Constants and Boundary Treatment<a class="headerlink" href="#constants-and-boundary-treatment" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — constantsdef</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;constantsdef&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&lt;gravity</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-9.81&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gravitational acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&lt;rhop0</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;998.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reference density of the fluid&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&lt;rhopgradient</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial density gradient 1:Rhop0, 2:Water column, 3:Max. water height (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">&lt;hswl</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum still water level to calculate speedofsound using coefsound&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Polytropic constant for water used in the state equation&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">&lt;speedsystem</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum system speed (by default the dam-break propagation is used)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nt">&lt;coefsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply speedsystem&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="nt">&lt;speedsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Speed of sound to use in the simulation (by default speedofsound=coefsound*speedsystem)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="nt">&lt;coefh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate the smoothing length (h=coefh*sqrt(3*dp^2) in 3D)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="nt">&lt;cflnumber</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply dt&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="nt">&lt;/constantsdef&gt;</span>
+</span></code></pre></div>
+<p>Gravity is (0,0,−9.81) m/s², reference fluid density is 998.5 kg/m³ and density-gradient option 3 is selected. <code>coefh=1.5</code>, CFL coefficient 0.2 and automatic sound-speed calculation with <code>coefsound=30</code> are preserved. The sound-speed fields with zero values and <code>auto=true</code> request automatic calculation; they do not prescribe a zero sound speed.</p>
+<p>This first continuous parameter extract selects boundaries, time integration and fluid treatment:</p>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — execution/parameters (excerpt)</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Boundary&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;mDBC&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SlipMode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FS&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;NoPenetration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Activate No-Penetration option for mDBC: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;StepAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SYM&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Step Algorithm: SYM:Symplectic, VER:Verlet (default=SYM)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;VerletSteps&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Verlet only: Number of steps to apply Euler timestepping (default=40)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Kernel&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;WC2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Interaction Kernel: WC2:WendlandC2, WC6:WendlandC6 (default=WC2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;LAM&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation: LAM:Laminar, ART:Artificial (default=LAM)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Visco&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1e-06&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoBoundFactor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Multiply viscosity value with boundary (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Turbulence&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SPS&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Turbulence model: NO:None, SPS:Sub-particle scale (default=NO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=NO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.10&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DivCleanKp&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kappa parameter for Divergence Cleaning (equal to coefsound) (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>The selected boundary method is mDBC with <strong><code>SlipMode=FS</code> (free slip)</strong>. The current reader maps it to <code>BSLIP_FreeSlip</code>, distinct from no-slip NS and zero-tangential-velocity V0. <code>NoPenetration=N</code> does not enable the additional no-penetration option. Geometry-based normal data include both tank and floating surface; no per-body boundary-method override is present.</p>
+<p>Integration is symplectic (<code>SYM</code>) with Wendland C2 (<code>WC2</code>). <code>ViscoTreatment=LAM</code>, <code>Visco=1e-06</code> m²/s and boundary multiplier 1 are selected, together with <code>Turbulence=SPS</code>. These active settings do not by themselves establish the provenance of a plotted numerical curve.</p>
+<p><code>DensityDT=FO</code> selects Fourtakas diffusion with coefficient 0.10; see <a href="#Fourtakas_2019">Fourtakas et al. (2019)</a>. <code>DivCleanKp=30</code> is explicitly prescribed for divergence cleaning, matching the configured sound-speed coefficient; it is not an experimental damping coefficient.</p>
+<h3 id="shifting-and-body-algorithm">Shifting and Body Algorithm<a class="headerlink" href="#shifting-and-body-algorithm" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — execution/parameters (excerpt)</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Shifting&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Shifting mode 0:None, 1:Ignore bound, 2:Ignore fixed, 3:Full, 4:Full advanced (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for standard shifting computation (default=-2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftTFS&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.75&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for advanced shifting computation (default=-0.01)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvALE&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;ALE formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvNCPress&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non conservative pressure formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RigidAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FREE&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Rigid Algorithm: FREE:collision-free, SPH, DEM, CHR:Chrono collision (default=SPH)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;FtPause&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time to freeze the floatings at simulation start (warmup) (default=0)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;FtIgnoreRadius&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Ignores floating body radius with periodic conditions: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><strong>Full advanced shifting, mode 4</strong>, is active with <code>ShiftAdvCoef=-0.01</code>, <code>ShiftAdvALE=N</code> and <code>ShiftAdvNCPress=Y</code>. The standard-mode <code>ShiftCoef=-0.2</code> and <code>ShiftTFS=2.75</code> do not control the selected advanced branch. <code>RigidAlgorithm=FREE</code> retains collision-free body motion; <code>FtIgnoreRadius=Y</code> does not enable periodic boundaries.</p>
+<h3 id="time-control-and-output">Time Control and Output<a class="headerlink" href="#time-control-and-output" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><span class="filename">HeaveDecay_Def.xml — execution/parameters (excerpt)</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CoefDtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtIni&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#2*Dp/1500&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial time step. Use 0 to default use (default=h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.00001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum time step. Use 0 to default use (default=coefdtmin*h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixed&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fixed Dt value. Use 0 to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixedFile&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NONE&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Dt values are loaded from file. Use NONE to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;milliseconds (ms)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtAllParticles&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity of all the particles is used to calculate DT. Y:All, N:Only fluid/floating (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#timeMax&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time of simulation&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#timeOut&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time out data&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeOutExtra&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;700&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum density valid (default=700)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1300&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum density valid (default=1300)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;WrnPartsOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Active warning according to number of out particles: Y/N (default=Y)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;MinFluidStop&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum proportion of initial fluid particles to continue the simulation 0:Never stops, 0.1:Stops when fluid drops to 10%. (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>The normal BAT starts a new simulation rather than a restart. Current duration is 5.4 s and regular output interval is 0.0225 s, approximately 44.444 Hz; this differs from the experimental 200 Hz sampling. <code>TimeOutExtra=0.05</code> is separate, and actual saved timestamps follow solver stepping.</p>
+<p>The initial step is the source expression <code>#2*Dp/1500</code> (approximately 0.0000133333 s for Dp=0.010 m). <strong><code>DtMin=0.00001 s</code> is explicit</strong>, so it must not be replaced by the derived <code>CoefDtMin</code> default formula. Fixed stepping is disabled with <code>DtFixed=0</code> and <code>DtFixedFile=NONE</code>; <code>DtAllParticles=N</code> uses the fluid/floating velocity criterion.</p>
+<p><code>SavePosDouble=Y</code> requests double-precision positions. <code>SaveExtraParts=10</code> is an extra-data PART-interval selection, not a 10 s output period. Valid density limits are 700–1300 kg/m³; particle-out warnings are enabled and <code>MinFluidStop=0</code> disables the fluid-proportion stopping criterion. No leading-underscore element is present in the current XML; active zero-valued settings and XML comments are treated separately.</p>
+<h2 id="experimental-reference-data">Experimental Reference Data<a class="headerlink" href="#experimental-reference-data" title="Link to this heading">&para;</a></h2>
+<h3 id="float-1-and-displacement-datum">Float 1 and Displacement Datum<a class="headerlink" href="#float-1-and-displacement-datum" title="Link to this heading">&para;</a></h3>
+<p>The supplied Test 14 PDF identifies Float 1 by its 9.75 kg mass and round-base geometry. Its experimental vertical zero is the position of the stationary body floating in still water. The displacement histories therefore describe <strong>motion relative to equilibrium</strong>, not an absolute numerical centre Z coordinate. Experimental time is in seconds and displacement is in millimetres, sampled at 200 Hz.</p>
+<p>Both supplied text files are headerless, whitespace/tab-separated two-column records. Their actual contents are:</p>
+<table>
+<thead>
+<tr>
+<th>Local file</th>
+<th>Condition</th>
+<th>Columns</th>
+<th style="text-align: right;">Records</th>
+<th>Time span / increment</th>
+<th style="text-align: right;">First recorded displacement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reference/Fl1+0p76.txt</code></td>
+<td>Float 1, nominal +76 mm release</td>
+<td>Time (s), displacement (mm)</td>
+<td style="text-align: right;">901</td>
+<td>0…4.5 s / 0.005 s</td>
+<td style="text-align: right;">76.4378 mm</td>
+</tr>
+<tr>
+<td><code>reference/Fl1-0p074.txt</code></td>
+<td>Float 1, nominal −74 mm release</td>
+<td>Time (s), displacement (mm)</td>
+<td style="text-align: right;">901</td>
+<td>0…4.5 s / 0.005 s</td>
+<td style="text-align: right;">−73.9973 mm</td>
+</tr>
+</tbody>
+</table>
+<p>Units and Float 1 condition descriptions come from the benchmark PDF, not from guessing the numeric magnitude or filename. The local positive filename omits a zero compared with the PDF's <code>Fl1+0p076.txt</code>; its first value and the XML's +0.076 m offset support selecting this positive-displacement series. The SPHERIC webpage has a further naming discrepancy for that condition, so the local PDF, physical body/offset and actual data are used together rather than relying on the web filename alone.</p>
+<p>The first positive value is <strong>76.4378 mm</strong>, not exactly 76 mm; it is preserved without forcing an offset. The negative file is an alternative release condition, not another simulation represented by the current XML. Float 2 and its different mass/offset are not selected here.</p>
+<h3 id="comparison-with-numerical-motion">Comparison with Numerical Motion<a class="headerlink" href="#comparison-with-numerical-motion" title="Link to this heading">&para;</a></h3>
+<p>The intended numerical observable is the vertical body displacement relative to a verified equilibrium reference. FloatingInfo's <code>center</code> is an absolute centre-of-mass position in metres, while its <code>heave</code> is a centre displacement in Z; the output's displacement zero must be checked rather than assumed to be the experimental equilibrium zero.</p>
+<p>For a verified centre reference, an equilibrium-based comparison could use <code>1000*(center.z(t)-center.z_equilibrium)</code> in millimetres. This states the required datum/unit relationship, not a transformation performed here: the reference centre is not established by the inactive centre comment or by the nominal geometry offset alone. Likewise, a heave channel referenced to the initial numerical position is not automatically the experimental equilibrium displacement.</p>
+<p>Both experimental files start at t=0, but that does not prove identical numerical/experimental release-time conventions. Confirm the actual motion record, marker, time origin and overlapping interval before plotting. No time shift, initial-value subtraction, interpolation, unit-converted dataset or comparison metric is generated in this task.</p>
+<h2 id="running-the-simulation">Running the Simulation<a class="headerlink" href="#running-the-simulation" title="Link to this heading">&para;</a></h2>
+<h3 id="current-windows-gpu-script">Current Windows GPU Script<a class="headerlink" href="#current-windows-gpu-script" title="Link to this heading">&para;</a></h3>
+<p>The available BAT defines these case names and executable paths. Defined utilities are not all active calls:</p>
+<div class="highlight"><span class="filename">wHeaveDecay_win64_GPU.bat (excerpt)</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">set</span> <span class="nv">name</span><span class="p">=</span>HeaveDecay
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">set</span> <span class="nv">dirout</span><span class="p">=</span><span class="nv">%name%</span>_out
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">set</span> <span class="nv">diroutdata</span><span class="p">=</span><span class="nv">%dirout%</span>\data
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1">rem Defines executable paths.</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="k">set</span> <span class="nv">dirbin</span><span class="p">=</span>../../../bin/windows
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="k">set</span> <span class="nv">gencase</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/GenCase_win64.exe&quot;</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="k">set</span> <span class="nv">dualsphysicscpu</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/DualSPHysics6.0CPU_win64.exe&quot;</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="k">set</span> <span class="nv">dualsphysicsgpu</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/DualSPHysics6.0_win64.exe&quot;</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="k">set</span> <span class="nv">boundaryvtk</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/BoundaryVTK_win64.exe&quot;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="k">set</span> <span class="nv">partvtk</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/PartVTK_win64.exe&quot;</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="k">set</span> <span class="nv">partvtkout</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/PartVTKOut_win64.exe&quot;</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="k">set</span> <span class="nv">measuretool</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/MeasureTool_win64.exe&quot;</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="k">set</span> <span class="nv">computeforces</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/ComputeForces_win64.exe&quot;</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="k">set</span> <span class="nv">isosurface</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/IsoSurface_win64.exe&quot;</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="k">set</span> <span class="nv">flowtool</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/FlowTool_win64.exe&quot;</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="k">set</span> <span class="nv">floatinginfo</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/FloatingInfo_win64.exe&quot;</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="k">set</span> <span class="nv">tracerparts</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/TracerParts_win64.exe&quot;</span>
+</span></code></pre></div>
+<p>Run from the case directory so the XML, STL and relative executable paths are resolved as intended. If output exists, the supplied script offers delete/re-run, post-processing or abort. Its run branch removes the existing output directory; no branch has been executed for this walkthrough.</p>
+<h4 id="gencase-and-gpu-solver">GenCase and GPU Solver<a class="headerlink" href="#gencase-and-gpu-solver" title="Link to this heading">&para;</a></h4>
+<div class="highlight"><span class="filename">wHeaveDecay_win64_GPU.bat (excerpt)</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">rem Executes GenCase to create initial files for simulation.</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">%gencase%</span> <span class="nv">%name%</span>_Def <span class="nv">%dirout%</span>/<span class="nv">%name%</span> -save:all
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span></code></pre></div>
+<div class="highlight"><span class="filename">wHeaveDecay_win64_GPU.bat (excerpt)</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">rem Executes DualSPHysics to run the SPH simulation.</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nv">%dualsphysicsgpu%</span> -gpu <span class="nv">%dirout%</span>/<span class="nv">%name%</span> <span class="nv">%dirout%</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span></code></pre></div>
+<p>GenCase prepares the particle/body data and exported actual geometry, then the GPU solver advances the selected free-decay configuration. The STL is required by the active normal-geometry list, despite primitive particle generation. No extra motion file, Chrono model or mooring input is configured.</p>
+<h4 id="particle-boundary-and-body-motion-extraction">Particle, Boundary and Body-motion Extraction<a class="headerlink" href="#particle-boundary-and-body-motion-extraction" title="Link to this heading">&para;</a></h4>
+<p>The following active commands occur after the solver, in the original order:</p>
+<div class="highlight"><span class="filename">wHeaveDecay_win64_GPU.bat (excerpt)</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">:</span><span class="nl">postprocessing</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c1">rem Executes PartVTK to create VTK files with fluid particles.</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\particles
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nv">%partvtk%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFluid -onlytype:-all,+fluid -continue:1
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="c1">rem Executes PartVTKOut to create VTK files with excluded particles.</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="nv">%partvtkout%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFluidOut -SaveResume <span class="nv">%dirout2%</span>/_ResumeFluidOut
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="c1">rem Executes BoundaryVTK to create VTK files with floating-body geometry.</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\boundary
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="nv">%boundaryvtk%</span> -loadvtk AutoActual -motiondata <span class="nv">%diroutdata%</span> -savevtkdata <span class="nv">%dirout2%</span>/Box -onlytype:floating
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="c1">rem Executes FloatingInfo to export the selected floating-body data to CSV files.</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\floatinginfo
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="nv">%floatinginfo%</span> -dirdata <span class="nv">%diroutdata%</span> -onlymk:60 -savedata <span class="nv">%dirout2%</span>/FloatMotion
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span></code></pre></div>
+<p>PartVTK selects fluid particles with <code>-onlytype:-all,+fluid</code> and writes the <code>particles/PartFluid</code> prefix. BoundaryVTK uses recorded motion and actual geometry for the floating-boundary <code>boundary/Box</code> prefix; the generic name “Box” does not change the rounded body's shape.</p>
+<p>FloatingInfo selects MK 60 and writes <code>floatinginfo/FloatMotion</code>. Check the generated marker metadata against local <code>mkbound=50</code>. Centre position and heave displacement use metres; linear velocity uses m/s, angular velocity rad/s and rotations degrees. Body-motion files are available, but quantities and reference datums still require final verification.</p>
+<p>The current BAT uses <code>-dirdata</code> for FloatingInfo. All active utility calls have error checks; static inspection does not prove runtime completion.</p>
+<h3 id="expected-outputs-and-final-release-platforms">Expected Outputs and Final Release Platforms<a class="headerlink" href="#expected-outputs-and-final-release-platforms" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Relative location under <code>HeaveDecay_out/</code></th>
+<th>Expected role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data/</code></td>
+<td>Saved solver particle/body data for extraction</td>
+</tr>
+<tr>
+<td><code>particles/PartFluid…</code></td>
+<td>Fluid-particle VTK series</td>
+</tr>
+<tr>
+<td><code>boundary/Box…</code></td>
+<td>Floating-body geometry reconstructed from motion</td>
+</tr>
+<tr>
+<td><code>floatinginfo/FloatMotion</code></td>
+<td>FloatingInfo motion-output prefix</td>
+</tr>
+</tbody>
+</table>
+<p>These paths follow the current BAT. Available generated XML agrees with the inspected 0.010 m spacing, SPS, advanced shifting, divergence cleaning 30 and 5.4 s requested duration. The supplied PNG spans 15 s, so it is not verified as the result of that exact current configuration. CPU/Linux release coverage remains a separate packaging review.</p>
+<h2 id="results-and-validation">Results and Validation<a class="headerlink" href="#results-and-validation" title="Link to this heading">&para;</a></h2>
+<h3 id="figure-1-float-1-heave-decay">Figure 1 – Float 1 Heave Decay<a class="headerlink" href="#figure-1-float-1-heave-decay" title="Link to this heading">&para;</a></h3>
+<figure id="fig-heave-decay-preliminary" style="text-align: center;">
+  <a href="../../assets/images/benchmarks/heave_decay/08_heavedecay_heave_preliminary_20261118.png" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/heave_decay/08_heavedecay_heave_preliminary_20261118.png" alt="Preliminary Float 1 heave displacement comparison in metres versus time, with Reference and DualSPHysics curves. The period annotations are preliminary and the 15 s plot is not verified against the current 5.4 s definition." style="width: 100%; max-width: 1100px; height: auto;">
+  </a>
+  <figcaption><strong>Figure 1:</strong> Preliminary Float 1 heave displacement comparison in metres versus time, with Reference and DualSPHysics curves. The period annotations are preliminary and the 15 s plot is not verified against the current 5.4 s definition.</figcaption>
+</figure>
+
+<p><strong>Preliminary figure. The numerical results and their comparison with the reference data are pending final verification.</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Original axis label and preliminary results</p>
+<p>The earlier supplied SPS/NO turb image uses <code>Heave [N]</code>, which is dimensionally inconsistent with displacement; its original asset is retained unchanged. The updated figure displayed here labels heave in metres. Neither the previous curves nor the updated PNG have been verified as results of the exact current XML configuration. The current definition selects SPS, while the updated plot alone does not identify its turbulence or shifting settings.</p>
+</div>
+<p>The final comparison requires verified body-motion output, the positive-offset Float 1 experimental channel, compatible units, an equilibrium displacement reference and justified time origins. No experimental agreement, natural period, damping ratio, convergence or completed physical validation is claimed. No second comparison is added for the negative release because the current numerical geometry does not configure that condition.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Link to this heading">&para;</a></h2>
+<p><a id="SPHERIC_14"></a>
+◆ Stansby, P., &amp; Carpintero Moreno, E. SPHERIC Test Case 14: <em>Free heave response of axisymmetric bodies with a round base</em>. The supplied benchmark PDF and reference data define the selected experimental condition. <a href="https://www.spheric-sph.org/tests/test-14" rel="noopener noreferrer" target="_blank">SPHERIC Test 14</a></p>
+<p><a id="Fourtakas_2019"></a>
+◆ Fourtakas, G., Domínguez, J. M., Vacondio, R., &amp; Rogers, B. D. (2019). Local Uniform Stencil (LUST) boundary condition for arbitrary 3-D boundaries in parallel smoothed particle hydrodynamics (SPH) models. <em>Computers &amp; Fluids</em>, <em>190</em>, 346–361. <a href="https://doi.org/10.1016/j.compfluid.2019.06.009" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.compfluid.2019.06.009</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../moored_box/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Moored Box">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Moored Box
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../xml_guides/introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction to XML">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Introduction to XML
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 DualSPHysics Team &middot; Edited by Bonaventura Tagliafierro
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/DualSPHysics/DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/catalogue-overview.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
