@@ -1,431 +1,431 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>http://127.0.0.1:8000/</loc>
+         <loc>https://btagliafierro.github.io/docs/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/features/</loc>
+         <loc>https://btagliafierro.github.io/docs/features/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/</loc>
+         <loc>https://btagliafierro.github.io/docs/licenses/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/dambreak_2d/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/dambreak_2d/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/dambreak_3d/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/dambreak_3d/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/dambreak_debris/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/dambreak_debris/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/drifting_box/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/drifting_box/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/flexible_gate/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/flexible_gate/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/heave_decay/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/heave_decay/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/moored_box/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/moored_box/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/runup/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/runup/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/sloshing/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/sloshing/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/turek/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/turek/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/benchmarks/wave_generation/</loc>
+         <loc>https://btagliafierro.github.io/docs/benchmarks/wave_generation/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/contributing/setup/</loc>
+         <loc>https://btagliafierro.github.io/docs/contributing/setup/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/</loc>
+         <loc>https://btagliafierro.github.io/docs/couplings/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/chrono/</loc>
+         <loc>https://btagliafierro.github.io/docs/couplings/chrono/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/dem/</loc>
+         <loc>https://btagliafierro.github.io/docs/couplings/dem/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/moordynplus/</loc>
+         <loc>https://btagliafierro.github.io/docs/couplings/moordynplus/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/wave_propagation/</loc>
+         <loc>https://btagliafierro.github.io/docs/couplings/wave_propagation/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/couplings/wavegen/</loc>
+         <loc>https://btagliafierro.github.io/docs/couplings/wavegen/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples/catalogue/flexstruc/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples/catalogue/flexstruc/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/overview/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/overview/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/chrono/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/chrono/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/chronofea/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/chronofea/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/divclean/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/divclean/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/flexstruc/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/flexstruc/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/geomech/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/geomech/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/inletmesh/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/inletmesh/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/inletoutlet/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/inletoutlet/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main-catalogue/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main-catalogue/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mdbc/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/mdbc/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/moordynplus/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/moordynplus/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/motion/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/motion/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mphase_liquidgas/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/mphase_liquidgas/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/mphase_nnewtonian/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/mphase_nnewtonian/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/shiftingadv/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/shiftingadv/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/vresolution/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/vresolution/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/wavecoupling/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/wavecoupling/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/01-dambreak/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/01-dambreak/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/02-periodicity/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/02-periodicity/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/03-movingsquare/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/03-movingsquare/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/04-externalforces/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/04-externalforces/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/05-sloshingtank/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/05-sloshingtank/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/06-wavemaker/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/06-wavemaker/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/07-wavemakerfile/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/07-wavemakerfile/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/08-wavesflap/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/08-wavesflap/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/09-wavespiston/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/09-wavespiston/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/10-wavespistonawas/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/10-wavespistonawas/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/11-floating/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/11-floating/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/12-floatingwaves/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/12-floatingwaves/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/13-pump/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/13-pump/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/14-dem/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/14-dem/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/15-poiseuille/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/15-poiseuille/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/16-solitarywaves/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/16-solitarywaves/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/17-waverunup/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/17-waverunup/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/18-bathymetry/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/18-bathymetry/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/19-focusedwaves/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/19-focusedwaves/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/examples_catalogue/catalogue/main/20-damping/</loc>
+         <loc>https://btagliafierro.github.io/docs/examples_catalogue/catalogue/main/20-damping/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/faq/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/faq/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/change_resolution/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/change_resolution/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/change_still_water_level/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/change_still_water_level/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/change_time_duration/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/change_time_duration/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/change_viscosity/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/change_viscosity/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/floating_body_motion/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/floating_body_motion/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/measure_force/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/measure_force/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/measure_free_surface/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/measure_free_surface/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/measure_pressure/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/measure_pressure/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/measure_velocity/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/measure_velocity/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/mk_labels/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/mk_labels/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/new_floating/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/new_floating/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/simulation_domain/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/simulation_domain/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/visualise_mdbc_normals/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/visualise_mdbc_normals/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/faq/howto/visualise_paraview/</loc>
+         <loc>https://btagliafierro.github.io/docs/faq/howto/visualise_paraview/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/gallery/intro/</loc>
+         <loc>https://btagliafierro.github.io/docs/gallery/intro/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/advanced/</loc>
+         <loc>https://btagliafierro.github.io/docs/getting_started/advanced/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/case_definition/</loc>
+         <loc>https://btagliafierro.github.io/docs/getting_started/case_definition/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/cpu-gpu-multigpu/</loc>
+         <loc>https://btagliafierro.github.io/docs/getting_started/cpu-gpu-multigpu/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/designsphysics/</loc>
+         <loc>https://btagliafierro.github.io/docs/getting_started/designsphysics/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/examples_intro/</loc>
+         <loc>https://btagliafierro.github.io/docs/getting_started/examples_intro/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/getting_started/</loc>
+         <loc>https://btagliafierro.github.io/docs/getting_started/getting_started/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/getting_started/workflow/</loc>
+         <loc>https://btagliafierro.github.io/docs/getting_started/workflow/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/home/</loc>
+         <loc>https://btagliafierro.github.io/docs/home/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/home/introduction/</loc>
+         <loc>https://btagliafierro.github.io/docs/home/introduction/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/</loc>
+         <loc>https://btagliafierro.github.io/docs/licenses/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/dualsphysics-bsd/</loc>
+         <loc>https://btagliafierro.github.io/docs/licenses/dualsphysics-bsd/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/dualsphysics-lgpl/</loc>
+         <loc>https://btagliafierro.github.io/docs/licenses/dualsphysics-lgpl/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/moordynplus/</loc>
+         <loc>https://btagliafierro.github.io/docs/licenses/moordynplus/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/project-chrono/</loc>
+         <loc>https://btagliafierro.github.io/docs/licenses/project-chrono/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/random-generator/</loc>
+         <loc>https://btagliafierro.github.io/docs/licenses/random-generator/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/licenses/tinyxml/</loc>
+         <loc>https://btagliafierro.github.io/docs/licenses/tinyxml/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/theory/</loc>
+         <loc>https://btagliafierro.github.io/docs/theory/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/chrono/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/chrono/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/chronofea/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/chronofea/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/flexstruc/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/flexstruc/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/general/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/general/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/geomech/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/geomech/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/inletoutlet/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/inletoutlet/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/introduction/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/introduction/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/mdbc/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/mdbc/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/moordynplus/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/moordynplus/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/mphase_nnewtonian/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/mphase_nnewtonian/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/shiftingadv/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/shiftingadv/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>http://127.0.0.1:8000/xml_guides/vresolution/</loc>
+         <loc>https://btagliafierro.github.io/docs/xml_guides/vresolution/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
 </urlset>
