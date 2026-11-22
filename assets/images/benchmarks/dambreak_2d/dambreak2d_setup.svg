@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 650" width="1040" height="650" role="img" aria-label="Dambreak 2D setup">
+<title>Dambreak 2D setup</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<style>text{font-family:'Segoe UI', Helvetica, Arial, sans-serif;}</style>
+<rect x="110.0" y="200.0" width="150.0" height="300.0" rx="0" fill="#4c8bf5" stroke="none" stroke-width="1" opacity="0.3"/>
+<text x="185.0" y="266.0" font-size="17" fill="#4c8bf5" text-anchor="middle" font-weight="normal">water</text>
+<path d="M110.0,327.5 L170.0,342.5 L230.0,380.0 L290.0,425.0 L350.0,462.5 L402.5,488.0 L425.0,500.0" fill="none" stroke="#4c8bf5" stroke-width="2.2" stroke-dasharray="6 5"/>
+<text x="297.5" y="407.0" font-size="15" fill="#4c8bf5" text-anchor="start" font-weight="normal">Evolved free surface</text>
+<line x1="425.0" y1="518.0" x2="425.0" y2="504.0" stroke="#e8574a" stroke-width="1.8" marker-end="url(#a)" opacity="1.0"/>
+<text x="425.0" y="536.0" font-size="15" fill="#e8574a" text-anchor="middle" font-weight="normal">front position</text>
+<path d="M110,50.0 L110,500.0 L710.0,500.0 L710.0,50.0" fill="none" stroke="#8a94a3" stroke-width="3.5"/>
+<line x1="102.5" y1="495.5" x2="717.5" y2="495.5" stroke="#e8574a" stroke-width="2" stroke-dasharray="3 3" opacity="1.0"/>
+<line x1="716.0" y1="495.5" x2="750.0" y2="432.5" stroke="#8a94a3" stroke-width="1.2" opacity="1.0"/>
+<text x="754.0" y="432.5" font-size="15" fill="#8a94a3" text-anchor="start" font-weight="normal">Gauge line</text>
+<line x1="110.0" y1="562.0" x2="260.0" y2="562.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="185.0" y="555.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">1.00</text>
+<line x1="110.0" y1="504.0" x2="110.0" y2="568.0" stroke="#8a94a3" stroke-width="0.8" opacity="1.0"/>
+<line x1="260.0" y1="504.0" x2="260.0" y2="568.0" stroke="#8a94a3" stroke-width="0.8" opacity="1.0"/>
+<line x1="110.0" y1="598.0" x2="710.0" y2="598.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="410.0" y="591.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">4.00</text>
+<line x1="110.0" y1="504.0" x2="110.0" y2="604.0" stroke="#8a94a3" stroke-width="0.8" opacity="1.0"/>
+<line x1="710.0" y1="504.0" x2="710.0" y2="604.0" stroke="#8a94a3" stroke-width="0.8" opacity="1.0"/>
+<line x1="94.0" y1="500.0" x2="94.0" y2="200.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="86.0" y="355.0" font-size="13" fill="#8a94a3" text-anchor="end" font-weight="normal">2.00</text>
+<line x1="46.0" y1="500.0" x2="46.0" y2="50.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="38.0" y="280.0" font-size="13" fill="#8a94a3" text-anchor="end" font-weight="normal">3.00</text>
+<text x="110.0" y="636.0" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal"></text>
+<line x1="770.0" y1="610.0" x2="820.0" y2="610.0" stroke="#8a94a3" stroke-width="1.5" marker-end="url(#a)" opacity="1.0"/>
+<text x="826.0" y="615.0" font-size="15" fill="#8a94a3" text-anchor="start" font-weight="normal" font-style="italic">x</text>
+<line x1="770.0" y1="610.0" x2="770.0" y2="565.0" stroke="#8a94a3" stroke-width="1.5" marker-end="url(#a)" opacity="1.0"/>
+<text x="764.0" y="560.0" font-size="15" fill="#8a94a3" text-anchor="end" font-weight="normal" font-style="italic">z</text>
+</svg>

@@ -1,0 +1,4848 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://btagliafierro.github.io/docs/xml_guides/execution/main_solver_parameters/">
+      
+      
+        <link rel="prev" href="../../casedef/floating_bodies_motion/">
+      
+      
+        <link rel="next" href="../special_features_overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/dualsphysics-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Main Solver Parameters - DualSPHysics Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.804a7bde.css">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#main-solver-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <strong>Draft for internal review.</strong>
+  Some pages, figures, and videos are still in progress.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../home/" title="DualSPHysics Documentation" class="md-header__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DualSPHysics Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Main Solver Parameters
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../home/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../theory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Theory
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../couplings/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Couplings
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../gallery/intro/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Gallery
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting_started/getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../examples_catalogue/catalogue/main-catalogue/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Examples Catalogue
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../benchmarks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Benchmarks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XML Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../faq/faq/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../licenses/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Licenses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../contributing/setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../home/" title="DualSPHysics Documentation" class="md-nav__button md-logo" aria-label="DualSPHysics Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/dualsphysics-logo.svg" alt="logo">
+
+    </a>
+    DualSPHysics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/btagliafierro/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../home/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../couplings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couplings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gallery/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Your First Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DualSPHysics Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/cpu-gpu-multigpu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU, GPU and Multi-GPU Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/case_definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Definition (XML)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/designsphysics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DesignSPHysics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+        
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples Catalogue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples Catalogue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+          <li class="md-nav__item">
+            <a href="../../../benchmarks/" class="md-nav__link">
+              <span class="md-ellipsis">Benchmarks</span>
+            </a>
+          </li>
+        
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/main-catalogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/mdbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/inletmesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InletMesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/wavecoupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wavecoupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/divclean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divergence cleaning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/mphase_liquidgas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase LiquidGas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase NNewtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples_catalogue/catalogue/motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../benchmarks/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/dambreak_2d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 2D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/dambreak_3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/sloshing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sloshing Tank
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/wave_generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XML Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Definition (casedef)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Definition (casedef)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casedef/physical_constants_resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical Constants and Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casedef/geometry_markers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometry and Markers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casedef/initial_conditions_properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initial Conditions and Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casedef/floating_bodies_motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floating Bodies and Prescribed Motion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution (execution)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Execution (execution)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Solver Parameters
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Solver Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#main-solver-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main solver parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main solver parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving-and-numerical-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving and numerical precision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary treatment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-integration-and-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time integration and kernel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viscosity-and-turbulence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viscosity and turbulence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-diffusion-and-divergence-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density diffusion and divergence cleaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#particle-shifting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particle shifting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rigid-body-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rigid-body interaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-step-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-step calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-duration-saving-and-particle-exclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation duration, saving and particle exclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-limits-and-periodic-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain limits and periodic boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-parameter-inputs-and-migration-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional parameter inputs and migration boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-representative-current-parameter-fragment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A representative current parameter fragment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-relationships-behind-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical relationships behind the configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical relationships behind the configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pressure-gravity-and-artificial-viscosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pressure, gravity and artificial viscosity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-shapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel shapes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laminar-viscosity-and-sps-stress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Laminar viscosity and SPS stress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-diffusion-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density-diffusion background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divergence-cleaning-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divergence-cleaning field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-particle-shifting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard particle shifting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-integration-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-integration stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../special_features_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Features: Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wave_generation_absorption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Generation and Absorption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gauges_accelerations_output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gauges, Accelerations and Output Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated_execution_xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generated Execution XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specialised Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Specialised Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mdbc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inletoutlet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inlet/Outlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vresolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flexstruc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flexible Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chronofea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoFEA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shiftingadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Shifting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mphase_nnewtonian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiphase Non-Newtonian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geomech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geomechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/new_floating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Add a Floating Object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/change_resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Resolution/Particle Size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/change_viscosity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Viscosity Formulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/change_time_duration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Simulation Time Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/change_still_water_level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Change the Still-Water Level (Pending)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/simulation_domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand the Simulation Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/mk_labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Understand MK Labels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/measure_velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Velocity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/measure_pressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/measure_free_surface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Free-Surface Elevation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/measure_force/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Measure Force
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/visualise_paraview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise Results in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/visualise_mdbc_normals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Visualise mDBC Normals in ParaView
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/howto/floating_body_motion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To: Compute the Motion of a Floating Body
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../licenses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licenses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Licenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../licenses/dualsphysics-lgpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (LGPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../licenses/dualsphysics-bsd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DualSPHysics (BSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../licenses/tinyxml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TinyXML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../licenses/random-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random number generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../licenses/project-chrono/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chrono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../licenses/moordynplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoorDynPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+      
+      
+        
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+      
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#main-solver-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main solver parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main solver parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving-and-numerical-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving and numerical precision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary treatment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-integration-and-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time integration and kernel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viscosity-and-turbulence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viscosity and turbulence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-diffusion-and-divergence-cleaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density diffusion and divergence cleaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#particle-shifting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particle shifting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rigid-body-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rigid-body interaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-step-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-step calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-duration-saving-and-particle-exclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation duration, saving and particle exclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-limits-and-periodic-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain limits and periodic boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-parameter-inputs-and-migration-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional parameter inputs and migration boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-representative-current-parameter-fragment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A representative current parameter fragment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-relationships-behind-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical relationships behind the configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical relationships behind the configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pressure-gravity-and-artificial-viscosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pressure, gravity and artificial viscosity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-shapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel shapes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laminar-viscosity-and-sps-stress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Laminar viscosity and SPS stress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-diffusion-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density-diffusion background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divergence-cleaning-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divergence-cleaning field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-particle-shifting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard particle shifting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-integration-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-integration stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../introduction/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    XML Guides
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Execution (execution)
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="main-solver-parameters">Main Solver Parameters<a class="headerlink" href="#main-solver-parameters" title="Link to this heading">&para;</a></h1>
+<p style="margin-top: -2.5em; font-size: 0.95em; color: gray;">
+  Under review by José Domínguez and Alex Crespo
+</p>
+
+<h2 id="main-solver-parameters_1">Main solver parameters<a class="headerlink" href="#main-solver-parameters_1" title="Link to this heading">&para;</a></h2>
+<p><code>execution/parameters</code> defines the principal numerical and saving options. It does not generate the particles. Use the <strong>current textual identifiers</strong> for the options that now provide them; shifting retains numerical mode values. The tables below group the distributed reference definitions by purpose.</p>
+<p>A documented default, an illustrative template value and a migration choice are different things. For example, the template illustrates <code>NoPenetration=Y</code> although its documented default is N, and <code>SaveExtraParts=0-100:10</code> although its documented default is 0. <code>TimeMax</code> and <code>TimeOut</code> require case-specific values. The current reference and reader use <code>DensityDT=FO</code> when omitted, whereas preserving an older configuration may require explicitly writing <code>NO</code>. Always specify the intended formulation rather than relying on an omitted option during migration.</p>
+<h3 id="saving-and-numerical-precision">Saving and numerical precision<a class="headerlink" href="#saving-and-numerical-precision" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SavePosDouble</code></td>
+<td>Saves particle position using double precision: Y/N (default=N)</td>
+<td><code>N</code></td>
+</tr>
+<tr>
+<td><code>SaveExtraParts</code></td>
+<td>Part interval or list for saving extra data for restart option (default=0)</td>
+<td><code>0-100:10</code></td>
+</tr>
+</tbody>
+</table>
+<p>Position computations use double precision internally. <code>SavePosDouble</code> controls the precision of <strong>saved positions</strong>. The source precision example has an 18 m domain, water depth 0.18 m and dp=0.012374 m, illustrating why coordinate magnitude relative to spacing matters. Saving in double precision does not independently select a different position-update algorithm.</p>
+<p><code>SaveExtraParts</code> selects extra data for restarting at particular PART numbers or intervals. Its list syntax is distinct from the physical saving interval <code>TimeOut</code>.</p>
+<p>As implementation background, the presentation distinguishes CPU double-precision positions from the GPU's auxiliary cell-relative position array. The comparison concerns large coordinate magnitudes relative to particle spacing. It does not turn <code>SavePosDouble</code> into a switch for the internal arithmetic or establish that a particular accelerator build uses every source implementation detail unchanged.</p>
+<h3 id="boundary-treatment">Boundary treatment<a class="headerlink" href="#boundary-treatment" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Boundary</code></td>
+<td>Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)</td>
+<td><code>DBC</code></td>
+</tr>
+<tr>
+<td><code>SlipMode</code></td>
+<td>Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)</td>
+<td><code>NS</code></td>
+</tr>
+<tr>
+<td><code>NoPenetration</code></td>
+<td>Activate No-Penetration option for mDBC: Y/N (default=N)</td>
+<td><code>Y</code></td>
+</tr>
+</tbody>
+</table>
+<p>DBC, mDBC and MIX are different boundary choices. mDBC reconstructs boundary density/pressure using normals and ghost-node information, with separate slip and optional no-penetration treatment. NS means no-slip, FS free-slip, V0 zero tangential velocity and M22 the older mDBC mode. No-penetration is an additional correction; do not infer that changing a slip name activates it.</p>
+<p>Boundary particle layers and smoothing length must provide adequate support. The general presentation describes at least three layers depending on h; use the detailed <a href="../../mdbc/">mDBC guide</a> to configure normal generation, orientation, layer spacing and the selected mode. MIX requires its own per-marker configuration. Merely changing <code>Boundary</code> does not generate normal vectors or assign all mixed conditions.</p>
+<p>The source motivates mDBC by reconstructing boundary density and pressure and reducing the unphysical separation that can occur between boundary and fluid particles. That intended improvement is conditional on correctly prepared boundaries and adequate support; it is not a universal accuracy guarantee for an arbitrary geometry. The <a href="../../mdbc/#boundary-normals-and-particle-layers">mDBC explanation of normals and layers</a> gives the corresponding construction and restrictions.</p>
+<h3 id="time-integration-and-kernel">Time integration and kernel<a class="headerlink" href="#time-integration-and-kernel" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>StepAlgorithm</code></td>
+<td>Step Algorithm: SYM:Symplectic, VER:Verlet (default=SYM)</td>
+<td><code>SYM</code></td>
+</tr>
+<tr>
+<td><code>VerletSteps</code></td>
+<td>Verlet only: Number of steps to apply Euler timestepping (default=40)</td>
+<td><code>40</code></td>
+</tr>
+<tr>
+<td><code>Kernel</code></td>
+<td>Interaction Kernel: WC2:WendlandC2, WC6:WendlandC6 (default=WC2)</td>
+<td><code>WC2</code></td>
+</tr>
+</tbody>
+</table>
+<p>The presentation contrasts Verlet and Symplectic integration. Current default SYM is not the old illustration's default=1 comment. Preserve an explicitly selected Verlet configuration as VER when it is still appropriate. <code>VerletSteps=40</code> is the interval for the Euler-type correction described by the source, not a request to take only 40 time steps.</p>
+<p>Current kernel identifiers are WC2 and WC6. WC6 requires a build that includes it. The older presentation's Cubic Spline option is historical background, not a current <code>Kernel</code> value. Moving from that kernel to WC2 is a numerical-method change, even if a documented migration policy prescribes it.</p>
+<h3 id="viscosity-and-turbulence">Viscosity and turbulence<a class="headerlink" href="#viscosity-and-turbulence" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ViscoTreatment</code></td>
+<td>Viscosity formulation: LAM:Laminar, ART:Artificial (default=LAM)</td>
+<td><code>LAM</code></td>
+</tr>
+<tr>
+<td><code>Visco</code></td>
+<td>Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar</td>
+<td><code>1e-6</code></td>
+</tr>
+<tr>
+<td><code>ViscoBoundFactor</code></td>
+<td>Multiply viscosity value with boundary (default=1)</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>Turbulence</code></td>
+<td>Turbulence model: NO:None, SPS:Sub-particle scale (default=NO)</td>
+<td><code>NO</code></td>
+</tr>
+</tbody>
+</table>
+<p>ART uses the artificial-viscosity coefficient; LAM uses kinematic viscosity in m²/s. A number appropriate to ART is not automatically a kinematic viscosity. Preserve the intended formulation and coefficient together. The source gives α=0.01 as a wave-tank example and larger values for some dam-break cases depending on dp; these are not universal calibration rules. Its ART screenshots additionally use 0.02; these are separate teaching examples. Its LAM example uses 10⁻⁶ m²/s for water.</p>
+<p><code>Turbulence=SPS</code> requires <code>ViscoTreatment=LAM</code> in the core fluid reader; the ART/SPS combination is rejected. To retain the old combined Laminar+SPS option, select both LAM and SPS. This mapping must not be applied to specialised non-Newtonian constitutive selectors.</p>
+<p>The boundary factor relates fluid–boundary and fluid–fluid artificial viscosity in the source as follows:</p>
+<div class="arithmatex">\[
+\alpha_{FB}=\mathrm{ViscoBoundFactor}\,\alpha_{FF}
+\]</div>
+<h3 id="density-diffusion-and-divergence-cleaning">Density diffusion and divergence cleaning<a class="headerlink" href="#density-diffusion-and-divergence-cleaning" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DensityDT</code></td>
+<td>Density Diffusion Term: NO:None, FO:Fourtakas (default=FO)</td>
+<td><code>FO</code></td>
+</tr>
+<tr>
+<td><code>DensityDTvalue</code></td>
+<td>DDT value (default=0.1)</td>
+<td><code>0.1</code></td>
+</tr>
+<tr>
+<td><code>DivCleanKp</code></td>
+<td>Kappa parameter for Divergence Cleaning (equal to coefsound) (default=0)</td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Density diffusion reduces density noise by adding a diffusive contribution to the continuity equation. The current core options are NO and FO. The historical presentation distinguishes Molteni diffusion, Fourtakas away from boundaries and the full Fourtakas application. The first two historical formulations are not available as current selectable equivalents. Replacing either with NO disables that contribution; it does not reproduce the original diffusion.</p>
+<p>The reader default <code>FO</code> applies when <code>DensityDT</code> is omitted. An explicit <code>NO</code> used during migration is a separate choice to keep density diffusion disabled; it does not redefine that default. The <code>default=NO</code> comment retained in the representative case below reflects its migration convention, not the reader default.</p>
+<p>FO uses the hydrostatic-aware formulation discussed by the source, which calculates hydrostatic pressure locally and depends on gravity. Its treatment near severely truncated boundary support is one of the reasons for distinguishing it from the older interior-only application. The coefficient <code>DensityDTvalue</code> is separate from selecting the method.</p>
+<p>Divergence cleaning uses an additional transported field and a dissipative momentum contribution. Zero <code>DivCleanKp</code> disables it; a positive value enables it. The source and parameter reference relate κ to <code>coefsound</code>. The inspected solver rejects divergence cleaning with VER and with Multi-GPU execution; do not infer compatibility merely from the existence of the parameter.</p>
+<h3 id="particle-shifting">Particle shifting<a class="headerlink" href="#particle-shifting" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Shifting</code></td>
+<td>Shifting mode 0:None, 1:Ignore bound, 2:Ignore fixed, 3:Full, 4:Full advanced (default=0)</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>ShiftCoef</code></td>
+<td>Coefficient for standard shifting computation (default=-2)</td>
+<td><code>-2</code></td>
+</tr>
+<tr>
+<td><code>ShiftTFS</code></td>
+<td>Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>ShiftAdvCoef</code></td>
+<td>Coefficient for advanced shifting computation (default=-0.01)</td>
+<td><code>-0.01</code></td>
+</tr>
+<tr>
+<td><code>ShiftAdvALE</code></td>
+<td>ALE formulation for advanced shifting: Y/N (default=N)</td>
+<td><code>N</code></td>
+</tr>
+<tr>
+<td><code>ShiftAdvNCPress</code></td>
+<td>Non conservative pressure formulation for advanced shifting: Y/N (default=N)</td>
+<td><code>N</code></td>
+</tr>
+</tbody>
+</table>
+<p>Modes 1–3 are standard shifting with different boundary exclusions; mode 4 selects Advanced Shifting. <code>ShiftCoef</code> and <code>ShiftTFS</code> apply to standard shifting. The typical free-surface thresholds 1.5 in 2D and 2.75 in 3D are not the default zero and must not be inserted automatically.</p>
+<p><code>ShiftAdvCoef</code>, <code>ShiftAdvALE</code> and <code>ShiftAdvNCPress</code> configure the advanced formulation. Their presence does not activate it when Shifting is zero. Particle regularisation is distinct from physical advection; use <a href="../../shiftingadv/">Advanced shifting</a> for transport corrections, free-surface treatment and the formulation's documented limits.</p>
+<h3 id="rigid-body-interaction">Rigid-body interaction<a class="headerlink" href="#rigid-body-interaction" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RigidAlgorithm</code></td>
+<td>Rigid Algorithm: FREE:collision-free, SPH, DEM, CHR:Chrono collision (default=SPH)</td>
+<td><code>SPH</code></td>
+</tr>
+<tr>
+<td><code>FtPause</code></td>
+<td>Time to freeze the floatings at simulation start (warmup) (default=0); units: seconds</td>
+<td><code>0.0</code></td>
+</tr>
+<tr>
+<td><code>FtIgnoreRadius</code></td>
+<td>Ignores floating body radius with periodic conditions: Y/N (default=N)</td>
+<td><code>N</code></td>
+</tr>
+</tbody>
+</table>
+<p>FREE means collision-free rigid-body treatment; it does not mean that the fluid exerts no force on a floating object. SPH, DEM and CHR select different solid-interaction treatments. DEM needs material contact properties, while CHR needs the <a href="../../chrono/">Chrono configuration</a> and its supporting library. These options must not be selected solely because two bodies are present.</p>
+<p><code>FtPause</code> freezes floating-body motion during an initial warm-up period measured in seconds. <code>FtIgnoreRadius</code> applies to the stated periodic-condition treatment and should not be enabled as a general geometry simplification.</p>
+<h3 id="time-step-calculation">Time-step calculation<a class="headerlink" href="#time-step-calculation" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CoefDtMin</code></td>
+<td>Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)</td>
+<td><code>0.05</code></td>
+</tr>
+<tr>
+<td><code>DtIni</code></td>
+<td>Initial time step. Use 0 to default use (default=h/speedsound); units: seconds</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>DtMin</code></td>
+<td>Minimum time step. Use 0 to default use (default=coefdtmin*h/speedsound); units: seconds</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>DtFixed</code></td>
+<td>Fixed Dt value. Use 0 to disable (default=disabled); units: seconds</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>DtFixedFile</code></td>
+<td>Dt values are loaded from file. Use NONE to disable (default=disabled); units: milliseconds (ms)</td>
+<td><code>NONE</code></td>
+</tr>
+<tr>
+<td><code>DtAllParticles</code></td>
+<td>Velocity of all the particles is used to calculate DT. Y:All, N:Only fluid/floating (default=N)</td>
+<td><code>N</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>DtIni=0</code> requests the automatic initial estimate, not a zero integration step. <code>DtMin=0</code> requests the minimum estimated using CoefDtMin. The source relations are:</p>
+<div class="arithmatex">\[
+\Delta t_{\mathrm{initial}}=\frac{h}{c_s},\qquad \Delta t_{\min}=\mathrm{CoefDtMin}\,\frac{h}{c_s}
+\]</div>
+<p><code>DtFixed=0</code> disables a fixed step. <code>DtFixedFile=NONE</code> disables the time-dependent dt file. The former is expressed in seconds; the distributed reference labels the latter's file values in milliseconds. Do not copy a filename into a numerical fixed-step value. <code>DtAllParticles</code> changes which particle velocities enter the time-step calculation; Y includes boundary particles and N uses fluid/floating particles.</p>
+<p>The adaptive source criterion combines acceleration and acoustic/viscous restrictions:</p>
+<div class="arithmatex">\[
+\Delta t=\mathrm{CFL}\min(\Delta t_f,\Delta t_{cv}),\qquad \Delta t_f=\min_a\sqrt{\frac{h}{|\mathbf f_a|}}
+\]</div>
+<div class="arithmatex">\[
+\Delta t_{cv}=\min_a\frac{h}{c_s+\max_b\left|h\frac{\mathbf v_{ab}\cdot\mathbf r_{ab}}{r_{ab}^{2}}\right|}
+\]</div>
+<p>The source later illustrates CFL=0.3, whereas its constants example uses 0.2. They are different illustrative settings; the chosen <code>cflnumber</code> controls the multiplier. Fixed-step settings can override the adaptive choice and require a deliberate stability assessment.</p>
+<h3 id="simulation-duration-saving-and-particle-exclusion">Simulation duration, saving and particle exclusion<a class="headerlink" href="#simulation-duration-saving-and-particle-exclusion" title="Link to this heading">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Current definition and documented alternatives</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TimeMax</code></td>
+<td>Time of simulation; units: seconds</td>
+<td><code>1.5</code></td>
+</tr>
+<tr>
+<td><code>TimeOut</code></td>
+<td>Time out data; units: seconds</td>
+<td><code>0.01</code></td>
+</tr>
+<tr>
+<td><code>RhopOutMin</code></td>
+<td>Minimum density valid (default=700); units: kg/m^3</td>
+<td><code>700</code></td>
+</tr>
+<tr>
+<td><code>RhopOutMax</code></td>
+<td>Maximum density valid (default=1300); units: kg/m^3</td>
+<td><code>1300</code></td>
+</tr>
+<tr>
+<td><code>WrnPartsOut</code></td>
+<td>Active warning according to number of out particles: Y/N (default=Y)</td>
+<td><code>Y</code></td>
+</tr>
+<tr>
+<td><code>MinFluidStop</code></td>
+<td>Minimum proportion of initial fluid particles to continue the simulation 0:Never stops, 0.1:Stops when fluid drops to 10%. (default=0)</td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>TimeMax</code> and <code>TimeOut</code> are mandatory case choices, without automatically assigned migration defaults. The source's TimeMax=10 s and TimeOut=0.1 s give 100 nominal output intervals. The total number of saved files can additionally depend on the initial state, final-time handling, extra saves and a variable output schedule; 100 intervals is not a universal exact file count.</p>
+<p>The distributed reference permits changing the stopping time with a file named <code>TERMINATE</code> in the output directory. Its contents replace TimeMax; an empty file or a value earlier than the current simulation time requests termination at the current time. It is checked at the end of each PART. This guide does not create that file or run a case.</p>
+<p>Particles may be excluded by leaving the simulation domain or by falling outside the configured density range. The source water illustration uses 700–1300 kg/m³; these bounds are not suitable defaults for every material. <code>WrnPartsOut</code> controls warnings, while <code>MinFluidStop</code> controls termination based on the fraction of initial fluid remaining. Disabling warnings does not prevent exclusion.</p>
+<p>A MinFluidStop value of 0 disables that stopping criterion; 0.1 stops when the fluid falls to 10% of its initial population. It does not mean that only 10% may be lost. The legacy <code>PartsOutMax</code> uses the complementary excluded fraction, so a migration must convert the meaning, not merely rename the key.</p>
+<h3 id="domain-limits-and-periodic-boundaries">Domain limits and periodic boundaries<a class="headerlink" href="#domain-limits-and-periodic-boundaries" title="Link to this heading">&para;</a></h3>
+<p><code>simulationdomain</code> belongs within <code>execution/parameters</code>. <code>default</code> uses the extent derived from generated particles; <code>default - 2</code> extends a minimum coordinate by 2 m and <code>default + 10%</code> extends a maximum by 10% of that axis's extent. A numerical absolute coordinate, such as x=0.5, overrides the corresponding limit. These are case choices, not template defaults to copy into every simulation.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;simulationdomain</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default - 2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default - 20%&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default + 1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default + 10%&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">&lt;/simulationdomain&gt;</span>
+</span></code></pre></div>
+<p>Periodicity must be activated deliberately for the corresponding axes. The six increment keys configure translated periodic interfaces; the combined keys select two-axis periodicity. An increment value of zero can still represent active periodicity. Its <code>active</code> attribute, where provided, is distinct from the spatial increment.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Current definition</th>
+<th>Reference example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>XPeriodicIncZ</code></td>
+<td>Increase of Z with periodic BC in axis X</td>
+<td><code>0</code> with active=<code>true</code></td>
+</tr>
+<tr>
+<td><code>XPeriodicIncY</code></td>
+<td>Increase of Y with periodic BC in axis X</td>
+<td><code>0</code> with active=<code>false</code></td>
+</tr>
+<tr>
+<td><code>YPeriodicIncX</code></td>
+<td>Increase of X with periodic BC in axis Y</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>YPeriodicIncZ</code></td>
+<td>Increase of Z with periodic BC in axis Y</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>ZPeriodicIncX</code></td>
+<td>Increase of X with periodic BC in axis Z</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>ZPeriodicIncY</code></td>
+<td>Increase of Y with periodic BC in axis Z</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>XYPeriodic</code></td>
+<td>Periodic BC in axes X and Y: Y/N (default=N)</td>
+<td><code>N</code></td>
+</tr>
+<tr>
+<td><code>XZPeriodic</code></td>
+<td>Periodic BC in axes X and Z: Y/N (default=N)</td>
+<td><code>N</code></td>
+</tr>
+<tr>
+<td><code>YZPeriodic</code></td>
+<td>Periodic BC in axes Y and Z: Y/N (default=N)</td>
+<td><code>N</code></td>
+</tr>
+</tbody>
+</table>
+<p>The source compares an X-periodic increment in Z of 0.3 m with a Y-periodic increment in Z of zero. These define different periodic geometries. Combined <code>XYPeriodic</code>, <code>XZPeriodic</code> and <code>YZPeriodic</code> use Y/N in the current syntax. A legacy unprefixed combined-periodicity key was activated by its presence, including a stored zero; preserving that old configuration requires Y. An absent or disabled legacy periodic option must not be activated by filling in all template entries.</p>
+<figure>
+  <a href="../../../assets/images/xml_guide/general/periodic-translation.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../../assets/images/xml_guide/general/periodic-translation.png" alt="Vertical translation of 0.3 m across X-periodic boundaries and zero translation across Y-periodic boundaries." loading="lazy"></a>
+  <figcaption><strong>Figure 41:</strong> Vertical translation of 0.3 m across X-periodic boundaries and zero translation across Y-periodic boundaries.</figcaption>
+</figure>
+
+<h3 id="optional-parameter-inputs-and-migration-boundaries">Optional parameter inputs and migration boundaries<a class="headerlink" href="#optional-parameter-inputs-and-migration-boundaries" title="Link to this heading">&para;</a></h3>
+<p><code>TimeOutExtra</code> is conditional: retain a case's explicit extra-saving definition, but do not invent an automatic value when none exists. <code>ViscoTime</code> is likewise included only when a case uses an external viscosity history. Neither belongs in an unconditional list of values to add to every case.</p>
+<p>Three types of migration must be kept distinct:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax-only</td>
+<td>Boundary 2 → mDBC; StepAlgorithm 1 → VER; numeric boolean → Y/N where documented.</td>
+<td>Retains the selected option's meaning, subject to its prerequisites.</td>
+</tr>
+<tr>
+<td>Additional settings required to preserve the documented selection</td>
+<td>Old ViscoTreatment 2 → LAM plus Turbulence SPS; old PartsOutMax p → MinFluidStop 1−p.</td>
+<td>Omitting the second setting or copying p unchanged changes the intended configuration.</td>
+</tr>
+<tr>
+<td>Potential numerical change</td>
+<td>Old Cubic Spline → WC2; removed density-diffusion model → NO; older single-precision position computation → current double precision.</td>
+<td>Not a claim of numerical equivalence. Review the affected configuration before treating it as the same method.</td>
+</tr>
+</tbody>
+</table>
+<p>A disabled legacy parameter is absent for migration purposes. In the overview illustration, <code>#Shifting</code>, <code>#ShiftCoef</code>, <code>#ShiftTFS</code>, <code>#DtIni</code>, <code>#DtMin</code> and <code>#DtFixed</code> are disabled keys; their stored values must not be activated accidentally. This is different from an active value such as <code>value="#Dp*2"</code>.</p>
+<p>The core-fluid mappings do not establish equivalent parameters for the specialised non-Newtonian or geomechanics solvers. Consult their guides for scope and compatibility. Preserve expressions, physical values and conditional options whenever their current meaning remains valid; do not combine alternatives merely because they appear together in a format collection.</p>
+<h3 id="a-representative-current-parameter-fragment">A representative current parameter fragment<a class="headerlink" href="#a-representative-current-parameter-fragment" title="Link to this heading">&para;</a></h3>
+<p>The following parameter block comes from the distributed dam-break configuration. It deliberately uses Visco=0.1 with ART, VER, DBC, no density diffusion and a 1.6 s duration with 0.01 s saving interval. These are the case's choices, not a proposed default configuration. Its extended upper Z bound is also retained. The outer build-identification comment is omitted; numerical settings and current parameter comments remain as supplied by that case.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;parameters&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SavePosDouble&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Saves particle position using double precision: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SaveExtraParts&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Part interval or list for saving extra data for restart option (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Boundary&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;DBC&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SlipMode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NS&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;NoPenetration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Activate No-Penetration option for mDBC: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;StepAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;VER&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Step Algorithm: SYM:Symplectic, VER:Verlet (default=SYM)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;VerletSteps&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Verlet only: Number of steps to apply Euler timestepping (default=40)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Kernel&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;WC2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Interaction Kernel: WC2:WendlandC2, WC6:WendlandC6 (default=WC2)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;ART&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation: LAM:Laminar, ART:Artificial (default=LAM)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Visco&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoBoundFactor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Multiply viscosity value with boundary (default=1)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Turbulence&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Turbulence model: NO:None, SPS:Sub-particle scale (default=NO)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=NO)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DivCleanKp&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kappa parameter for Divergence Cleaning (equal to coefsound) (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Shifting&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Shifting mode 0:None, 1:Ignore bound, 2:Ignore fixed, 3:Full, 4:Full advanced (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for standard shifting computation (default=-2)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftTFS&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for advanced shifting computation (default=-0.01)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvALE&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;ALE formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvNCPress&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non conservative pressure formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RigidAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SPH&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Rigid Algorithm: FREE:collision-free, SPH, DEM, CHR:Chrono collision (default=SPH)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;FtPause&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time to freeze the floatings at simulation start (warmup) (default=0)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;FtIgnoreRadius&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Ignores floating body radius with periodic conditions: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CoefDtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtIni&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial time step. Use 0 to default use (default=h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum time step. Use 0 to default use (default=coefdtmin*h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixed&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fixed Dt value. Use 0 to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixedFile&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NONE&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Dt values are loaded from file. Use NONE to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;milliseconds (ms)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtAllParticles&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity of all the particles is used to calculate DT. Y:All, N:Only fluid/floating (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.6&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time of simulation&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time out data&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;700&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum density valid (default=700)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1300&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum density valid (default=1300)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;WrnPartsOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Active warning according to number of out particles: Y/N (default=Y)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;MinFluidStop&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum proportion of initial fluid particles to continue the simulation 0:Never stops, 0.1:Stops when fluid drops to 10%. (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">            </span><span class="nt">&lt;simulationdomain</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">                </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">                </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default + 50%&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">            </span><span class="nt">&lt;/simulationdomain&gt;</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="nt">&lt;/parameters&gt;</span>
+</span></code></pre></div>
+<h2 id="numerical-relationships-behind-the-configuration">Numerical relationships behind the configuration<a class="headerlink" href="#numerical-relationships-behind-the-configuration" title="Link to this heading">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Editorial review: potential content for Theory</p>
+<p>This material has been provisionally identified as theoretical content. The reviewer is asked to assess whether it should:</p>
+<ul>
+<li>Remain in this XML Guide.</li>
+<li>Be summarised here and developed further in Theory.</li>
+<li>Be moved entirely to Theory once that section is completed.</li>
+</ul>
+<hr />
+<p>The following relationships explain the numerical settings discussed in the general presentation. They describe the source formulations and notation; they are not a substitute for a complete discretisation, implementation-specific boundary treatment or stability analysis. Historical alternatives are identified explicitly where the current parameter interface no longer selects them.</p>
+<h3 id="pressure-gravity-and-artificial-viscosity">Pressure, gravity and artificial viscosity<a class="headerlink" href="#pressure-gravity-and-artificial-viscosity" title="Link to this heading">&para;</a></h3>
+<div class="arithmatex">\[
+\frac{d\mathbf v_a}{dt}=-\sum_b m_b\left(\frac{P_b+P_a}{\rho_b\rho_a}+\Pi_{ab}\right)\nabla_aW_{ab}+\mathbf g
+\]</div>
+<p>Here a and b denote interacting particles, m is mass, ρ density, P pressure, W the smoothing kernel, and g gravity. The artificial-viscosity term in the source applies to approaching pairs:</p>
+<div class="arithmatex">\[
+\Pi_{ab}=\begin{cases}-\dfrac{\alpha c_{ab}\mu_{ab}}{\rho_{ab}},&amp;\mathbf v_{ab}\cdot\mathbf r_{ab}&lt;0,\\0,&amp;\mathbf v_{ab}\cdot\mathbf r_{ab}&gt;0.\end{cases}
+\]</div>
+<p>The symbols cab, μab and ρab are the pairwise quantities in that formulation. Their complete averaging and regularisation definitions must follow the selected solver formulation; the displayed relation alone does not define a standalone viscosity implementation.</p>
+<h3 id="kernel-shapes">Kernel shapes<a class="headerlink" href="#kernel-shapes" title="Link to this heading">&para;</a></h3>
+<p>The source compares the following shapes using q=r/h. Cubic Spline is retained here to explain the historical comparison; it is not an available current Kernel identifier.</p>
+<div class="arithmatex">\[
+W_{\mathrm{cubic}}(r,h)=\alpha_D\begin{cases}1-\frac32q^2+\frac34q^3,&amp;0\leq q\leq1,\\\frac14(2-q)^3,&amp;1\leq q\leq2,\\0,&amp;q\geq2.\end{cases}
+\]</div>
+<p>For this historical cubic form, the source gives αD=10/(7πh²) in 2D and 1/(πh³) in 3D.</p>
+<div class="arithmatex">\[
+W_{C2}(r,h)=\alpha_D\left(1-\frac q2\right)^4(2q+1),\quad0\leq q\leq2,\qquad \alpha_D=\begin{cases}\dfrac7{4\pi h^2}&amp;\text{2D},\\\dfrac{21}{16\pi h^3}&amp;\text{3D}.\end{cases}
+\]</div>
+<h3 id="laminar-viscosity-and-sps-stress">Laminar viscosity and SPS stress<a class="headerlink" href="#laminar-viscosity-and-sps-stress" title="Link to this heading">&para;</a></h3>
+<p>The presentation separates the pressure/gravity contribution from the laminar-viscous and SPS-stress contributions:</p>
+<div class="arithmatex">\[
+\begin{aligned}\frac{d\mathbf v_a}{dt}={}&amp;-\sum_bm_b\left(\frac{P_b}{\rho_b^2}+\frac{P_a}{\rho_a^2}\right)\nabla_aW_{ab}+\mathbf g\\&amp;+\sum_bm_b\frac{4\nu_0\,\mathbf r_{ab}\cdot\nabla_aW_{ab}}{(\rho_a+\rho_b)(r_{ab}^2+\eta^2)}\,\mathbf v_{ab}\\&amp;+\sum_bm_b\left(\frac{\boldsymbol\tau_{ij}^{b}}{\rho_b^2}+\frac{\boldsymbol\tau_{ij}^{a}}{\rho_a^2}\right)\nabla_aW_{ab}.\end{aligned}
+\]</div>
+<p>ν0 denotes kinematic viscosity, η the regularisation appearing in the source expression and τ the sub-particle-scale stress. The stress term is associated with the turbulence treatment; choosing LAM does not by itself assert that SPS is enabled.</p>
+<h3 id="density-diffusion-background">Density-diffusion background<a class="headerlink" href="#density-diffusion-background" title="Link to this heading">&para;</a></h3>
+<p>The presentation writes the continuity equation with a density-diffusion contribution in the form below, with Vj the particle volume and δ the diffusion coefficient:</p>
+<div class="arithmatex">\[
+\frac{d\rho_i}{dt}=\sum_jm_j\mathbf u_{ij}\cdot\nabla W_{ij}+\delta h c_i\sum_j\boldsymbol\psi_{ij}\cdot\nabla W_{ij}V_j
+\]</div>
+<div class="arithmatex">\[
+\boldsymbol\psi_{ij}^{\mathrm{Molteni}}=2(\rho_j-\rho_i)\frac{\mathbf x_{ij}}{\|\mathbf x_{ij}\|^2}
+\]</div>
+<div class="arithmatex">\[
+\boldsymbol\psi_{ij}^{\mathrm{Fourtakas}}=2(\rho_i^D-\rho_j^D)\frac{\mathbf x_{ij}}{\|\mathbf x_{ij}\|^2},\qquad \boldsymbol\psi_{ij}=2(\rho_{ij}^T-\rho_{ij}^H)\frac{\mathbf x_{ij}}{\|\mathbf x_{ij}\|^2}
+\]</div>
+<div class="arithmatex">\[
+\rho_{ij}^H=\rho_0\left[\left(1+\frac{P_{ij}^H}{C_B}\right)^{1/\gamma}-1\right],\qquad P_{ij}^H=\rho_0 g z_{ij}
+\]</div>
+<p>These expressions preserve the source distinction between total, dynamic and hydrostatic density differences. The ordering of an ij difference and the kernel-gradient convention must remain consistent across a derivation. They do not establish that removing a historical model preserves its numerical contribution. For a current case, select only the documented NO or FO option and assess the resulting method.</p>
+<h3 id="divergence-cleaning-field">Divergence-cleaning field<a class="headerlink" href="#divergence-cleaning-field" title="Link to this heading">&para;</a></h3>
+<div class="arithmatex">\[
+\frac{D\psi}{Dt}=c_0^2\sum_b(\mathbf v_a-\mathbf v_b)\cdot\nabla W_{ab}V_b-\frac{\psi_a}{\tau},\qquad\tau=\frac{\lambda}{\sigma c_i}
+\]</div>
+<div class="arithmatex">\[
+c_i=\kappa\sqrt{\frac{P_i}{\rho_i}},\qquad\boldsymbol\Pi_{\mathrm{div}}=-\nabla\psi=-\sum_b(\psi_a-\psi_b)\nabla W_{ab}V_b
+\]</div>
+<p>ψ is the additional cleaning field; κ is associated with DivCleanKp in the source. The displayed λ and σ belong to the characteristic time-scale expression. These relations explain the added field and dissipation; they do not supply every implementation coefficient or establish applicability to an arbitrary pressure range. Follow the selected solver method and the compatibility restrictions stated above.</p>
+<h3 id="standard-particle-shifting">Standard particle shifting<a class="headerlink" href="#standard-particle-shifting" title="Link to this heading">&para;</a></h3>
+<div class="arithmatex">\[
+\delta\mathbf r_i=D\nabla C_i,\qquad D=A_s h\|\mathbf u_i\|\Delta t,\qquad\nabla C_i=\sum_j\frac{m_j}{\rho_j}\nabla W_{ij}
+\]</div>
+<div class="arithmatex">\[
+\nabla\cdot\mathbf r_i=\sum_j\frac{m_j}{\rho_j}\mathbf r_{ij}\cdot\nabla_iW_{ij}
+\]</div>
+<p>The source suppresses the normal component of shifting at a detected free surface and illustrates a 1.5 particle-divergence threshold in 2D. The sign of the coefficient is part of the formulation; the XML standard-shifting coefficient is illustrated as −2. Do not replace the configurable threshold with a hard-coded universal value or transfer these standard-shifting relations directly to the advanced ALE formulation.</p>
+<h3 id="time-integration-stages">Time-integration stages<a class="headerlink" href="#time-integration-stages" title="Link to this heading">&para;</a></h3>
+<p>The Verlet schematic uses the acceleration symbol F and density rate D. Between its periodic corrections, it writes:</p>
+<div class="arithmatex">\[
+\mathbf v_a^{n+1}=\mathbf v_a^{n-1}+2\Delta t\mathbf F_a^n,\quad\mathbf r_a^{n+1}=\mathbf r_a^n+\Delta t\mathbf v_a^n+\tfrac12\Delta t^2\mathbf F_a^n,\quad\rho_a^{n+1}=\rho_a^{n-1}+2\Delta t D_a^n
+\]</div>
+<p>Once every M steps, with M selected by VerletSteps, its correction uses:</p>
+<div class="arithmatex">\[
+\mathbf v_a^{n+1}=\mathbf v_a^n+\Delta t\mathbf F_a^n,\qquad\rho_a^{n+1}=\rho_a^n+\Delta t D_a^n
+\]</div>
+<p>The Symplectic predictor and corrector are shown in the source with the following temporal indices:</p>
+<div class="arithmatex">\[
+\mathbf r_a^{n+1/2}=\mathbf r_a^n+\frac{\Delta t}{2}\mathbf v_a^n,\qquad\rho_a^{n+1/2}=\rho_a^n+\frac{\Delta t}{2}D_a^n
+\]</div>
+<div class="arithmatex">\[
+\mathbf v_a^{n+1}=\mathbf v_a^{n-1/2}+\frac{\Delta t}{2}\mathbf F_a^{n+1/2},\qquad\mathbf r_a^{n+1}=\mathbf r_a^{n+1/2}+\frac{\Delta t}{2}\mathbf v_a^{n+1}
+\]</div>
+<p>These source schematics are not a complete derivation of every state update. Their temporal-index notation should not be used to implement or change the solver independently of its full integration algorithm.</p>
+</div>
+<p>See <a href="../gauges_accelerations_output/#time-step-diagnostics-and-saving-schedules">Gauges, Accelerations and Output Control</a> for separate diagnostic and variable-saving settings.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../casedef/floating_bodies_motion/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Floating Bodies and Prescribed Motion">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Floating Bodies and Prescribed Motion
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../special_features_overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Special Features: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Special Features: Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 DualSPHysics Team &middot; Edited by Bonaventura Tagliafierro
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/DualSPHysics/DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@DualSPHysics" target="_blank" rel="noopener" title="DualSPHysics on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.1}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/catalogue-overview.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
