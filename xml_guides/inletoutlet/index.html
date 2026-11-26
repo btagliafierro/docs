@@ -1458,6 +1458,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1611,6 +1621,146 @@
     
   
     Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
   
 
     
@@ -4582,17 +4732,17 @@ f_o=f_g+(\mathbf r_o-\mathbf r_g)\cdot\nabla f_g.
 </span></code></pre></div>
 <p>The four-inlet box case demonstrates particle-defined 3D surfaces. Its four zones select seed markers 0, 1, 2 and 3, with directions <code>right</code>, <code>back</code>, <code>left</code> and <code>front</code>, respectively. Each has six layers, imposed velocity 2 m/s, <code>refilling=0</code> and <code>inputtreatment=2</code>. Thus all four introduce fluid towards the domain; a negative sign has not been added to manufacture an outlet.</p>
 <p><strong>XML excerpt — four-inlet-zone.</strong> XML location: <code>case/execution/special/inout</code>. Source: <code>examples/inletoutlet/06_Box4Inlet3D/CaseBox4Inlet3D_Def.xml</code>. This selection requires its surrounding case or zone; it is not a complete simulation.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">                </span><span class="nt">&lt;inoutzone&gt;</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">                    </span><span class="nt">&lt;refilling</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Refilling mode. 0:Simple full, 1:Simple below zsurf, 2:Advanced for reverse flows (very slow) (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">                    </span><span class="nt">&lt;inputtreatment</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Treatment of fluid entering the zone. 0:No changes, 1:Convert fluid (necessary for outlet), 2:Remove fluid (recommended for inlet)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">                    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Number of inlet/outlet particle layers&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">                    </span><span class="nt">&lt;zone3d</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Input zone for 3-D simulations&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">                        </span><span class="nt">&lt;particles</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">direction=</span><span class="s">&quot;right&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">                    </span><span class="nt">&lt;/zone3d&gt;</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">                    </span><span class="nt">&lt;imposevelocity</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Imposed velocity 0:fixed value, 1:variable value, 2:Extrapolated value (default=0)&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">                        </span><span class="nt">&lt;velocity</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Uniform velocity&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">                    </span><span class="nt">&lt;/imposevelocity&gt;</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">                </span><span class="nt">&lt;/inoutzone&gt;</span>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;inoutzone&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nt">&lt;refilling</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Refilling mode. 0:Simple full, 1:Simple below zsurf, 2:Advanced for reverse flows (very slow) (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">&lt;inputtreatment</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Treatment of fluid entering the zone. 0:No changes, 1:Convert fluid (necessary for outlet), 2:Remove fluid (recommended for inlet)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Number of inlet/outlet particle layers&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nt">&lt;zone3d</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Input zone for 3-D simulations&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="nt">&lt;particles</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">direction=</span><span class="s">&quot;right&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="nt">&lt;/zone3d&gt;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="nt">&lt;imposevelocity</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Imposed velocity 0:fixed value, 1:variable value, 2:Extrapolated value (default=0)&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span><span class="nt">&lt;velocity</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Uniform velocity&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nt">&lt;/imposevelocity&gt;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="nt">&lt;/inoutzone&gt;</span>
 </span></code></pre></div>
 <h2 id="particle-conversion-and-buffer-refilling">Particle conversion and buffer refilling<a class="headerlink" href="#particle-conversion-and-buffer-refilling" title="Link to this heading">&para;</a></h2>
 <p><code>refilling</code> and <code>inputtreatment</code> control different operations. Refilling replaces or creates buffer particles; input treatment determines what happens when ordinary fluid particles enter the buffer. Specify both explicitly, along with <code>layers</code>.</p>
@@ -4874,9 +5024,9 @@ f_o=f_g+(\mathbf r_o-\mathbf r_g)\cdot\nabla f_g.
 <p>The supported unit strings are <code>l/s</code>, <code>gal/s</code> and <code>gal/min</code>. Here the original value 2 means 2 l/s, because the <code>flowvelocity</code> switch is active. Without that switch, a <code>velocity/@v</code> value normally means m/s. For geometrical interpretation, volumetric rate and mean normal speed satisfy <span class="arithmatex">\(Q=A U_n\)</span>; the discrete conversion follows the active particle representation, rather than an arbitrary area supplied independently of the zone.</p>
 <p>For a circular <code>zone3d/circle</code>, <code>jetcircle</code> defines a fixed incoming jet with a velocity, an opening radius and a distance at which that radius is specified. It is supported for positive inflow with constant density and a fixed or undefined surface condition.</p>
 <p><strong>XML excerpt — circular-jet.</strong> XML location: <code>case/execution/special/inout/inoutzone</code>. Source: <code>doc/xml_format/_FmtXML_InOut.xml</code>. This selection requires its surrounding case or zone; it is not a complete simulation.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="w">    </span><span class="nt">&lt;imposevelocity</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Imposed velocity 0:fixed value, 1:variable value, 2:Extrapolated velocity, 3:Interpolated velocity (default=0)&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">        </span><span class="nt">&lt;jetcircle</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;0.010&quot;</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;0.02&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity for circular jet (velocity, distance and opening radius)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">&lt;/imposevelocity&gt;</span>
+<div class="highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">&lt;imposevelocity</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Imposed velocity 0:fixed value, 1:variable value, 2:Extrapolated velocity, 3:Interpolated velocity (default=0)&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nt">&lt;jetcircle</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">distance=</span><span class="s">&quot;0.010&quot;</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;0.02&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity for circular jet (velocity, distance and opening radius)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nt">&lt;/imposevelocity&gt;</span>
 </span></code></pre></div>
 <p>The reference values are 2 m/s, distance 0.010 m and radius 0.02 m. The radius belongs to the downstream opening definition, while the <code>circle</code> geometry separately defines the interface radius. Do not reinterpret these two radii as the same parameter.</p>
 <h2 id="density-and-hydrostatic-pressure">Density and hydrostatic pressure<a class="headerlink" href="#density-and-hydrostatic-pressure" title="Link to this heading">&para;</a></h2>

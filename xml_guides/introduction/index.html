@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://btagliafierro.github.io/docs/xml_guides/introduction/">
       
       
-        <link rel="prev" href="../../benchmarks/wave_generation/">
+        <link rel="prev" href="../../benchmarks/heave_decay/">
       
       
         <link rel="next" href="../casedef/physical_constants_resolution/">
@@ -1458,6 +1458,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1611,6 +1621,146 @@
     
   
     Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
   
 
     
@@ -3716,8 +3866,8 @@
 <p>The user normally edits <code>Case_Def.xml</code>, or the corresponding case-specific name ending in <code>_Def.xml</code>. The <code>case</code> root contains the GenCase definition in <code>casedef</code> and the solver settings in <code>execution</code>. Geometry commands define which particles GenCase will create. The user also supplies the physical constants, marker configuration, initial conditions, motion or other options required by that particular case. Some of these sections are optional.</p>
 <p>For example, the distributed <code>examples/main/01_DamBreak/CaseDambreak_Def.xml</code> has <code>constantsdef</code>, <code>mkconfig</code> and <code>geometry</code> beneath <code>casedef</code>, and <code>parameters</code> beneath <code>execution</code>. Its particle-generation bounds are:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;definition</span><span class="w"> </span><span class="na">dp=</span><span class="s">&quot;0.0085&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;pointmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-0.05&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-0.05&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-0.05&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;pointmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;pointmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-0.05&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-0.05&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-0.05&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;pointmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">&lt;/definition&gt;</span>
 </span></code></pre></div>
 <p>This fragment belongs to <code>case/casedef/geometry</code>. Its spacing and bounds are specific to this example. The complete drawing commands and execution settings remain in the case file. At this stage the example has no <code>execution/particles</code> or <code>execution/constants</code> blocks: these depend on particle generation and the resolution of requested calculations.</p>
@@ -3726,10 +3876,10 @@
 <p>The inspected GenCase v6 output for the dam-break example retains <code>casedef</code> and its supplied <code>execution/parameters</code>, then adds <code>particles</code>, <code>constants</code>, <code>uservars</code>, <code>motion</code> and <code>vtkout</code> under <code>execution</code>. These output sections describe the generated particle populations, resolved physical quantities, exported variables, execution motion and requested geometry-output associations. The exact sections and their contents depend on the case and generator options; the presence of an empty <code>motion</code> block does not imply moving boundaries.</p>
 <p>The following generated particle blocks are an excerpt from that output, with the diagnostic <code>_summary</code> omitted:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;particles</span><span class="w"> </span><span class="na">np=</span><span class="s">&quot;171496&quot;</span><span class="w"> </span><span class="na">nb=</span><span class="s">&quot;43186&quot;</span><span class="w"> </span><span class="na">nbf=</span><span class="s">&quot;43186&quot;</span><span class="w"> </span><span class="na">mkboundfirst=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">mkfluidfirst=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;fixed</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;39993&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&lt;fixed</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;39993&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;2383&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&lt;fixed</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;42376&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;810&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&lt;fluid</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;43186&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;128310&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;fixed</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;39993&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;fixed</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;39993&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;2383&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;fixed</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;42376&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;810&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&lt;fluid</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">begin=</span><span class="s">&quot;43186&quot;</span><span class="w"> </span><span class="na">count=</span><span class="s">&quot;128310&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">&lt;/particles&gt;</span>
 </span></code></pre></div>
 <p>This fragment belongs to <code>case/execution</code>. The population sizes, index ranges and final marker values describe this generated example; they are not settings to copy into an unrelated case. <code>constants</code> also records the resolved <code>dp</code>, smoothing length <code>h</code>, equation-of-state coefficient <code>b</code> and particle masses. In this output <code>dp=0.0085</code> m and <code>h=0.014722431864</code> m. GenCase has resolved the corresponding automatic quantities from the definition.</p>
@@ -3837,7 +3987,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../benchmarks/wave_generation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Wave Generation">
+          <a href="../../benchmarks/heave_decay/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Heave Decay">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3847,7 +3997,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Wave Generation
+                Heave Decay
               </div>
             </div>
           </a>

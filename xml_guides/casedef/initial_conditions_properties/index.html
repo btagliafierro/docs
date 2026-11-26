@@ -1458,6 +1458,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1611,6 +1621,146 @@
     
   
     Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
   
 
     
@@ -3616,18 +3766,23 @@
 <p><code>casedef/initials</code> applies initial values to populations selected by <code>mkfluid</code> or <code>mkbound</code>. This is distinct from a velocity prescribed throughout execution. A fluid can begin with a uniform vector, a height-dependent velocity profile or data interpolated from a previous particle field.</p>
 <p>The source sphere begins with velocity (1.05, 0, 4.905) m/s and the box with (−0.875, 0, 5.886) m/s. Their markers, initial geometry and later motion are distinct. The following initial-velocity fragment preserves those values.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;initials&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;velocity</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1.05&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;4.905&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;velocity</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-0.875&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;5.886&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;velocity</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1.05&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;4.905&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;velocity</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;-0.875&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;5.886&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">&lt;/initials&gt;</span>
 </span></code></pre></div>
+<figure>
+  <a href="../../../assets/images/xml_guide/general/initial-velocity-evolution.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../../assets/images/xml_guide/general/initial-velocity-evolution.png" alt="Historical sequence showing the evolution and impact of a sphere and a box given different initial velocities." loading="lazy"></a>
+  <figcaption><strong>Historical initial-velocity example:</strong> the sequence shows the evolution and subsequent impact of the sphere and box with the different initial velocities specified above; colour represents velocity. It comes from page 73 of the original XML Guide and is not a new v6 validation.</figcaption>
+</figure>
+
 <p>The source also lists <code>velwave</code> for a solitary-wave initial velocity, separately from the moving <code>piston_solitary</code> wavemaker used during execution. The current GenCase template retains this form under <code>casedef/initials</code>. Its example specifies fluid marker 3, depth 4, <code>hmaxwave=3</code>, reference position <code>x0=26</code> and <code>negative="false"</code>; these values are illustrative inputs rather than defaults or a claim of a physically validated solitary wave. The selected marker must already exist in the generated fluid geometry.
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;velwave</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">depth=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">hmaxwave=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">x0=</span><span class="s">&quot;26&quot;</span><span class="w"> </span><span class="na">negative=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div></p>
 <h3 id="profiles-and-previous-particle-fields">Profiles and previous particle fields<a class="headerlink" href="#profiles-and-previous-particle-fields" title="Link to this heading">&para;</a></h3>
 <p>A profile contains a <code>direction</code> and one of <code>velocity</code>, <code>velocity2</code> or <code>velocity3</code>. These specify uniform, linear or parabolic profiles respectively. The source linear profile rises from 1 m/s at z=0 to 5 m/s at z=1 m. Its parabolic example uses 1 m/s at z=0, 3.1 m/s at z=0.3 m and 5 m/s at z=1 m. These triples define the example polynomial; do not substitute profile values from another method or case.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;velocity</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&lt;direction</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&lt;velocity3</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">v2=</span><span class="s">&quot;3.1&quot;</span><span class="w"> </span><span class="na">v3=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z2=</span><span class="s">&quot;0.3&quot;</span><span class="w"> </span><span class="na">z3=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;direction</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;velocity3</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">v2=</span><span class="s">&quot;3.1&quot;</span><span class="w"> </span><span class="na">v3=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z2=</span><span class="s">&quot;0.3&quot;</span><span class="w"> </span><span class="na">z3=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">&lt;/velocity&gt;</span>
 </span></code></pre></div>
 <p>The left profile is linear, from 1 m/s at Z=0 to 5 m/s at Z=1. The right is parabolic, passing through 1 m/s at Z=0, 3.1 m/s at Z=0.3 and 5 m/s at Z=1. These are the same inputs as the <code>velocity2</code> and <code>velocity3</code> fragments above.</p>
@@ -3638,18 +3793,18 @@
 
 <p><code>velpart</code> initialises velocity from a previous PART file; <code>densitypart</code> similarly initialises density and can fit pressure with <code>fitpress</code>. The interpolation uses a minimum fluid-volume ratio, illustrated as 0.5, rather than blindly applying values at insufficiently populated points. The source's old input is <code>Initial2D/Part_0300.bi4</code>; its illustrated t=10 s field becomes the new case's t=0 state. The file and its metadata must actually exist and cover the region being initialised.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;velpart</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Part_0028.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Part_0028.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;/velpart&gt;</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;densitypart</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Part_0028.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">&lt;fitpress</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fits the pressure instead of density&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Part_0028.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&lt;fitpress</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fits the pressure instead of density&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">&lt;/densitypart&gt;</span>
 </span></code></pre></div>
 <p>The presentation also reconstructs the initial free surface from an earlier PART file: fill the candidate volume, select void, then <code>redraw mkfluid="0"</code> with a <code>filterfluid maxratio="0.5"</code> and the input <code>file</code>. This removes unwanted candidate particles according to the previous field. It can initialise a finer spacing from a coarser result; it is not equivalent to restarting a simulation with every state variable preserved.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;redraw</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&lt;filterfluid</span><span class="w"> </span><span class="na">maxratio=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;Part_0028.bi4&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;filterfluid</span><span class="w"> </span><span class="na">maxratio=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;Part_0028.bi4&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;/redraw&gt;</span>
 </span></code></pre></div>
 <p>The upper particle row is the new, finer initial configuration; the lower row is the previous simulation’s final free-surface profile at coarser resolution. The existing filtering explanation describes the reconstruction of this surface; its panel labels have been moved here from the image.</p>
@@ -3660,15 +3815,15 @@
 
 <p><strong>Loading initial fields from a previous simulation.</strong> The exact source example below belongs under <code>case/casedef/initials</code>. It preserves the source file path and comments; the earlier <code>Part_0028.bi4</code> fragment is the separate current-reference example. <code>mkfluid</code> selects the fluid population, <code>minratio</code> sets the minimum fluid volume ratio for interpolation (the source states a default of 0.5), and <code>partfile</code> identifies the earlier binary particle data. The source describes <code>fitpress</code> as measuring particle pressure and using it to initialise density. Its <code>densitypart</code> paragraph also says “velocity” twice; this is an unresolved wording discrepancy, not a reason to change the source configuration. No execution or numerical equivalence is claimed.
 <div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;initials&gt;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&lt;velpart</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Initial2D/Part_0300.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&lt;/velpart&gt;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">&lt;densitypart</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&lt;fitpress</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fits the pressure instead of density&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Initial2D/Part_0300.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">&lt;/densitypart&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;velpart</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Initial2D/Part_0300.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&lt;/velpart&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&lt;densitypart</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="nt">&lt;minratio</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum fluid ratio (volume) to apply interpolated values&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="nt">&lt;fitpress</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fits the pressure instead of density&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="nt">&lt;partfile</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;Initial2D/Part_0300.bi4&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;PART file with input particle data&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&lt;/densitypart&gt;</span>
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nt">&lt;/initials&gt;</span>
 </span></code></pre></div></p>
 <figure>
@@ -3679,16 +3834,16 @@
 <h3 id="moving-generated-particles-before-execution">Moving generated particles before execution<a class="headerlink" href="#moving-generated-particles-before-execution" title="Link to this heading">&para;</a></h3>
 <p>Initial <code>move</code> and <code>rotateaxis</code> act on the final generated particle positions. They differ from matrix operations that rotate a shape before sampling the lattice. The source rotates a box by 40 degrees: rotating the geometry first produces a stair-stepped low-resolution boundary, whereas rotating the already generated particles avoids that particular lattice-alignment effect. This changes the generated particle arrangement and must be chosen deliberately.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;rotateaxis</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">&lt;/rotateaxis&gt;</span>
 </span></code></pre></div>
 <p>Panels A and C use the same open-ended box, defined by boundary marker 2, origin <code>(0.15, 0.04, 0)</code> and size <code>(0.05, 0.21, 0.04)</code>, with <code>boxfill</code> equal to <code>all ^ top ^ bottom</code>. For C, the following source initial rotation acts on the generated particles after drawing. Its 40-degree angle and axis are distinct from the separate 45-degree current-reference fragment above.
 <div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;initials&gt;</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&lt;rotateaxis</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.145&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.145&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">&lt;/rotateaxis&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&lt;rotateaxis</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">angle=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.145&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.145&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">&lt;/rotateaxis&gt;</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nt">&lt;/initials&gt;</span>
 </span></code></pre></div></p>
 <figure>
@@ -3700,20 +3855,20 @@
 <div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">&lt;!-- A: draw the box directly --&gt;</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">&lt;drawbox&gt;</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">&lt;boxfill&gt;</span>all<span class="w"> </span>^<span class="w"> </span>top<span class="w"> </span>^<span class="w"> </span>bottom<span class="nt">&lt;/boxfill&gt;</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.04&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.21&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.04&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>all<span class="w"> </span>^<span class="w"> </span>top<span class="w"> </span>^<span class="w"> </span>bottom<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.04&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.21&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.04&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="nt">&lt;/drawbox&gt;</span>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="cm">&lt;!-- B: independent alternative, rotate geometry before drawing --&gt;</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nt">&lt;rotateline</span><span class="w"> </span><span class="na">ang=</span><span class="s">&quot;40&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.145&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.145&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.145&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.145&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nt">&lt;/rotateline&gt;</span>
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="nt">&lt;drawbox&gt;</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">  </span><span class="nt">&lt;boxfill&gt;</span>all<span class="w"> </span>^<span class="w"> </span>top<span class="w"> </span>^<span class="w"> </span>bottom<span class="nt">&lt;/boxfill&gt;</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.04&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.21&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.04&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>all<span class="w"> </span>^<span class="w"> </span>top<span class="w"> </span>^<span class="w"> </span>bottom<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.15&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.04&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.21&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.04&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="nt">&lt;/drawbox&gt;</span>
 </span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="nt">&lt;matrixreset/&gt;</span>
 </span></code></pre></div></p>
@@ -3727,25 +3882,25 @@
 <p><code>propertyfile</code> loads properties from an external XML file and <code>path</code> identifies the section in that file. The source example uses <code>run/ftdata_ext.xml</code> with <code>case.materials</code>. GenCase copies the resolved associations to <code>execution/particles/properties</code>, allowing the solver to obtain properties for each population. A generated <code>begin</code>/<code>count</code> range is metadata about actual particles, not a portable specification of another geometry.</p>
 <p>For DEM contact, the source's <code>Floating_Materials.xml</code> illustration supplies Young's modulus, Poisson ratio, restitution and kinetic friction. Its example has Young's modulus 210000000000 N/m², Poisson ratio 0.30, restitution 0.80 and friction 0.45. A local <code>userdef01</code> overrides the restitution coefficient to 0.70 and combines with <code>steel</code>; this is an explicit material choice, not a default for all steel objects. DEM and Chrono contact configurations are separate mechanisms.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;properties&gt;</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&lt;links&gt;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;0,2-3&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;Material_1&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;4,2&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;Material_2&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;ExtraData+Material_3&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="nt">&lt;/links&gt;</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="nt">&lt;propertyfile</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;directory/data_external.xml&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;case.properties&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Material_1&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;black&quot;</span><span class="w"> </span><span class="na">density=</span><span class="s">&quot;0.0012&quot;</span><span class="w"> </span><span class="na">alpha=</span><span class="s">&quot;0.5&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="nt">&lt;color2</span><span class="w"> </span><span class="na">r=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">g=</span><span class="s">&quot;120&quot;</span><span class="w"> </span><span class="na">b=</span><span class="s">&quot;220&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="nt">&lt;poshole</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;3.5&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;4.2&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="nt">&lt;other</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;125&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Material_2&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;blue&quot;</span><span class="w"> </span><span class="na">xdensity=</span><span class="s">&quot;0.99&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="nt">&lt;poscen</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;3.5&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="nt">&lt;more</span><span class="w"> </span><span class="na">val=</span><span class="s">&quot;99&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">  </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Material_3&quot;</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;87&quot;</span><span class="w"> </span><span class="na">modif=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">    </span><span class="nt">&lt;poss</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;39.65&quot;</span><span class="w"> </span><span class="na">yz=</span><span class="s">&quot;27.48&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
-</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">  </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ExtraData&quot;</span><span class="w"> </span><span class="na">coef=</span><span class="s">&quot;0.895&quot;</span><span class="w"> </span><span class="na">texture=</span><span class="s">&quot;milk&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&lt;links&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;0,2-3&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;Material_1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;4,2&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;Material_2&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;ExtraData+Material_3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">&lt;/links&gt;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">&lt;propertyfile</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;directory/data_external.xml&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;case.properties&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Material_1&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;black&quot;</span><span class="w"> </span><span class="na">density=</span><span class="s">&quot;0.0012&quot;</span><span class="w"> </span><span class="na">alpha=</span><span class="s">&quot;0.5&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="nt">&lt;color2</span><span class="w"> </span><span class="na">r=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">g=</span><span class="s">&quot;120&quot;</span><span class="w"> </span><span class="na">b=</span><span class="s">&quot;220&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="nt">&lt;poshole</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;3.5&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;4.2&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="nt">&lt;other</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;125&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Material_2&quot;</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;blue&quot;</span><span class="w"> </span><span class="na">xdensity=</span><span class="s">&quot;0.99&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="nt">&lt;poscen</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;3.5&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">        </span><span class="nt">&lt;more</span><span class="w"> </span><span class="na">val=</span><span class="s">&quot;99&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Material_3&quot;</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;87&quot;</span><span class="w"> </span><span class="na">modif=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">        </span><span class="nt">&lt;poss</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;39.65&quot;</span><span class="w"> </span><span class="na">yz=</span><span class="s">&quot;27.48&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ExtraData&quot;</span><span class="w"> </span><span class="na">coef=</span><span class="s">&quot;0.895&quot;</span><span class="w"> </span><span class="na">texture=</span><span class="s">&quot;milk&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="nt">&lt;/properties&gt;</span>
 </span></code></pre></div>
 <p>The presentation identifies <code>JSpaceParts</code> as the internal object used to retrieve properties assigned to particle blocks. This explains why input associations in <code>casedef/properties</code> are resolved into <code>execution/particles/properties</code>; it is not an additional XML element to insert. Its sample <code>material_1</code> has weight 1.35 and text <code>other="pepe"</code>, while <code>material_2</code> contains a mass value 4728.78 and centre (4.99, 5, 7.03). These illustrate scalar/text/nested property data rather than automatic material defaults; generated <code>begin</code>/<code>count</code> values must not be copied to another geometry.</p>

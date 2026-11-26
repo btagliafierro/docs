@@ -1458,6 +1458,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1611,6 +1621,146 @@
     
   
     Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
   
 
     
@@ -4198,6 +4348,11 @@
 </table>
 <p>Modes 1–3 are standard shifting with different boundary exclusions; mode 4 selects Advanced Shifting. <code>ShiftCoef</code> and <code>ShiftTFS</code> apply to standard shifting. The typical free-surface thresholds 1.5 in 2D and 2.75 in 3D are not the default zero and must not be inserted automatically.</p>
 <p><code>ShiftAdvCoef</code>, <code>ShiftAdvALE</code> and <code>ShiftAdvNCPress</code> configure the advanced formulation. Their presence does not activate it when Shifting is zero. Particle regularisation is distinct from physical advection; use <a href="../../shiftingadv/">Advanced shifting</a> for transport corrections, free-surface treatment and the formulation's documented limits.</p>
+<figure>
+  <a href="../../../assets/images/xml_guide/general/standard-shifting-comparison.png" target="_blank" rel="noopener" title="Open figure at full resolution"><img src="../../../assets/images/xml_guide/general/standard-shifting-comparison.png" alt="Particle distribution without shifting above and with standard shifting that ignores fixed boundaries below." loading="lazy"></a>
+  <figcaption><strong>Historical standard-shifting example:</strong> the upper panel shows the particle distribution without shifting; the lower panel uses standard shifting that ignores fixed boundaries. This comparison does not by itself represent Advanced Shifting with ALE, and is not a new v6 validation.</figcaption>
+</figure>
+
 <h3 id="rigid-body-interaction">Rigid-body interaction<a class="headerlink" href="#rigid-body-interaction" title="Link to this heading">&para;</a></h3>
 <table>
 <thead>
@@ -4331,8 +4486,8 @@
 <h3 id="domain-limits-and-periodic-boundaries">Domain limits and periodic boundaries<a class="headerlink" href="#domain-limits-and-periodic-boundaries" title="Link to this heading">&para;</a></h3>
 <p><code>simulationdomain</code> belongs within <code>execution/parameters</code>. <code>default</code> uses the extent derived from generated particles; <code>default - 2</code> extends a minimum coordinate by 2 m and <code>default + 10%</code> extends a maximum by 10% of that axis's extent. A numerical absolute coordinate, such as x=0.5, overrides the corresponding limit. These are case choices, not template defaults to copy into every simulation.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;simulationdomain</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default - 2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default - 20%&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default + 1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default + 10%&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default - 2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default - 20%&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default + 1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default + 10%&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">&lt;/simulationdomain&gt;</span>
 </span></code></pre></div>
 <p>Periodicity must be activated deliberately for the corresponding axes. The six increment keys configure translated periodic interfaces; the combined keys select two-axis periodicity. An increment value of zero can still represent active periodicity. Its <code>active</code> attribute, where provided, is distinct from the spatial increment.</p>
@@ -4432,49 +4587,50 @@
 <h3 id="a-representative-current-parameter-fragment">A representative current parameter fragment<a class="headerlink" href="#a-representative-current-parameter-fragment" title="Link to this heading">&para;</a></h3>
 <p>The following parameter block comes from the distributed dam-break configuration. It deliberately uses Visco=0.1 with ART, VER, DBC, no density diffusion and a 1.6 s duration with 0.01 s saving interval. These are the case's choices, not a proposed default configuration. Its extended upper Z bound is also retained. The outer build-identification comment is omitted; numerical settings and current parameter comments remain as supplied by that case.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;parameters&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SavePosDouble&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Saves particle position using double precision: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SaveExtraParts&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Part interval or list for saving extra data for restart option (default=0)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Boundary&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;DBC&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SlipMode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NS&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;NoPenetration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Activate No-Penetration option for mDBC: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;StepAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;VER&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Step Algorithm: SYM:Symplectic, VER:Verlet (default=SYM)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;VerletSteps&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Verlet only: Number of steps to apply Euler timestepping (default=40)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Kernel&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;WC2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Interaction Kernel: WC2:WendlandC2, WC6:WendlandC6 (default=WC2)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;ART&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation: LAM:Laminar, ART:Artificial (default=LAM)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Visco&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoBoundFactor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Multiply viscosity value with boundary (default=1)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Turbulence&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Turbulence model: NO:None, SPS:Sub-particle scale (default=NO)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=NO)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DivCleanKp&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kappa parameter for Divergence Cleaning (equal to coefsound) (default=0)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Shifting&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Shifting mode 0:None, 1:Ignore bound, 2:Ignore fixed, 3:Full, 4:Full advanced (default=0)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for standard shifting computation (default=-2)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftTFS&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for advanced shifting computation (default=-0.01)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvALE&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;ALE formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvNCPress&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non conservative pressure formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RigidAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SPH&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Rigid Algorithm: FREE:collision-free, SPH, DEM, CHR:Chrono collision (default=SPH)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;FtPause&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time to freeze the floatings at simulation start (warmup) (default=0)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;FtIgnoreRadius&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Ignores floating body radius with periodic conditions: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CoefDtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtIni&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial time step. Use 0 to default use (default=h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum time step. Use 0 to default use (default=coefdtmin*h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixed&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fixed Dt value. Use 0 to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixedFile&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NONE&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Dt values are loaded from file. Use NONE to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;milliseconds (ms)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtAllParticles&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity of all the particles is used to calculate DT. Y:All, N:Only fluid/floating (default=N)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.6&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time of simulation&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time out data&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;700&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum density valid (default=700)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1300&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum density valid (default=1300)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;WrnPartsOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Active warning according to number of out particles: Y/N (default=Y)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">            </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;MinFluidStop&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum proportion of initial fluid particles to continue the simulation 0:Never stops, 0.1:Stops when fluid drops to 10%. (default=0)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">            </span><span class="nt">&lt;simulationdomain</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">                </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">                </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default + 50%&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">            </span><span class="nt">&lt;/simulationdomain&gt;</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="nt">&lt;/parameters&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SavePosDouble&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Saves particle position using double precision: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SaveExtraParts&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Part interval or list for saving extra data for restart option (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Boundary&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;DBC&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SlipMode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NS&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;NoPenetration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Activate No-Penetration option for mDBC: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;StepAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;VER&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Step Algorithm: SYM:Symplectic, VER:Verlet (default=SYM)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;VerletSteps&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Verlet only: Number of steps to apply Euler timestepping (default=40)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Kernel&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;WC2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Interaction Kernel: WC2:WendlandC2, WC6:WendlandC6 (default=WC2)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;ART&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation: LAM:Laminar, ART:Artificial (default=LAM)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Visco&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoBoundFactor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Multiply viscosity value with boundary (default=1)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Turbulence&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Turbulence model: NO:None, SPS:Sub-particle scale (default=NO)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=NO)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DivCleanKp&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kappa parameter for Divergence Cleaning (equal to coefsound) (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Shifting&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Shifting mode 0:None, 1:Ignore bound, 2:Ignore fixed, 3:Full, 4:Full advanced (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for standard shifting computation (default=-2)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftTFS&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for advanced shifting computation (default=-0.01)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvALE&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;ALE formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvNCPress&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non conservative pressure formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RigidAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SPH&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Rigid Algorithm: FREE:collision-free, SPH, DEM, CHR:Chrono collision (default=SPH)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;FtPause&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time to freeze the floatings at simulation start (warmup) (default=0)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;FtIgnoreRadius&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Ignores floating body radius with periodic conditions: Y/N (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CoefDtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtIni&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial time step. Use 0 to default use (default=h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum time step. Use 0 to default use (default=coefdtmin*h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixed&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fixed Dt value. Use 0 to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixedFile&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NONE&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Dt values are loaded from file. Use NONE to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;milliseconds (ms)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtAllParticles&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity of all the particles is used to calculate DT. Y:All, N:Only fluid/floating (default=N)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.6&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time of simulation&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time out data&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;700&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum density valid (default=700)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1300&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum density valid (default=1300)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;WrnPartsOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Active warning according to number of out particles: Y/N (default=Y)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;MinFluidStop&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum proportion of initial fluid particles to continue the simulation 0:Never stops, 0.1:Stops when fluid drops to 10%. (default=0)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="nt">&lt;simulationdomain</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">        </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default + 50%&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">    </span><span class="nt">&lt;/simulationdomain&gt;</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="nt">&lt;/parameters&gt;</span>
 </span></code></pre></div>
 <h2 id="numerical-relationships-behind-the-configuration">Numerical relationships behind the configuration<a class="headerlink" href="#numerical-relationships-behind-the-configuration" title="Link to this heading">&para;</a></h2>
+<p>For the hydrostatic density-diffusion correction underlying the current Fourtakas option, see G. Fourtakas, J. M. Domínguez, R. Vacondio and B. D. Rogers (2019), <em>Local Uniform Stencil (LUST) boundary condition for arbitrary 3-D boundaries in parallel smoothed particle hydrodynamics (SPH) models</em>, <em>Computers &amp; Fluids</em>, 190, 346–361, <a href="https://doi.org/10.1016/j.compfluid.2019.06.009">doi:10.1016/j.compfluid.2019.06.009</a>. The density-diffusion background below retains the distinction between this correction and the historical alternatives.</p>
 <div class="admonition danger">
 <p class="admonition-title">Editorial review: potential content for Theory</p>
 <p>This material has been provisionally identified as theoretical content. The reviewer is asked to assess whether it should:</p>

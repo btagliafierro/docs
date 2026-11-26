@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://btagliafierro.github.io/docs/benchmarks/runup/">
       
       
+        <link rel="prev" href="../wave_generation/">
+      
+      
+        <link rel="next" href="../dambreak_debris/">
       
       
         
@@ -352,10 +356,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -1435,6 +1441,8 @@
         
   
   
+    
+  
   
   
     
@@ -1452,20 +1460,33 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1487,13 +1508,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1605,6 +1626,481 @@
     
   
     Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#case-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Case configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical constants
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometry-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry definition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometry definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-dimensions-and-particle-spacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real dimensions and particle spacing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-particle-lattice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The particle lattice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piston-floor-and-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piston, floor, and slope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#armour-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Armour blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-wall-surfaces-for-mdbc-hdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The wall surfaces for mDBC (hdp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Water
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-normals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary normals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-the-generated-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking the generated case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wave-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wave generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-gauges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical gauges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundary-formulation-and-time-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary formulation and time integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viscosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viscosity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-diffusion-and-shifting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density diffusion and shifting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-step-output-and-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time step, output, and domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
   
 
     
@@ -3695,8 +4191,8 @@
 <ul>
 <li>A flume <strong>periodic</strong> in the transverse direction</li>
 <li>A piston driven by a <strong>motion file</strong> (<code>mvpredef</code>)</li>
-<li>A slope drawn on its <strong>own particle lattice</strong> with FreeDraw</li>
-<li><strong>98 armour blocks</strong>: an STL file for their wall surfaces, and particles placed with the same coordinates</li>
+<li>A slope drawn with its own <strong>particle lattice</strong> with FreeDraw</li>
+<li><strong>98 armour blocks</strong> drawb individually</li>
 <li>Wave gauges and inclined <strong>run-up gauges</strong></li>
 </ul>
 </div>
@@ -3707,7 +4203,7 @@
   <a href="../../assets/images/benchmarks/runup/runup_setup.svg" target="_blank" rel="noopener noreferrer">
     <img src="../../assets/images/benchmarks/runup/runup_setup.svg" alt="Side view of the flume and of the breakwater." style="width: 100%; max-width: 1100px; height: auto;">
   </a>
-  <figcaption><strong>Figure 1:</strong> The flume with the piston and the wave gauges (a), and the breakwater with its two layers of blocks and the run-up lines (b). Dimensions in meters.</figcaption>
+  <figcaption><strong>Figure 1:</strong> The flume layout, with the location of the wave gauges (a), and the breakwater with its two layers of blocks and the run-up lines (b). Dimensions in meters.</figcaption>
 </figure>
 
 <table>
@@ -3741,7 +4237,7 @@
 </tr>
 <tr>
 <td>Armour blocks</td>
-<td>98 cubes, 0.058 (6 cut to 0.039 in <span class="arithmatex">\(y\)</span>)</td>
+<td>98 cubes</td>
 <td>two layers on the slope, mk 21–118</td>
 </tr>
 <tr>
@@ -3766,7 +4262,7 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;cflnumber</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply dt&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">&lt;/constantsdef&gt;</span>
 </span></code></pre></div>
-<p><strong>Fluid</strong>: water with reference density 999 kg/m³. <code>rhopgradient=3</code> indicates that the water is initialized with a hydrostatic density profile computed from the maximum water height.</p>
+<p><strong>Fluid</strong>: water with reference density 999 kg/m³. <code>rhopgradient=3</code> indicates that the water is initialized with a hydrostatic density profile computed from the maximum water height per each vertical line. This ensures that particles within the breakwater are initialized with the right pressure values.</p>
 <p><strong>Speed of sound</strong>: the entries with <code>auto="true"</code> are calculated by GenCase. The still-water level <code>hswl</code> is taken from the water depth, and the system speed is the dam-break velocity taken as <span class="arithmatex">\(\sqrt{g\,h_{\mathrm{swl}}}\)</span>; the speed of sound is then computed considering the multiplier <code>coefsound</code> = 20.</p>
 <p><strong>Smoothing length</strong>: in 3D, <span class="arithmatex">\(h = \mathrm{coefh}\,\sqrt{3}\,Dp = 1.3\sqrt{3}\times0.00627 = 0.0141\)</span> m. Each particle interacts with neighbors up to <span class="arithmatex">\(2h\)</span> = 4.50·Dp away. This information is used to define the number of boundary layers needed for correct simulations.</p>
 <p><strong>Time step</strong>: <code>cflnumber=0.2</code> scales the time step that the solver computes at every step, to account for the Courant condition.</p>
@@ -3802,7 +4298,7 @@
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PistonX=</span><span class="s">&quot;roundpos(pistonPosition,0,Dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DownX=</span><span class="s">&quot;roundpos(domainDown,0,Dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<p><strong>Particle spacing</strong>: the flume is periodic in <span class="arithmatex">\(y\)</span>, so its width must be an integer number of spacings: <code>Dp</code> is the width divided by <code>nY</code> = 59, that is 0.00627 m.</p>
+<p><strong>Particle spacing</strong>: the flume is periodic in <span class="arithmatex">\(y\)</span>, so its width needs to be an integer number of spacings, thus we identify <code>Dp</code> from the width divided by <code>nY</code> = 59, that is 0.00627 m.</p>
 <p><strong>Rounding</strong>: the depth, the top of the walls, the piston, and the end of the flume are rounded with <code>roundpos</code> to the nearest position that is an integer number of spacings from the origin. The depth becomes 40·Dp = 0.251 m, and the piston face <span class="arithmatex">\(x\)</span> = −5.951 m. As the comment on <code>nY</code> notes, 74 particles across the width would make the depth exact.</p>
 <h3 id="the-particle-lattice">The particle lattice<a class="headerlink" href="#the-particle-lattice" title="Link to this heading">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PminX=</span><span class="s">&quot;DownX-Dpm-Dp&quot;</span><span class="w"> </span><span class="na">PminY=</span><span class="s">&quot;-domainWidthY/2+Dpm&quot;</span><span class="w"> </span><span class="na">PminZ=</span><span class="s">&quot;-depth-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
@@ -3810,18 +4306,17 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PosMin_x=</span><span class="s">&quot;PminX&quot;</span><span class="w"> </span><span class="na">PosMin_y=</span><span class="s">&quot;PminY&quot;</span><span class="w"> </span><span class="na">PosMin_z=</span><span class="s">&quot;PminZ&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><strong>The lattice origin</strong>: the nodes are at Dp/2 + k·Dp from the floor, the piston face, and the still-water level, so these surfaces fall halfway between two nodes. In <span class="arithmatex">\(y\)</span>, the 59 rows of nodes run from Dp/2 inside one side of the flume to Dp/2 inside the other, so that the particles are evenly spaced across the periodic boundary too.</p>
-<p><strong>Periodicity</strong>: the parameter <code>YPeriodicIncZ</code> makes the flume periodic in <span class="arithmatex">\(y\)</span>: a particle that leaves through one side enters through the other, with no change of <span class="arithmatex">\(z\)</span>. The flume therefore represents a strip of an infinitely wide breakwater.</p>
+<p><strong>Periodicity</strong>: the parameter <code>YPeriodicIncZ</code> makes the flume periodic in <span class="arithmatex">\(y\)</span>, meaning that a particle that leaves through one side enters through the other. The flume can therefore be regarded as a strip of an infinitely wide breakwater.</p>
 <h3 id="piston-floor-and-slope">Piston, floor, and slope<a class="headerlink" href="#piston-floor-and-slope" title="Link to this heading">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">&lt;!-- Particle positions (first layer) --&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Floorpz=</span><span class="s">&quot;-depth-Dpm&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Pistonpx2=</span><span class="s">&quot;PistonX-Dpm&quot;</span><span class="w"> </span><span class="na">Pistonpx1=</span><span class="s">&quot;Pistonpx2-5*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Slopepx1=</span><span class="s">&quot;ToeX+Dpm*sindg(SlopeAngle)/(1+cosdg(SlopeAngle))&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Slope particle line Dp/2 below the real slope&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Slopepx2=</span><span class="s">&quot;Slopepx1+(TopZ-Floorpz)*cosdg(SlopeAngle)/sindg(SlopeAngle)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="cm">&lt;!-- Slope particles  --&gt;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">SlopeLen=</span><span class="s">&quot;tankHeight/sindg(SlopeAngle)&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Length of the real slope&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Slopexl1=</span><span class="s">&quot;Dpm&quot;</span><span class="w"> </span><span class="na">Slopexl2=</span><span class="s">&quot;roundpos(SlopeLen-Dpm,Slopexl1,Dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Slopezl1=</span><span class="s">&quot;-Dpm-5*Dp&quot;</span><span class="w"> </span><span class="na">Slopezl2=</span><span class="s">&quot;-Dpm&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;6 layers, first one Dp/2 below the surface&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="cm">&lt;!-- Slope particles  --&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">SlopeLen=</span><span class="s">&quot;tankHeight/sindg(SlopeAngle)&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Length of the real slope&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Slopexl1=</span><span class="s">&quot;Dpm&quot;</span><span class="w"> </span><span class="na">Slopexl2=</span><span class="s">&quot;roundpos(SlopeLen-Dpm,Slopexl1,Dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Slopezl1=</span><span class="s">&quot;-Dpm-5*Dp&quot;</span><span class="w"> </span><span class="na">Slopezl2=</span><span class="s">&quot;-Dpm&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;6 layers, first one Dp/2 below the surface&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><strong>Piston</strong>: six columns of particles (<code>Pistonpx1</code> to <code>Pistonpx2</code>), the first one Dp/2 behind the piston face. It starts one row above the first floor layer.</p>
 <p><strong>Floor</strong>: <code>Floorpz</code> is the first floor layer, Dp/2 below the floor; the floor is drawn on the lattice of the case, with six layers downwards.</p>
@@ -3837,11 +4332,11 @@
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nt">&lt;/drawbox&gt;</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nt">&lt;matrixreset</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<p><strong>The slope frame</strong>: the box is written in slope coordinates, and the two transformations place it: <code>rotate</code> tilts it by the slope angle about <span class="arithmatex">\(y\)</span>, and <code>move</code> brings the origin to the toe, on the floor. FreeDraw places the particles on a lattice that starts exactly at <code>point</code>, aligned with the slope, instead of on the horizontal lattice of the case. The armour blocks use the same slope frame.</p>
+<p><strong>The slope frame</strong>: the box is written in slope coordinates, and the two transformations place it in its final position. <code>rotate</code> tilts it by the slope angle about <span class="arithmatex">\(y\)</span>, and <code>move</code> brings the origin to the toe, on the tank bottom. FreeDraw then places the particles on a lattice that starts exactly at <code>point</code>, aligned with the slope. The armour blocks use the same slope frame.</p>
 <h3 id="armour-blocks">Armour blocks<a class="headerlink" href="#armour-blocks" title="Link to this heading">&para;</a></h3>
-<p>The breakwater is armoured with 98 cubic blocks, laid in two layers on the slope, with the positions of the experiment. Each block is represented twice, with the same coordinates:</p>
+<p>The breakwater is armoured with 98 cubic blocks, laid in two layers on the slope, with the positions of the experiment. To comply with the experimental armour configuration, each block requires two representations, with the same coordinates, which is achieved here by:</p>
 <ul>
-<li><strong>Wall surface</strong>: the file <code>Blocks_Final.stl</code> contains the 98 blocks in their final position, and is loaded in <code>GeometryForNormals</code> to compute the mDBC normals.</li>
+<li><strong>Wall surface</strong>: the file <code>Blocks_Final.stl</code> contains the 98 blocks in their final position, and is loaded in <code>GeometryForNormals</code> to compute the mDBC normals. This was generated after the experimental campaign, and in this setup, it represents our firm configuration.</li>
 <li><strong>Particles</strong>: each block is drawn as a box of particles, placed with its own position and rotation, so that the particles fill the block exactly where the STL puts it.</li>
 </ul>
 <p>This section follows one block, block 25 (<code>mkbound=25</code>), from the XML to its final position.</p>
@@ -3854,9 +4349,9 @@
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&lt;depth</span><span class="w"> </span><span class="na">depthmin=</span><span class="s">&quot;#0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nt">&lt;/drawfilestl&gt;</span>
 </span></code></pre></div>
-<p><strong>STL in the slope coordinates</strong>: the STL is written with the toe of the slope at the origin and the floor at <span class="arithmatex">\(z=0\)</span>; <code>drawmove</code> lowers it by the depth, to the floor of the flume. The faces of the STL are the real faces of the blocks: they are the wall surfaces of the blocks for mDBC.</p>
+<p><strong>STL in the slope coordinates</strong>: the STL is written with the toe of the slope at the origin and the floor at <span class="arithmatex">\(z=0\)</span>; <code>drawmove</code> conforms its geometry to our spatial frame which uses the free surface at 0. The faces of the STL are the real faces of the blocks, and they will be used as the wall surfaces of the blocks for mDBC.</p>
 <h4 id="the-block-particles">The block particles<a class="headerlink" href="#the-block-particles" title="Link to this heading">&para;</a></h4>
-<p>The particles of every block are made by the same list, <code>BlockPart</code>:</p>
+<p>The particles of every block are generated by the same list, <code>BlockPart</code>:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;BlockPart&quot;</span><span class="nt">&gt;</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&lt;drawbox&gt;</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&lt;boxfill&gt;</span>solid<span class="nt">&lt;/boxfill&gt;</span>
@@ -4055,7 +4550,7 @@
 </span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for standard shifting computation (default=-2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftTFS&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.75&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<p><strong>Density diffusion</strong>: the Fourtakas formulation with coefficient 0.10 smooths the pressure field (<a href="#Fourtakas_2019">Fourtakas et al., 2019</a>).</p>
+<p><strong>Density diffusion</strong>: the Fourtakas formulation with coefficient 0.10 smooths the pressure field.</p>
 <p><strong>Shifting</strong>: standard shifting, ignoring the boundary particles, with coefficient −0.2, and the 3-D free-surface threshold 2.75.</p>
 <h3 id="time-step-output-and-domain">Time step, output, and domain<a class="headerlink" href="#time-step-output-and-domain" title="Link to this heading">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CoefDtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
@@ -4127,24 +4622,22 @@
 <h2 id="results-and-validation">Results and validation<a class="headerlink" href="#results-and-validation" title="Link to this heading">&para;</a></h2>
 <p>The experimental data are in <code>reference/WG1_4.csv</code>, with the time and the water levels in the order WG4, WG3, WG2, WG1, and in <code>reference/Runup.csv</code>, with the time and the run-up. They are compared with the gauge files <code>GaugesSWL_WG1.csv</code> to <code>GaugesSWL_WG4.csv</code>, and with the run-up gauges (Figures 7 and 8).</p>
 <figure id="fig-wave-gauges" style="text-align: center;">
-  <a href="../../assets/images/benchmarks/runup/04_waverunup_wavegauges_preliminary_20261118_v2.png" target="_blank" rel="noopener noreferrer">
-    <img src="../../assets/images/benchmarks/runup/04_waverunup_wavegauges_preliminary_20261118_v2.png" alt="Water levels at WG1–WG4 against time." style="width: 100%; max-width: 1100px; height: auto;">
+  <a href="../../assets/images/benchmarks/runup/runup_wavegauges.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/runup/runup_wavegauges.svg" alt="Water levels at WG1–WG4 against time." style="width: 100%; max-width: 900px; height: auto;">
   </a>
-  <figcaption><strong>Figure 7:</strong> Water levels at WG1–WG4: experiment and DualSPHysics.</figcaption>
+  <figcaption><strong>Figure 7:</strong> Free surface elevation at WG1–WG4. Experiment (gray) and DualSPHysics (blue).</figcaption>
 </figure>
 
 <figure id="fig-runup" style="text-align: center;">
-  <a href="../../assets/images/benchmarks/runup/04_waverunup_runup_preliminary_20261121.png" target="_blank" rel="noopener noreferrer">
-    <img src="../../assets/images/benchmarks/runup/04_waverunup_runup_preliminary_20261121.png" alt="Run-up against time." style="width: 100%; max-width: 1100px; height: auto;">
+  <a href="../../assets/images/benchmarks/runup/runup_runup.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/runup/runup_runup.svg" alt="Run-up on the slope against time." style="width: 100%; max-width: 1000px; height: auto;">
   </a>
-  <figcaption><strong>Figure 8:</strong> Run-up on the slope: experiment, and the mean and spread of the seven run-up gauges of DualSPHysics.</figcaption>
+  <figcaption><strong>Figure 8:</strong> Run-up on the slope: experiment (gray), and the mean of the seven run-up gauges of DualSPHysics (blue) with their spread, mean ± one standard deviation (band).</figcaption>
 </figure>
 
 <h2 id="references">References<a class="headerlink" href="#references" title="Link to this heading">&para;</a></h2>
 <p><a id="Zhang_2018"></a>
 ◆ Zhang, F., Crespo, A. J. C., Altomare, C., Domínguez, J. M., Marzeddu, A., Shang, S., &amp; Gómez-Gesteira, M. (2018). DualSPHysics: a numerical tool to simulate real breakwaters. <em>Journal of Hydrodynamics</em>, <em>30</em>(1), 95-105. <a href="https://doi.org/10.1007/s42241-018-0010-0" rel="noopener" target="_blank">DOI: 10.1007/s42241-018-0010-0</a>.</p>
-<p><a id="Fourtakas_2019"></a>
-◆ Fourtakas, G., Domínguez, J. M., Vacondio, R., &amp; Rogers, B. D. (2019). Local Uniform Stencil (LUST) boundary condition for arbitrary 3-D boundaries in parallel smoothed particle hydrodynamics (SPH) models. <em>Computers &amp; Fluids</em>, <em>190</em>, 346-361. <a href="https://doi.org/10.1016/j.compfluid.2019.06.009" rel="noopener" target="_blank">DOI: 10.1016/j.compfluid.2019.06.009</a>.</p>
 
 
 
@@ -4178,6 +4671,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../wave_generation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Wave Generation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Wave Generation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../dambreak_debris/" class="md-footer__link md-footer__link--next" aria-label="Next: Dambreak Debris">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Dambreak Debris
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

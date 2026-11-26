@@ -6,7 +6,7 @@
 <path d="M131.49152542372886,151.24576271186442 L1024.1949152542372,151.24576271186442 L1094.961233102862,113.61864406779662 L131.49152542372886,113.61864406779662 Z" fill="#4c8bf5" opacity="0.3"/>
 <path d="M60.0,151.24576271186442 L1024.1949152542372,151.24576271186442 L1195.8032360371521,60.0" fill="none" stroke="#8a94a3" stroke-width="2.5"/>
 <rect x="126.5" y="60.0" width="5.0" height="91.2" rx="0" fill="#e05a4f" stroke="none" stroke-width="1" opacity="1.0"/>
-<text x="123.5" y="52.0" font-size="13" fill="#e05a4f" text-anchor="start" font-weight="bold">piston (mk 10)</text>
+<text x="123.5" y="52.0" font-size="13" fill="#e05a4f" text-anchor="start" font-weight="bold">Piston</text>
 <line x1="596.5" y1="151.2" x2="596.5" y2="60.0" stroke="#8a94a3" stroke-width="1.2" stroke-dasharray="4 4" opacity="1.0"/>
 <line x1="596.5" y1="60.0" x2="545.1" y2="44.0" stroke="#8a94a3" stroke-width="1" opacity="1.0"/>
 <text x="545.1" y="38.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="bold">WG1</text>
@@ -53,15 +53,15 @@
 <path d="M738.5,384.8 L770.3,367.9 L753.4,336.1 L721.6,353.0 Z" fill="#e05a4f" opacity="0.6"/>
 <path d="M771.4,367.3 L803.1,350.4 L786.2,318.7 L754.5,335.5 Z" fill="#e05a4f" opacity="0.6"/>
 <path d="M804.2,349.8 L835.9,332.9 L819.1,301.2 L787.3,318.1 Z" fill="#e05a4f" opacity="0.6"/>
-<text x="723.4" y="470.5" font-size="15" fill="#e05a4f" text-anchor="start" font-weight="bold">armour blocks (mk 21–118)</text>
+<text x="723.4" y="470.5" font-size="15" fill="#e05a4f" text-anchor="start" font-weight="bold">Armour blocks</text>
 <line x1="339.0" y1="638.4" x2="438.2" y2="638.4" stroke="#8a94a3" stroke-width="1" stroke-dasharray="3 3" opacity="1.0"/>
 <path d="M413.40000000000003,638.3949152542373 A74.4,74.4 0 0 0 404.6913009087042,603.4662309829671" fill="none" stroke="#8a94a3" stroke-width="1.4"/>
-<text x="419.6" y="629.1" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">slope 28°</text>
+<text x="419.6" y="629.1" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">Slope 28°</text>
 <line x1="195.6" y1="613.6" x2="871.4" y2="254.0" stroke="#e8574a" stroke-width="2" stroke-dasharray="6 4" opacity="1.0"/>
-<text x="877.4" y="254.0" font-size="13" fill="#e8574a" text-anchor="start" font-weight="bold">run-up lines</text>
+<text x="877.4" y="254.0" font-size="13" fill="#e8574a" text-anchor="start" font-weight="bold">Run-up lines</text>
 <line x1="60.0" y1="482.9" x2="631.5" y2="482.9" stroke="#8a94a3" stroke-width="1" stroke-dasharray="4 4" opacity="1.0"/>
 <text x="64.0" y="476.9" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">SWL, z = 0</text>
 <line x1="90.0" y1="482.9" x2="90.0" y2="638.4" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
 <text x="98.0" y="565.6" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">0.251</text>
-<text x="30.0" y="712.4" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">Dimensions in meters. The flume is periodic in y, 0.37 m wide.</text>
+<text x="30.0" y="712.4" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal"></text>
 </svg>

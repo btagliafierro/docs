@@ -1458,6 +1458,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1611,6 +1621,146 @@
     
   
     Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
   
 
     
@@ -3592,22 +3742,22 @@
 
 <h2 id="constants-resolution-and-physical-scales">Constants, resolution and physical scales<a class="headerlink" href="#constants-resolution-and-physical-scales" title="Link to this heading">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;constantsdef&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;lattice</span><span class="w"> </span><span class="na">bound=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">fluid=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Type of lattice to create the initial particles (default=1)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;gravity</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-9.81&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gravitational acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&lt;rhop0</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reference density of the fluid&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&lt;rhopgradient</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial density gradient 1:Rhop0, 2:Water column, 3:Max. water height (default=2)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&lt;hswl</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum height of still water to calculate speedofsound using coefsound&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Polytropic constant for water used in the state equation&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&lt;speedsystem</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum system speed (by default the dam-break propagation is used)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&lt;coefsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply speedsystem&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&lt;speedsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Speed of sound to use in the simulation (by default speedofsound=coefsound*speedsystem)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">&lt;coefh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.866025&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate the smoothing length (h=coefh*sqrt(3*dp^2) in 3D)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">&lt;_hdp</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Alternative option to calculate the smoothing length (h=hdp*dp)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">&lt;cflnumber</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply dt&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">&lt;h</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">&lt;b</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;Pascal (Pa)&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nt">&lt;massbound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nt">&lt;massfluid</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;lattice</span><span class="w"> </span><span class="na">bound=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">fluid=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Type of lattice to create the initial particles (default=1)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;gravity</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-9.81&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gravitational acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;rhop0</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reference density of the fluid&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;rhopgradient</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial density gradient 1:Rhop0, 2:Water column, 3:Max. water height (default=2)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&lt;hswl</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum height of still water to calculate speedofsound using coefsound&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Polytropic constant for water used in the state equation&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&lt;speedsystem</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum system speed (by default the dam-break propagation is used)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;coefsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply speedsystem&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;speedsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Speed of sound to use in the simulation (by default speedofsound=coefsound*speedsystem)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;coefh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.866025&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate the smoothing length (h=coefh*sqrt(3*dp^2) in 3D)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&lt;_hdp</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Alternative option to calculate the smoothing length (h=hdp*dp)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">&lt;cflnumber</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply dt&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">&lt;h</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">&lt;b</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;Pascal (Pa)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&lt;massbound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">&lt;massfluid</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nt">&lt;/constantsdef&gt;</span>
 </span></code></pre></div>
 <p>This fragment belongs to <code>case/casedef</code>. The current template's example uses reference density 1000 kg/m³, gravity (0, 0, −9.81) m/s², polytropic exponent 7, <code>coefsound=20</code>, <code>coefh=0.866025</code> and <code>cflnumber=0.2</code>. They illustrate a water configuration; they are not a complete specification of an arbitrary fluid. A value accompanied by <code>auto="true"</code> requests the associated automatic calculation. A displayed zero in such an entry does not mean that the final physical quantity is zero.</p>

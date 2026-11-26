@@ -1458,6 +1458,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1611,6 +1621,146 @@
     
   
     Wave Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/runup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave Run-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/dambreak_debris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dambreak Debris
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/drifting_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drifting Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/moored_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moored Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../benchmarks/heave_decay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heave Decay
   
 
     
@@ -3591,25 +3741,25 @@
 </p>
 
 <h2 id="floating-bodies-and-material-properties">Floating bodies and material properties<a class="headerlink" href="#floating-bodies-and-material-properties" title="Link to this heading">&para;</a></h2>
-<p>A <code>casedef/floatings/floating</code> entry identifies a rigid floating body by <code>mkbound</code>. Its density or total mass must be consistent with the intended object. The presentation describes density (<code>rhopbody</code>), relative weight and total mass as alternative ways to characterise a body. For the current format, use the explicitly documented <code>rhopbody</code> attribute or <code>massbody</code> child shown below. Do not supply conflicting mass and density definitions or assume that a historical relative-weight value is a mass in kilograms.</p>
+<p>A <code>casedef/floatings/floating</code> entry identifies a rigid floating body by <code>mkbound</code>. Its density or total mass must be consistent with the intended object. GenCase v6 accepts <code>relativeweight</code> as well as the <code>rhopbody</code> attribute and <code>massbody</code> child illustrated below. <code>relativeweight</code> is a dimensionless relative-weight factor referenced to the fluid reference density, not a mass in kilograms. Select a consistent body specification; these input forms must not be treated as automatically interchangeable or supplied as conflicting mass and density definitions.</p>
 <p>GenCase can calculate the centre of gravity and inertia, or the user can specify them. <code>inertia</code> supplies diagonal terms; <code>inertiafull</code> supplies the full matrix. The source defines inertia about axes parallel to the reference coordinate system and through the body's centre. Initial translational velocity uses m/s and initial angular velocity rad/s.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;floating</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;Material_2&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;massbody</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.3&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;inertiafull&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;values</span><span class="w"> </span><span class="na">v11=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">v12=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">v13=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;values</span><span class="w"> </span><span class="na">v21=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">v22=</span><span class="s">&quot;22&quot;</span><span class="w"> </span><span class="na">v23=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&lt;values</span><span class="w"> </span><span class="na">v31=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">v32=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">v33=</span><span class="s">&quot;33&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&lt;/inertiafull&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;massbody</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;inertiafull&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">&lt;values</span><span class="w"> </span><span class="na">v11=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">v12=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">v13=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">&lt;values</span><span class="w"> </span><span class="na">v21=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">v22=</span><span class="s">&quot;22&quot;</span><span class="w"> </span><span class="na">v23=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">&lt;values</span><span class="w"> </span><span class="na">v31=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">v32=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">v33=</span><span class="s">&quot;33&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;/inertiafull&gt;</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">&lt;/floating&gt;</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nt">&lt;floating</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">rhopbody=</span><span class="s">&quot;1500&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&lt;linearvelini</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">&lt;angularvelini</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.4&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.6&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;rad/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;linearvelini</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;angularvelini</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.4&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.6&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;rad/s&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">&lt;/floating&gt;</span>
 </span></code></pre></div>
 <p><code>translationDOF</code> controls surge, sway and heave along X, Y and Z; <code>rotationDOF</code> controls roll, pitch and yaw about them. Zero restricts the selected degree of freedom and one permits it. Do not confuse these constraints with a prescribed <code>motion</code> history or assume they define an arbitrary mechanical joint.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;floating</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">rhopbody=</span><span class="s">&quot;1500&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;translationDOF</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to restrict Degrees Of Freedon for translation (default=(1,1,1))&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&lt;rotationDOF</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to restrict Degrees Of Freedon for rotation (default=(1,1,1))&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;translationDOF</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to restrict Degrees Of Freedon for translation (default=(1,1,1))&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;rotationDOF</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Use 0 to restrict Degrees Of Freedon for rotation (default=(1,1,1))&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">&lt;/floating&gt;</span>
 </span></code></pre></div>
 <h2 id="prescribed-boundary-motion">Prescribed boundary motion<a class="headerlink" href="#prescribed-boundary-motion" title="Link to this heading">&para;</a></h2>
@@ -3618,13 +3768,13 @@
 <p>For <code>mvrect</code>, a negative <code>duration</code> specifies an instantaneous transformation. Its displacement is the specified velocity multiplied by the magnitude of <code>duration</code>, rather than motion over an indefinite interval. This interpretation applies to <code>mvrect</code>; retain the surrounding object, <code>begin</code> entry and movement sequence.</p>
 <p>The first source example alternates constant-velocity movements and pauses: movements of 0.6 s, pauses of 0.3 s and a final return at −1.8 m/s. A separate combined-motion example superposes X and Y histories. The hierarchical example moves boundary object 2 relative to the motion of object 1. These are different constructions, not interchangeable interpretations of a single velocity.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;objreal</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;11&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">mov=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">finish=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&lt;mvrect</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;vel</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&lt;/mvrect&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&lt;mvrect</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;vel</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">&lt;/mvrect&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">mov=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">finish=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;mvrect</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nt">&lt;vel</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&lt;/mvrect&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&lt;mvrect</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">next=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="nt">&lt;vel</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&lt;/mvrect&gt;</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nt">&lt;/objreal&gt;</span>
 </span></code></pre></div>
 <figure>
@@ -3676,21 +3826,21 @@
 </table>
 <p>Use <code>anglesunits</code> for angular quantities when the element provides it. Frequencies are in inverse seconds, translational amplitudes in metres and angular amplitudes in the selected angular unit. The source contrasts 20 and 240 degrees/s in its rotation example; its accelerated rotational/circular example uses initial angular velocity −50 degrees/s and angular acceleration 9 degrees/s². These values are example inputs, not stability recommendations.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;mvrectace</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;velini</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&lt;ace</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;velini</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&lt;ace</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;/mvrectace&gt;</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;mvrotace</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&lt;ace</span><span class="w"> </span><span class="na">ang=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees/s^2&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&lt;velini</span><span class="w"> </span><span class="na">ang=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees/s&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&lt;ace</span><span class="w"> </span><span class="na">ang=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees/s^2&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&lt;velini</span><span class="w"> </span><span class="na">ang=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nt">&lt;/mvrotace&gt;</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nt">&lt;mvrotsinu</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;112&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="nt">&lt;freq</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;1/s&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">&lt;ampl</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">&lt;freq</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;1/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="nt">&lt;ampl</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nt">&lt;/mvrotsinu&gt;</span>
 </span></code></pre></div>
 <p>The six source snapshots illustrate <code>Motion06</code>, combining accelerated rotation (<code>mvrotace</code>) and accelerated circular motion (<code>mvcirace</code>). Their original times are 0, 5, 10, 15, 20 and 25 s.</p>
@@ -3700,31 +3850,82 @@
 </figure>
 
 <p>The source's numerical motion examples are independent configurations. Its combined translation starts the X history at 0 s (1 m/s for 2 s, then −2 m/s for 1 s) and the Y history at 0.5 s (±1 m/s in 1.3 s segments). Its accelerated translation begins at zero velocity with acceleration (2, 0, 0) m/s² for 1.411 s, followed by a 1 s segment starting at (2, 5, 0) m/s with acceleration (0, −10, 0) m/s². These histories must retain their own <code>begin</code>, <code>duration</code>, <code>next</code> and initial-velocity relationships; replacing them by a different current-reference example does not reproduce the same trajectory.</p>
+<p><strong>Minimal hierarchy and circular-motion fragments.</strong> The following examples are independent fragments for <code>case/casedef/motion</code>, with values drawn from <code>GenCase_CaseTemplate.xml</code>. Each <code>objreal ref</code> must match a generated moving-boundary population; the fragments do not create its geometry. Repeated reference numbers across these independent examples are not a combined case.</p>
+<p>The parent <code>obj</code> below supplies an X translation to its child. The child's own Y translation begins at 0.2 s. <code>obj</code> groups motion without directly selecting particles; the nested <code>objreal ref="15"</code> selects the moving boundary. Movement IDs and <code>begin</code> entries belong to their respective objects.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;obj&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">mov=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;mvrect</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="nt">&lt;vel</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&lt;/mvrect&gt;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&lt;objreal</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;15&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">mov=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;0.2&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="nt">&lt;mvrect</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">            </span><span class="nt">&lt;vel</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nt">&lt;/mvrect&gt;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">&lt;/objreal&gt;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nt">&lt;/obj&gt;</span>
+</span></code></pre></div>
+<p>For <code>mvcirace</code>, <code>ref</code> is a <strong>point</strong>, separate from the boundary identifier in <code>objreal ref</code>. The axis passes through <code>axisp1</code> and <code>axisp2</code>, which must differ. The reference point follows the circular displacement; this circular motion does not itself rotate the body about its own centre. With <code>anglesunits="degrees"</code>, <code>velini ang</code> is in degrees/s and <code>ace ang</code> in degrees/s²; axis and reference-point coordinates use metres in the SI configuration.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;objreal</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;27&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">mov=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&lt;mvcirace</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="nt">&lt;ace</span><span class="w"> </span><span class="na">ang=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees/s^2&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="nt">&lt;velini</span><span class="w"> </span><span class="na">ang=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="nt">&lt;ref</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">&lt;/mvcirace&gt;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nt">&lt;/objreal&gt;</span>
+</span></code></pre></div>
+<p><strong>Vector and scalar sinusoidal inputs.</strong> <code>mvrectsinu</code> uses X/Y/Z components for <code>freq</code>, <code>ampl</code> and <code>phase</code>: frequency is in 1/s, translation amplitude in metres and phase in the selected angular unit. This fragment defines an X-direction oscillation, with zero Y/Z amplitudes; <code>anglesunits</code> controls phase, not the length unit.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;objreal</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;27&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">mov=</span><span class="s">&quot;101&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;mvrectsinu</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;101&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nt">&lt;freq</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;1/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&lt;ampl</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&lt;/mvrectsinu&gt;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nt">&lt;/objreal&gt;</span>
+</span></code></pre></div>
+<p><code>mvcirsinu</code> instead uses scalar <code>v</code> attributes for frequency, angular amplitude and phase, together with the reference point and axis. Here frequency is in 1/s, amplitude and phase in degrees, and the duration is in seconds. It prescribes sinusoidal circular displacement, distinct from <code>mvrotsinu</code>, which rotates the body.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;objreal</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;27&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&lt;begin</span><span class="w"> </span><span class="na">mov=</span><span class="s">&quot;123&quot;</span><span class="w"> </span><span class="na">start=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&lt;mvcirsinu</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;123&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="nt">&lt;freq</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;1.5&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;1/s&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">&lt;ampl</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;180&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">v=</span><span class="s">&quot;90&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;degrees&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span><span class="nt">&lt;ref</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="nt">&lt;/mvcirsinu&gt;</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nt">&lt;/objreal&gt;</span>
+</span></code></pre></div>
+<p>These deliberately shortened fragments demonstrate hierarchy and input syntax; they do not reproduce the complete historical trajectories or define universal motion amplitudes.</p>
 <h3 id="motion-from-external-files">Motion from external files<a class="headerlink" href="#motion-from-external-files" title="Link to this heading">&para;</a></h3>
 <p>External motion files must use the specified time and data columns. Column indices start at zero: <code>fieldtime="0"</code> selects the first column. <code>fields</code> is the number of columns, while <code>fieldx</code>, <code>fieldy</code> and <code>fieldz</code> select translational position components.</p>
 <p>The current template and motion reader use <code>mvrectfile</code> for translational files; <code>mvpredef</code> and <code>mvfile</code> are recognised aliases. <code>mvrotfile</code> reads a rotational history about an axis. For three-angle rotation, the current spelling is <strong><code>mvrotadvfile</code></strong>, with <code>fieldang1</code>, <code>fieldang2</code>, <code>fieldang3</code>, <code>center</code>, <code>intrinsic</code> and <code>axes</code>. The historical <code>mvadvrotfile</code> spelling in the presentation is not the current template name.</p>
 <p><code>mvpathfile</code> combines translational and three-angle histories. Its <code>movecenter</code> option controls whether the rotation centre moves with the object. Keep axis order, intrinsic/extrinsic convention, angle units and column assignments consistent with the data producer. A filename alone does not establish these conventions.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;mvrectfile</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;134&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;filemotionT_X_Y_Z.dat&quot;</span><span class="w"> </span><span class="na">fields=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">fieldtime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fieldx=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">fieldy=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">fieldz=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;/mvrectfile&gt;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;mvrotfile</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;138&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fileRotationT_Deg.dat&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nt">&lt;/mvrotfile&gt;</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nt">&lt;mvrotadvfile</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;140&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fileEulerRotationXYZ_Deg.dat&quot;</span><span class="w"> </span><span class="na">fields=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">fieldtime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fieldang1=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">fieldang2=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">fieldang3=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="nt">&lt;center</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="nt">&lt;intrinsic</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="nt">&lt;axes</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;XYZ&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nt">&lt;/mvrotadvfile&gt;</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nt">&lt;mvpathfile</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;142&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;filePath_Deg.dat&quot;</span><span class="w"> </span><span class="na">fields=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">fieldtime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fieldx=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">fieldy=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">fieldz=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">fieldang1=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">fieldang2=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">fieldang3=</span><span class="s">&quot;6&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span><span class="nt">&lt;center</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span><span class="nt">&lt;movecenter</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span><span class="nt">&lt;intrinsic</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="nt">&lt;axes</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;XYZ&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="nt">&lt;/mvpathfile&gt;</span>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;mvrectfile</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;134&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;filemotionT_X_Y_Z.dat&quot;</span><span class="w"> </span><span class="na">fields=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">fieldtime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fieldx=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">fieldy=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">fieldz=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">&lt;/mvrectfile&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nt">&lt;mvrotfile</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;138&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fileRotationT_Deg.dat&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">&lt;axisp1</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;-1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">&lt;axisp2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nt">&lt;/mvrotfile&gt;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nt">&lt;mvrotadvfile</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;140&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fileEulerRotationXYZ_Deg.dat&quot;</span><span class="w"> </span><span class="na">fields=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">fieldtime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fieldang1=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">fieldang2=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">fieldang3=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="nt">&lt;center</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="nt">&lt;intrinsic</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="nt">&lt;axes</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;XYZ&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="nt">&lt;/mvrotadvfile&gt;</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="nt">&lt;mvpathfile</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;142&quot;</span><span class="w"> </span><span class="na">duration=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">anglesunits=</span><span class="s">&quot;degrees&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="nt">&lt;file</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;filePath_Deg.dat&quot;</span><span class="w"> </span><span class="na">fields=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">fieldtime=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">fieldx=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">fieldy=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">fieldz=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">fieldang1=</span><span class="s">&quot;4&quot;</span><span class="w"> </span><span class="na">fieldang2=</span><span class="s">&quot;5&quot;</span><span class="w"> </span><span class="na">fieldang3=</span><span class="s">&quot;6&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="nt">&lt;center</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="nt">&lt;movecenter</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="nt">&lt;intrinsic</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="nt">&lt;axes</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;XYZ&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="nt">&lt;/mvpathfile&gt;</span>
 </span></code></pre></div>
 <p>See <a href="../initial_conditions_properties/#properties-linked-to-markers">Properties linked to markers</a> for named property groups and their associations.</p>
 
