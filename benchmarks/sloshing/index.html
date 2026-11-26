@@ -25,7 +25,7 @@
     
     
       
-        <title>Sloshing Tank - DualSPHysics Documentation</title>
+        <title>Sloshing test case - DualSPHysics Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sloshing-tank" class="md-skip">
+        <a href="#sloshing" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sloshing Tank
+              Sloshing test case
             
           </span>
         </div>
@@ -1460,16 +1460,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1653,19 +1643,19 @@
   <a href="#case-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Case Configuration
+        Case configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Case Configuration">
+    <nav class="md-nav" aria-label="Case configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#physical-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Physical Setup
+        Physical setup
       
     </span>
   </a>
@@ -1673,21 +1663,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#geometry-definition" class="md-nav__link">
+  <a href="#physical-constants" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Geometry Definition
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#acceleration-input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Acceleration Input
+        Physical constants
       
     </span>
   </a>
@@ -1700,22 +1679,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#numerical-parameters" class="md-nav__link">
+  <a href="#geometry-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Numerical Parameters
+        Geometry definition
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Numerical Parameters">
+    <nav class="md-nav" aria-label="Geometry definition">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#boundary-treatment" class="md-nav__link">
+  <a href="#real-dimensions-and-particle-spacing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Boundary Treatment
+        Real dimensions and particle spacing
       
     </span>
   </a>
@@ -1723,10 +1702,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#time-integration" class="md-nav__link">
+  <a href="#wall-surfaces-on-the-lattice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Time Integration
+        Wall surfaces on the lattice
       
     </span>
   </a>
@@ -1734,10 +1713,115 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#kernel-and-viscosity" class="md-nav__link">
+  <a href="#the-particle-lattice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kernel and Viscosity
+        The particle lattice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-wall-surface-for-mdbc-hdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The wall surface for mDBC (hdp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawing-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawing particles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-normals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary normals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-the-generated-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking the generated case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imposed-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imposed motion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-gauges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical gauges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundary-formulation-and-time-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary formulation and time integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viscosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viscosity
       
     </span>
   </a>
@@ -1748,7 +1832,7 @@
   <a href="#density-diffusion-and-shifting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Density Diffusion and Shifting
+        Density diffusion and shifting
       
     </span>
   </a>
@@ -1756,32 +1840,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#simulation-domain" class="md-nav__link">
+  <a href="#time-step-output-and-domain" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simulation Domain
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simulation-time-and-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simulation Time and Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#diagnostic-water-level-gauge" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Diagnostic Water-Level Gauge
+        Time step, output, and domain
       
     </span>
   </a>
@@ -1797,19 +1859,19 @@
   <a href="#running-the-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running the Simulation
+        Running the simulation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Running the Simulation">
+    <nav class="md-nav" aria-label="Running the simulation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#input-files-and-expected-outputs" class="md-nav__link">
+  <a href="#input-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Input Files and Expected Outputs
+        Input files
       
     </span>
   </a>
@@ -1827,11 +1889,28 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#final-release-platforms" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Final Release Platforms
+        Post-processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#particle-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particle visualization
       
     </span>
   </a>
@@ -1839,10 +1918,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pressure-post-processing" class="md-nav__link">
+  <a href="#pressure-at-sensor-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pressure Post-Processing
+        Pressure at Sensor 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface visualization
       
     </span>
   </a>
@@ -1858,38 +1948,10 @@
   <a href="#results-and-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Results and Validation
+        Results and validation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Results and Validation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#experimental-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Experimental Reference
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preliminary-pressure-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preliminary Pressure Comparison
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1928,146 +1990,6 @@
     
   
     Wave Generation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../runup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Wave Run-up
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dambreak_debris/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dambreak Debris
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../drifting_box/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Drifting Box
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../moored_box/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Moored Box
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../heave_decay/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Heave Decay
   
 
     
@@ -3836,19 +3758,19 @@
   <a href="#case-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Case Configuration
+        Case configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Case Configuration">
+    <nav class="md-nav" aria-label="Case configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#physical-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Physical Setup
+        Physical setup
       
     </span>
   </a>
@@ -3856,21 +3778,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#geometry-definition" class="md-nav__link">
+  <a href="#physical-constants" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Geometry Definition
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#acceleration-input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Acceleration Input
+        Physical constants
       
     </span>
   </a>
@@ -3883,22 +3794,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#numerical-parameters" class="md-nav__link">
+  <a href="#geometry-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Numerical Parameters
+        Geometry definition
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Numerical Parameters">
+    <nav class="md-nav" aria-label="Geometry definition">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#boundary-treatment" class="md-nav__link">
+  <a href="#real-dimensions-and-particle-spacing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Boundary Treatment
+        Real dimensions and particle spacing
       
     </span>
   </a>
@@ -3906,10 +3817,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#time-integration" class="md-nav__link">
+  <a href="#wall-surfaces-on-the-lattice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Time Integration
+        Wall surfaces on the lattice
       
     </span>
   </a>
@@ -3917,10 +3828,115 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#kernel-and-viscosity" class="md-nav__link">
+  <a href="#the-particle-lattice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kernel and Viscosity
+        The particle lattice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-wall-surface-for-mdbc-hdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The wall surface for mDBC (hdp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawing-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawing particles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-normals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary normals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-the-generated-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking the generated case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imposed-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imposed motion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-gauges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical gauges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundary-formulation-and-time-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary formulation and time integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viscosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viscosity
       
     </span>
   </a>
@@ -3931,7 +3947,7 @@
   <a href="#density-diffusion-and-shifting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Density Diffusion and Shifting
+        Density diffusion and shifting
       
     </span>
   </a>
@@ -3939,32 +3955,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#simulation-domain" class="md-nav__link">
+  <a href="#time-step-output-and-domain" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simulation Domain
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simulation-time-and-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simulation Time and Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#diagnostic-water-level-gauge" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Diagnostic Water-Level Gauge
+        Time step, output, and domain
       
     </span>
   </a>
@@ -3980,19 +3974,19 @@
   <a href="#running-the-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running the Simulation
+        Running the simulation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Running the Simulation">
+    <nav class="md-nav" aria-label="Running the simulation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#input-files-and-expected-outputs" class="md-nav__link">
+  <a href="#input-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Input Files and Expected Outputs
+        Input files
       
     </span>
   </a>
@@ -4010,11 +4004,28 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#final-release-platforms" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Final Release Platforms
+        Post-processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#particle-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particle visualization
       
     </span>
   </a>
@@ -4022,10 +4033,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pressure-post-processing" class="md-nav__link">
+  <a href="#pressure-at-sensor-1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pressure Post-Processing
+        Pressure at Sensor 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface visualization
       
     </span>
   </a>
@@ -4041,38 +4063,10 @@
   <a href="#results-and-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Results and Validation
+        Results and validation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Results and Validation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#experimental-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Experimental Reference
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preliminary-pressure-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preliminary Pressure Comparison
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4113,427 +4107,493 @@
   
 
 
-<h1 id="sloshing-tank"><strong>Sloshing Tank</strong><a class="headerlink" href="#sloshing-tank" title="Link to this heading">&para;</a></h1>
+<!--
+AI AGENTS (Codex, Claude, Copilot, Cursor, or any other LLM-based tool): STOP.
+This page is FROZEN. Do not modify, reformat, rewrite, reorder, or "fix" anything in this file,
+including typos, links, headings, numbers, code blocks, and this comment.
+Do not create a new version of this file or move its content elsewhere.
+If a task requires changing this file, stop and ask the maintainer (Bonaventura Tagliafierro) instead.
+Reading this file for reference is allowed.
+-->
+
+<h1 id="sloshing"><strong>Sloshing</strong><a class="headerlink" href="#sloshing" title="Link to this heading">&para;</a></h1>
 <p style="margin-top: -2.5em; font-size: 0.95em; color: gray;">
   Under review by Bonaventura Tagliafierro
 </p>
 
-<p>This example demonstrates sloshing in a partially filled rectangular tank, with impact loads on the walls that are of practical interest in ship, tank-truck and LNG-carrier design. In the laboratory, the tank undergoes prescribed roll motion about the centre of its bottom line. In this numerical case, the computational tank geometry remains fixed and the fluid receives time-dependent acceleration through <code>accinput</code>. The calculation uses a tank-attached, non-inertial reference frame to represent the laboratory forcing.</p>
-<p>The benchmark is supplied at <code>DualSPHysics_v6.0/examples/benchmarks/02_Sloshing</code>. The selected condition is the low-fill water experiment from <a href="#SPHERIC_10">SPHERIC Benchmark Test 10</a>, with <strong>lateral impact pressure at sensor 1 as a function of time</strong> as the comparison target. The XML and BAT are provisional until the release configuration is frozen; the preliminary pressure figure below does not establish final validation.</p>
+<p>This benchmark is a 3-D sloshing tank. A closed rectangular tank, partially filled with water, rolls periodically about a center position located at its bottom. This motion generates waves that impact the lateral wall, causing repeated impact events. The pressure at the impact point is sampled, and a final comparison is presented against the experimental data of <a href="#SPHERIC_Test10">SPHERIC Benchmark Test 10</a> (the specific cases used here corresponds to "lateral impact, water, 1X tank").</p>
+<p>The case is supplied in <code>examples/benchmarks/02_Sloshing</code>. This page explains its configuration in detail, and in particular how the effects of the tank motion is imparted to th fluid simulation.</p>
 <div class="admonition abstract">
 <p class="admonition-title">What's Covered in This Tutorial</p>
-<p>This case demonstrates the following DualSPHysics capabilities:</p>
 <ul>
-<li>A finite-width, 3-D partially filled tank built using <code>drawbox</code> and <code>fillbox</code></li>
-<li>Fixed computational boundaries with prescribed fluid acceleration from a CSV file</li>
-<li>mDBC boundary treatment with the selected slip and no-penetration settings</li>
-<li>Pressure interpolation at the experimental lateral sensor location</li>
-<li>A comparison workflow using the selected SPHERIC water-pressure history</li>
+<li>Imposing the motion of a tank as <strong>accelerations in the tank frame</strong> (<code>accinputs</code>)</li>
+<li>Placing the <strong>particle lattice</strong> and the <strong>hdp</strong> geometry for a tank for mDBC</li>
+<li>MeasureTool <strong>pressure</strong> at a wall sensor, and comparison with the experiment</li>
 </ul>
 </div>
-<p><strong>Video: To be updated for the approved benchmark configuration.</strong></p>
-<h2 id="case-configuration">Case Configuration<a class="headerlink" href="#case-configuration" title="Link to this heading">&para;</a></h2>
-<h3 id="physical-setup">Physical Setup<a class="headerlink" href="#physical-setup" title="Link to this heading">&para;</a></h3>
-<p>The nominal geometry and initial water filling are:</p>
+<p><strong>Video: To be updated.</strong></p>
+<h2 id="case-configuration">Case configuration<a class="headerlink" href="#case-configuration" title="Link to this heading">&para;</a></h2>
+<h3 id="physical-setup">Physical setup<a class="headerlink" href="#physical-setup" title="Link to this heading">&para;</a></h3>
+<figure id="fig-setup" style="text-align: center;">
+  <a href="../../assets/images/benchmarks/sloshing/sloshing_setup.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/sloshing/sloshing_setup.svg" alt="Side view of the sloshing tank." style="width: 100%; max-width: 1100px; height: auto;">
+  </a>
+  <figcaption><strong>Figure 1:</strong> Side view of the tank. Dimensions in meters.</figcaption>
+</figure>
+
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Dimensions [m]</th>
+<th>Position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tank</td>
+<td>0.900 × 0.062 × 0.508</td>
+<td>centered on <span class="arithmatex">\(x=0\)</span> and <span class="arithmatex">\(y=0\)</span>, floor at <span class="arithmatex">\(z=0\)</span></td>
+</tr>
+<tr>
+<td>Water</td>
+<td>depth 0.093 (18% filling)</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Rotation axis</td>
+<td></td>
+<td>along <span class="arithmatex">\(y\)</span>, at the center of the bottom <span class="arithmatex">\((0, 0, 0)\)</span></td>
+</tr>
+<tr>
+<td>Sensor 1</td>
+<td></td>
+<td>on the left wall, at <span class="arithmatex">\(z=0.093\)</span></td>
+</tr>
+<tr>
+<td>Particle spacing</td>
+<td><span class="arithmatex">\(Dp = 0.002\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For this test, the tank rolls with a period of 1.630 s, that is 0.85 times the first sloshing period of the water level (1.919 s); the motion amplitude is about 4° as  measured in the experiment. The water is labeled <code>mkfluid=0</code>, and the tank <code>mkbound=0</code>.</p>
+<h3 id="physical-constants">Physical constants<a class="headerlink" href="#physical-constants" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;constantsdef&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;gravity</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-9.81&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gravitational acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;rhop0</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;998&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reference density of the fluid&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;rhopgradient</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial density gradient 1:Rhop0, 2:Water column, 3:Max. water height (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;hswl</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum still water level to calculate speedofsound using coefsound&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Polytropic constant for water used in the state equation&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;speedsystem</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum system speed (by default the dam-break propagation is used)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&lt;coefsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply speedsystem&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;speedsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Speed of sound to use in the simulation (by default speedofsound=coefsound*speedsystem)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;coefh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.30&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate the smoothing length (h=coefh*sqrt(3*dp^2) in 3D)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;cflnumber</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply dt&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">&lt;/constantsdef&gt;</span>
+</span></code></pre></div>
+<p><strong>Fluid</strong>: water with reference density 998 kg/m³, as in the experiment. <code>rhopgradient=2</code> indicates that the water is initialized with a hydrostatic density profile computed from the maximum water height. The gravity defined here is not applied to the water phase, as we will supply it to the tank frame together with the motion (see <a href="#imposed-motion">Imposed motion</a>).</p>
+<p><strong>Speed of sound</strong>: the entries with <code>auto="true"</code> are calculated by GenCase. The still-water level <code>hswl</code> is taken from the water depth, and the system speed is the dambreak velocity taken as <span class="arithmatex">\(\sqrt{g\,h_{\mathrm{swl}}}\)</span>; the speed of sound is then computed considering the multiplier <code>coefsound</code> = 20.</p>
+<p><strong>Smoothing length</strong>: in 3D, <span class="arithmatex">\(h = \mathrm{coefh}\,\sqrt{3}\,Dp = 1.30\sqrt{3}\times0.002 = 0.0045\)</span> m. Each particle interacts with neighbors up to <span class="arithmatex">\(2h\)</span> = 4.50·Dp away. This information is used to define the number of boundary layers needed for correct simulations with mDBC and the density diffusion.</p>
+<p><strong>Time step</strong>: <code>cflnumber=0.2</code> scales the time step that the solver computes at every step, to account for the Courant condition.</p>
+<h2 id="geometry-definition">Geometry definition<a class="headerlink" href="#geometry-definition" title="Link to this heading">&para;</a></h2>
+<h3 id="real-dimensions-and-particle-spacing">Real dimensions and particle spacing<a class="headerlink" href="#real-dimensions-and-particle-spacing" title="Link to this heading">&para;</a></h3>
+<p>All dimensions are defined once, as constants in <code>case/casedef/geometry/predefinition</code>:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Dp=</span><span class="s">&quot;0.002&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Dpm=</span><span class="s">&quot;Dp/2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">waterHeight=</span><span class="s">&quot;0.093&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water level (from the floor)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">waterLength=</span><span class="s">&quot;0.900&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water column length&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeMax=</span><span class="s">&quot;8.30&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeOut=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="cm">&lt;!-- Nominal tank --&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainDown=</span><span class="s">&quot;-0.450&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainUp=</span><span class="s">&quot;0.450&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainWidthY=</span><span class="s">&quot;0.062&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainHeight=</span><span class="s">&quot;0.508&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cm">&lt;!-- Gauge positions --&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">H1x=</span><span class="s">&quot;-0.4&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><strong>Variables</strong>: <code>Dp</code> is the particle spacing, 0.002 m, and we define <code>Dpm</code> as the half spacing. The tank is described by its real limits, which go from <code>domainDown</code> to <code>domainUp</code> in <span class="arithmatex">\(x\)</span>, <code>domainWidthY</code> wide, and <code>domainHeight</code> high, with the floor at <span class="arithmatex">\(z=0\)</span>. This matches the experimental scheme and creates a convenient position for the later comparison.</p>
+<h3 id="wall-surfaces-on-the-lattice">Wall surfaces on the lattice<a class="headerlink" href="#wall-surfaces-on-the-lattice" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">&lt;!-- Real surfaces (hdp) rounded to grid faces --&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Tankpx1=</span><span class="s">&quot;domainDown&quot;</span><span class="w"> </span><span class="na">Tankpx2=</span><span class="s">&quot;domainDown+floor((domainUp-domainDown)/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Tankpy1=</span><span class="s">&quot;-domainWidthY/2&quot;</span><span class="w"> </span><span class="na">Tankpy2=</span><span class="s">&quot;Tankpy1+floor(domainWidthY/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Tankpz1=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">Tankpz2=</span><span class="s">&quot;floor(domainHeight/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">WaterLengthR=</span><span class="s">&quot;floor(waterLength/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="na">WaterHeightR=</span><span class="s">&quot;floor(waterHeight/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water represented by whole rows of particles&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><strong>Tank constants</strong>: here the <code>Tank*</code> constants are the <strong>wall surfaces</strong>, as opposed to the particle positions shown in the <a href="../dambreak_3d/">Dambreak 3D</a> benchmark. The near walls are taken at their real position, and each far wall at an integer number of spacings away from it, with the expression <code>floor(L/Dp+0.5)*Dp</code>, which rounds a length to the nearest integer number of <code>Dp</code>. The tank is 450, 31, and 254 spacings long, wide, and high, so the wall surfaces coincides with the real ones.</p>
+<p><strong>Water constants</strong>: <code>WaterLengthR</code> and <code>WaterHeightR</code> are the length and depth of the water rounded in the same way. The depth, 0.093 m, is 46.5·Dp, so it cannot be represented by an integer number of particle rows (at this resolution); <code>WaterHeightR</code> is used for the gauge H1 (see <a href="#numerical-gauges">Numerical gauges</a>).</p>
+<h3 id="the-particle-lattice">The particle lattice<a class="headerlink" href="#the-particle-lattice" title="Link to this heading">&para;</a></h3>
+<p>GenCase creates particles only at the nodes of a regular lattice (or Cartesian grid) with spacing <code>Dp</code>, initialized at <code>pointref</code>. Here <code>pointref</code> and <code>pointmin</code> are the same point, placed Dp/2 plus ten spacings outside the inner corner of the tank:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">&lt;!-- Particle grid with nodes at Dp/2 --&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PminX=</span><span class="s">&quot;Tankpx1-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="na">PminY=</span><span class="s">&quot;Tankpy1-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="na">PminZ=</span><span class="s">&quot;Tankpz1-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PmaxX=</span><span class="s">&quot;Tankpx2+Dpm+10*Dp&quot;</span><span class="w"> </span><span class="na">PmaxY=</span><span class="s">&quot;Tankpy2+Dpm+10*Dp&quot;</span><span class="w"> </span><span class="na">PmaxZ=</span><span class="s">&quot;Tankpz2+Dpm+20*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;definition</span><span class="w"> </span><span class="na">dp=</span><span class="s">&quot;#Dp&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;pointref</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#PminX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#PminY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#PminZ&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Origin of the particle grid: same as pointmin&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;pointmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#PminX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#PminY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#PminZ&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;pointmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#PmaxX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#PmaxY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#PmaxZ&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">&lt;/definition&gt;</span>
+</span></code></pre></div>
+<p><strong>The lattice origin</strong>: the nodes are at <code>PminX + k·Dp</code>, so every node lies at Dp/2 + k·Dp from the wall surfaces. Each wall therefore falls between two nodes, and so between the boundary particles and the fluid particles, as explained in <a href="../dambreak_3d/#from-real-geometry-to-particles">Dambreak 3D</a>. The ten extra spacings leave room for the boundary layers.</p>
+<p><strong>Generation bounds</strong>: particles can only be created and retained between <code>pointmin</code> and <code>pointmax</code>. You can imagine these bounds as the definition of the drawing area; the solver domain is set later by using instructions from <code>simulationdomain</code> (see <a href="#time-step-output-and-domain">Time step, output, and domain</a>).</p>
+<h3 id="the-wall-surface-for-mdbc-hdp">The wall surface for mDBC (hdp)<a class="headerlink" href="#the-wall-surface-for-mdbc-hdp" title="Link to this heading">&para;</a></h3>
+<p>The wall surface is drawn in its own list, <code>GeometryForNormals</code>, for the sake of clarity, and it is invoked in <code>mainlist</code> before drawing the particles:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;GeometryForNormals&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;setactive</span><span class="w"> </span><span class="na">drawpoints=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">drawshapes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&lt;setshapemode&gt;</span>actual<span class="w"> </span>|<span class="w"> </span>bound<span class="nt">&lt;/setshapemode&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;setfrdrawmode</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="cm">&lt;!-- Tank mk=0 --&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&lt;setnormalinvert</span><span class="w"> </span><span class="na">invert=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="nt">&lt;boxfill&gt;</span>all<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="nt">&lt;endpoint</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">&lt;/drawbox&gt;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">&lt;setnormalinvert</span><span class="w"> </span><span class="na">invert=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;hdp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nt">&lt;resetdraw</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="nt">&lt;/list&gt;</span>
+</span></code></pre></div>
+<p><strong>Generating shapes</strong>: the flags <code>drawpoints="0"</code> and <code>drawshapes="1"</code> make the list draw surfaces only for all the commands in the list. <code>shapeout</code>, instead, saves them as <code>SloshingAcc_hdp_Actual.vtk</code>, and <code>resetdraw</code> clears them before the particles are drawn.</p>
+<p><strong>Geometry positioning</strong>: since the <code>Tank*</code> constants are the wall surfaces, the box is drawn directly through them, without <code>layers</code> (or better using the layer at 0). <code>boxfill all</code> draws the six faces of the closed tank, and <code>setnormalinvert invert="true"</code> reverses the direction of the normal to this surface, so positive values for the layer position are drawn outward.</p>
+<p><strong>Geometry function</strong>: the geometry is used to generate normal vectors for the boundary particles, and then used for the internal computation by mDBC.</p>
+<h3 id="drawing-particles">Drawing particles<a class="headerlink" href="#drawing-particles" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">&lt;!-- Particle generation --&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">&lt;setactive</span><span class="w"> </span><span class="na">drawpoints=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">drawshapes=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">&lt;setshapemode&gt;</span>actual<span class="w"> </span>|<span class="w"> </span>bound<span class="nt">&lt;/setshapemode&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">&lt;setdrawmode</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;full&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h4 id="tank-boundaries">Tank boundaries<a class="headerlink" href="#tank-boundaries" title="Link to this heading">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">&lt;!-- Tank mk=0 --&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>all<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx1-Dpm&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1-Dpm&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz1-Dpm&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">&lt;endpoint</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx2+Dpm&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy2+Dpm&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz2+Dpm&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;0,1,2,3,4,5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nt">&lt;/drawbox&gt;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;tank&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><strong>Tank</strong>: <code>setmkbound</code> makes the next particles boundary. The box is the wall surface moved Dp/2 outwards, so that it passes through the first boundary layer. <code>boxfill all</code> tells the command <code>drawbox</code> to draw all six faces of the closed tank. With the instruction <code>layers vdp="0,1,2,3,4,5"</code>, the command adds six layers, one spacing apart, outwards from the box faces. Six layers reach 6.0·Dp behind the wall, which covers the 2h = 4.50·Dp reach of a fluid particle positioned at Dp/2 in front of it.</p>
+<figure id="fig-corner" style="text-align: center;">
+  <a href="../../assets/images/benchmarks/sloshing/sloshing_corner.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/sloshing/sloshing_corner.svg" alt="Corner of the tank." style="width: 100%; max-width: 950px; height: auto;">
+  </a>
+  <figcaption><strong>Figure 2:</strong> Detailed view of the tank corner; the wall surface ($hdp$) is the real wall, and the particle box (dashed) is drawn Dp/2 outside it.</figcaption>
+</figure>
+
+<h4 id="water">Water<a class="headerlink" href="#water" title="Link to this heading">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">&lt;!-- Fluid --&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">&lt;setmkfluid</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">&lt;fillbox</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx1+Dpm+5*Dp&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1+Dpm+5*Dp&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz1+Dpm+2*Dp&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&lt;modefill&gt;</span>void<span class="nt">&lt;/modefill&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#domainDown-2*Dp&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1-Dp&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz1-Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#waterLength+4*Dp&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#domainWidthY+2*Dp&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#waterHeight&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="nt">&lt;/fillbox&gt;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">reset=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><strong>Water</strong>: <code>setmkfluid</code> makes the next drawn particles fluid. <code>fillbox</code> with <code>modefill=void</code> fills the empty nodes connected to the seed point, inside the box.</p>
+<p><strong>Fill limits</strong>: the box starts beyond the first boundary layer, whose nodes are already occupied by the tank, so the first fluid particle is exactly Dp/2 away from the walls and the floor. The box ends at <span class="arithmatex">\(z\)</span> = 0.091 m, so the top particle row is at 0.091 m, and the free surface at 0.092 m: the represented depth is half a spacing lower than the real one, which is 46.5·Dp.</p>
+<h3 id="boundary-normals">Boundary normals<a class="headerlink" href="#boundary-normals" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;normals&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&lt;distanceh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance (H*distanceh) to compute normals data (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&lt;geometryfile</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;[CaseName]_hdp_Actual.vtk&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;File with boundary geometry (VTK format). Use NONE to ignore it.&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">&lt;/normals&gt;</span>
+</span></code></pre></div>
+<p>GenCase reads <code>SloshingAcc_hdp_Actual.vtk</code>, and computes a normal for every boundary particle up to <span class="arithmatex">\(3h\)</span> from the surface, which includes all six layers. See the <a href="../../xml_guides/mdbc/#generating-normals-from-actual-geometry">mDBC guide</a> for how the normals are defined.</p>
+<h3 id="checking-the-generated-case">Checking the generated case<a class="headerlink" href="#checking-the-generated-case" title="Link to this heading">&para;</a></h3>
+<p>GenCase writes the initial state to <code>SloshingAcc_out/</code> before the simulation starts. Open these files in ParaView to check the case:</p>
 <ul>
-<li><strong>Tank</strong>: 0.900 m long, 0.062 m wide and 0.508 m high, closed on all faces.</li>
-<li><strong>Water column</strong>: 0.900 m long, spanning the tank width, with nominal initial water height 0.093 m.</li>
-<li><strong>Particle spacing</strong>: <span class="arithmatex">\(dp=0.002\)</span> m (2 mm).</li>
-<li><strong>Coordinates</strong>: <span class="arithmatex">\(x\)</span> is longitudinal, <span class="arithmatex">\(y\)</span> spans the tank width and <span class="arithmatex">\(z\)</span> is vertical. The origin is at the bottom centre, with the floor at <span class="arithmatex">\(z=0\)</span>.</li>
+<li><code>SloshingAcc_Fluid.vtk</code> and <code>SloshingAcc_Bound.vtk</code>: contains the fluid particles, and the six layers of the closed tank.</li>
+<li><code>SloshingAcc_hdp_Actual.vtk</code>: the six faces of the tank, halfway between the first boundary layer and the first fluid layer.</li>
+<li><code>CfgInit_Normals.vtk</code>: the boundary normals, which should all point towards the inside of the tank. See <a href="../../faq/howto/visualise_mdbc_normals/">Visualise mDBC normals</a>.</li>
 </ul>
-<p>Local fluid label <code>mkfluid=0</code> identifies the water, and local boundary label <code>mkbound=0</code> identifies the fixed tank. These are the labels used by the case definition; generated particle-marker values are not assumed here. The finite <span class="arithmatex">\(y\)</span> extent and nonzero generation width make this a <strong>3-D numerical case</strong>, even though sensor 1 and the diagnostic gauge lie in the central longitudinal plane.</p>
-<h3 id="geometry-definition">Geometry Definition<a class="headerlink" href="#geometry-definition" title="Link to this heading">&para;</a></h3>
-<h4 id="domain-setup">Domain Setup<a class="headerlink" href="#domain-setup" title="Link to this heading">&para;</a></h4>
-<p>The variables in <code>case/casedef/geometry/predefinition</code> define nominal dimensions, grid placement and run duration:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;predefinition&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Dp=</span><span class="s">&quot;0.002&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Dpm=</span><span class="s">&quot;Dp/2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">waterHeight=</span><span class="s">&quot;0.093&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water level (from the floor)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">waterLength=</span><span class="s">&quot;0.900&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water column length&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeMax=</span><span class="s">&quot;8.30&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeOut=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="cm">&lt;!-- Nominal tank --&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainDown=</span><span class="s">&quot;-0.450&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainUp=</span><span class="s">&quot;0.450&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainWidthY=</span><span class="s">&quot;0.062&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">domainHeight=</span><span class="s">&quot;0.508&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="cm">&lt;!-- Gauge positions --&gt;</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">H1x=</span><span class="s">&quot;-0.4&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="cm">&lt;!-- Real surfaces (hdp) rounded to grid faces --&gt;</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Tankpx1=</span><span class="s">&quot;domainDown&quot;</span><span class="w"> </span><span class="na">Tankpx2=</span><span class="s">&quot;domainDown+floor((domainUp-domainDown)/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Tankpy1=</span><span class="s">&quot;-domainWidthY/2&quot;</span><span class="w"> </span><span class="na">Tankpy2=</span><span class="s">&quot;Tankpy1+floor(domainWidthY/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Tankpz1=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">Tankpz2=</span><span class="s">&quot;floor(domainHeight/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">WaterLengthR=</span><span class="s">&quot;floor(waterLength/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="na">WaterHeightR=</span><span class="s">&quot;floor(waterHeight/Dp+0.5)*Dp&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water represented by whole rows of particles&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="cm">&lt;!-- Particle grid with nodes at Dp/2 --&gt;</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PminX=</span><span class="s">&quot;Tankpx1-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="na">PminY=</span><span class="s">&quot;Tankpy1-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="na">PminZ=</span><span class="s">&quot;Tankpz1-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PmaxX=</span><span class="s">&quot;Tankpx2+Dpm+10*Dp&quot;</span><span class="w"> </span><span class="na">PmaxY=</span><span class="s">&quot;Tankpy2+Dpm+10*Dp&quot;</span><span class="w"> </span><span class="na">PmaxZ=</span><span class="s">&quot;Tankpz2+Dpm+20*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nt">&lt;/predefinition&gt;</span>
+<h2 id="imposed-motion">Imposed motion<a class="headerlink" href="#imposed-motion" title="Link to this heading">&para;</a></h2>
+<p>The tank does not move in the simulation, which overall simplifies the simulationa and the post process as well. The simulation is computed in the frame of the tank, and a time-dependent acceleration field is applied to the water:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;accinputs&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&lt;accinput</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="nt">&lt;acccentre</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Center of acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="nt">&lt;globalgravity</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Global gravity enabled (1) or disabled (0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="nt">&lt;acctimesfile</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SloshingAccData.csv&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;File with linear and angular acceleration data&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">&lt;/accinput&gt;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nt">&lt;/accinputs&gt;</span>
 </span></code></pre></div>
-<p><strong>Particle spacing and grid coordinates</strong>: <code>Dp=0.002</code> and <code>Dpm=Dp/2</code> retain the resolution and half-spacing. <code>Tankpx*</code>, <code>Tankpy*</code> and <code>Tankpz*</code> describe the tank surfaces using the source's rounding expressions. Nominal limits are <span class="arithmatex">\(x=-0.450\)</span> to 0.450 m, <span class="arithmatex">\(y=-0.031\)</span> to 0.031 m and <span class="arithmatex">\(z=0\)</span> to 0.508 m. <code>WaterHeightR</code> is a separate grid-rounded reference used by the diagnostic gauge; it is not a replacement value for the <code>waterHeight</code> entry in the fluid-filling command.</p>
-<p>The particle-generation definition is:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;definition</span><span class="w"> </span><span class="na">dp=</span><span class="s">&quot;#Dp&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;pointref</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#PminX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#PminY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#PminZ&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Origin of the particle grid: same as pointmin&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;pointmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#PminX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#PminY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#PminZ&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;pointmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#PmaxX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#PmaxY&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#PmaxZ&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">&lt;/definition&gt;</span>
-</span></code></pre></div>
-<p><strong>Generation bounds</strong>: The <code>Pmin*</code> and <code>Pmax*</code> expressions provide space around the closed tank for its boundary layers. The reference point fixes the particle grid at the same origin as these generation bounds. These are GenCase drawing limits; the solver's simulation domain is configured separately below.</p>
-<h4 id="tank-boundaries">Tank Boundaries<a class="headerlink" href="#tank-boundaries" title="Link to this heading">&para;</a></h4>
-<p>The main drawing list first prepares the normal geometry and then generates particles:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">&lt;!-- Actual geometry for normals --&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;runlist</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;GeometryForNormals&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cm">&lt;!-- Particle generation --&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">&lt;setactive</span><span class="w"> </span><span class="na">drawpoints=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">drawshapes=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">&lt;setshapemode&gt;</span>actual<span class="w"> </span>|<span class="w"> </span>bound<span class="nt">&lt;/setshapemode&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">&lt;setdrawmode</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;full&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="cm">&lt;!-- Tank mk=0 --&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nt">&lt;drawbox&gt;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>all<span class="nt">&lt;/boxfill&gt;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx1-Dpm&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1-Dpm&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz1-Dpm&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">&lt;endpoint</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx2+Dpm&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy2+Dpm&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz2+Dpm&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;0,1,2,3,4,5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nt">&lt;/drawbox&gt;</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;tank&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span></code></pre></div>
-<p><strong>Boundary marker</strong>: <code>setmkbound mk="0"</code> selects local boundary label 0 for the tank.</p>
-<p><strong>Closed surfaces</strong>: <code>boxfill=all</code> creates all six faces: floor, roof and four walls. The particle-drawing box uses half-spacing offsets around the nominal surfaces and the exact layer list <code>0,1,2,3,4,5</code>. <code>shapeout file="tank"</code> exports the tank shape for inspection.</p>
-<p>The <code>GeometryForNormals</code> list called above is:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;GeometryForNormals&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;setactive</span><span class="w"> </span><span class="na">drawpoints=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">drawshapes=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&lt;setshapemode&gt;</span>actual<span class="w"> </span>|<span class="w"> </span>bound<span class="nt">&lt;/setshapemode&gt;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&lt;setfrdrawmode</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="cm">&lt;!-- Tank mk=0 --&gt;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&lt;setnormalinvert</span><span class="w"> </span><span class="na">invert=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&lt;drawbox&gt;</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">&lt;boxfill&gt;</span>all<span class="nt">&lt;/boxfill&gt;</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nt">&lt;endpoint</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">&lt;/drawbox&gt;</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="nt">&lt;setnormalinvert</span><span class="w"> </span><span class="na">invert=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;hdp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nt">&lt;resetdraw</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="nt">&lt;/list&gt;</span>
-</span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;normals&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;distanceh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance (H*distanceh) to compute normals data (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;geometryfile</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;[CaseName]_hdp_Actual.vtk&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;File with boundary geometry (VTK format). Use NONE to ignore it.&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;/normals&gt;</span>
-</span></code></pre></div>
-<p>This pass draws shapes with particle generation disabled, uses inverted normals for the interior of the tank and exports the <code>hdp</code> geometry. The normal calculation references <code>[CaseName]_hdp_Actual.vtk</code> and a maximum distance of <span class="arithmatex">\(3h\)</span>. <code>[CaseName]</code> is the source's preprocessing placeholder. The geometry and its boundaries remain fixed throughout this numerical case.</p>
-<h4 id="water-column">Water Column<a class="headerlink" href="#water-column" title="Link to this heading">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;setmkfluid</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">&lt;fillbox</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Tankpx1+Dpm+5*Dp&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1+Dpm+5*Dp&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz1+Dpm+2*Dp&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&lt;modefill&gt;</span>void<span class="nt">&lt;/modefill&gt;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#domainDown-2*Dp&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1-Dp&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Tankpz1-Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&lt;size</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#waterLength+4*Dp&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#domainWidthY+2*Dp&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#waterHeight&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nt">&lt;/fillbox&gt;</span>
-</span></code></pre></div>
-<p><strong>Marker assignment</strong>: <code>setmkfluid mk="0"</code> selects the water for this filling operation and for the acceleration input described below.</p>
-<p><strong>Void fill mode</strong>: <code>modefill=void</code> fills the available region from a seed point inside the tank. The seed coordinates are defined relative to the tank surfaces, <code>Dpm</code> and <code>Dp</code>; the filling-box point and size retain the source's particle-grid allowances.</p>
-<p><strong>Initial filling</strong>: <code>waterHeight=0.093</code> m specifies the nominal low-fill condition. The actual particle locations follow the displayed filling bounds and lattice. No imposed initial velocity, floating-body or prescribed boundary-motion block is configured.</p>
-<p>The physical and numerical scales are supplied by:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;constantsdef&gt;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&lt;gravity</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-9.81&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gravitational acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;rhop0</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;998&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reference density of the fluid&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&lt;rhopgradient</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial density gradient 1:Rhop0, 2:Water column, 3:Max. water height (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&lt;hswl</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum still water level to calculate speedofsound using coefsound&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Polytropic constant for water used in the state equation&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&lt;speedsystem</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum system speed (by default the dam-break propagation is used)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">&lt;coefsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply speedsystem&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">&lt;speedsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Speed of sound to use in the simulation (by default speedofsound=coefsound*speedsystem)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">&lt;coefh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.30&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate the smoothing length (h=coefh*sqrt(3*dp^2) in 3D)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">&lt;cflnumber</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply dt&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="nt">&lt;/constantsdef&gt;</span>
-</span></code></pre></div>
-<p>The reference water density is 998 kg/m³ and the configured gravity vector is <span class="arithmatex">\((0,0,-9.81)\)</span> m/s². <code>rhopgradient=3</code> selects the initial density gradient based on maximum water height. Entries with <code>auto="true"</code> request calculated values; <code>coefsound=20</code>, <code>coefh=1.30</code>, <code>gamma=7</code> and <code>cflnumber=0.2</code> retain the case's chosen scales. Gravity is also accounted for in the prescribed acceleration history, as explained next.</p>
-<h3 id="acceleration-input">Acceleration Input<a class="headerlink" href="#acceleration-input" title="Link to this heading">&para;</a></h3>
-<p>The forcing is defined under <code>case/execution/special</code>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;accinputs&gt;</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&lt;accinput</span><span class="w"> </span><span class="na">mkfluid=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="nt">&lt;acccentre</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Center of acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="nt">&lt;globalgravity</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Global gravity enabled (1) or disabled (0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">&lt;acctimesfile</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SloshingAccData.csv&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;File with linear and angular acceleration data&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">&lt;/accinput&gt;</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nt">&lt;/accinputs&gt;</span>
-</span></code></pre></div>
-<p><strong>Selected fluid and acceleration centre</strong>: <code>accinput mkfluid="0"</code> applies the prescribed acceleration to the water. The centre is <span class="arithmatex">\((0,0,0)\)</span>, at the bottom centre of the tank. The physical laboratory motion is represented in this reference frame while the computational boundary particles stay fixed.</p>
-<p><strong>Gravity treatment</strong>: <code>globalgravity=0</code> disables adding the ordinary global-gravity contribution to the selected fluid on top of the input acceleration. It does <strong>not</strong> mean gravity is physically absent. The CSV's linear components already contain the gravity projections in the tank frame; its initial vertical component is −9.81 m/s².</p>
-<p><strong>Reference-frame acceleration</strong>: The input implementation accounts for prescribed linear acceleration and the applicable angular-acceleration, rotation-rate and Coriolis terms about the specified centre. It obtains velocity histories from the supplied accelerations for these calculations. This describes the configured forcing mechanism, rather than an accuracy equivalence with another numerical formulation.</p>
-<h4 id="acceleration-history">Acceleration History<a class="headerlink" href="#acceleration-history" title="Link to this heading">&para;</a></h4>
-<p><code>SloshingAccData.csv</code> contains a semicolon-separated header and 167,001 numerical records, covering 0–8.35 s. The simulation uses the interval up to its configured end at 8.30 s. The file begins:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>#Time;LinearAccX;LinearAccY;LinearAccZ;AngularAccX;AngularAccY;AngularAccZ
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>0;-0;0;-9.81;0;0.312057592;0
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>5e-05;-3.82749831e-09;0;-9.81;0;0.312275881;0
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>0.0001;-1.53135626e-08;0;-9.81;0;0.312494169;0
-</span></code></pre></div>
+<figure id="fig-frame" style="text-align: center;">
+  <a href="../../assets/images/benchmarks/sloshing/sloshing_frame.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/sloshing/sloshing_frame.svg" alt="Laboratory frame and tank frame." style="width: 100%; max-width: 700px; height: auto;">
+  </a>
+  <figcaption><strong>Figure 3:</strong> The rolling tank in the laboratory (a, top), and the same instant in the tank frame (b, bottom). The roll angle is exaggerated for clarity.</figcaption>
+</figure>
+
+<p><strong>Accelerations on the water</strong>: <code>accinput</code> applies the accelerations of the file <code>SloshingAccData.csv</code> to the fluid with <code>mkfluid=0</code>. The angular acceleration acts about <code>acccentre</code>, which corresponds to the rotation axis at the center of the tank bottom.</p>
+<p><strong>Gravity in the tank frame</strong>: in the frame of the tank, gravity turns with the roll angle <span class="arithmatex">\(\varphi\)</span> (Figure 3). The file therefore contains gravity in the tank frame, <span class="arithmatex">\((-g\sin\varphi,\ 0,\ -g\cos\varphi)\)</span>, as linear acceleration, and <code>globalgravity=0</code> switches off the gravity of <code>&lt;constantsdef&gt;</code>, which would otherwise be applied twice.</p>
+<p><strong>The acceleration file</strong>: <code>SloshingAccData.csv</code> has one row every 5·10⁻⁵ s, from 0 to 8.35 s, with the columns:</p>
 <table>
 <thead>
 <tr>
 <th>Column</th>
-<th>Quantity</th>
-<th>Units</th>
+<th>Content</th>
+<th>Unit</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Time</code></td>
-<td>Time in the prescribed history</td>
+<td>time</td>
 <td>s</td>
 </tr>
 <tr>
 <td><code>LinearAccX</code>, <code>LinearAccY</code>, <code>LinearAccZ</code></td>
-<td>Linear acceleration components in the computational frame</td>
+<td>gravity in the tank frame</td>
 <td>m/s²</td>
 </tr>
 <tr>
 <td><code>AngularAccX</code>, <code>AngularAccY</code>, <code>AngularAccZ</code></td>
-<td>Angular acceleration components</td>
+<td>roll acceleration, about <span class="arithmatex">\(y\)</span> only</td>
 <td>rad/s²</td>
 </tr>
 </tbody>
 </table>
-<p>The supplied history has nonzero linear <span class="arithmatex">\(x/z\)</span> and angular <span class="arithmatex">\(y\)</span> components; linear <span class="arithmatex">\(y\)</span> and angular <span class="arithmatex">\(x/z\)</span> are zero. Its times match <code>reference/SPHERIC_TestCase10/data_files/lateral_water_1x.txt</code>. Angular <span class="arithmatex">\(y\)</span> acceleration corresponds to the experimental angular acceleration converted from degrees/s² to radians/s². The linear <span class="arithmatex">\(x/z\)</span> components correspond to gravity projected using the reference's smoothed angle history. Keep the supplied CSV alongside the XML; the calculation reads it as the prescribed input rather than generating a motion history from the XML.</p>
-<h2 id="numerical-parameters">Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Link to this heading">&para;</a></h2>
-<h3 id="boundary-treatment">Boundary Treatment<a class="headerlink" href="#boundary-treatment" title="Link to this heading">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Boundary&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;mDBC&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SlipMode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;V0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;NoPenetration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Activate No-Penetration option for mDBC: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p>The roll acceleration is the one measured in the experiment, and the angle used for gravity is the measured roll angle, so the simulation follows the experimental record with the same time origin.</p>
+<h2 id="numerical-gauges">Numerical gauges<a class="headerlink" href="#numerical-gauges" title="Link to this heading">&para;</a></h2>
+<p>One runtime gauge records the water level close to the left wall:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&lt;gauges&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nt">&lt;default&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">        </span><span class="nt">&lt;savevtkpart</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Creates VTK files for each PART (default=false)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="nt">&lt;computedt</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time between measurements. 0:all steps (default=TimeOut)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Creates CSV files of measurements (default=false)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="nt">&lt;outputdt</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time between output measurements. 0:all steps (default=TimeOut)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nt">&lt;/default&gt;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="nt">&lt;swl</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;H1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="nt">&lt;pointdp</span><span class="w"> </span><span class="na">coefdp=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Distance between check points (value=coefdp*dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="nt">&lt;point0</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#H1x&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#WaterHeightR-10*Dp&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial point&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="nt">&lt;point2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#H1x&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#WaterHeightR+10*Dp&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Final point&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="nt">&lt;/swl&gt;</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nt">&lt;/gauges&gt;</span>
 </span></code></pre></div>
-<p>This benchmark selects mDBC, <code>SlipMode=V0</code> (zero tangential velocity) and <code>NoPenetration=Y</code> for the fixed tank. These are the choices made by this XML, rather than a statement about the built-in default of every executable.</p>
-<h3 id="time-integration">Time Integration<a class="headerlink" href="#time-integration" title="Link to this heading">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;StepAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SYM&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Step Algorithm: SYM:Symplectic, VER:Verlet (default=SYM)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;VerletSteps&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Verlet only: Number of steps to apply Euler timestepping (default=40)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p><strong>SWL gauge</strong>: it checks sequentially all points along a line, from <code>point0</code> to <code>point2</code>, and returns the position when it identifies the free surface, which corresponds to the topmost position of fluid.</p>
+<p><strong>Settings</strong>: the check points are 0.05·Dp apart. The gauge is evaluated and written to a CSV file every 0.01 s (<code>computedt</code> and <code>outputdt</code>).</p>
+<h2 id="numerical-parameters">Numerical parameters<a class="headerlink" href="#numerical-parameters" title="Link to this heading">&para;</a></h2>
+<p>All parameters are set in <code>case/execution/parameters</code>.</p>
+<h3 id="boundary-formulation-and-time-integration">Boundary formulation and time integration<a class="headerlink" href="#boundary-formulation-and-time-integration" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Boundary&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;mDBC&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Boundary method: DBC, mDBC, MIX:MixBC (default=DBC)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SlipMode&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;V0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Slip mode for mDBC: NS:No-slip, FS:Free slip, V0:TanVel=0, M22:mDBC 2022 (default=NS)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;NoPenetration&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Activate No-Penetration option for mDBC: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;StepAlgorithm&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;SYM&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Step Algorithm: SYM:Symplectic, VER:Verlet (default=SYM)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Kernel&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;WC2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Interaction Kernel: WC2:WendlandC2, WC6:WendlandC6 (default=WC2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CoefDtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtIni&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#2*Dp/1500&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial time step. Use 0 to default use (default=h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum time step. Use 0 to default use (default=coefdtmin*h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixed&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fixed Dt value. Use 0 to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtFixedFile&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NONE&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Dt values are loaded from file. Use NONE to disable (default=disabled)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;milliseconds (ms)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtAllParticles&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Velocity of all the particles is used to calculate DT. Y:All, N:Only fluid/floating (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p>The walls use <strong>mDBC</strong> with zero tangential velocity on the boundary particles (<code>V0</code>), and the <strong>no-penetration</strong> option, which prevents fluid particles from crossing the walls during the impacts. The time integration uses the <strong>symplectic</strong> scheme, and the kernel is Wendland C2.</p>
+<h3 id="viscosity">Viscosity<a class="headerlink" href="#viscosity" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;ART&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation: LAM:Laminar, ART:Artificial (default=LAM)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Visco&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#1e-6*10/(CoefSound*H)&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoBoundFactor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Multiply viscosity value with boundary (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<p><strong>Symplectic integration</strong> is selected by <code>SYM</code>. <code>VerletSteps=40</code> is a Verlet-only companion setting and does not control this selected scheme. <code>CoefDtMin=0.001</code> supplies the minimum-step coefficient when the default minimum is used. The source expression for <code>DtIni</code> is retained, and fixed time stepping is disabled by <code>DtFixed=0</code> and <code>DtFixedFile=NONE</code>.</p>
-<h3 id="kernel-and-viscosity">Kernel and Viscosity<a class="headerlink" href="#kernel-and-viscosity" title="Link to this heading">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Kernel&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;WC2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Interaction Kernel: WC2:WendlandC2, WC6:WendlandC6 (default=WC2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoTreatment&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;ART&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity formulation: LAM:Laminar, ART:Artificial (default=LAM)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Visco&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#1e-6*10/(CoefSound*H)&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ViscoBoundFactor&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Multiply viscosity value with boundary (default=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Turbulence&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Turbulence model: NO:None, SPS:Sub-particle scale (default=NO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p><strong>Viscosity</strong>: artificial viscosity, with the coefficient computed from the kinematic viscosity of water, 10⁻⁶ m²/s, using <code>CoefSound</code> and the smoothing length <code>H</code> from <code>&lt;constantsdef&gt;</code>. With the values of this case, it evaluates to <span class="arithmatex">\(\alpha = 1.1\times10^{-4}\)</span>. <code>ViscoBoundFactor=1</code> applies the same viscosity between fluid and walls.</p>
+<h3 id="density-diffusion-and-shifting">Density diffusion and shifting<a class="headerlink" href="#density-diffusion-and-shifting" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=NO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.10&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Shifting&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Shifting mode 0:None, 1:Ignore bound, 2:Ignore fixed, 3:Full, 4:Full advanced (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for standard shifting computation (default=-2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftTFS&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.75&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<ul>
-<li><strong>Wendland C2</strong> (<code>WC2</code>) is used for particle interactions.</li>
-<li><strong>Artificial viscosity</strong> (<code>ART</code>) uses the expression <code>#1e-6*10/(CoefSound*H)</code>, evaluated during case preparation. The expression is retained verbatim; no generated coefficient is assumed.</li>
-<li><strong>Boundary viscosity factor</strong> is 1.</li>
-<li><strong>Turbulence model</strong> is <code>NO</code>.</li>
-</ul>
-<h3 id="density-diffusion-and-shifting">Density Diffusion and Shifting<a class="headerlink" href="#density-diffusion-and-shifting" title="Link to this heading">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=NO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.10&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DivCleanKp&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Divergence cleaning local speed of sound factor (0:Inactive, &gt;0:Active)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p><strong>Density diffusion</strong>: the Fourtakas formulation with coefficient 0.10 smooths the pressure field.</p>
+<p><strong>Shifting</strong>: standard shifting, ignoring the boundary particles, with the 3-D free-surface threshold 2.75.</p>
+<h3 id="time-step-output-and-domain">Time step, output, and domain<a class="headerlink" href="#time-step-output-and-domain" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CoefDtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtIni&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#2*Dp/1500&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial time step. Use 0 to default use (default=h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#timeMax&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time of simulation&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#timeOut&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time out data&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;700&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum density valid (default=700)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1300&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum density valid (default=1300)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Shifting&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Shifting mode 0:None, 1:Ignore bound, 2:Ignore fixed, 3:Full, 4:Full advanced (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for standard shifting computation (default=-2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftTFS&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.75&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvCoef&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;-0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient for advanced shifting computation (default=-0.01)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvALE&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;ALE formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;ShiftAdvNCPress&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Non conservative pressure formulation for advanced shifting: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;simulationdomain</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nt">&lt;/simulationdomain&gt;</span>
 </span></code></pre></div>
-<p><code>FO</code> selects Fourtakas density diffusion with coefficient 0.10; see <a href="#Fourtakas_2019">Fourtakas et al. (2019)</a>. The case uses standard shifting mode 1, labelled “Ignore bound”, with <code>ShiftCoef=-2</code> and <code>ShiftTFS=2.75</code>. The <code>ShiftAdv*</code> entries are companion parameters for advanced shifting, which is not selected. <code>DivCleanKp=0</code> leaves divergence cleaning inactive.</p>
-<h3 id="simulation-domain">Simulation Domain<a class="headerlink" href="#simulation-domain" title="Link to this heading">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;simulationdomain</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&lt;posmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;e.g.: x=0.5, y=default-1, z=default-10%&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&lt;posmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nt">&lt;/simulationdomain&gt;</span>
-</span></code></pre></div>
-<p>The solver uses the bounds derived from the generated particles. No explicit zero-width <span class="arithmatex">\(y\)</span> domain is set: the finite-width tank is represented in three dimensions and stays fixed in the computational frame.</p>
-<h3 id="simulation-time-and-output">Simulation Time and Output<a class="headerlink" href="#simulation-time-and-output" title="Link to this heading">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SavePosDouble&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Saves particle position using double precision: Y/N (default=N)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;SaveExtraParts&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Part interval or list for saving extra data for restart option (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#timeMax&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time of simulation&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#timeOut&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time out data&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeOutExtra&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;700&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum density valid (default=700)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RhopOutMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1300&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum density valid (default=1300)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;WrnPartsOut&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Active warning according to number of out particles: Y/N (default=Y)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;MinFluidStop&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Minimum proportion of initial fluid particles to continue the simulation 0:Never stops, 0.1:Stops when fluid drops to 10%. (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span></code></pre></div>
-<p><code>#timeMax</code> and <code>#timeOut</code> evaluate to 8.30 s and 0.01 s. Positions are saved with double precision. The source also supplies <code>TimeOutExtra=0.05</code> and separately sets <code>SaveExtraParts=0</code>; these entries do not replace the main output interval. The valid density range is 700–1300 kg/m³, particle-loss warnings are enabled and <code>MinFluidStop=0</code> disables stopping at a specified remaining-fluid proportion. The floating-body settings in the source do not introduce a moving tank or a floating object into this case.</p>
-<h3 id="diagnostic-water-level-gauge">Diagnostic Water-Level Gauge<a class="headerlink" href="#diagnostic-water-level-gauge" title="Link to this heading">&para;</a></h3>
-<p>The XML defines one additional SWL diagnostic, H1:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">&lt;gauges&gt;</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nt">&lt;default&gt;</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span><span class="nt">&lt;savevtkpart</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Creates VTK files for each PART (default=false)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span><span class="nt">&lt;computedt</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time between measurements. 0:all steps (default=TimeOut)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Creates CSV files of measurements (default=false)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="nt">&lt;outputdt</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time between output measurements. 0:all steps (default=TimeOut)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;s&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="nt">&lt;/default&gt;</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="nt">&lt;swl</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;H1&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">        </span><span class="nt">&lt;pointdp</span><span class="w"> </span><span class="na">coefdp=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Distance between check points (value=coefdp*dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">        </span><span class="nt">&lt;point0</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#H1x&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#WaterHeightR-10*Dp&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial point&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">        </span><span class="nt">&lt;point2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#H1x&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#WaterHeightR+10*Dp&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Final point&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="nt">&lt;/swl&gt;</span>
-</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="nt">&lt;/gauges&gt;</span>
-</span></code></pre></div>
-<p>It samples a vertical line at <span class="arithmatex">\(x=-0.4\)</span> m, <span class="arithmatex">\(y=0\)</span>, centred on <code>WaterHeightR</code>. The defined rounding gives <code>WaterHeightR=0.094</code> m, so its endpoints are <span class="arithmatex">\(z=0.074\)</span> and 0.114 m, with checking distance <code>0.05×Dp=0.0001</code> m. Computation and CSV output are requested every 0.01 s, with per-PART VTK output disabled. This is a diagnostic of the numerical flow; the agreed experimental comparison remains lateral pressure at sensor 1.</p>
-<p>General XML organisation and parameter syntax are covered by the <a href="../../xml_guides/general/">XML Configuration guide</a>.</p>
-<h2 id="running-the-simulation">Running the Simulation<a class="headerlink" href="#running-the-simulation" title="Link to this heading">&para;</a></h2>
-<h3 id="input-files-and-expected-outputs">Input Files and Expected Outputs<a class="headerlink" href="#input-files-and-expected-outputs" title="Link to this heading">&para;</a></h3>
+<p><strong>Duration and output</strong>: the simulation runs for 8.30 s, covering the first four impacts, and saves the particles every 0.01 s, in double precision (<code>SavePosDouble=Y</code>).</p>
+<p><strong>Time step</strong>: is computed automatically at every step. <code>DtIni</code> sets the initial time step to 2·Dp/1500, and <code>CoefDtMin=0.001</code> sets the minimum value.</p>
+<p><strong>Excluded particles</strong>: a fluid particle whose density leaves the range 700–1300 kg/m³ is removed from the simulation, with a warning.</p>
+<p><strong>Domain</strong>: <code>default</code> determines the solver domain as the box around all the generated particles. The tank is fixed and closed, so the default limits will never be exceeded.</p>
+<h2 id="running-the-simulation">Running the simulation<a class="headerlink" href="#running-the-simulation" title="Link to this heading">&para;</a></h2>
+<h3 id="input-files">Input files<a class="headerlink" href="#input-files" title="Link to this heading">&para;</a></h3>
+<p>Work in <code>examples/benchmarks/02_Sloshing/</code>:</p>
 <table>
 <thead>
 <tr>
-<th>Source</th>
+<th>File</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>SloshingAcc_Def.xml</code></td>
-<td>Fixed tank geometry, prescribed fluid acceleration, diagnostic gauge and numerical settings.</td>
+<td>Case definition, read by GenCase</td>
 </tr>
 <tr>
 <td><code>SloshingAccData.csv</code></td>
-<td>Linear and angular acceleration history read by the solver.</td>
+<td>Accelerations of the tank frame, read by DualSPHysics</td>
 </tr>
 <tr>
 <td><code>wSloshingAcc_win64_GPU.bat</code></td>
-<td>Current Windows GPU preparation, execution and pressure post-processing sequence.</td>
+<td>Windows: GenCase, GPU simulation, and post-processing</td>
 </tr>
 <tr>
-<td><code>reference/SPHERIC_TestCase10/data_files/lateral_water_1x.txt</code></td>
-<td>Selected experimental pressure and laboratory motion history.</td>
-</tr>
-<tr>
-<td><code>reference/SPHERIC_TestCase10/SOUTOIGLESIAS_BOTIA_SPHERIC_TESTCASE10_IMPACT_PRESSURE.pdf</code></td>
-<td>Experimental tank, sensor and test-condition description.</td>
+<td><code>reference/SPHERIC_TestCase10/</code></td>
+<td>Test description, experimental data, and repeatability files</td>
 </tr>
 </tbody>
 </table>
-<p>The script uses the following output structure:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>SloshingAcc_out/
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>├── data/   Solver data supplied to the measurement tool
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>└── measure/   MeasureTool pressure-output prefix
-</span></code></pre></div>
-<p>GenCase and the solver also use <code>SloshingAcc_out/</code> itself. Existing numerical output is available, but output availability is distinct from successful completion and scientific validation of the current configuration.</p>
+<p>If <code>SloshingAcc_out/</code> already exists, the script offers to delete it and run again, to run only the post-processing, or to stop. The first option removes the existing results.</p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Link to this heading">&para;</a></h3>
-<p>From the benchmark folder, the current GPU script is <code>wSloshingAcc_win64_GPU.bat</code>. Its case and selected executable assignments are:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">rem Defines the case name and output directories.</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">set</span> <span class="nv">name</span><span class="p">=</span>SloshingAcc
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">set</span> <span class="nv">dirout</span><span class="p">=</span><span class="nv">%name%</span>_out
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">set</span> <span class="nv">diroutdata</span><span class="p">=</span><span class="nv">%dirout%</span>\data
+<p>From the case folder, run <code>wSloshingAcc_win64_GPU.bat</code>. Its main lines are:</p>
+<div class="highlight"><span class="filename">wSloshingAcc_win64_GPU.bat</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">set</span> <span class="nv">name</span><span class="p">=</span>SloshingAcc
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">set</span> <span class="nv">dirout</span><span class="p">=</span><span class="nv">%name%</span>_out
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">set</span> <span class="nv">diroutdata</span><span class="p">=</span><span class="nv">%dirout%</span>\data
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">set</span> <span class="nv">dirbin</span><span class="p">=</span>../../../bin/windows
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">set</span> <span class="nv">gencase</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/GenCase_win64.exe&quot;</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="k">set</span> <span class="nv">dualsphysicsgpu</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/DualSPHysics6.0_win64.exe&quot;</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="k">set</span> <span class="nv">partvtk</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/PartVTK_win64.exe&quot;</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="k">set</span> <span class="nv">partvtkout</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/PartVTKOut_win64.exe&quot;</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="k">set</span> <span class="nv">measuretool</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/MeasureTool_win64.exe&quot;</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="k">set</span> <span class="nv">isosurface</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/IsoSurface_win64.exe&quot;</span>
 </span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">set</span> <span class="nv">dirbin</span><span class="p">=</span>../../../bin/windows
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">set</span> <span class="nv">gencase</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/GenCase_win64.exe&quot;</span>
+<div class="highlight"><span class="filename">wSloshingAcc_win64_GPU.bat</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">rem Executes GenCase to create initial files for simulation.</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nv">%gencase%</span> <span class="nv">%name%</span>_Def <span class="nv">%dirout%</span>/<span class="nv">%name%</span> -save:all
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1">rem Executes DualSPHysics to run the SPH simulation.</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nv">%dualsphysicsgpu%</span> -gpu <span class="nv">%dirout%</span>/<span class="nv">%name%</span> <span class="nv">%dirout%</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
 </span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">set</span> <span class="nv">dualsphysicsgpu</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/DualSPHysics6.0_win64.exe&quot;</span>
+<p><strong>Pre-processing</strong>: GenCase reads <code>SloshingAcc_Def.xml</code> and writes the case to <code>SloshingAcc_out/SloshingAcc</code>. <code>-save:all</code> also saves the initial particles as VTK.</p>
+<p><strong>Simulation</strong>: the solver runs on the GPU (<code>-gpu</code>), reads <code>SloshingAccData.csv</code>, and writes its results to <code>SloshingAcc_out</code>.</p>
+<h2 id="post-processing">Post-processing<a class="headerlink" href="#post-processing" title="Link to this heading">&para;</a></h2>
+<p>The post-processing tools write their output to these folders:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>SloshingAcc_out/
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>├── data/        Solver particle data, read by the post-processing tools
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>├── particles/   PartVTK and PartVTKOut output
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>├── measure/     MeasureTool output
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>└── surface/     IsoSurface output
 </span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">set</span> <span class="nv">measuretool</span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%dirbin%</span><span class="s2">/MeasureTool_win64.exe&quot;</span>
+<h3 id="particle-visualization">Particle visualization<a class="headerlink" href="#particle-visualization" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><span class="filename">wSloshingAcc_win64_GPU.bat</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">rem Executes PartVTK to create VTK files with fluid particles.</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\particles
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nv">%partvtk%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFluid -onlytype:-all,+fluid -continue:1
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1">rem Executes PartVTKOut to create VTK files with excluded particles.</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="nv">%partvtkout%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFluidOut -SaveResume <span class="nv">%dirout2%</span>/_ResumeFluidOut
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
 </span></code></pre></div>
-<p>The active preparation and solver calls are:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1">rem Executes GenCase to create initial files for simulation.</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nv">%gencase%</span> <span class="nv">%name%</span>_Def <span class="nv">%dirout%</span>/<span class="nv">%name%</span> -save:all
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
-</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1">rem Executes DualSPHysics to run the SPH simulation.</span>
-</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="nv">%dualsphysicsgpu%</span> -gpu <span class="nv">%dirout%</span>/<span class="nv">%name%</span> <span class="nv">%dirout%</span>
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+<p><strong>PartVTK</strong>: writes the fluid particles only (<code>-onlytype:-all,+fluid</code>); <code>-continue:1</code> skips files that already exist.</p>
+<p><strong>PartVTKOut</strong>: writes the particles excluded during the run, and a summary CSV.</p>
+<h3 id="pressure-at-sensor-1">Pressure at Sensor 1<a class="headerlink" href="#pressure-at-sensor-1" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><span class="filename">wSloshingAcc_win64_GPU.bat</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">rem Executes MeasureTool to export the selected measurements to CSV files.</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\measure
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nv">%measuretool%</span> -dirdata <span class="nv">%diroutdata%</span> -pointsdef:pt=-0.450:0:0.093 -onlytype:-all,+fluid -vars:-all,+press -kcusedummy:0 -kclimit:0.01 -savecsv <span class="nv">%dirout2%</span>/Pressure
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
 </span></code></pre></div>
-<p>GenCase reads <code>SloshingAcc_Def</code> and writes the prepared case with prefix <code>SloshingAcc_out/SloshingAcc</code>. The GPU solver reads that prefix and writes to <code>SloshingAcc_out</code>. The BAT checks each return code before continuing.</p>
-<p>The existing-output menu offers deletion and rerun, post-processing only, or abort. Retain any existing results deliberately when choosing an option.</p>
-<h3 id="final-release-platforms">Final Release Platforms<a class="headerlink" href="#final-release-platforms" title="Link to this heading">&para;</a></h3>
-<p>The final package is expected to provide Windows GPU/CPU and Linux GPU/CPU execution scripts. Only the existing Windows GPU BAT is currently verified; final CPU/Linux filenames and commands remain subject to packaging confirmation.</p>
-<h3 id="pressure-post-processing">Pressure Post-Processing<a class="headerlink" href="#pressure-post-processing" title="Link to this heading">&para;</a></h3>
-<p>The active BAT sequence includes the following MeasureTool pressure calculation before the final IsoSurface export:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">:</span><span class="nl">postprocessing</span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1">rem Executes PartVTK to create VTK files with fluid particles.</span>
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\particles
-</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="nv">%partvtk%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFluid -onlytype:-all,+fluid -continue:1
-</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
-</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="c1">rem Executes PartVTKOut to create VTK files with excluded particles.</span>
-</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="nv">%partvtkout%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFluidOut -SaveResume <span class="nv">%dirout2%</span>/_ResumeFluidOut
-</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
-</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="c1">rem Executes MeasureTool to export the selected measurements to CSV files.</span>
-</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\measure
-</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="nv">%measuretool%</span> -dirdata <span class="nv">%diroutdata%</span> -pointsdef:pt=-0.450:0:0.093 -onlytype:-all,+fluid -vars:-all,+press -kcusedummy:0 -kclimit:0.01 -savecsv <span class="nv">%dirout2%</span>/Pressure
-</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+<p><strong>Measuring point</strong>: <code>-pointsdef:pt=-0.450:0:0.093</code> defines a single point at the position of Sensor 1, which is located on the wall surface, between the first boundary layer and the first fluid layer, and at the height of a particle row (Figure 4). The sensor is initially dry, so this measurement starts from atmospheric pressure, which is 0 in our simulation.</p>
+<p><strong>Fluid particles only</strong>: MeasureTool computes the pressure at the point as a kernel-weighted average of the pressure of the particles around it, within the kernel support of radius <span class="arithmatex">\(2h\)</span>. <code>-onlytype:-all,+fluid</code> restricts this average to the fluid particles, and <code>-vars:-all,+press</code> exports only the pressure.</p>
+<p><strong>Kernel correction</strong>: on the wall surface, only the fluid side of the support can contain particles, and during an impact only part of it is filled by the wave (Figure 4), so the sum of the kernel weights is well below 1. This kernel correction divides the weighted sum by the sum of the weights, which recovers the pressure of the fluid next to the wall. <code>-kclimit:0.01</code> applies the correction only where the sum of the weights is at least 0.01; when the sensor is dry, the sum is lower, and <code>-kcusedummy:0</code> writes the value without correction, close to zero, instead of a dummy value.</p>
+<p>The pressure is written in Pa to <code>measure/Pressure.csv</code>.</p>
+<figure id="fig-comparison" style="text-align: center;">
+  <a href="../../assets/images/benchmarks/sloshing/sloshing_pressure.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/sloshing/sloshing_pressure.svg" alt="Pressure at Sensor 1 against time." style="width: 100%; max-width: 900px; height: auto;">
+  </a>
+  <figcaption><strong>Figure 4:</strong> Position of Sensor 1. The reference experiment (gray line), DualSPHysics (blue). The range and mean reported for each peak correspond to repetibility test from the same experimental campaign (bars).</figcaption>
+</figure>
+
+<h3 id="surface-visualization">Surface visualization<a class="headerlink" href="#surface-visualization" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><span class="filename">wSloshingAcc_win64_GPU.bat</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">rem Executes IsoSurface to create VTK files with fluid surfaces or slices.</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\surface
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nv">%isosurface%</span> -dirdata <span class="nv">%diroutdata%</span> -saveiso <span class="nv">%dirout2%</span>/Surface
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
 </span></code></pre></div>
-<p>This is the literal MeasureTool command in the current BAT, using <code>-dirdata</code> and the <code>measure/Pressure</code> output prefix. Active PartVTK and PartVTKOut operations precede it and export fluid and excluded-particle data; the active IsoSurface stage follows it and requests a 3-D isosurface.</p>
-<p><strong>Sampling position</strong>: <code>-pointsdef:pt=-0.450:0:0.093</code> defines sensor 1 at <span class="arithmatex">\((x,y,z)=(-0.450,0,0.093)\)</span> m. It is on the left lateral wall, 93 mm above the bottom, consistent with the low-fill sensor position in Figure 1 of the SPHERIC reference. The numerical position is fixed in the computational tank frame.</p>
-<p><strong>Particle and quantity selection</strong>: <code>-onlytype:-all,+fluid</code> excludes every particle type and then includes fluid particles. <code>-vars:-all,+press</code> deselects all quantities and then requests pressure interpolation. <code>-kclimit:0.01</code> sets the minimum kernel sum <code>sum_wab_vol</code> for applying kernel correction, while <code>-kcusedummy:0</code> disables use of its dummy value when correction is not applied.</p>
-<p>The configured pressure output prefix is <code>SloshingAcc_out/measure/Pressure</code>. Verify the actual CSV headers, units and usable time extent before the final comparison.</p>
-<p>The final active surface-export block in <code>wSloshingAcc_win64_GPU.bat</code> is:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1">rem Executes IsoSurface to create VTK files with fluid surfaces or slices.</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\surface
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nv">%isosurface%</span> -dirdata <span class="nv">%diroutdata%</span> -saveiso <span class="nv">%dirout2%</span>/Surface
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span></code></pre></div>
-<p>It reads <code>%diroutdata%</code> (<code>SloshingAcc_out/data</code>) and writes the <code>surface/Surface</code> prefix under the same case output directory. The return-code check precedes <code>:success</code>; static inspection does not establish successful execution.</p>
-<h2 id="results-and-validation">Results and Validation<a class="headerlink" href="#results-and-validation" title="Link to this heading">&para;</a></h2>
-<h3 id="experimental-reference">Experimental Reference<a class="headerlink" href="#experimental-reference" title="Link to this heading">&para;</a></h3>
-<p>The selected dataset is <code>reference/SPHERIC_TestCase10/data_files/lateral_water_1x.txt</code>. It contains the following columns:</p>
+<p><strong>IsoSurface</strong>: writes the free surface at every output time to <code>surface/</code>, with the prefix <code>Surface</code>.</p>
+<h2 id="results-and-validation">Results and validation<a class="headerlink" href="#results-and-validation" title="Link to this heading">&para;</a></h2>
+<p>The experimental record is in <code>reference/SPHERIC_TestCase10/data_files/lateral_water_1x.txt</code>, with the time [s], the pressure at Sensor 1 [mbar], and the roll angle [deg]. As reported in the reference material, the time series refers to the run whose first impact is the closest to the mean of 100 experiments. The first four impacts of the record are:</p>
 <table>
 <thead>
 <tr>
-<th>Column</th>
-<th>Experimental quantity</th>
-<th>Units</th>
+<th>Impact</th>
+<th style="text-align: right;">Time [s]</th>
+<th style="text-align: right;">Pressure [mbar]</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td>Time</td>
-<td>s</td>
+<td style="text-align: right;">2.375</td>
+<td style="text-align: right;">36.8</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Lateral pressure at sensor 1</td>
-<td>mbar</td>
+<td style="text-align: right;">4.067</td>
+<td style="text-align: right;">38.9</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Smoothed roll-angle history</td>
-<td>degrees</td>
+<td style="text-align: right;">5.672</td>
+<td style="text-align: right;">26.6</td>
 </tr>
 <tr>
 <td>4</td>
-<td>Angular velocity</td>
-<td>degrees/s</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Angular acceleration</td>
-<td>degrees/s²</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Original angle history</td>
-<td>degrees</td>
+<td style="text-align: right;">7.303</td>
+<td style="text-align: right;">71.5</td>
 </tr>
 </tbody>
 </table>
-<p>The reference folder also contains other experimental conditions and repeatability peak datasets. Those peak datasets contain first-to-fourth impact values, not complete pressure histories; they are not substituted for the selected lateral-water time series.</p>
-<p>For a comparison in Pa, <strong>1 mbar = 100 Pa</strong>. Numerical and experimental quantities must use consistent units and pressure/time conventions. No arbitrary time shift or modification of the experimental data is prescribed.</p>
-<h3 id="preliminary-pressure-comparison">Preliminary Pressure Comparison<a class="headerlink" href="#preliminary-pressure-comparison" title="Link to this heading">&para;</a></h3>
-<p>Figure 1 is the updated preliminary lateral-pressure comparison, with Reference and DualSPHysics curves, superseding the earlier REF/ART/LAM alternatives. Generated metadata agrees with the inspected ART, mDBC/V0, 0.002 m spacing and 8.3 s requested duration. This does not establish PNG provenance or runtime completion; the plotted numerical curve covers only part of the displayed experimental interval.</p>
-<figure id="fig-pressure-comparison" style="text-align: center;">
-  <a href="../../assets/images/benchmarks/sloshing/02_sloshing_pressure_preliminary_20261118.png" target="_blank" rel="noopener noreferrer">
-    <img src="../../assets/images/benchmarks/sloshing/02_sloshing_pressure_preliminary_20261118.png" alt="Preliminary lateral impact pressure at sensor 1: Reference and DualSPHysics curves, with pressure in Pa and time in seconds." style="width: 100%; max-width: 1100px; height: auto;">
-  </a>
-  <figcaption><strong>Figure 1:</strong> Preliminary lateral impact pressure at sensor 1: Reference and DualSPHysics curves, with pressure in Pa and time in seconds.</figcaption>
-</figure>
-
-<p><strong>Preliminary figure. The numerical results and their comparison with the reference data are pending final verification.</strong></p>
-<p>Open the unchanged image at full resolution to inspect its labels. The definitive numerical-versus-experimental pressure comparison and the approved-configuration video remain pending.</p>
+<p><strong>Repeatability</strong>: impact pressures vary considerably from one run to the next. <code>reference/SPHERIC_TestCase10/Repeatability_Files/Water_4first_peak_lateral_impact_tto_0_85_H93_B1X.txt</code> gives the four peaks, shown in Figure 4, of 102 repeated experiments, from which:</p>
+<table>
+<thead>
+<tr>
+<th>Impact</th>
+<th style="text-align: right;">Mean [mbar]</th>
+<th style="text-align: right;">Standard deviation [mbar]</th>
+<th style="text-align: right;">Range [mbar]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: right;">37.1</td>
+<td style="text-align: right;">7.3</td>
+<td style="text-align: right;">22.1–59.3</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: right;">48.2</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">29.4–129.8</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">46.9</td>
+<td style="text-align: right;">17.1</td>
+<td style="text-align: right;">25.1–131.2</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: right;">46.4</td>
+<td style="text-align: right;">13.2</td>
+<td style="text-align: right;">24.8–104.4</td>
+</tr>
+</tbody>
+</table>
 <h2 id="references">References<a class="headerlink" href="#references" title="Link to this heading">&para;</a></h2>
-<ul>
-<li><span id="SPHERIC_10"></span><strong>SPHERIC Benchmark Test 10 – Sloshing impact pressures</strong>, coordinated by A. Souto-Iglesias and E. Botia-Vera. <a href="https://www.spheric-sph.org/tests/test-10" rel="noopener noreferrer" target="_blank">Test description and experimental data</a>. The selected local history is <code>reference/SPHERIC_TestCase10/data_files/lateral_water_1x.txt</code>.</li>
-<li><span id="Fourtakas_2019"></span>Fourtakas G, Domínguez JM, Vacondio R, Rogers BD. 2019. Local Uniform Stencil (LUST) boundary condition for arbitrary 3-D boundaries in parallel smoothed particle hydrodynamics (SPH) models. <em>Computers &amp; Fluids</em>, 190: 346–361. <a href="https://doi.org/10.1016/j.compfluid.2019.06.009" rel="noopener noreferrer" target="_blank">doi:10.1016/j.compfluid.2019.06.009</a>.</li>
-</ul>
+<p><a id="SPHERIC_Test10"></a>
+◆ Souto-Iglesias, A., &amp; Botia-Vera, E. SPHERIC Benchmark Test 10: Wave impact problem. <a href="https://www.spheric-sph.org/tests/test-10" rel="noopener" target="_blank">Test description and experimental data</a>.</p>
+<p><a id="Delorme_2009"></a>
+◆ Delorme, L., Colagrossi, A., Souto-Iglesias, A., Zamora-Rodríguez, R., &amp; Botia-Vera, E. (2009). A set of canonical problems in sloshing. Part I: Pressure field in forced roll. Comparison between experimental results and SPH. <em>Ocean Engineering</em>, <em>36</em>(2), 168-178.</p>
+<p><a id="SoutoIglesias_2011"></a>
+◆ Souto-Iglesias, A., Botia-Vera, E., &amp; Bulian, G. (2011). Repeatability and two-dimensionality of model scale sloshing impacts. In <em>Proceedings of the 21st International Offshore and Polar Engineering Conference (ISOPE)</em>.</p>
+<p><a id="BotiaVera_2010"></a>
+◆ Botia-Vera, E., Souto-Iglesias, A., Bulian, G., &amp; Lobovský, L. (2010). Three SPH novel benchmark test cases for free surface flows. In <em>5th ERCOFTAC SPHERIC Workshop on SPH Applications</em>.</p>
 
 
 

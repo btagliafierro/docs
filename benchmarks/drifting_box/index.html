@@ -11,10 +11,6 @@
         <link rel="canonical" href="https://btagliafierro.github.io/docs/benchmarks/drifting_box/">
       
       
-        <link rel="prev" href="../dambreak_debris/">
-      
-      
-        <link rel="next" href="../moored_box/">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Drifting Box - DualSPHysics Documentation</title>
+        <title>Drifting box test case - DualSPHysics Documentation</title>
       
     
     
@@ -128,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Drifting Box
+              Drifting box test case
             
           </span>
         </div>
@@ -356,12 +352,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../" class="md-tabs__link">
           
   
@@ -1441,8 +1435,6 @@
         
   
   
-    
-  
   
   
     
@@ -1460,33 +1452,20 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1508,13 +1487,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1626,443 +1605,6 @@
     
   
     Wave Generation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../runup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Wave Run-up
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dambreak_debris/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dambreak Debris
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Drifting Box
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Drifting Box
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#case-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Case Configuration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Case Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#two-complementary-setups" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Two Complementary Setups
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#source-files-and-reference-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Source Files and Reference Data
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#geometry-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Geometry Definition
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Geometry Definition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#shared-tank-coordinates-and-resolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Shared Tank, Coordinates and Resolution
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floating-box" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Floating Box
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boundary-normals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Boundary Normals
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wave-generation-and-absorption" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wave Generation and Absorption
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Wave Generation and Absorption">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#second-order-piston" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Second-order Piston
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passive-damping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Passive Damping
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#numerical-gauges" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Numerical Gauges
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#numerical-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Numerical Parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-the-simulation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running the Simulation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Running the Simulation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows-gpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows GPU
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-processing-and-output-paths" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Post-processing and Output Paths
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#results-and-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Results and Validation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Results and Validation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#experimental-reference-and-coordinate-conventions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Experimental Reference and Coordinate Conventions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wave-propagation-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wave Propagation Validation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floating-body-motion-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Floating-body Motion Validation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../moored_box/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Moored Box
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../heave_decay/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Heave Decay
   
 
     
@@ -3831,19 +3373,19 @@
   <a href="#case-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Case Configuration
+        Case configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Case Configuration">
+    <nav class="md-nav" aria-label="Case configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#two-complementary-setups" class="md-nav__link">
+  <a href="#physical-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two Complementary Setups
+        Physical setup
       
     </span>
   </a>
@@ -3851,10 +3393,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#source-files-and-reference-data" class="md-nav__link">
+  <a href="#physical-constants" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Source Files and Reference Data
+        Physical constants
       
     </span>
   </a>
@@ -3870,19 +3412,19 @@
   <a href="#geometry-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Geometry Definition
+        Geometry definition
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Geometry Definition">
+    <nav class="md-nav" aria-label="Geometry definition">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#shared-tank-coordinates-and-resolution" class="md-nav__link">
+  <a href="#real-dimensions-and-the-particle-lattice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Shared Tank, Coordinates and Resolution
+        Real dimensions and the particle lattice
       
     </span>
   </a>
@@ -3890,10 +3432,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#floating-box" class="md-nav__link">
+  <a href="#the-floating-box" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Floating Box
+        The floating box
       
     </span>
   </a>
@@ -3901,10 +3443,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#boundary-normals" class="md-nav__link">
+  <a href="#flume-piston-and-water" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Boundary Normals
+        Flume, piston, and water
       
     </span>
   </a>
@@ -3917,41 +3459,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wave-generation-and-absorption" class="md-nav__link">
+  <a href="#wave-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wave Generation and Absorption
+        Wave generation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Wave Generation and Absorption">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#second-order-piston" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Second-order Piston
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passive-damping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Passive Damping
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3959,7 +3473,18 @@
   <a href="#numerical-gauges" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Numerical Gauges
+        Numerical gauges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wave-propagation-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wave propagation case
       
     </span>
   </a>
@@ -3970,7 +3495,7 @@
   <a href="#numerical-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Numerical Parameters
+        Numerical parameters
       
     </span>
   </a>
@@ -3981,19 +3506,19 @@
   <a href="#running-the-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running the Simulation
+        Running the simulation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Running the Simulation">
+    <nav class="md-nav" aria-label="Running the simulation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#windows-gpu" class="md-nav__link">
+  <a href="#input-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows GPU
+        Input files
       
     </span>
   </a>
@@ -4001,10 +3526,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-processing-and-output-paths" class="md-nav__link">
+  <a href="#windows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Post-processing and Output Paths
+        Windows
       
     </span>
   </a>
@@ -4020,49 +3545,10 @@
   <a href="#results-and-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Results and Validation
+        Results and validation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Results and Validation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#experimental-reference-and-coordinate-conventions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Experimental Reference and Coordinate Conventions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wave-propagation-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wave Propagation Validation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floating-body-motion-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Floating-body Motion Validation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4103,393 +3589,298 @@
   
 
 
-<h1 id="drifting-box">Drifting Box<a class="headerlink" href="#drifting-box" title="Link to this heading">&para;</a></h1>
+<h1 id="drifting-box"><strong>Drifting box</strong><a class="headerlink" href="#drifting-box" title="Link to this heading">&para;</a></h1>
 <p style="margin-top: -2.5em; font-size: 0.95em; color: gray;">
   Under review by Bonaventura Tagliafierro
 </p>
 
-<p>This benchmark considers regular-wave propagation and the resulting drift and oscillation of a freely floating rectangular box. It is based on <a href="#ren-2015">Ren et al. (2015)</a>. Two complementary two-dimensional configurations separate the incident wave field from the body's surge, heave and pitch response.</p>
-<p>The files are supplied at <code>DualSPHysics_v6.0/examples/benchmarks/06_DriftingBox</code>. The wave-only case measures free-surface elevation at the intended box location; the body-present case provides the motion comparison. Both currently select wave height 0.10 m and period 1.20 s.</p>
+<p>This benchmark is a 2-D wave flume with a freely floating box. A piston wavemaker generates regular waves, which make the half-immersed box sway, heave, and roll, and drift slowly in the direction of the waves. The wave elevation and the motions of the box are compared with the experiments of <a href="#Ren_2015">Ren et al. (2015)</a>.</p>
+<p>The benchmark has two cases, with the same flume and the same waves:</p>
+<ul>
+<li><strong>Wave propagation</strong>: the empty flume, to check the waves that reach the position of the box.</li>
+<li><strong>Drifting box</strong>: the same flume with the box.</li>
+</ul>
+<p>The case files are supplied in <code>examples/benchmarks/06_DriftingBox</code>. This page explains the drifting box case in detail, and in particular how the box is made of particles; the wave propagation case is described by its differences from it.</p>
 <div class="admonition abstract">
 <p class="admonition-title">What's Covered in This Tutorial</p>
 <ul>
-<li>Shared wave-tank geometry and second-order piston generation</li>
-<li>Wave-only and floating-body configurations with separate outputs</li>
-<li>Free-slip mDBC, laminar viscosity and advanced shifting</li>
-<li>Wave-gauge and floating-body motion extraction</li>
-<li>Experimental elevation, surge, heave and pitch comparisons</li>
+<li>Checking the incident waves in an <strong>empty flume</strong> before adding a body</li>
+<li>A <strong>floating box</strong> on the particle lattice, with its mass from a relative weight</li>
+<li>Second-order regular waves from a piston, and a damping zone</li>
+<li>The motions of the box with FloatingInfo</li>
 </ul>
 </div>
-<p><strong>Video pending – Drifting Box benchmark simulation.</strong></p>
-<p>All XML and BAT blocks below are contiguous excerpts copied directly from the named current source files, with their expressions, attributes and comments preserved. XML snippets omit common leading indentation for readability. Separate excerpts do not form a complete runnable input. Only the settings relevant to this walkthrough are shown.</p>
-<h2 id="case-configuration">Case Configuration<a class="headerlink" href="#case-configuration" title="Link to this heading">&para;</a></h2>
-<h3 id="two-complementary-setups">Two Complementary Setups<a class="headerlink" href="#two-complementary-setups" title="Link to this heading">&para;</a></h3>
+<p><strong>Video: To be updated.</strong></p>
+<h2 id="case-configuration">Case configuration<a class="headerlink" href="#case-configuration" title="Link to this heading">&para;</a></h2>
+<h3 id="physical-setup">Physical setup<a class="headerlink" href="#physical-setup" title="Link to this heading">&para;</a></h3>
+<figure id="fig-setup" style="text-align: center;">
+  <a href="../../assets/images/benchmarks/drifting_box/driftingbox_setup.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/drifting_box/driftingbox_setup.svg" alt="Side view of the flume with the box." style="width: 100%; max-width: 1100px; height: auto;">
+  </a>
+  <figcaption><strong>Figure 1:</strong> Side view of the flume, with the piston, the box, the wave gauges, and the damping zone. Dimensions in meters.</figcaption>
+</figure>
+
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>Wave propagation</th>
-<th>Floating-body motion</th>
+<th>Element</th>
+<th>Dimensions [m]</th>
+<th>Position</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>XML</td>
-<td><code>WavePropagation_Def.xml</code></td>
-<td><code>DriftingBox_Def.xml</code></td>
+<td>Flume</td>
+<td>10.00 long, walls 0.80 high</td>
+<td>floor at <span class="arithmatex">\(z=-0.40\)</span>, still-water level at <span class="arithmatex">\(z=0\)</span></td>
 </tr>
 <tr>
-<td>Windows GPU BAT</td>
-<td><code>wWavePropagation_win64_GPU.bat</code></td>
-<td><code>wDriftingBox_win64_GPU.bat</code></td>
+<td>Waves</td>
+<td>height 0.10, period 1.20 s</td>
+<td>regular, second order; wavelength <span class="arithmatex">\(L\)</span> = 1.94 m</td>
 </tr>
 <tr>
-<td>Output root</td>
-<td><code>WavePropagation_out/</code></td>
-<td><code>DriftingBox_out/</code></td>
+<td>Piston</td>
+<td>mk 10</td>
+<td>face at <span class="arithmatex">\(x=0.20\)</span></td>
 </tr>
 <tr>
-<td>Floating body</td>
-<td>None</td>
-<td>Rectangular box, local <code>mkbound=50</code></td>
+<td>Box</td>
+<td>0.30 × 0.20, density 500 kg/m³</td>
+<td>centered at <span class="arithmatex">\(x=2.00\)</span>, <span class="arithmatex">\(z=0\)</span>: half immersed</td>
 </tr>
 <tr>
-<td>Primary comparison</td>
-<td>Elevation at X=2.0 m</td>
-<td>Surge, heave and pitch</td>
+<td>Damping zone</td>
+<td>6.00</td>
+<td>from <span class="arithmatex">\(x=4.00\)</span> to the end wall</td>
 </tr>
 <tr>
-<td>Gauges</td>
-<td><code>WG_Box</code>, <code>WG_Up</code>, <code>WG_Down</code></td>
-<td><code>WG_Up</code>, <code>WG_Down</code></td>
+<td>Particle spacing</td>
+<td><span class="arithmatex">\(Dp = 0.005\)</span></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>Both XMLs have identical <code>execution/parameters</code> blocks and share the constants, piston settings and damping limits. The body geometry, floating declaration and central wave gauge distinguish the configurations. There is no Chrono or MoorDynPlus coupling in either file.</p>
-<h3 id="source-files-and-reference-data">Source Files and Reference Data<a class="headerlink" href="#source-files-and-reference-data" title="Link to this heading">&para;</a></h3>
-<p>The folder contains the two case XMLs, their Windows GPU BATs, a Windows shortcut and <code>reference/Ren2015_Fig11_Experimental_H0.10.csv</code>. Numerical output directories and comparison PNGs are available. The selected experimental file corresponds to the configured 0.10 m wave height; final coordinate, datum and angular-sign verification remains pending.</p>
-<h2 id="geometry-definition">Geometry Definition<a class="headerlink" href="#geometry-definition" title="Link to this heading">&para;</a></h2>
-<h3 id="shared-tank-coordinates-and-resolution">Shared Tank, Coordinates and Resolution<a class="headerlink" href="#shared-tank-coordinates-and-resolution" title="Link to this heading">&para;</a></h3>
-<p>The model uses the XZ plane, with wave propagation in positive X, Z upwards, Y transverse and still water at Z=0. <code>PminY=PmaxY=0</code> generates a 2-D section. The nominal tank extends from X=0 to 10 m, with floor Z=−0.40 m and top Z=0.40 m. The piston face rests at X=0.20 m; the intended box centre is X=2.0 m. The nominal particle spacing is 0.005 m.</p>
-<p>These shared definitions are from the wave-only XML:</p>
-<div class="highlight"><span class="filename">WavePropagation_Def.xml — excerpt</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">depth=</span><span class="s">&quot;0.40&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water depth (SWL at z=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">waveH=</span><span class="s">&quot;0.10&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Wave height: 0.04 or 0.10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">wavePeriod=</span><span class="s">&quot;1.20&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Wave period&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeMax=</span><span class="s">&quot;10*wavePeriod&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeOut=</span><span class="s">&quot;wavePeriod/20&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p>The case is 2-D: particles are created only in the plane <span class="arithmatex">\(y=0\)</span>. The water is labeled <code>mkfluid=0</code>, the flume <code>mkbound=0</code>, the piston <code>mkbound=10</code>, and the box <code>mkbound=50</code>. The case also runs with the smaller waves of the paper, 0.04 m high, by changing <code>waveH</code>.</p>
+<h3 id="physical-constants">Physical constants<a class="headerlink" href="#physical-constants" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;constantsdef&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;gravity</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-9.81&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gravitational acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;rhop0</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reference density of the fluid (Ren et al.: 1000)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;rhopgradient</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial density gradient 1:Rhop0, 2:Water column, 3:Max. water height (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;hswl</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum still water level to calculate speedofsound using coefsound&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Polytropic constant for water used in the state equation&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;speedsystem</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum system speed (by default the dam-break propagation is used)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&lt;coefsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply speedsystem&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;speedsound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Speed of sound to use in the simulation (by default speedofsound=coefsound*speedsystem)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;coefh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1.3&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate the smoothing length (h=coefh*sqrt(2*dp^2) in 2D)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;cflnumber</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply dt&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">&lt;/constantsdef&gt;</span>
 </span></code></pre></div>
-<div class="highlight"><span class="filename">WavePropagation_Def.xml — excerpt</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefTankpx=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">DefTanksx=</span><span class="s">&quot;10.0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Tank length (Fig. 9)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefTankpz=</span><span class="s">&quot;-depth&quot;</span><span class="w"> </span><span class="na">DefTanksz=</span><span class="s">&quot;2*depth&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Wall height (2*depth, as Fig. 3)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefPistonX=</span><span class="s">&quot;0.20&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Piston face at rest (paper: x=0.2 m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DampingX1=</span><span class="s">&quot;4.0&quot;</span><span class="w"> </span><span class="na">DampingX2=</span><span class="s">&quot;DefTankpx+DefTanksx&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Sponge layer, last 3 m (Fig. 9)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">BoxX=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Box centroid x (section 5); wave gauge at this position&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DummyWidthY=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;2D case: only y=0 is generated&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p><strong>Fluid</strong>: water with reference density 1000 kg/m³, as in the paper. <code>rhopgradient=3</code> indicates that the water is initialized with a hydrostatic density profile computed from the maximum water height.</p>
+<p><strong>Speed of sound</strong>: the entries with <code>auto="true"</code> are calculated by GenCase. The still-water level <code>hswl</code> is taken from the water depth, and the system speed is the dam-break velocity taken as <span class="arithmatex">\(\sqrt{g\,h_{\mathrm{swl}}}\)</span>; the speed of sound is then computed considering the multiplier <code>coefsound</code> = 20.</p>
+<p><strong>Smoothing length</strong>: in 2D, <span class="arithmatex">\(h = \mathrm{coefh}\,\sqrt{2}\,Dp = 1.3\sqrt{2}\times0.005 = 0.0092\)</span> m. Each particle interacts with neighbors up to <span class="arithmatex">\(2h\)</span> = 3.68·Dp away. This information is used to define the number of boundary layers needed for correct simulations.</p>
+<p><strong>Time step</strong>: <code>cflnumber=0.2</code> scales the time step that the solver computes at every step, to account for the Courant condition.</p>
+<h2 id="geometry-definition">Geometry definition<a class="headerlink" href="#geometry-definition" title="Link to this heading">&para;</a></h2>
+<h3 id="real-dimensions-and-the-particle-lattice">Real dimensions and the particle lattice<a class="headerlink" href="#real-dimensions-and-the-particle-lattice" title="Link to this heading">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">depth=</span><span class="s">&quot;0.40&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Water depth (SWL at z=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">waveH=</span><span class="s">&quot;0.10&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Wave height: 0.04 or 0.10&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">wavePeriod=</span><span class="s">&quot;1.20&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Wave period&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeMax=</span><span class="s">&quot;10*wavePeriod&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">timeOut=</span><span class="s">&quot;wavePeriod/20&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefTankpx=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">DefTanksx=</span><span class="s">&quot;10.0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Tank length (Fig. 9)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefTankpz=</span><span class="s">&quot;-depth&quot;</span><span class="w"> </span><span class="na">DefTanksz=</span><span class="s">&quot;2*depth&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Wall height (2*depth, as Fig. 3)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefPistonX=</span><span class="s">&quot;0.20&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Piston face at rest (paper: x=0.2 m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DampingX1=</span><span class="s">&quot;4.0&quot;</span><span class="w"> </span><span class="na">DampingX2=</span><span class="s">&quot;DefTankpx+DefTanksx&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Sponge layer, last 3 m (Fig. 9)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">BoxX=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Box centroid x (section 5)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">BoxZ=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Box centroid z (half immersed)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefBoxsx=</span><span class="s">&quot;0.30&quot;</span><span class="w"> </span><span class="na">DefBoxsz=</span><span class="s">&quot;0.20&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefBoxpx=</span><span class="s">&quot;BoxX-DefBoxsx/2&quot;</span><span class="w"> </span><span class="na">DefBoxpz=</span><span class="s">&quot;BoxZ-DefBoxsz/2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">BoxRelW=</span><span class="s">&quot;0.50&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Average density 500 kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="cm">&lt;!-- Resolution  --&gt;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Dp=</span><span class="s">&quot;0.005&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Dpm=</span><span class="s">&quot;Dp/2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="cm">&lt;!-- Domain limits --&gt;</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PminX=</span><span class="s">&quot;DefTankpx-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="na">PminY=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">PminZ=</span><span class="s">&quot;DefTankpz-Dpm-10*Dp&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">PosMin_x=</span><span class="s">&quot;PminX&quot;</span><span class="w"> </span><span class="na">PosMin_y=</span><span class="s">&quot;PminY&quot;</span><span class="w"> </span><span class="na">PosMin_z=</span><span class="s">&quot;PminZ&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<p>The particle coordinates use the source's <code>roundpos</code> expressions and half-spacing offsets. <code>DummyWidthY=1.0</code> supports the geometry construction; it does not make this a three-dimensional tank. The tank draws its right wall and bottom; the moving piston closes the upstream side. The boundary-particle tank layers are <code>0*,1,2,3,4</code>, and the piston is generated as a solid block with six X columns.</p>
-<h3 id="floating-box">Floating Box<a class="headerlink" href="#floating-box" title="Link to this heading">&para;</a></h3>
-<p>Only <code>DriftingBox_Def.xml</code> defines and draws the box. Its nominal dimensions are 0.30 m along X and 0.20 m along Z, centred initially at (X,Z)=(2.0,0). Its nominal bottom and top are −0.10 and +0.10 m, giving half immersion at the still-water surface. Relative weight 0.50 against the specified water density 1000 kg/m³ corresponds to nominal body density 500 kg/m³.</p>
-<div class="highlight"><span class="filename">DriftingBox_Def.xml — excerpt</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">BoxX=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Box centroid x (section 5)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">BoxZ=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Box centroid z (half immersed)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefBoxsx=</span><span class="s">&quot;0.30&quot;</span><span class="w"> </span><span class="na">DefBoxsz=</span><span class="s">&quot;0.20&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DefBoxpx=</span><span class="s">&quot;BoxX-DefBoxsx/2&quot;</span><span class="w"> </span><span class="na">DefBoxpz=</span><span class="s">&quot;BoxZ-DefBoxsz/2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">BoxRelW=</span><span class="s">&quot;0.50&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;Average density 500 kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">DummyWidthY=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">_rem=</span><span class="s">&quot;2D case: only y=0 is generated&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p><strong>Real dimensions</strong>: the <code>Def*</code> constants are the real geometry: the flume, the piston face, and the box, defined by its center and its size. None of them depends on <code>Dp</code>.</p>
+<p><strong>The lattice</strong>: <code>PminX</code> and <code>PminZ</code> are Dp/2 plus ten spacings outside the end of the flume and the floor, so the nodes are at Dp/2 + k·Dp from <span class="arithmatex">\(x=0\)</span> and from the floor. The walls, the piston face, and the box faces are all at multiples of 0.005 m from these surfaces, so they all fall halfway between two nodes. The first boundary layers are placed with <code>roundposx</code> and <code>roundposz</code>, as in the <a href="../dambreak_3d/">Dambreak 3D</a> benchmark.</p>
+<h3 id="the-floating-box">The floating box<a class="headerlink" href="#the-floating-box" title="Link to this heading">&para;</a></h3>
+<h4 id="its-faces-and-particles">Its faces and particles<a class="headerlink" href="#its-faces-and-particles" title="Link to this heading">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Boxpx1=</span><span class="s">&quot;DefBoxpx+Dpm&quot;</span><span class="w"> </span><span class="na">Boxpx2=</span><span class="s">&quot;roundpos(DefBoxpx+DefBoxsx-Dpm,Boxpx1,Dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;newvarcte</span><span class="w"> </span><span class="na">Boxpz1=</span><span class="s">&quot;DefBoxpz+Dpm&quot;</span><span class="w"> </span><span class="na">Boxpz2=</span><span class="s">&quot;roundpos(DefBoxpz+DefBoxsz-Dpm,Boxpz1,Dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<div class="highlight"><span class="filename">DriftingBox_Def.xml — excerpt</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;floatings&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;floating</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">relativeweight=</span><span class="s">&quot;#BoxRelW&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;/floatings&gt;</span>
+<p><strong>First layer</strong>: <code>Boxpx1</code> and <code>Boxpz1</code> are the first layer of particles, Dp/2 inside the left face and the bottom; <code>Boxpx2</code> and <code>Boxpz2</code>, Dp/2 inside the right face and the top, are rounded to an integer number of spacings from the first layer. The box is 0.30 m = 60·Dp long and 0.20 m = 40·Dp high, so all four faces are exact.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">&lt;!-- Box mk=50 --&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;setmkbound</span><span class="w"> </span><span class="na">mk=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;setfrdrawmode</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;drawbox&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&lt;boxfill&gt;</span>solid<span class="nt">&lt;/boxfill&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&lt;point</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Boxpx1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy1&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Boxpz1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&lt;endpoint</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#Boxpx2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;#Tankpy2&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#Boxpz2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&lt;layers</span><span class="w"> </span><span class="na">vdp=</span><span class="s">&quot;0,-1,-2,-3,-4&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">&lt;/drawbox&gt;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nt">&lt;setfrdrawmode</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nt">&lt;shapeout</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;box&quot;</span><span class="w"> </span><span class="na">reset=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<p>The box is assigned local <code>mkbound=50</code> and generated with <code>setfrdrawmode auto="true"</code>. Its boundary-normal surfaces and solid floating particles are constructed separately; the particle draw uses layers <code>0,-1,-2,-3,-4</code>. The XML supplies relative weight rather than an explicit mass, centre of mass or inertia tensor. These generated body properties must therefore be checked in the case information before interpreting a motion result.</p>
-<p>The intended in-plane degrees of freedom are <strong>surge</strong> (X displacement), <strong>heave</strong> (Z displacement) and <strong>pitch</strong> (rotation about Y). There are no explicit translation/rotation restrictions in the floating declaration. <code>RigidAlgorithm=SPH</code> is selected and <code>FtPause=0.0</code> specifies no initial freezing interval. Do not describe the in-plane rotation as roll or infer the generated global MK from the local boundary label alone.</p>
-<h3 id="boundary-normals">Boundary Normals<a class="headerlink" href="#boundary-normals" title="Link to this heading">&para;</a></h3>
-<p>Both cases create a <code>GeometryForNormals</code> list and export the tank and piston surfaces; the body-present case also includes the box surfaces. After the shape export, drawing is reset before particle generation. The common normal input is:</p>
-<div class="highlight"><span class="filename">DriftingBox_Def.xml — excerpt</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;normals&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;distanceh</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2.0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum distance (H*distanceh) to compute normals data (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;geometryfile</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;[CaseName]_hdp_Actual.vtk&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;File with boundary geometry (VTK format). Use NONE to ignore it.&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;/normals&gt;</span>
+<p><strong>A solid box on the lattice</strong>: <code>boxfill solid</code> fills the box with 60 × 40 boundary particles. The first layer is at Dp/2 from the faces, which are halfway between nodes, so the box particles are on the lattice nodes, and FreeDraw places them exactly where the lattice would.</p>
+<p><strong>Drawn after the water</strong>: the box is drawn last, after the water fills the flume up to <span class="arithmatex">\(z=0\)</span>. Its particles take the nodes of the water below the still-water level, since the last drawing wins, so no water is left inside the box (Figure 2).</p>
+<p><strong>The wall surface</strong>: in <code>GeometryForNormals</code>, the same box is drawn through its first layer, with its four faces (<code>left|right|bottom|top</code>), and <code>layers vdp="0.5"</code> moves them half a spacing outwards, onto the real faces.</p>
+<figure id="fig-box" style="text-align: center;">
+  <a href="../../assets/images/benchmarks/drifting_box/driftingbox_box.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/drifting_box/driftingbox_box.svg" alt="The box on the particle lattice." style="width: 100%; max-width: 1100px; height: auto;">
+  </a>
+  <figcaption><strong>Figure 2:</strong> The box: 60 × 40 particles on the lattice nodes, its faces (hdp) halfway between box and fluid particles, half below the still-water level.</figcaption>
+</figure>
+
+<h4 id="its-mass">Its mass<a class="headerlink" href="#its-mass" title="Link to this heading">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;floatings&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;floating</span><span class="w"> </span><span class="na">mkbound=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">relativeweight=</span><span class="s">&quot;#BoxRelW&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;/floatings&gt;</span>
 </span></code></pre></div>
-<p>The active settings are <code>Boundary=mDBC</code>, <code>SlipMode=FS</code> and <code>NoPenetration=N</code>. Free-slip mDBC applies with the supplied geometry normals; the additional no-penetration option is not enabled. See the <a href="../../xml_guides/mdbc/">mDBC XML Guide</a> for the general method and normal-generation workflow.</p>
-<h2 id="wave-generation-and-absorption">Wave Generation and Absorption<a class="headerlink" href="#wave-generation-and-absorption" title="Link to this heading">&para;</a></h2>
-<h3 id="second-order-piston">Second-order Piston<a class="headerlink" href="#second-order-piston" title="Link to this heading">&para;</a></h3>
-<p>Both files attach motion reference 10 to a null base motion and use the wave-paddle controller to drive that piston along positive X. They select second-order waves, H=0.10 m, T=1.20 s, depth 0.40 m, zero phase and a one-period ramp. Start time is zero and duration zero extends generation to the simulation end.</p>
-<p>The following contiguous excerpt shows the active generation settings in <code>WavePropagation_Def.xml</code>; the same settings occur in <code>DriftingBox_Def.xml</code>:</p>
-<div class="highlight"><span class="filename">WavePropagation_Def.xml — excerpt</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;mkbound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Mk-Bound of selected particles&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">&lt;waveorder</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Order wave generation 1:1st order, 2:2nd order (def=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">&lt;start</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Start time (def=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nt">&lt;duration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Movement duration, Zero is the end of simulation (def=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nt">&lt;depth</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#depth&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fluid depth (def=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nt">&lt;pistondir</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Movement direction (def=(1,0,0))&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nt">&lt;waveheight</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#waveH&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Wave height&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nt">&lt;waveperiod</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#wavePeriod&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Wave period&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nt">&lt;phase</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial wave phase in function of PI (def=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nt">&lt;ramp</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Periods of ramp (def=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nt">&lt;savemotion</span><span class="w"> </span><span class="na">periods=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">periodsteps=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">xpos=</span><span class="s">&quot;#BoxX-DefPistonX&quot;</span><span class="w"> </span><span class="na">zpos=</span><span class="s">&quot;#-depth/2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Saves motion data. xpos and zpos are optional. zpos=-depth of the measuring point&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p><strong>Relative weight</strong>: <code>relativeweight="0.5"</code> gives the box half the density of the water, 500 kg/m³: GenCase computes its mass from the volume of its particles, and its center of gravity and inertia from their positions, as a uniform body. With half the density of the water, the box floats with half its height immersed, which is where it starts.</p>
+<p><strong>Final marker</strong>: GenCase stores the box particles with <code>mk</code> = 50 + 1 + 9 = 60 (see <a href="../../getting_started/workflow/#particle-types-and-the-mk-number">Particle types and the mk number</a>).</p>
+<h3 id="flume-piston-and-water">Flume, piston, and water<a class="headerlink" href="#flume-piston-and-water" title="Link to this heading">&para;</a></h3>
+<p>The flume and the piston follow the same approach as the <a href="../wave_generation/">Wave generation</a> benchmark: the floor and the end wall are drawn through their first layer with five layers outwards (<code>0*,1,2,3,4</code>), the piston with six columns behind its face, starting one row above the floor, and the water fills the flume from the piston to the end wall, up to <span class="arithmatex">\(z=0\)</span>.</p>
+<h2 id="wave-generation">Wave generation<a class="headerlink" href="#wave-generation" title="Link to this heading">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;piston&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;mkbound</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Mk-Bound of selected particles&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&lt;waveorder</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Order wave generation 1:1st order, 2:2nd order (def=1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;depth</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#depth&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Fluid depth (def=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&lt;waveheight</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#waveH&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Wave height&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&lt;waveperiod</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#wavePeriod&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Wave period&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&lt;ramp</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Periods of ramp (def=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&lt;savemotion</span><span class="w"> </span><span class="na">periods=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">periodsteps=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">xpos=</span><span class="s">&quot;#BoxX-DefPistonX&quot;</span><span class="w"> </span><span class="na">zpos=</span><span class="s">&quot;#-depth/2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Saves motion data. xpos and zpos are optional. zpos=-depth of the measuring point&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nt">&lt;/piston&gt;</span>
 </span></code></pre></div>
-<p><code>savemotion</code> requests 30 periods with 20 steps per period, at relative X=<code>BoxX-DefPistonX</code>=1.80 m and Z=−0.20 m. That diagnostic request is distinct from the 12 s simulation duration and from the numerical free-surface gauges. The following <code>awas_zsurf</code> block has <code>active="0"</code> in both XMLs: <strong>active wave absorption is disabled</strong>. Its settings are not used to describe an operating absorption controller here.</p>
-<h3 id="passive-damping">Passive Damping<a class="headerlink" href="#passive-damping" title="Link to this heading">&para;</a></h3>
-<p>Passive damping remains configured in both cases:</p>
-<div class="highlight"><span class="filename">WavePropagation_Def.xml — excerpt</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;damping&gt;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&lt;dampingzone&gt;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&lt;limitmin</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#DampingX1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;minimum reduction is applied&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nt">&lt;limitmax</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#DampingX2&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;maximum reduction is applied&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&lt;overlimit</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="nt">&lt;redumax</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum reduction in location limitmax (default=10)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&lt;/dampingzone&gt;</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nt">&lt;/damping&gt;</span>
-</span></code></pre></div>
-<p>The actual limits evaluate to X=4.0 and 10.0 m, giving a 6.0 m damping zone, with <code>redumax=6</code> and <code>overlimit=0</code>. These values govern the configuration; the predefinition comment saying “last 3 m” does not match the selected limits. The damping region lies downstream of the initial box position.</p>
-<h2 id="numerical-gauges">Numerical Gauges<a class="headerlink" href="#numerical-gauges" title="Link to this heading">&para;</a></h2>
-<p>Both cases compute and save gauge measurements every 0.01 s and disable per-PART gauge VTK output. This is independent of the regular PART interval of 0.06 s.</p>
+<p>The piston generates second-order regular waves, with a ramp over the first period. <code>savemotion</code> writes the theoretical elevation at <code>xpos</code> from the piston, the position of the box. See the <a href="../wave_generation/#piston-wavemaker">Wave generation</a> benchmark for the details of each option. A damping zone from <span class="arithmatex">\(x\)</span> = 4.00 m to the end wall (<code>redumax=6</code>) absorbs the waves.</p>
+<h2 id="numerical-gauges">Numerical gauges<a class="headerlink" href="#numerical-gauges" title="Link to this heading">&para;</a></h2>
+<p>Two runtime gauges, 1.0 m before and 2.0 m after the box, record the water level:</p>
 <table>
 <thead>
 <tr>
 <th>Gauge</th>
-<th>X (m)</th>
-<th>Present in</th>
+<th style="text-align: right;"><span class="arithmatex">\(x\)</span> [m]</th>
+<th>Position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WG_Up</td>
+<td style="text-align: right;">1.00</td>
+<td>between the piston and the box</td>
+</tr>
+<tr>
+<td>WG_Down</td>
+<td style="text-align: right;">4.00</td>
+<td>after the box, at the start of the damping zone</td>
+</tr>
+</tbody>
+</table>
+<p>Each is a vertical line from <span class="arithmatex">\(z=-0.40\)</span> to <span class="arithmatex">\(0.40\)</span> m (±4 wave heights), with check points 0.05·Dp apart, written every 0.01 s.</p>
+<h2 id="wave-propagation-case">Wave propagation case<a class="headerlink" href="#wave-propagation-case" title="Link to this heading">&para;</a></h2>
+<p><code>WavePropagation_Def.xml</code> is the same case without the box: the same flume, piston, waves, damping zone, and parameters. It is run first, to check the waves that reach the position of the box, before adding the body. It differs from <code>DriftingBox_Def.xml</code> in two places only:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Wave propagation</th>
+<th>Drifting box</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Box</td>
+<td>not drawn</td>
+<td>particles, wall surface, and <code>&lt;floatings&gt;</code></td>
+</tr>
+<tr>
+<td>Gauges</td>
+<td>WG_Up, <strong>WG_Box</strong> at <span class="arithmatex">\(x=2.00\)</span>, WG_Down</td>
+<td>WG_Up, WG_Down</td>
+</tr>
+</tbody>
+</table>
+<p><strong>WG_Box</strong>: the extra gauge is at the center of the box, where the box would be. Its water level is the incident wave of the drifting box case, and is compared with the theoretical elevation of <code>savemotion</code>, written for the same position, and with the experiment.</p>
+<h2 id="numerical-parameters">Numerical parameters<a class="headerlink" href="#numerical-parameters" title="Link to this heading">&para;</a></h2>
+<p><strong>Boundaries</strong>: <strong>mDBC</strong> with <strong>free slip</strong> (<code>FS</code>) on the flume, the piston, and the box.</p>
+<p><strong>Floating body</strong>: <code>RigidAlgorithm=SPH</code> computes the motion of the box from the forces of the fluid, and <code>FtPause=0</code> lets it move from the start.</p>
+<p><strong>Viscosity</strong>: laminar viscosity with the kinematic viscosity of water, 10⁻⁶ m²/s.</p>
+<p><strong>Density diffusion and shifting</strong>: the Fourtakas density diffusion with coefficient 0.10 (<a href="#Fourtakas_2019">Fourtakas et al., 2019</a>), and advanced shifting (<code>4</code>), with the 2-D free-surface threshold 1.5.</p>
+<p><strong>Duration and output</strong>: the simulation runs for 10 wave periods, 12.0 s, and saves the particles every <span class="arithmatex">\(T/20\)</span> = 0.06 s, in double precision.</p>
+<p><strong>Domain</strong>: <code>default</code> determines the solver domain as the box around all the generated particles, and <code>z="default + 10%"</code> raises its top by 10% of its height.</p>
+<h2 id="running-the-simulation">Running the simulation<a class="headerlink" href="#running-the-simulation" title="Link to this heading">&para;</a></h2>
+<h3 id="input-files">Input files<a class="headerlink" href="#input-files" title="Link to this heading">&para;</a></h3>
+<p>Work in <code>examples/benchmarks/06_DriftingBox/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>WG_Box</code></td>
-<td>2.0</td>
-<td>Wave-only</td>
-<td>Incident elevation at the intended box centre</td>
+<td><code>WavePropagation_Def.xml</code></td>
+<td>Empty flume, read by GenCase</td>
 </tr>
 <tr>
-<td><code>WG_Up</code></td>
-<td>1.0</td>
-<td>Both</td>
-<td>Upstream elevation</td>
+<td><code>DriftingBox_Def.xml</code></td>
+<td>Flume with the box, read by GenCase</td>
 </tr>
 <tr>
-<td><code>WG_Down</code></td>
-<td>4.0</td>
-<td>Both</td>
-<td>Downstream elevation, at the damping-zone entrance</td>
+<td><code>wDriftingBox_win64_GPU.bat</code></td>
+<td>Windows: GenCase, GPU simulation, and post-processing</td>
+</tr>
+<tr>
+<td><code>reference/Ren2015_Fig11_Experimental_H0.10.csv</code></td>
+<td>Experimental elevation and motions, digitized from Figure 11 of the paper</td>
 </tr>
 </tbody>
 </table>
-<p>All gauge lines use Y=0 and run vertically from −4H to +4H (−0.40 to +0.40 m for the selected height), with <code>pointdp coefdp=0.05</code>. The central wave-only gauge is:</p>
-<div class="highlight"><span class="filename">WavePropagation_Def.xml — excerpt</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;swl</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;WG_Box&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&lt;pointdp</span><span class="w"> </span><span class="na">coefdp=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Distance between check points (value=coefdp*dp)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&lt;point0</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#BoxX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#-4*waveH&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial point&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&lt;point2</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;#BoxX&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;#4*waveH&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Final point&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nt">&lt;/swl&gt;</span>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Link to this heading">&para;</a></h3>
+<p>From the case folder, run <code>wDriftingBox_win64_GPU.bat</code>. GenCase and DualSPHysics are run as in the other benchmarks; for the wave propagation case, change <code>name</code> to <code>WavePropagation</code>. The post-processing writes the fluid particles, the surface of the box, and its motion:</p>
+<div class="highlight"><span class="filename">wDriftingBox_win64_GPU.bat</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\boundary
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">%boundaryvtk%</span> -loadvtk AutoActual -motiondata <span class="nv">%diroutdata%</span> -savevtkdata <span class="nv">%dirout2%</span>/Box -onlytype:floating
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\post
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">%floatinginfo%</span> -dirin <span class="nv">%diroutdata%</span> -savemotion -onlymk:10-120 -savedata <span class="nv">%dirout2%</span>/
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
 </span></code></pre></div>
-<p>The wave-only central gauge writes <code>WavePropagation_out/GaugesSWL_WG_Box.csv</code>. Use its actual time and vertical-position headers. There is no <code>WG_Box</code> gauge in the body-present XML; the central incident-wave comparison belongs to the wave-only case.</p>
-<h2 id="numerical-parameters">Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Link to this heading">&para;</a></h2>
-<p>The two parameter blocks are identical. The active selections relevant to these comparisons are:</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Current selection</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Time integration / kernel</td>
-<td>Symplectic (<code>SYM</code>) / Wendland C2 (<code>WC2</code>)</td>
-</tr>
-<tr>
-<td>Viscosity / turbulence</td>
-<td>Laminar (<code>LAM</code>), <code>Visco=1e-6</code> m²/s, boundary factor 1 / <code>Turbulence=NO</code></td>
-</tr>
-<tr>
-<td>Density diffusion</td>
-<td>Fourtakas (<code>FO</code>), coefficient 0.10</td>
-</tr>
-<tr>
-<td>Shifting</td>
-<td>Full advanced, mode 4; <code>ShiftCoef=-0.3</code>, <code>ShiftTFS=1.5</code>, <code>ShiftAdvCoef=-0.01</code></td>
-</tr>
-<tr>
-<td>Advanced-shifting formulation</td>
-<td><code>ShiftAdvALE=N</code>, <code>ShiftAdvNCPress=Y</code></td>
-</tr>
-<tr>
-<td>Divergence cleaning</td>
-<td><code>DivCleanKp=0</code>, disabled</td>
-</tr>
-<tr>
-<td>Floating-body interaction</td>
-<td><code>RigidAlgorithm=SPH</code>, no initial pause</td>
-</tr>
-<tr>
-<td>Smoothing / stability</td>
-<td><code>coefh=1.3</code>, CFL=0.2; automatic sound-speed selection with <code>coefsound=20</code></td>
-</tr>
-<tr>
-<td>Time-step controls</td>
-<td><code>CoefDtMin=0.001</code>, <code>DtIni=0</code>, <code>DtMin=0</code>, <code>DtFixed=0</code>, <code>DtAllParticles=N</code></td>
-</tr>
-<tr>
-<td>Simulation / regular output</td>
-<td><code>TimeMax=10*wavePeriod</code>=12 s / <code>TimeOut=wavePeriod/20</code>=0.06 s</td>
-</tr>
-<tr>
-<td>Density exclusion</td>
-<td>700–1300 kg/m³, excluded-particle warning enabled</td>
-</tr>
-<tr>
-<td>Position storage / domain</td>
-<td>Double precision; default particle-derived domain with +10% upper-Z extension</td>
-</tr>
-</tbody>
-</table>
-<p>These are the configured settings, not evidence of convergence or agreement. General option explanations are in <a href="../../xml_guides/general/">XML Configuration</a> and the <a href="../../xml_guides/shiftingadv/">Advanced Shifting XML Guide</a>.</p>
-<h2 id="running-the-simulation">Running the Simulation<a class="headerlink" href="#running-the-simulation" title="Link to this heading">&para;</a></h2>
-<h3 id="windows-gpu">Windows GPU<a class="headerlink" href="#windows-gpu" title="Link to this heading">&para;</a></h3>
-<p>Use the BAT corresponding to the configuration, from the benchmark directory. The wave-only naming block is:</p>
-<div class="highlight"><span class="filename">wWavePropagation_win64_GPU.bat — excerpt</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">set</span> <span class="nv">name</span><span class="p">=</span>WavePropagation
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">set</span> <span class="nv">dirout</span><span class="p">=</span><span class="nv">%name%</span>_out
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">set</span> <span class="nv">diroutdata</span><span class="p">=</span><span class="nv">%dirout%</span>\data
-</span></code></pre></div>
-<p>The body-present naming block is:</p>
-<div class="highlight"><span class="filename">wDriftingBox_win64_GPU.bat — excerpt</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">rem Defines the case name and output directories.</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">set</span> <span class="nv">name</span><span class="p">=</span>DriftingBox
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">set</span> <span class="nv">dirout</span><span class="p">=</span><span class="nv">%name%</span>_out
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">set</span> <span class="nv">diroutdata</span><span class="p">=</span><span class="nv">%dirout%</span>\data
-</span></code></pre></div>
-<p>Both scripts resolve executables under <code>../../../bin/windows</code>. They define CPU and GPU solver paths but invoke the GPU solver. The shared execution sequence below is copied from the body-present BAT:</p>
-<div class="highlight"><span class="filename">wDriftingBox_win64_GPU.bat — excerpt</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">rem Executes GenCase to create initial files for simulation.</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">%gencase%</span> <span class="nv">%name%</span>_Def <span class="nv">%dirout%</span>/<span class="nv">%name%</span> -save:all
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1">rem Executes DualSPHysics to run the SPH simulation.</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nv">%dualsphysicsgpu%</span> -gpu <span class="nv">%dirout%</span>/<span class="nv">%name%</span> <span class="nv">%dirout%</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span></code></pre></div>
-<h3 id="post-processing-and-output-paths">Post-processing and Output Paths<a class="headerlink" href="#post-processing-and-output-paths" title="Link to this heading">&para;</a></h3>
-<p>The body-present post-processing sequence is:</p>
-<div class="highlight"><span class="filename">wDriftingBox_win64_GPU.bat — excerpt</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">:</span><span class="nl">postprocessing</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">rem Executes PartVTK to create VTK files with fluid particles.</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\particles
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nv">%partvtk%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFluid -onlytype:-all,+fluid -continue:1
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1">rem Executes PartVTK to create VTK files with piston particles.</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nv">%partvtk%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartPiston -onlytype:-all,+moving -continue:1
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="c1">rem Executes PartVTK to create VTK files with floating particles.</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nv">%partvtk%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFloating -onlytype:-all,+floating -continue:1
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
-</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="c1">rem Executes PartVTKOut to create VTK files with excluded particles.</span>
-</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="nv">%partvtkout%</span> -dirdata <span class="nv">%diroutdata%</span> -savevtk <span class="nv">%dirout2%</span>/PartFluidOut -SaveResume <span class="nv">%dirout2%</span>/_ResumeFluidOut
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
-</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="c1">rem Executes BoundaryVTK to create VTK files with floating-body geometry.</span>
-</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\boundary
-</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="nv">%boundaryvtk%</span> -loadvtk AutoActual -motiondata <span class="nv">%diroutdata%</span> -savevtkdata <span class="nv">%dirout2%</span>/Box -onlytype:floating
-</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
-</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="c1">rem Executes FloatingInfo to export the selected floating-body data to CSV files.</span>
-</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\floatinginfo
-</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="nv">%floatinginfo%</span> -dirdata <span class="nv">%diroutdata%</span> -savemotion -onlymk:60 -savedata <span class="nv">%dirout2%</span>/FloatMotion
-</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span></code></pre></div>
-<p>PartVTK exports fluid, moving-piston and floating particles under <code>particles/</code>, with separate <code>PartFluid</code>, <code>PartPiston</code> and <code>PartFloating</code> prefixes. PartVTKOut exports excluded particles and their summary. BoundaryVTK selects floating geometry for <code>boundary/Box</code>. FloatingInfo selects MK 60, requests motion data with <code>-savemotion</code>, reads <code>-dirdata</code> and writes <code>floatinginfo/FloatMotion</code>. Every active tool call is followed by the BAT return-code check.</p>
-<p>The wave-only BAT exports fluid and moving-piston particles plus excluded-particle data. It does not invoke MeasureTool, BoundaryVTK or FloatingInfo. Its elevation comparison uses the XML runtime <code>WG_Box</code> gauge; body-motion extraction belongs to the body-present BAT. Both production BATs finish with the same active 2-D slice-export block shown below; the wave-only block resolves its own <code>WavePropagation_out</code> input and output directories.</p>
-<p>The final active surface-export block below occurs in both <code>wDriftingBox_win64_GPU.bat</code> and <code>wWavePropagation_win64_GPU.bat</code>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">rem Executes IsoSurface to create VTK files with fluid surfaces or slices.</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">set</span> <span class="nv">dirout2</span><span class="p">=</span><span class="nv">%dirout%</span>\surface
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nv">%isosurface%</span> -dirdata <span class="nv">%diroutdata%</span> -saveslice <span class="nv">%dirout2%</span>/Slices
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
-</span></code></pre></div>
-<p>It reads <code>%diroutdata%</code> (<code>DriftingBox_out/data</code>) and writes the <code>surface/Slices</code> prefix under the same case output directory. For <code>wWavePropagation_win64_GPU.bat</code>, the corresponding input is <code>WavePropagation_out/data</code> and the output prefix is <code>WavePropagation_out/surface/Slices</code>. The return-code check precedes <code>:success</code>; static inspection does not establish successful execution.</p>
-<table>
-<thead>
-<tr>
-<th>Configuration</th>
-<th>Expected output paths</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Wave propagation</td>
-<td><code>WavePropagation_out/data/</code>, <code>GaugesSWL_WG_Box.csv</code>, <code>GaugesSWL_WG_Up.csv</code>, <code>GaugesSWL_WG_Down.csv</code>; fluid VTK under <code>particles/</code></td>
-</tr>
-<tr>
-<td>Drifting box</td>
-<td><code>DriftingBox_out/data/</code>; <code>GaugesSWL_WG_Up.csv</code>, <code>GaugesSWL_WG_Down.csv</code>; fluid VTK under <code>particles/</code>, body VTK under <code>boundary/</code>, floating CSV under <code>floatinginfo/</code></td>
-</tr>
-</tbody>
-</table>
-<p>The current FloatingInfo command selects MK 60 and writes the prefix <code>DriftingBox_out/floatinginfo/FloatMotion</code>. Check generated marker metadata and output headers before identifying the box motion. See <a href="../../faq/howto/floating_body_motion/">Compute the motion of a floating body</a> for general field interpretation.</p>
-<h2 id="results-and-validation">Results and Validation<a class="headerlink" href="#results-and-validation" title="Link to this heading">&para;</a></h2>
-<h3 id="experimental-reference-and-coordinate-conventions">Experimental Reference and Coordinate Conventions<a class="headerlink" href="#experimental-reference-and-coordinate-conventions" title="Link to this heading">&para;</a></h3>
-<p>The selected experimental CSV provides time and response channels. Inspect its headers and valid time/quantity pairs before comparison; the original channel names alone do not define the numerical coordinate mapping.</p>
-<table>
-<thead>
-<tr>
-<th>Comparison</th>
-<th>Experimental columns</th>
-<th>Numerical quantity</th>
-<th>Convention to verify</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Free-surface elevation</td>
-<td><code>t_s</code>, <code>eta_m</code></td>
-<td>Central wave-only gauge elevation</td>
-<td>X=2.0 m in the XML; confirm experimental probe location and vertical datum</td>
-</tr>
-<tr>
-<td>Surge</td>
-<td><code>t_s</code>, <code>sway_m</code> (also <code>x_over_d</code>)</td>
-<td>X displacement (<code>surge</code> in metres)</td>
-<td>X origin, displacement reference and positive direction</td>
-</tr>
-<tr>
-<td>Heave</td>
-<td><code>t_s</code>, <code>heave_m</code> (also <code>z_over_d</code>)</td>
-<td>Z displacement</td>
-<td>Displacement datum and positive direction</td>
-</tr>
-<tr>
-<td>Pitch</td>
-<td><code>t_s</code>, <code>roll_deg</code> or <code>roll_rad</code> (also <code>theta_over_kd</code>)</td>
-<td>Rotation about Y</td>
-<td>Angular units, zero reference and positive sign</td>
-</tr>
-</tbody>
-</table>
-<p>For this XZ model, the comparison names are <strong>surge, heave and pitch</strong>, despite the experimental column labels <code>sway_m</code> and <code>roll_*</code>. The CSV files alone do not establish the original angular sign or the full experimental coordinate mapping. Do not invert a curve or equate a centre position with displacement without a documented reference.</p>
-<p>The current H=0.10 m reference contains elevation, surge, heave and angular channels with their own valid samples. Missing entries are not zeros. Match valid time/quantity pairs and verify the displacement and angular conventions; do not invent observations to fill gaps.</p>
-<h3 id="wave-propagation-validation">Wave Propagation Validation<a class="headerlink" href="#wave-propagation-validation" title="Link to this heading">&para;</a></h3>
-<p>Compare the wave-only central gauge with the H=0.10 m experimental elevation series. Confirm that the experimental measurement represents the intended box position, and document the time origin and elevation datum before applying any alignment. Use the upstream and downstream gauges to examine propagation without substituting them for the central comparison.</p>
-<figure style="text-align: center;">
+<p><strong>BoundaryVTK</strong>: writes the surface of the box at every output time, to show it in ParaView with the water.</p>
+<p><strong>FloatingInfo</strong>: writes the motion of the floating bodies with a final marker between 10 and 120, here the box (<code>mk</code> = 60): the position of its center, its rotation, and their velocities.</p>
+<h2 id="results-and-validation">Results and validation<a class="headerlink" href="#results-and-validation" title="Link to this heading">&para;</a></h2>
+<p>The experimental data of <a href="#Ren_2015">Ren et al. (2015)</a>, for the 0.10 m waves, are compared with the elevation at the position of the box from the wave propagation case (Figure 3), and with the sway, heave, and roll of the box from FloatingInfo (Figure 4).</p>
+<figure id="fig-elevation" style="text-align: center;">
   <a href="../../assets/images/benchmarks/drifting_box/06_driftingbox_waveelevation_preliminary_20261118.png" target="_blank" rel="noopener noreferrer">
-    <img src="../../assets/images/benchmarks/drifting_box/06_driftingbox_waveelevation_preliminary_20261118.png" alt="Free-surface elevation comparison at the intended box location, with Reference and DualSPHysics curves; elevation in metres and time in seconds." style="width: 100%; max-width: 1100px; height: auto;">
+    <img src="../../assets/images/benchmarks/drifting_box/06_driftingbox_waveelevation_preliminary_20261118.png" alt="Wave elevation at the position of the box against time." style="width: 100%; max-width: 1100px; height: auto;">
   </a>
-  <figcaption><strong>Figure 1:</strong> Free-surface elevation comparison at the intended box location, with Reference and DualSPHysics curves; elevation in metres and time in seconds.</figcaption>
+  <figcaption><strong>Figure 3:</strong> Wave elevation at the position of the box, in the empty flume: experiment and DualSPHysics.</figcaption>
 </figure>
 
-<h3 id="floating-body-motion-validation">Floating-body Motion Validation<a class="headerlink" href="#floating-body-motion-validation" title="Link to this heading">&para;</a></h3>
-<p>Use the body-present output and the corresponding experimental series. Check generated body properties, selected MK, displacement references and Y-axis angular sign before overlaying the curves. Use displacement in metres and pitch in degrees, with any conversion stated explicitly.</p>
-<figure style="text-align: center;">
+<figure id="fig-motion" style="text-align: center;">
   <a href="../../assets/images/benchmarks/drifting_box/06_driftingbox_motion_preliminary_20261118.png" target="_blank" rel="noopener noreferrer">
-    <img src="../../assets/images/benchmarks/drifting_box/06_driftingbox_motion_preliminary_20261118.png" alt="Floating-body motion comparison: heave and surge in metres and pitch in degrees, versus time in seconds." style="width: 100%; max-width: 1100px; height: auto;">
+    <img src="../../assets/images/benchmarks/drifting_box/06_driftingbox_motion_preliminary_20261118.png" alt="Sway, heave, and roll of the box against time." style="width: 100%; max-width: 1100px; height: auto;">
   </a>
-  <figcaption><strong>Figure 2:</strong> Floating-body motion comparison: heave and surge in metres and pitch in degrees, versus time in seconds.</figcaption>
+  <figcaption><strong>Figure 4:</strong> Sway, heave, and roll of the box: experiment and DualSPHysics.</figcaption>
 </figure>
 
-<p>The generated XMLs record the selected 0.005 m spacing, free-slip mDBC and 12 s duration. This agreement of inspected settings does not prove the provenance of the plotted curves. Experimental time alignment, displacement datum and angular sign still require final verification. No earlier Floating Box figure is attributed to this case.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Link to this heading">&para;</a></h2>
-<p><a id="ren-2015"></a>
-Ren, B., He, M., Dong, P. and Wen, H. (2015). <em>Nonlinear simulations of wave-induced motions of a freely floating body using WCSPH method</em>. Applied Ocean Research, <strong>50</strong>, 1–12. <a href="https://doi.org/10.1016/j.apor.2014.12.003" rel="noopener noreferrer" target="_blank">DOI: 10.1016/j.apor.2014.12.003</a>. <a href="https://www.sciencedirect.com/science/article/pii/S0141118714001175" rel="noopener noreferrer" target="_blank">Article</a>.</p>
-<p>Bibliographic details are verified against the <a href="https://discovery.dundee.ac.uk/en/publications/nonlinear-simulations-of-wave-induced-motions-of-a-freely-floatin/" rel="noopener noreferrer" target="_blank">University of Dundee publication record</a>. A local full-text copy has not been identified; the experimental probe mapping and angular sign remain to be checked against the paper.</p>
+<p><a id="Ren_2015"></a>
+◆ Ren, B., He, M., Dong, P., &amp; Wen, H. (2015). Nonlinear simulations of wave-induced motions of a freely floating body using WCSPH method. <em>Applied Ocean Research</em>, <em>50</em>, 1-12. <a href="https://doi.org/10.1016/j.apor.2014.12.003" rel="noopener" target="_blank">DOI: 10.1016/j.apor.2014.12.003</a>.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -4514,44 +3905,6 @@ Ren, B., He, M., Dong, P. and Wen, H. (2015). <em>Nonlinear simulations of wave-
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../dambreak_debris/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dambreak Debris">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Dambreak Debris
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../moored_box/" class="md-footer__link md-footer__link--next" aria-label="Next: Moored Box">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Moored Box
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

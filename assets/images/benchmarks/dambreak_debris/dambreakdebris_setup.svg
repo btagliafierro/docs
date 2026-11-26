@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170 370" width="1170" height="370" role="img" aria-label="Dambreak debris: plan view">
+<title>Dambreak debris: plan view</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<style>text{font-family:'Segoe UI', Helvetica, Arial, sans-serif;}</style>
+<rect x="60.0" y="50.0" width="210.0" height="210.0" rx="0" fill="#4c8bf5" stroke="none" stroke-width="1" opacity="0.3"/>
+<text x="165.0" y="155.0" font-size="17" fill="#4c8bf5" text-anchor="middle" font-weight="normal">water</text>
+<rect x="60.0" y="50.0" width="1050.0" height="210.0" rx="0" fill="none" stroke="#8a94a3" stroke-width="3" opacity="1.0"/>
+<line x1="270.0" y1="50.0" x2="270.0" y2="260.0" stroke="#e05a4f" stroke-width="4" opacity="1.0"/>
+<text x="276.0" y="42.0" font-size="13" fill="#e05a4f" text-anchor="start" font-weight="bold">gate (mk 1)</text>
+<rect x="648.0" y="58.4" width="126.0" height="63.0" rx="0" fill="#8a94a3" stroke="none" stroke-width="1" opacity="0.35"/>
+<text x="711.0" y="94.9" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">building 1 (mk 10)</text>
+<rect x="879.0" y="171.8" width="126.0" height="63.0" rx="0" fill="#8a94a3" stroke="none" stroke-width="1" opacity="0.35"/>
+<text x="942.0" y="208.3" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">building 2 (mk 11)</text>
+<path d="M632.9,183.3 L650.4,190.3 L669.0,144.4 L651.5,137.3 Z" fill="#f2a541"/>
+<path d="M678.3,186.6 L695.8,193.7 L714.3,147.7 L696.8,140.7 Z" fill="#f2a541"/>
+<path d="M723.2,190.0 L740.7,197.1 L759.3,151.1 L741.8,144.0 Z" fill="#f2a541"/>
+<text x="690.0" y="138.2" font-size="13" fill="#f2a541" text-anchor="middle" font-weight="bold">boxes (mk 61–63)</text>
+<circle cx="633.3" cy="96.2" r="5.0" fill="#e8574a" stroke="none" stroke-width="0" opacity="1.0"/>
+<text x="625.3" y="101.2" font-size="13" fill="#e8574a" text-anchor="end" font-weight="bold">h1</text>
+<circle cx="864.3" cy="197.0" r="5.0" fill="#e8574a" stroke="none" stroke-width="0" opacity="1.0"/>
+<text x="856.3" y="202.0" font-size="13" fill="#e8574a" text-anchor="end" font-weight="bold">h2</text>
+<line x1="60.0" y1="290.0" x2="270.0" y2="290.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="165.0" y="283.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">0.50</text>
+<line x1="60.0" y1="320.0" x2="1110.0" y2="320.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="585.0" y="313.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">2.50</text>
+<line x1="1132.0" y1="260.0" x2="1132.0" y2="50.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="1138.0" y="160.0" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">0.50</text>
+<text x="60.0" y="360.0" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">Plan view; dimensions in meters. The water is 0.10 m deep; the walls are 0.30 m high.</text>
+</svg>

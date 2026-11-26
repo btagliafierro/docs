@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1319 728" width="1319" height="728" role="img" aria-label="Wave run-up flume and breakwater">
+<title>Wave run-up flume and breakwater</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<style>text{font-family:'Segoe UI', Helvetica, Arial, sans-serif;}</style>
+<text x="30.0" y="32.0" font-size="17" fill="#8a94a3" text-anchor="start" font-weight="bold">(a) The flume</text>
+<path d="M131.49152542372886,151.24576271186442 L1024.1949152542372,151.24576271186442 L1094.961233102862,113.61864406779662 L131.49152542372886,113.61864406779662 Z" fill="#4c8bf5" opacity="0.3"/>
+<path d="M60.0,151.24576271186442 L1024.1949152542372,151.24576271186442 L1195.8032360371521,60.0" fill="none" stroke="#8a94a3" stroke-width="2.5"/>
+<rect x="126.5" y="60.0" width="5.0" height="91.2" rx="0" fill="#e05a4f" stroke="none" stroke-width="1" opacity="1.0"/>
+<text x="123.5" y="52.0" font-size="13" fill="#e05a4f" text-anchor="start" font-weight="bold">piston (mk 10)</text>
+<line x1="596.5" y1="151.2" x2="596.5" y2="60.0" stroke="#8a94a3" stroke-width="1.2" stroke-dasharray="4 4" opacity="1.0"/>
+<line x1="596.5" y1="60.0" x2="545.1" y2="44.0" stroke="#8a94a3" stroke-width="1" opacity="1.0"/>
+<text x="545.1" y="38.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="bold">WG1</text>
+<line x1="611.5" y1="151.2" x2="611.5" y2="60.0" stroke="#8a94a3" stroke-width="1.2" stroke-dasharray="4 4" opacity="1.0"/>
+<line x1="611.5" y1="60.0" x2="601.1" y2="44.0" stroke="#8a94a3" stroke-width="1" opacity="1.0"/>
+<text x="601.1" y="38.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="bold">WG2</text>
+<line x1="632.5" y1="151.2" x2="632.5" y2="60.0" stroke="#8a94a3" stroke-width="1.2" stroke-dasharray="4 4" opacity="1.0"/>
+<line x1="632.5" y1="60.0" x2="657.1" y2="44.0" stroke="#8a94a3" stroke-width="1" opacity="1.0"/>
+<text x="657.1" y="38.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="bold">WG3</text>
+<line x1="676.0" y1="151.2" x2="676.0" y2="60.0" stroke="#8a94a3" stroke-width="1.2" stroke-dasharray="4 4" opacity="1.0"/>
+<line x1="676.0" y1="60.0" x2="713.1" y2="44.0" stroke="#8a94a3" stroke-width="1" opacity="1.0"/>
+<text x="713.1" y="38.0" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="bold">WG4</text>
+<line x1="131.5" y1="181.2" x2="1024.2" y2="181.2" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="577.8" y="174.2" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">5.95 (piston to toe)</text>
+<text x="30.0" y="233.2" font-size="17" fill="#8a94a3" text-anchor="start" font-weight="bold">(b) The breakwater</text>
+<path d="M60.0,638.3949152542373 L339.0,638.3949152542373 L631.500780440982,482.86949152542377 L60.0,482.86949152542377 Z" fill="#4c8bf5" opacity="0.3"/>
+<path d="M60.0,638.3949152542373 L339.0,638.3949152542373 L1048.3143925693814,261.2457627118644" fill="none" stroke="#8a94a3" stroke-width="2.5"/>
+<path d="M377.8,617.6 L409.5,600.7 L392.6,568.9 L360.9,585.8 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M410.6,600.1 L442.4,583.2 L425.5,551.5 L393.7,568.3 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M443.5,582.6 L475.2,565.8 L458.3,534.0 L426.6,550.9 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M476.3,565.2 L508.1,548.3 L491.2,516.5 L459.4,533.4 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M509.2,547.7 L540.9,530.8 L524.0,499.1 L492.3,516.0 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M542.0,530.2 L573.8,513.4 L556.9,481.6 L525.1,498.5 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M574.9,512.8 L606.6,495.9 L589.7,464.1 L558.0,481.0 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M607.7,495.3 L639.5,478.4 L622.6,446.7 L590.8,463.6 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M640.5,477.8 L672.3,461.0 L655.4,429.2 L623.7,446.1 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M673.4,460.4 L705.1,443.5 L688.3,411.8 L656.5,428.6 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M706.2,442.9 L738.0,426.0 L721.1,394.3 L689.4,411.2 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M739.1,425.5 L770.8,408.6 L754.0,376.8 L722.2,393.7 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M771.9,408.0 L803.7,391.1 L786.8,359.4 L755.0,376.2 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M804.8,390.5 L836.5,373.6 L819.6,341.9 L787.9,358.8 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M837.6,373.1 L869.4,356.2 L852.5,324.4 L820.7,341.3 Z" fill="#e05a4f" opacity="0.9"/>
+<path d="M377.2,576.9 L409.0,560.0 L392.1,528.2 L360.3,545.1 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M410.0,559.4 L441.8,542.5 L424.9,510.8 L393.2,527.6 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M442.9,541.9 L474.6,525.1 L457.8,493.3 L426.0,510.2 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M475.7,524.5 L507.5,507.6 L490.6,475.8 L458.9,492.7 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M508.6,507.0 L540.3,490.1 L523.5,458.4 L491.7,475.3 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M541.4,489.5 L573.2,472.7 L556.3,440.9 L524.6,457.8 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M574.3,472.1 L606.0,455.2 L589.1,423.4 L557.4,440.3 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M607.1,454.6 L638.9,437.7 L622.0,406.0 L590.2,422.9 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M640.0,437.1 L671.7,420.3 L654.8,388.5 L623.1,405.4 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M672.8,419.7 L704.6,402.8 L687.7,371.1 L655.9,387.9 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M705.7,402.2 L737.4,385.3 L720.5,353.6 L688.8,370.5 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M738.5,384.8 L770.3,367.9 L753.4,336.1 L721.6,353.0 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M771.4,367.3 L803.1,350.4 L786.2,318.7 L754.5,335.5 Z" fill="#e05a4f" opacity="0.6"/>
+<path d="M804.2,349.8 L835.9,332.9 L819.1,301.2 L787.3,318.1 Z" fill="#e05a4f" opacity="0.6"/>
+<text x="723.4" y="470.5" font-size="15" fill="#e05a4f" text-anchor="start" font-weight="bold">armour blocks (mk 21–118)</text>
+<line x1="339.0" y1="638.4" x2="438.2" y2="638.4" stroke="#8a94a3" stroke-width="1" stroke-dasharray="3 3" opacity="1.0"/>
+<path d="M413.40000000000003,638.3949152542373 A74.4,74.4 0 0 0 404.6913009087042,603.4662309829671" fill="none" stroke="#8a94a3" stroke-width="1.4"/>
+<text x="419.6" y="629.1" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">slope 28°</text>
+<line x1="195.6" y1="613.6" x2="871.4" y2="254.0" stroke="#e8574a" stroke-width="2" stroke-dasharray="6 4" opacity="1.0"/>
+<text x="877.4" y="254.0" font-size="13" fill="#e8574a" text-anchor="start" font-weight="bold">run-up lines</text>
+<line x1="60.0" y1="482.9" x2="631.5" y2="482.9" stroke="#8a94a3" stroke-width="1" stroke-dasharray="4 4" opacity="1.0"/>
+<text x="64.0" y="476.9" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">SWL, z = 0</text>
+<line x1="90.0" y1="482.9" x2="90.0" y2="638.4" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="98.0" y="565.6" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">0.251</text>
+<text x="30.0" y="712.4" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">Dimensions in meters. The flume is periodic in y, 0.37 m wide.</text>
+</svg>

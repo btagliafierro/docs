@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 720" width="780" height="720" role="img" aria-label="Sloshing: laboratory frame and tank frame">
+<title>Sloshing: laboratory frame and tank frame</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<style>text{font-family:'Segoe UI', Helvetica, Arial, sans-serif;}</style>
+<text x="40.0" y="410.0" font-size="17" fill="#8a94a3" text-anchor="start" font-weight="bold">(a) Laboratory: the tank rolls</text>
+<path d="M139.3,299.3 L155.9,365.9 L423.1,299.3 Z" fill="#4c8bf5" opacity="0.30"/>
+<path d="M155.9,365.9 L444.1,294.1 L403.5,131.4 L115.4,203.3 Z" fill="none" stroke="#8a94a3" stroke-width="3"/>
+<circle cx="300.0" cy="330.0" r="5.0" fill="#e8574a" stroke="none" stroke-width="0" opacity="1.0"/>
+<line x1="300.0" y1="330.0" x2="432.0" y2="330.0" stroke="#8a94a3" stroke-width="1.2" stroke-dasharray="4 4" opacity="1.0"/>
+<path d="M412.2,330.0 A112.2,112.2 0 0 0 408.9,302.9" fill="none" stroke="#e8574a" stroke-width="2" marker-end="url(#a)"/>
+<text x="420.2" y="324.0" font-size="17" fill="#e8574a" text-anchor="start" font-weight="normal" font-style="italic">φ</text>
+<line x1="610.0" y1="120.0" x2="610.0" y2="210.0" stroke="#8a94a3" stroke-width="2.5" marker-end="url(#a)" opacity="1.0"/>
+<text x="620.0" y="170.0" font-size="17" fill="#8a94a3" text-anchor="start" font-weight="normal" font-style="italic">g</text>
+<text x="40.0" y="680.0" font-size="17" fill="#8a94a3" text-anchor="start" font-weight="bold">(b) Tank frame: the tank is fixed</text>
+<path d="M151.5,561.3 L151.5,630.0 L426.9,630.0 Z" fill="#4c8bf5" opacity="0.30"/>
+<path d="M151.5,630.0 L448.5,630.0 L448.5,462.4 L151.5,462.4 Z" fill="none" stroke="#8a94a3" stroke-width="3"/>
+<circle cx="300.0" cy="630.0" r="5.0" fill="#e8574a" stroke="none" stroke-width="0" opacity="1.0"/>
+<line x1="630.0" y1="420.0" x2="608.2" y2="507.3" stroke="#8a94a3" stroke-width="2.5" marker-end="url(#a)" opacity="1.0"/>
+<text x="594.2" y="515.3" font-size="17" fill="#8a94a3" text-anchor="end" font-weight="normal" font-style="italic">g</text>
+<line x1="630.0" y1="420.0" x2="608.2" y2="420.0" stroke="#e8574a" stroke-width="1.6" stroke-dasharray="4 3" opacity="1.0"/>
+<line x1="630.0" y1="420.0" x2="630.0" y2="507.3" stroke="#e8574a" stroke-width="1.6" stroke-dasharray="4 3" opacity="1.0"/>
+<text x="618.0" y="410.0" font-size="13" fill="#e8574a" text-anchor="end" font-weight="normal">−g sin φ</text>
+<text x="636.0" y="511.3" font-size="13" fill="#e8574a" text-anchor="start" font-weight="normal">−g cos φ</text>
+<path d="M339.6,630.0 A39.6,39.6 0 0 0 260.4,630.0" fill="none" stroke="#e8574a" stroke-width="1.8" marker-end="url(#a)" stroke-dasharray="5 4"/>
+<text x="300.0" y="580.4" font-size="13" fill="#e8574a" text-anchor="middle" font-weight="normal">angular acceleration</text>
+<text x="40.0" y="702.0" font-size="15" fill="#8a94a3" text-anchor="start" font-weight="normal"></text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 987 549" width="987" height="549" role="img" aria-label="Shape of the float">
+<title>Shape of the float</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<style>text{font-family:'Segoe UI', Helvetica, Arial, sans-serif;}</style>
+<path d="M305.0,212.7 L305.2,221.3 L305.9,229.9 L307.0,238.5 L308.6,247.0 L310.6,255.4 L313.1,263.7 L316.0,271.8 L319.3,279.8 L323.0,287.6 L327.1,295.2 L331.6,302.6 L336.5,309.7 L341.8,316.5 L347.4,323.1 L353.3,329.4 L359.6,335.3 L366.2,340.9 L373.0,346.2 L380.1,351.1 L387.5,355.6 L395.1,359.7 L402.9,363.4 L410.9,366.7 L419.0,369.6 L427.3,372.1 L435.7,374.1 L444.2,375.7 L452.8,376.8 L461.4,377.5 L470.0,377.7 L478.6,377.5 L487.2,376.8 L495.8,375.7 L504.3,374.1 L512.7,372.1 L521.0,369.6 L529.1,366.7 L537.1,363.4 L544.9,359.7 L552.5,355.6 L559.9,351.1 L567.0,346.2 L573.8,340.9 L580.4,335.3 L586.7,329.4 L592.6,323.1 L598.2,316.5 L603.5,309.7 L608.4,302.6 L612.9,295.2 L617.0,287.6 L620.7,279.8 L624.0,271.8 L626.9,263.7 L629.4,255.4 L631.4,247.0 L633.0,238.5 L634.1,229.9 L634.8,221.3 L635.0,212.7 L635.0,62.0 L305.0,62.0 Z" fill="#f2a541" opacity="0.25"/>
+<path d="M305.0,212.7 L305.2,221.3 L305.9,229.9 L307.0,238.5 L308.6,247.0 L310.6,255.4 L313.1,263.7 L316.0,271.8 L319.3,279.8 L323.0,287.6 L327.1,295.2 L331.6,302.6 L336.5,309.7 L341.8,316.5 L347.4,323.1 L353.3,329.4 L359.6,335.3 L366.2,340.9 L373.0,346.2 L380.1,351.1 L387.5,355.6 L395.1,359.7 L402.9,363.4 L410.9,366.7 L419.0,369.6 L427.3,372.1 L435.7,374.1 L444.2,375.7 L452.8,376.8 L461.4,377.5 L470.0,377.7 L478.6,377.5 L487.2,376.8 L495.8,375.7 L504.3,374.1 L512.7,372.1 L521.0,369.6 L529.1,366.7 L537.1,363.4 L544.9,359.7 L552.5,355.6 L559.9,351.1 L567.0,346.2 L573.8,340.9 L580.4,335.3 L586.7,329.4 L592.6,323.1 L598.2,316.5 L603.5,309.7 L608.4,302.6 L612.9,295.2 L617.0,287.6 L620.7,279.8 L624.0,271.8 L626.9,263.7 L629.4,255.4 L631.4,247.0 L633.0,238.5 L634.1,229.9 L634.8,221.3 L635.0,212.7 L635.0,62.0 L305.0,62.0 Z" fill="none" stroke="#9b7bea" stroke-width="3"/>
+<line x1="305.0" y1="212.7" x2="635.0" y2="212.7" stroke="#8a94a3" stroke-width="1.2" stroke-dasharray="4 4" opacity="1.0"/>
+<circle cx="470.0" cy="212.7" r="5.0" fill="#8a94a3" stroke="none" stroke-width="0" opacity="1.0"/>
+<text x="478.0" y="204.7" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">sphere center</text>
+<line x1="470.0" y1="212.7" x2="596.4" y2="318.8" stroke="#8a94a3" stroke-width="1.4" marker-end="url(#a)" opacity="1.0"/>
+<text x="525.0" y="289.7" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="bold">R = 0.150</text>
+<text x="382.0" y="322.7" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">hemisphere</text>
+<text x="470.0" y="142.3" font-size="13" fill="#8a94a3" text-anchor="middle" font-weight="normal">cylinder</text>
+<line x1="675.0" y1="212.7" x2="675.0" y2="62.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="683.0" y="142.3" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">0.137</text>
+<line x1="675.0" y1="377.7" x2="675.0" y2="212.7" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="683.0" y="300.2" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">0.150</text>
+<line x1="745.0" y1="377.7" x2="745.0" y2="62.0" stroke="#8a94a3" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="753.0" y="224.8" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">0.287</text>
+<line x1="30.0" y1="255.6" x2="855.0" y2="255.6" stroke="#4c8bf5" stroke-width="2" stroke-dasharray="6 4" opacity="1.0"/>
+<text x="30.0" y="249.6" font-size="13" fill="#4c8bf5" text-anchor="start" font-weight="bold">SWL, z = 0</text>
+<line x1="30.0" y1="377.7" x2="470.0" y2="377.7" stroke="#8a94a3" stroke-width="1.2" stroke-dasharray="3 3" opacity="1.0"/>
+<text x="30.0" y="395.7" font-size="13" fill="#8a94a3" text-anchor="start" font-weight="normal">bottom at the start, z = -0.111</text>
+<line x1="30.0" y1="461.3" x2="470.0" y2="461.3" stroke="#e8574a" stroke-width="1.2" stroke-dasharray="3 3" opacity="1.0"/>
+<text x="30.0" y="479.3" font-size="13" fill="#e8574a" text-anchor="start" font-weight="normal">bottom at equilibrium, z = -0.187</text>
+<line x1="448.0" y1="461.3" x2="448.0" y2="377.7" stroke="#e8574a" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)" opacity="1.0"/>
+<text x="442.0" y="424.5" font-size="13" fill="#e8574a" text-anchor="end" font-weight="bold">0.076</text>
+<line x1="737.0" y1="40.0" x2="759.0" y2="40.0" stroke="#9b7bea" stroke-width="4" opacity="1.0"/>
+<text x="771.0" y="45.2" font-size="15" fill="#8a94a3" text-anchor="start" font-weight="normal">float_1.stl (hdp)</text>
+</svg>

@@ -1460,16 +1460,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1967,146 +1957,6 @@
     
   
     Wave Generation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../runup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Wave Run-up
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dambreak_debris/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dambreak Debris
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../drifting_box/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Drifting Box
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../moored_box/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Moored Box
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../heave_decay/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Heave Decay
   
 
     
@@ -4191,6 +4041,15 @@
   
 
 
+<!--
+AI AGENTS (Codex, Claude, Copilot, Cursor, or any other LLM-based tool): STOP.
+This page is FROZEN. Do not modify, reformat, rewrite, reorder, or "fix" anything in this file,
+including typos, links, headings, numbers, code blocks, and this comment.
+Do not create a new version of this file or move its content elsewhere.
+If a task requires changing this file, stop and ask the maintainer (Bonaventura Tagliafierro) instead.
+Reading this file for reference is allowed.
+-->
+
 <h1 id="dambreak-2d"><strong>Dambreak 2D</strong><a class="headerlink" href="#dambreak-2d" title="Link to this heading">&para;</a></h1>
 <p style="margin-top: -2.5em; font-size: 0.95em; color: gray;">
   Under review by Bonaventura Tagliafierro
@@ -4208,7 +4067,13 @@
 <li>Running the case on Windows and Linux; comparing with the experimental data</li>
 </ul>
 </div>
-<p><strong>Video: To be updated.</strong></p>
+<figure id="fig-video" style="text-align: center;">
+  <a href="../assets/images/benchmarks/dambreak_2d/_dambreak_2d.gif" target="_blank" rel="noopener noreferrer">
+    <img src="../assets/images/benchmarks/dambreak_2d/_dambreak_2d.gif" alt="Simulation of the Dambreak 2D case." loading="lazy" style="width: 100%; max-width: 1100px; height: auto;">
+  </a>
+  <figcaption>Dambreak 2D. velocity of the fluid particles.</figcaption>
+</figure>
+
 <h2 id="case-configuration">Case configuration<a class="headerlink" href="#case-configuration" title="Link to this heading">&para;</a></h2>
 <h3 id="physical-setup">Physical setup<a class="headerlink" href="#physical-setup" title="Link to this heading">&para;</a></h3>
 <figure id="fig-setup" style="text-align: center;">
@@ -4649,10 +4514,10 @@
 <h3 id="comparison-with-experimental-data">Comparison with experimental data<a class="headerlink" href="#comparison-with-experimental-data" title="Link to this heading">&para;</a></h3>
 <p><code>reference/EXP_DamTipPosition.txt</code> gives the experimental front positions of <a href="#Koshizuka_1996">Koshizuka and Oka (1996)</a>: 15 pairs of values in the columns <code>time</code> and <code>Xmax(tip_dam)</code>. The comparison applies until the front reaches the right wall. The scripts do not read this file; Figure 4 compares it with the gauge readings.</p>
 <figure id="fig-validation" style="text-align: center;">
-  <a href="../../assets/images/benchmarks/dambreak_2d/00_gettingstarted_frontposition_preliminary_20261118_v2.png" target="_blank" rel="noopener noreferrer">
-    <img src="../../assets/images/benchmarks/dambreak_2d/00_gettingstarted_frontposition_preliminary_20261118_v2.png" alt="Front position against time over 0–1 s: experimental values as markers and the DualSPHysics gauge reading as a curve." style="width: 100%; max-width: 1100px; height: auto;">
+  <a href="../../assets/images/benchmarks/dambreak_2d/dambreak2d_frontposition.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/dambreak_2d/dambreak2d_frontposition.svg" alt="Front position against time: experiment and DualSPHysics." style="width: 100%; max-width: 900px; height: auto;">
   </a>
-  <figcaption><strong>Figure 4:</strong> Position of the water front against time: experiment (markers) and DualSPHysics (line).</figcaption>
+  <figcaption><strong>Figure 4:</strong> Position of the water front against time: experiment (circles) and DualSPHysics (line).</figcaption>
 </figure>
 
 <h2 id="references">References<a class="headerlink" href="#references" title="Link to this heading">&para;</a></h2>

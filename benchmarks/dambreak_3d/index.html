@@ -1460,16 +1460,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1814,7 +1804,7 @@
   <a href="#density-diffusion-and-shifting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Density diffusion and Shifting
+        Density diffusion and shifting
       
     </span>
   </a>
@@ -1825,7 +1815,7 @@
   <a href="#time-step-output-and-domain" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Time-Step, output, and domain
+        Time step, output, and domain
       
     </span>
   </a>
@@ -1853,7 +1843,7 @@
   <a href="#input-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Input Files
+        Input files
       
     </span>
   </a>
@@ -2039,146 +2029,6 @@
     
   
     Wave Generation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../runup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Wave Run-up
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dambreak_debris/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dambreak Debris
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../drifting_box/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Drifting Box
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../moored_box/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Moored Box
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../heave_decay/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Heave Decay
   
 
     
@@ -4136,7 +3986,7 @@
   <a href="#density-diffusion-and-shifting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Density diffusion and Shifting
+        Density diffusion and shifting
       
     </span>
   </a>
@@ -4147,7 +3997,7 @@
   <a href="#time-step-output-and-domain" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Time-Step, output, and domain
+        Time step, output, and domain
       
     </span>
   </a>
@@ -4175,7 +4025,7 @@
   <a href="#input-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Input Files
+        Input files
       
     </span>
   </a>
@@ -4335,12 +4185,21 @@
   
 
 
+<!--
+AI AGENTS (Codex, Claude, Copilot, Cursor, or any other LLM-based tool): STOP.
+This page is FROZEN. Do not modify, reformat, rewrite, reorder, or "fix" anything in this file,
+including typos, links, headings, numbers, code blocks, and this comment.
+Do not create a new version of this file or move its content elsewhere.
+If a task requires changing this file, stop and ask the maintainer (Bonaventura Tagliafierro) instead.
+Reading this file for reference is allowed.
+-->
+
 <h1 id="dambreak-3d"><strong>Dambreak 3D</strong><a class="headerlink" href="#dambreak-3d" title="Link to this heading">&para;</a></h1>
 <p style="margin-top: -2.5em; font-size: 0.95em; color: gray;">
   Under review by Bonaventura Tagliafierro
 </p>
 
-<p>This benchmark is a 3-D dambreak with an obstacle. A rectangular column of water, held at rest, is released at <span class="arithmatex">\(t=0\)</span>, and it collapses under gravity. The water flows and runs along the tank, hitting a fixed box downstream, and runnning over the obstacle. The water level is measured at four gauge positions and the pressure is sampled at eight sensors on the obstacle; a final comparison is presented agaist the experimental data of <a href="#SPHERIC_Test02">SPHERIC Benchmark Test 02</a>.</p>
+<p>This benchmark is a 3-D dambreak with an obstacle. A rectangular column of water, held at rest, is released at <span class="arithmatex">\(t=0\)</span>, and it collapses under gravity. The water flows and runs along the tank, hitting a fixed box downstream, and running over the obstacle. The water level is measured at four gauge positions and the pressure is sampled at eight sensors on the obstacle; a final comparison is presented against the experimental data of <a href="#SPHERIC_Test02">SPHERIC Benchmark Test 02</a>.</p>
 <p>The case is supplied in <code>examples/benchmarks/01_Dambreak</code>. This page explains its configuration in detail, and in particular how the geometry is placed with respect to the particle grid.</p>
 <div class="admonition abstract">
 <p class="admonition-title">What's Covered in This Tutorial</p>
@@ -4400,7 +4259,7 @@
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;constantsdef&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;gravity</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;-9.81&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Gravitational acceleration&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;m/s^2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;rhop0</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;999&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Reference density of the fluid&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;kg/m^3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;rhopgradient</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial density gradient 1:Rhop0, 2:Water column, 3:Max. water height (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;rhopgradient</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial density gradient 1:Rhop0, 2:Water column, 3:Max. water height (default=2)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;hswl</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum still water level to calculate speedofsound using coefsound&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;metres (m)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&lt;gamma</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Polytropic constant for water used in the state equation&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;speedsystem</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">auto=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Maximum system speed (by default the dam-break propagation is used)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
@@ -4410,7 +4269,7 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;cflnumber</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to multiply dt&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">&lt;/constantsdef&gt;</span>
 </span></code></pre></div>
-<p><strong>Fluid</strong>: water with reference density 999 kg/m³ under gravity <span class="arithmatex">\((0,0,-9.81)\)</span> m/s². <code>rhopgradient=3</code> indicates that the water is initialized with a hydrostatic density profile computed from the maximum water height.</p>
+<p><strong>Fluid</strong>: water with reference density 999 kg/m³ under gravity <span class="arithmatex">\((0,0,-9.81)\)</span> m/s². <code>rhopgradient=2</code> indicates that the water is initialized with a hydrostatic density profile computed from the maximum water height.</p>
 <p><strong>Speed of sound</strong>: the entries with <code>auto="true"</code> are calculated by GenCase. The still-water level <code>hswl</code> is taken from the water height (0.55 m), and the system speed is the dam-break velocity taken as <span class="arithmatex">\(\sqrt{g\,h_{\mathrm{swl}}}\)</span>; the speed of sound is then computed considering the multiplier <code>coefsound</code> = 20.</p>
 <p><strong>Smoothing length</strong>: in 3D, <span class="arithmatex">\(h = \mathrm{coefh}\,\sqrt{3}\,Dp = 1.3\sqrt{3}\times0.00805 = 0.0181\)</span> m. Each particle interacts with neighbors up to <span class="arithmatex">\(2h\)</span> = 4.5·Dp away. This information is used to define the number of boundary layers needed for correct simulations.</p>
 <p><strong>Time step</strong>: <code>cflnumber=0.2</code> scales the time step that the solver computes at every step, to account for the Courant condition.</p>
@@ -4455,7 +4314,7 @@
 <li>Each wall surface lies <strong>exactly halfway</strong> between the boundary particles and the fluid particles: the first boundary layer is Dp/2 behind it, and the first fluid particle Dp/2 in front of it.</li>
 <li>This holds for <strong>any</strong> <code>Dp</code>. When a real dimension is not a whole number of <code>Dp</code>, the wall is moved to the nearest position that satisfies the first rule; the error is always smaller than Dp/2, so the geometry converges to the real one as <code>Dp</code> decreases.</li>
 </ol>
-<p>The fluid can only be placed on the regular particle lattice, so the walls in contact with the water are placed on that lattice. The obstacle is dry at <span class="arithmatex">\(t=0\)</span>, so it is drawn at its exact real position instead (see <a href="#obstacle-exact-position-with-freedraw">Obstacle</a>).</p>
+<p>The fluid can only be placed on the regular particle lattice, so the walls in contact with the water are placed on that lattice. The obstacle is dry at <span class="arithmatex">\(t=0\)</span>, so it is drawn at its exact real position instead (see <a href="#exact-position-with-freedraw">Obstacle</a>).</p>
 <figure id="fig-grid-wall" style="text-align: center;">
   <a href="../../assets/images/benchmarks/dambreak_3d/dambreak3d_grid_wall.svg" target="_blank" rel="noopener noreferrer">
     <img src="../../assets/images/benchmarks/dambreak_3d/dambreak3d_grid_wall.svg" alt="Corner of the tank." style="width: 100%; max-width: 900px; height: auto;">
@@ -4494,7 +4353,7 @@
 <p><strong>Use for the tank variables</strong>: each <code>Tank*</code>-constant is the <strong>first boundary layer</strong>, that is, the node nearest to the wall moved Dp/2 outwards. For example, <code>Tankpx1 = roundposx(DefTankpx − Dpm)</code> is the node Dp/2 behind the wall at <span class="arithmatex">\(x=0\)</span>, and <code>Tankpx2 = roundposx(DefTankpx + DefTanksx + Dpm)</code> is the node nearest to Dp/2 behind the far wall. The wall surface used for the normals is then half a spacing back towards the fluid from these nodes.</p>
 <p><strong>Two possible outcomes</strong>: the position passed to the function is the real wall plus Dp/2, where the first boundary particle should be.</p>
 <ul>
-<li>If the wall is a integer number of spacings away from the reference walls, that position is already a node, and nothing moves, and this case is shown in Figure 3. This is the case for the far end wall, where the tank length, 3.22 m, is exactly 400·Dp.</li>
+<li>If the wall is an integer number of spacings away from the reference walls, that position is already a node, and nothing moves, as shown in Figure 3. This is the case for the far end wall, where the tank length, 3.22 m, is exactly 400·Dp.</li>
 </ul>
 <figure id="fig-roundpos-exact" style="text-align: center;">
   <a href="../../assets/images/benchmarks/dambreak_3d/dambreak3d_roundpos_exact.svg" target="_blank" rel="noopener noreferrer">
@@ -4782,7 +4641,7 @@
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;Turbulence&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;NO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Turbulence model: NO:None, SPS:Sub-particle scale (default=NO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><strong>Viscosity</strong>: artificial viscosity, with the coefficient computed from the kinematic viscosity of water, 10⁻⁶ m²/s, using <code>CoefSound</code> and the smoothing length <code>H</code> from <code>&lt;constantsdef&gt;</code>, so that it follows any change of <code>coefsound</code> or <code>Dp</code>. With the values of this case, it evaluates to <span class="arithmatex">\(\alpha = 2.8\times10^{-5}\)</span>. <code>ViscoBoundFactor=1</code> applies the same viscosity between fluid and walls.</p>
-<h3 id="density-diffusion-and-shifting">Density diffusion and Shifting<a class="headerlink" href="#density-diffusion-and-shifting" title="Link to this heading">&para;</a></h3>
+<h3 id="density-diffusion-and-shifting">Density diffusion and shifting<a class="headerlink" href="#density-diffusion-and-shifting" title="Link to this heading">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDT&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;FO&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Density Diffusion Term: NO:None, FO:Fourtakas (default=NO)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DensityDTvalue&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.10&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;DDT value (default=0.1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DivCleanKp&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Kappa parameter for Divergence Cleaning (equal to coefsound) (default=0)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
@@ -4792,7 +4651,7 @@
 </span></code></pre></div>
 <p><strong>Density diffusion</strong>: the Fourtakas formulation with coefficient 0.10 smooths the pressure field (<a href="#Fourtakas_2019">Fourtakas et al., 2019</a>).</p>
 <p><strong>Shifting</strong>: standard shifting, ignoring the boundary particles, with the 3-D free-surface threshold 2.75.</p>
-<h3 id="time-step-output-and-domain">Time-Step, output, and domain<a class="headerlink" href="#time-step-output-and-domain" title="Link to this heading">&para;</a></h3>
+<h3 id="time-step-output-and-domain">Time step, output, and domain<a class="headerlink" href="#time-step-output-and-domain" title="Link to this heading">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;DtIni&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#2*Dp/1500&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Initial time step. Use 0 to default use (default=h/speedsound)&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;CoefDtMin&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;TimeMax&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;#timeMax&quot;</span><span class="w"> </span><span class="na">comment=</span><span class="s">&quot;Time of simulation&quot;</span><span class="w"> </span><span class="na">units_comment=</span><span class="s">&quot;seconds&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
@@ -4810,7 +4669,7 @@
 <p><strong>Excluded particles</strong>: a fluid particle whose density leaves the range 700–1300 kg/m³ is removed from the simulation, with a warning. Particles that leave the domain are removed in the same way.</p>
 <p><strong>Domain</strong>: <code>default</code> determines the solver domain as the box around all the generated particles, in this case, up to the top of the walls at <span class="arithmatex">\(z=1.00\)</span> m. The tank is open at the top, so any particle that goes higher than that is excluded from the simulation.</p>
 <h2 id="running-the-simulation">Running the simulation<a class="headerlink" href="#running-the-simulation" title="Link to this heading">&para;</a></h2>
-<h3 id="input-files">Input Files<a class="headerlink" href="#input-files" title="Link to this heading">&para;</a></h3>
+<h3 id="input-files">Input files<a class="headerlink" href="#input-files" title="Link to this heading">&para;</a></h3>
 <p>Work in <code>examples/benchmarks/01_Dambreak/</code>:</p>
 <table>
 <thead>
@@ -4870,7 +4729,7 @@
 </span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
 </span></code></pre></div>
 <p><strong>Pre-processing</strong>: GenCase reads <code>Dambreak_Def.xml</code> and writes the case to <code>Dambreak_out/Dambreak</code>. <code>-save:all</code> also saves the initial particles as VTK.</p>
-<p><strong>Simulation</strong>: the solver runs on the GPU (<code>-gpu</code>) and writes its results to <code>Dambreak_out</code>. The gauge output is written during the run.</p>
+<p><strong>Simulation</strong>: the solver runs on the GPU (<code>-gpu</code>) and writes its results to <code>Dambreak_out</code>.</p>
 <p>The post-processing steps are described in the next section. See <a href="../../getting_started/workflow/#the-batch-files">The batch files</a> for a line-by-line explanation of the script structure.</p>
 <h2 id="post-processing">Post-processing<a class="headerlink" href="#post-processing" title="Link to this heading">&para;</a></h2>
 <p>The post-processing tools write their output to four folders:</p>
@@ -4893,7 +4752,7 @@
 <p><strong>PartVTK</strong>: writes the fluid particles only (<code>-onlytype:-all,+fluid</code>); <code>-continue:1</code> skips files that already exist.</p>
 <p><strong>PartVTKOut</strong>: writes the particles excluded during the run, and a summary CSV.</p>
 <h3 id="water-heights-at-h1h4">Water heights at H1–H4<a class="headerlink" href="#water-heights-at-h1h4" title="Link to this heading">&para;</a></h3>
-<p><code>elevation.txt</code> defines one vertical sampling line per gauge, at the model positions of the table above:</p>
+<p><code>elevation.txt</code> defines one vertical sampling line per gauge, at the positions H1–H4 of Figure 1, written in the model frame (<span class="arithmatex">\(x_{\mathrm{model}} = 3.22 - x_{\mathrm{reference}}\)</span>):</p>
 <div class="highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>POINTSLIST #H4
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>0.582000 0.000000 0.010733
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>0 0 0.002
@@ -4921,7 +4780,6 @@
 </span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%ERRORLEVEL%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span> <span class="k">goto</span> <span class="nl">fail</span>
 </span></code></pre></div>
 <p><strong>MeasureTool</strong>: <code>-elevation:0.5</code> takes the free surface where the kernel sum of the fluid drops below 0.5. The second call adds <code>-hvars:+depthfirst</code>, the first fluid depth from the bottom of each line.</p>
-<p>The runtime <code>swl</code> gauges and these MeasureTool lines measure the same quantity in two ways; use one of them consistently when comparing with the experiment.</p>
 <h3 id="pressures-at-p1p8">Pressures at P1–P8<a class="headerlink" href="#pressures-at-p1p8" title="Link to this heading">&para;</a></h3>
 <p>P1–P4 are on the front face of the obstacle, and P5–P8 on its top (Figure 7 of the test description). <code>pressure_points.txt</code> contains:</p>
 <table>
@@ -5009,25 +4867,23 @@
 <p>The <code>Experimental_data</code> sheet of <code>reference/test_case_2_exp_data.xls</code> contains the time [s] in column A, P1–P8 [Pa] in columns B–I, and H1–H4 [m] in columns K–N. Figures 6 and 7 compare them with the numerical water heights and pressures.</p>
 <h3 id="water-heights">Water heights<a class="headerlink" href="#water-heights" title="Link to this heading">&para;</a></h3>
 <figure id="fig-elevation-comparison" style="text-align: center;">
-  <a href="../../assets/images/benchmarks/dambreak_3d/01_dambreak_surfaceelevation_preliminary_20261118.png" target="_blank" rel="noopener noreferrer">
-    <img src="../../assets/images/benchmarks/dambreak_3d/01_dambreak_surfaceelevation_preliminary_20261118.png" alt="Water heights at H1–H4 against time." style="width: 100%; max-width: 1100px; height: auto;">
+  <a href="../../assets/images/benchmarks/dambreak_3d/dambreak3d_waterheights.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/dambreak_3d/dambreak3d_waterheights.svg" alt="Water heights at H1–H4 against time." style="width: 100%; max-width: 1000px; height: auto;">
   </a>
-  <figcaption><strong>Figure 6:</strong> Water heights at H1–H4: experiment and DualSPHysics.</figcaption>
+  <figcaption><strong>Figure 6:</strong> Water heights at H1–H4: experiment (grey) and DualSPHysics (blue).</figcaption>
 </figure>
 
 <h3 id="preliminary-pressure-comparison">Pressures<a class="headerlink" href="#preliminary-pressure-comparison" title="Link to this heading">&para;</a></h3>
 <figure id="fig-pressure-comparison" style="text-align: center;">
-  <a href="../../assets/images/benchmarks/dambreak_3d/01_dambreak_pressure_preliminary_20261118.png" target="_blank" rel="noopener noreferrer">
-    <img src="../../assets/images/benchmarks/dambreak_3d/01_dambreak_pressure_preliminary_20261118.png" alt="Pressures at P1–P8 against time." style="width: 100%; max-width: 1100px; height: auto;">
+  <a href="../../assets/images/benchmarks/dambreak_3d/dambreak3d_pressures.svg" target="_blank" rel="noopener noreferrer">
+    <img src="../../assets/images/benchmarks/dambreak_3d/dambreak3d_pressures.svg" alt="Pressures at P1–P8 against time." style="width: 100%; max-width: 1000px; height: auto;">
   </a>
-  <figcaption><strong>Figure 7:</strong> Pressures at P1–P8: experiment and DualSPHysics.</figcaption>
+  <figcaption><strong>Figure 7:</strong> Pressures at P1–P8: experiment (grey) and DualSPHysics (blue).</figcaption>
 </figure>
 
 <h2 id="references">References<a class="headerlink" href="#references" title="Link to this heading">&para;</a></h2>
 <p><a id="SPHERIC_Test02"></a>
 ◆ Issa, R., &amp; Violeau, D. (2006). 3D schematic dam break and evolution of the free surface. SPHERIC Benchmark Test 02. <a href="https://www.spheric-sph.org/tests/test-02" rel="noopener" target="_blank">Test description and experimental data</a>.</p>
-<p><a id="Fourtakas_2019"></a>
-◆ Fourtakas, G., Domínguez, J. M., Vacondio, R., &amp; Rogers, B. D. (2019). Local Uniform Stencil (LUST) boundary condition for arbitrary 3-D boundaries in parallel smoothed particle hydrodynamics (SPH) models. <em>Computers &amp; Fluids</em>, <em>190</em>, 346-361. <a href="https://doi.org/10.1016/j.compfluid.2019.06.009" rel="noopener" target="_blank">DOI: 10.1016/j.compfluid.2019.06.009</a>.</p>
 
 
 
